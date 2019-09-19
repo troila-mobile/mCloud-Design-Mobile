@@ -1,0 +1,22 @@
+diff --git a/node_modules/@react-native-community/eslint-config/index.js b/node_modules/@react-native-community/eslint-config/index.js
+index d1cfc69..bfc0f92 100644
+--- a/node_modules/@react-native-community/eslint-config/index.js
++++ b/node_modules/@react-native-community/eslint-config/index.js
+@@ -18,7 +18,7 @@ module.exports = {
+ 
+   plugins: [
+     'eslint-comments',
+-    'prettier',
++    // 'prettier',
+     'react',
+     'react-hooks',
+     'react-native',
+@@ -216,7 +216,7 @@ module.exports = {
+ 
+     // Prettier Plugin
+     // https://github.com/prettier/eslint-plugin-prettier
+-    'prettier/prettier': 2,
++    // 'prettier/prettier': 2,
+ 
+     // Stylistic Issues
+     // These rules are purely matters of style and are quite subjective.
