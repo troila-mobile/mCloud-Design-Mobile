@@ -42,7 +42,6 @@ module.exports = {
     "no-empty-function":1,
     "no-useless-return":2,
     "no-unreachable":2,
-    "babel/semi": 2,
     "max-classes-per-file": ["error", 2],
     "comma-dangle": 1,
     "react/prop-types": 2,
@@ -55,6 +54,7 @@ module.exports = {
     // }],
     "import/order": 0,
     "class-methods-use-this": 0,
-    "max-len": [2, 120]
+    "max-len": [2, 120],
+    "react/forbid-prop-types":0,
   }
 };
