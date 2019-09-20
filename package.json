@@ -6,10 +6,15 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "pre-lint": "eslint $(git diff-index --cached HEAD --name-only --diff-filter ACMR | egrep '.js$')"
   },
+  "pre-commit": [
+    "pre-lint"
+  ],
   "dependencies": {
     "deepmerge": "^4.0.0",
+    "prop-types": "^15.7.2",
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-gesture-handler": "^1.4.1",
@@ -37,6 +42,7 @@
     "metro-react-native-babel-preset": "^0.56.0",
     "patch-package": "^6.2.0",
     "postinstall-postinstall": "^2.0.0",
+    "pre-commit": "^1.2.2",
     "prettier": "^1.18.2",
     "react-test-renderer": "16.8.6"
   },
