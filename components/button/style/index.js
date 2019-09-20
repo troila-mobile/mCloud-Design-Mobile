@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { Theme } from '../../style'
+import { StyleSheet } from 'react-native';
+import { Theme } from '../../style';
 
 export default (theme) => StyleSheet.create({
     container: {
@@ -111,4 +111,4 @@ export default (theme) => StyleSheet.create({
     indicator: {
         marginRight: theme.h_spacing_md,
     },
-})
+});
