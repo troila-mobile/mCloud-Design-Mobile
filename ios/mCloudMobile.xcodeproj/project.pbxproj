@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* mCloudMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* mCloudMobileTests.m */; };
-		0D01FEBFCB71DE048599C8CB /* libPods-mCloudMobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C250A0B2F9F3053463D5F483 /* libPods-mCloudMobile-tvOSTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		232DBB5098E54EDAC9CB901B /* libPods-mCloudMobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E02C08441C965C17B3E58AB5 /* libPods-mCloudMobile-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* mCloudMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* mCloudMobileTests.m */; };
-		A6AB30053D6204111B80DBE7 /* libPods-mCloudMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6114218FB4809601248D5081 /* libPods-mCloudMobileTests.a */; };
-		C04450F0E9A8B114EE4E44BC /* libPods-mCloudMobile-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C4E3CBDE3D7FFE9EAD4344 /* libPods-mCloudMobile-tvOS.a */; };
-		C8B21A79DD82BB73E4E78967 /* libPods-mCloudMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E0702F8C07E74B316D1CC9 /* libPods-mCloudMobile.a */; };
+		7442CED867E081FD251D1674 /* libPods-mCloudMobile-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C20550427D50894869E5E15 /* libPods-mCloudMobile-tvOS.a */; };
+		7C104DBB990891E192187BCC /* libPods-mCloudMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ED167735203BEC53F188E6 /* libPods-mCloudMobileTests.a */; };
+		D10378C228DFF838AC94B96C /* libPods-mCloudMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE318F0A3D86598790A1D2E /* libPods-mCloudMobile.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 		00E356EE1AD99517003FC87E /* mCloudMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mCloudMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* mCloudMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mCloudMobileTests.m; sourceTree = "<group>"; };
+		078539B684EBCC2AE0EFFD2C /* Pods-mCloudMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mCloudMobile/Pods-mCloudMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* mCloudMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mCloudMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = mCloudMobile/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = mCloudMobile/AppDelegate.m; sourceTree = "<group>"; };
@@ -51,22 +52,21 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = mCloudMobile/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = mCloudMobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mCloudMobile/main.m; sourceTree = "<group>"; };
-		27C4E3CBDE3D7FFE9EAD4344 /* libPods-mCloudMobile-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCloudMobile-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BE318F0A3D86598790A1D2E /* libPods-mCloudMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCloudMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6B286479781463072D01D9 /* Pods-mCloudMobile-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-mCloudMobile-tvOS/Pods-mCloudMobile-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* mCloudMobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mCloudMobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* mCloudMobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mCloudMobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5043403D108D21172CD4C885 /* Pods-mCloudMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile.release.xcconfig"; path = "Target Support Files/Pods-mCloudMobile/Pods-mCloudMobile.release.xcconfig"; sourceTree = "<group>"; };
-		6114218FB4809601248D5081 /* libPods-mCloudMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCloudMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CF471069A426CFF03A1C307 /* Pods-mCloudMobile-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-mCloudMobile-tvOS/Pods-mCloudMobile-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		6E50E76475D4424FB2B83AA6 /* Pods-mCloudMobile-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-mCloudMobile-tvOSTests/Pods-mCloudMobile-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		8DE4782039EE69FE562E26AA /* Pods-mCloudMobile-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile-tvOS.release.xcconfig"; path = "Target Support Files/Pods-mCloudMobile-tvOS/Pods-mCloudMobile-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		A8E0702F8C07E74B316D1CC9 /* libPods-mCloudMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCloudMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACA580CD5130D1C36C62F926 /* Pods-mCloudMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile.debug.xcconfig"; path = "Target Support Files/Pods-mCloudMobile/Pods-mCloudMobile.debug.xcconfig"; sourceTree = "<group>"; };
-		B9786C7826458CA4F478D4A3 /* Pods-mCloudMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-mCloudMobileTests/Pods-mCloudMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C250A0B2F9F3053463D5F483 /* libPods-mCloudMobile-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCloudMobile-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1F6B7C567CF90E3B61ECC62 /* Pods-mCloudMobile-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-mCloudMobile-tvOSTests/Pods-mCloudMobile-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EA64508D513CD45AF02BEAB5 /* Pods-mCloudMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobileTests.release.xcconfig"; path = "Target Support Files/Pods-mCloudMobileTests/Pods-mCloudMobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C20550427D50894869E5E15 /* libPods-mCloudMobile-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCloudMobile-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EFFD4EAC0239431BDCEE5E9 /* Pods-mCloudMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobileTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mCloudMobileTests/Pods-mCloudMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69CBAF596FC752A3544CA62B /* Pods-mCloudMobile-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mCloudMobile-tvOSTests/Pods-mCloudMobile-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6A9102483EB09CF2324F77C3 /* Pods-mCloudMobile-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mCloudMobile-tvOS/Pods-mCloudMobile-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A0B0218803F38DF3B7A8BDEA /* Pods-mCloudMobile-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mCloudMobile-tvOSTests/Pods-mCloudMobile-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		B7ED167735203BEC53F188E6 /* libPods-mCloudMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCloudMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C18A18071F8F03B5EB1D0B96 /* Pods-mCloudMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-mCloudMobile/Pods-mCloudMobile.release.xcconfig"; sourceTree = "<group>"; };
+		E02C08441C965C17B3E58AB5 /* libPods-mCloudMobile-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCloudMobile-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FBDBFB52981E03EFF1BC4172 /* Pods-mCloudMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCloudMobileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mCloudMobileTests/Pods-mCloudMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6AB30053D6204111B80DBE7 /* libPods-mCloudMobileTests.a in Frameworks */,
+				7C104DBB990891E192187BCC /* libPods-mCloudMobileTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8B21A79DD82BB73E4E78967 /* libPods-mCloudMobile.a in Frameworks */,
+				D10378C228DFF838AC94B96C /* libPods-mCloudMobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C04450F0E9A8B114EE4E44BC /* libPods-mCloudMobile-tvOS.a in Frameworks */,
+				7442CED867E081FD251D1674 /* libPods-mCloudMobile-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D01FEBFCB71DE048599C8CB /* libPods-mCloudMobile-tvOSTests.a in Frameworks */,
+				232DBB5098E54EDAC9CB901B /* libPods-mCloudMobile-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,12 +141,27 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				A8E0702F8C07E74B316D1CC9 /* libPods-mCloudMobile.a */,
-				27C4E3CBDE3D7FFE9EAD4344 /* libPods-mCloudMobile-tvOS.a */,
-				C250A0B2F9F3053463D5F483 /* libPods-mCloudMobile-tvOSTests.a */,
-				6114218FB4809601248D5081 /* libPods-mCloudMobileTests.a */,
+				1BE318F0A3D86598790A1D2E /* libPods-mCloudMobile.a */,
+				3C20550427D50894869E5E15 /* libPods-mCloudMobile-tvOS.a */,
+				E02C08441C965C17B3E58AB5 /* libPods-mCloudMobile-tvOSTests.a */,
+				B7ED167735203BEC53F188E6 /* libPods-mCloudMobileTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		669BA4E20B8203CE40E2FDDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				078539B684EBCC2AE0EFFD2C /* Pods-mCloudMobile.debug.xcconfig */,
+				C18A18071F8F03B5EB1D0B96 /* Pods-mCloudMobile.release.xcconfig */,
+				6A9102483EB09CF2324F77C3 /* Pods-mCloudMobile-tvOS.debug.xcconfig */,
+				1D6B286479781463072D01D9 /* Pods-mCloudMobile-tvOS.release.xcconfig */,
+				69CBAF596FC752A3544CA62B /* Pods-mCloudMobile-tvOSTests.debug.xcconfig */,
+				A0B0218803F38DF3B7A8BDEA /* Pods-mCloudMobile-tvOSTests.release.xcconfig */,
+				3EFFD4EAC0239431BDCEE5E9 /* Pods-mCloudMobileTests.debug.xcconfig */,
+				FBDBFB52981E03EFF1BC4172 /* Pods-mCloudMobileTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -164,7 +179,7 @@
 				00E356EF1AD99517003FC87E /* mCloudMobileTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				AF20336370D7D3F4CE691447 /* Pods */,
+				669BA4E20B8203CE40E2FDDD /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -182,22 +197,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AF20336370D7D3F4CE691447 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				ACA580CD5130D1C36C62F926 /* Pods-mCloudMobile.debug.xcconfig */,
-				5043403D108D21172CD4C885 /* Pods-mCloudMobile.release.xcconfig */,
-				6CF471069A426CFF03A1C307 /* Pods-mCloudMobile-tvOS.debug.xcconfig */,
-				8DE4782039EE69FE562E26AA /* Pods-mCloudMobile-tvOS.release.xcconfig */,
-				E1F6B7C567CF90E3B61ECC62 /* Pods-mCloudMobile-tvOSTests.debug.xcconfig */,
-				6E50E76475D4424FB2B83AA6 /* Pods-mCloudMobile-tvOSTests.release.xcconfig */,
-				B9786C7826458CA4F478D4A3 /* Pods-mCloudMobileTests.debug.xcconfig */,
-				EA64508D513CD45AF02BEAB5 /* Pods-mCloudMobileTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,7 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "mCloudMobileTests" */;
 			buildPhases = (
-				2B786EE5F9AF4119BBE60B14 /* [CP] Check Pods Manifest.lock */,
+				091CC56FCC1006E3FAC144C8 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -224,7 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "mCloudMobile" */;
 			buildPhases = (
-				5F71BA2CF9FB2DDE1AB6007D /* [CP] Check Pods Manifest.lock */,
+				19185F28397BA33A94F73B4F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -244,7 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "mCloudMobile-tvOS" */;
 			buildPhases = (
-				3DECC630E95B59BA18CFEBD1 /* [CP] Check Pods Manifest.lock */,
+				034E0CB8D8B98EEB5F96A144 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -264,7 +263,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "mCloudMobile-tvOSTests" */;
 			buildPhases = (
-				5DE518BCB4DC40EEE9F61624 /* [CP] Check Pods Manifest.lock */,
+				EB6FADC491BDF9F5B13D665B /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -373,43 +372,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		2B786EE5F9AF4119BBE60B14 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mCloudMobileTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		3DECC630E95B59BA18CFEBD1 /* [CP] Check Pods Manifest.lock */ = {
+		034E0CB8D8B98EEB5F96A144 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -431,7 +394,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5DE518BCB4DC40EEE9F61624 /* [CP] Check Pods Manifest.lock */ = {
+		091CC56FCC1006E3FAC144C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -446,14 +409,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mCloudMobile-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-mCloudMobileTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5F71BA2CF9FB2DDE1AB6007D /* [CP] Check Pods Manifest.lock */ = {
+		19185F28397BA33A94F73B4F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,6 +432,42 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-mCloudMobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		EB6FADC491BDF9F5B13D665B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mCloudMobile-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -580,7 +579,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9786C7826458CA4F478D4A3 /* Pods-mCloudMobileTests.debug.xcconfig */;
+			baseConfigurationReference = 3EFFD4EAC0239431BDCEE5E9 /* Pods-mCloudMobileTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -603,7 +602,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA64508D513CD45AF02BEAB5 /* Pods-mCloudMobileTests.release.xcconfig */;
+			baseConfigurationReference = FBDBFB52981E03EFF1BC4172 /* Pods-mCloudMobileTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -623,7 +622,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACA580CD5130D1C36C62F926 /* Pods-mCloudMobile.debug.xcconfig */;
+			baseConfigurationReference = 078539B684EBCC2AE0EFFD2C /* Pods-mCloudMobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -643,7 +642,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5043403D108D21172CD4C885 /* Pods-mCloudMobile.release.xcconfig */;
+			baseConfigurationReference = C18A18071F8F03B5EB1D0B96 /* Pods-mCloudMobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -662,7 +661,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CF471069A426CFF03A1C307 /* Pods-mCloudMobile-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 6A9102483EB09CF2324F77C3 /* Pods-mCloudMobile-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -690,7 +689,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DE4782039EE69FE562E26AA /* Pods-mCloudMobile-tvOS.release.xcconfig */;
+			baseConfigurationReference = 1D6B286479781463072D01D9 /* Pods-mCloudMobile-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -718,7 +717,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1F6B7C567CF90E3B61ECC62 /* Pods-mCloudMobile-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 69CBAF596FC752A3544CA62B /* Pods-mCloudMobile-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -745,7 +744,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E50E76475D4424FB2B83AA6 /* Pods-mCloudMobile-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = A0B0218803F38DF3B7A8BDEA /* Pods-mCloudMobile-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
