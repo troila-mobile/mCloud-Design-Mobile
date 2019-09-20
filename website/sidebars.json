@@ -1,6 +1,9 @@
 {
   "docs": {
-    "Component": ["doc1"],
+    "Component": [
+      "doc1",
+      "component1"
+    ],
     "First Category": ["doc2"],
     "Second Category": ["doc3"]
   },

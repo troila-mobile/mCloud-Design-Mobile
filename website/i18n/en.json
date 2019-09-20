@@ -5,12 +5,17 @@
     "previous": "Previous",
     "tagline": "A website for testing",
     "docs": {
+      "component1": {
+        "title": "Buttoncc",
+        "sidebar_label": "Buttoncc"
+      },
       "doc1": {
-        "title": "Button",
-        "sidebar_label": "Button"
+        "title": "doc1",
+        "sidebar_label": "doc1"
       },
       "doc2": {
-        "title": "document number 2"
+        "title": "doc2",
+        "sidebar_label": "doc2"
       },
       "doc3": {
         "title": "This is document number 3"

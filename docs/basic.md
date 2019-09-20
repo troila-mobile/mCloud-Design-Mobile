@@ -1,7 +1,7 @@
 ---
-id: doc1
-title: Button
-sidebar_label: Button
+id: component1
+title: Buttoncc
+sidebar_label: Buttoncc
 ---
 
 Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
