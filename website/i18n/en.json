@@ -5,13 +5,9 @@
     "previous": "Previous",
     "tagline": "A website for testing",
     "docs": {
-      "component1": {
-        "title": "Buttoncc",
-        "sidebar_label": "Buttoncc"
-      },
-      "doc1": {
-        "title": "doc1",
-        "sidebar_label": "doc1"
+      "Button": {
+        "title": "Button",
+        "sidebar_label": "Button"
       },
       "doc2": {
         "title": "doc2",
@@ -34,9 +30,9 @@
       "Blog": "Blog"
     },
     "categories": {
-      "Component": "Component",
       "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Second Category": "Second Category",
+      "Component": "Component"
     }
   },
   "pages-strings": {
