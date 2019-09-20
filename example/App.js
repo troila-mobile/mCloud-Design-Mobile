@@ -44,8 +44,7 @@ const App = (props) => (
                             props.navigation.navigate('Button')
                         }}
                     >
-Button
-
+                        Button
                     </Text>
                     <Text style={styles.sectionDescription}>
             Edit
