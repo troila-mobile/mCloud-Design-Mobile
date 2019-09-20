@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "一个基于 React Native 的 UI 组件库",
     "docs": {
       "Button": {
         "title": "Button",
