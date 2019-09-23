@@ -9,6 +9,10 @@
         "title": "Button",
         "sidebar_label": "Button"
       },
+      "Checkbox": {
+        "title": "Checkbox",
+        "sidebar_label": "Checkbox"
+      },
       "doc2": {
         "title": "doc2",
         "sidebar_label": "doc2"
@@ -21,6 +25,10 @@
       },
       "doc5": {
         "title": "Fifth Document"
+      },
+      "SearchBar": {
+        "title": "SearchBar",
+        "sidebar_label": "SearchBar"
       }
     },
     "links": {
