@@ -33,6 +33,11 @@ sidebar_label: Contributing
 - 调试website：`cd website & yarn start`
 - 需要保证doc和component的匹配准确性，doc编辑完成后需要调试`website`来验证效果
 
+## Example Develop
+- 在`/example/componentList`内参照示例补充调试用例
+- ios: `/ xcode run`
+- android: `/ android studio run`
+
 ## TODO
 - 配置 github commit auto build component and publish npm
 - 配置 github pull request auto run website build and publish github.io

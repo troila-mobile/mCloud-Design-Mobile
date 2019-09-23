@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import { Button } from '../..'
 
 export default () => (
-    <View style={{ flex:1 }}>
+    <View style={{ flex: 1 }}>
         <Button>default</Button>
         <Button disabled>default disabled</Button>
 
@@ -27,10 +27,10 @@ export default () => (
 
         <Button type="ghost">ghost</Button>
         <Button type="ghost" disabled>
-                ghost disabled
+            ghost disabled
         </Button>
         <Button type="ghost" size="small">
-                ghost
+            ghost
         </Button>
     </View>
 )
