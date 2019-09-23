@@ -9,9 +9,9 @@
         "title": "Button",
         "sidebar_label": "Button"
       },
-      "doc2": {
-        "title": "doc2",
-        "sidebar_label": "doc2"
+      "Contributing": {
+        "title": "贡献说明",
+        "sidebar_label": "Contributing"
       },
       "doc3": {
         "title": "This is document number 3"
@@ -30,6 +30,7 @@
       "Blog": "Blog"
     },
     "categories": {
+      "Croe": "Croe",
       "First Category": "First Category",
       "Second Category": "Second Category",
       "Component": "Component"
