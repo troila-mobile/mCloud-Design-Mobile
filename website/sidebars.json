@@ -6,7 +6,9 @@
   },
   "docs-other": {
     "Component": [
-      "Button"
+      "Button",
+      "SearchBar",
+      "Checkbox"
     ],
     "First Category": ["doc4", "doc5"]
   }
