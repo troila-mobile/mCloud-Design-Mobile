@@ -10,7 +10,6 @@ export default (theme) => StyleSheet.create({
         borderWidth:1,
         borderRadius:theme.radius_md,
         width:theme.segmented_control_width,
-        height:theme.segmented_control_height,
     },
     specialContainer:{
         flexDirection: 'row',
@@ -18,7 +17,17 @@ export default (theme) => StyleSheet.create({
         borderWidth:1,
         borderRadius:theme.radius_md,
         width:theme.segmented_control_width,
+    },
+    containerHeight:{
         height:theme.segmented_control_height,
+    },
+    defaultBorderRight:{
+        borderColor:theme.segmented_control_color,
+        borderRightWidth:1
+    },
+    specialBorderRight:{
+        borderColor:'#fff',
+        borderRightWidth:1
     },
     disabled:{
         opacity:0.6,
@@ -51,18 +60,23 @@ export default (theme) => StyleSheet.create({
         fontSize:theme.font_size_base,
         color:theme.segmented_control_color,
     },
-    wrapperStyleLeft: {
+    borderRadiusLeft: {
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
         borderTopLeftRadius:theme.radius_md,
         borderBottomLeftRadius:theme.radius_md,
     },
-    wrapperStyleRight: {
+    borderRadiusRight: {
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
         borderTopRightRadius:theme.radius_md,
         borderBottomRightRadius:theme.radius_md,
+    },
+    wrapperStyle: {
+        flex:1,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 })
