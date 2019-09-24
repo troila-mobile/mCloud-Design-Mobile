@@ -21,6 +21,10 @@
       },
       "doc5": {
         "title": "Fifth Document"
+      },
+      "SegmentedControl": {
+        "title": "SegmentedControl",
+        "sidebar_label": "SegmentedControl"
       }
     },
     "links": {
