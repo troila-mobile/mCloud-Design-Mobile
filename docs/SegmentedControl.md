@@ -4,33 +4,29 @@ title: SegmentedControl
 sidebar_label: SegmentedControl
 ---
 
-就是一个SegmentedControl
+SegmentedControl
 
 ## Basic Example:
 
-```SnackPlayer name=button-simple
+```SnackPlayer name=SegmentedControl-simple
 import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text } from 'react-native';
 import Constants from 'expo-constants';
-import AwesomeButton from "react-native-really-awesome-button";
+import { SegmentedControl } from "mcloud-design-mobile";
 
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-        <AwesomeButton>Text</AwesomeButton>
-        <AwesomeButton
-        progress
-        onPress={next => {
-          /** Do Something **/
-          next();
-        }}
-      >
-        Text
-      </AwesomeButton>
-      <AwesomeButton>
-        <Text>Send it</Text>
-      </AwesomeButton>
+       <SegmentedControl leftText='申请' rightText='审批' style={{ marginTop:20 }} />
+       <SegmentedControl disabled leftText='申请' rightText='审批' style={{ marginTop:20 }} />
+       <SegmentedControl
+                              leftText='今日遭到榜'
+                              rightText='昨日工时榜'
+                              type='special'
+                              style={{ marginTop:20,width:300,height:40 }}
+                          />
+
     </SafeAreaView>
   );
 }
@@ -41,15 +37,6 @@ const styles = StyleSheet.create({
     marginTop: Constants.statusBarHeight,
         alignItems:'center'
   },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
-  },
 });
 ```
 
@@ -57,9 +44,12 @@ const styles = StyleSheet.create({
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| type    | 按钮类型，可选值为`primary`/`ghost`/`warning`或者不设  |   string   |   -  |
-| size    | 按钮大小，可选值为`large`、`small` | string | `large`|
-| activeStyle  | 点击反馈的自定义样式 (设为 false 时表示禁止点击反馈) | {}/false | {} |
+| type    | segmentedControl类型，可选值为`default`/`special`  |   string   |   `default`  |
 | disabled   | 设置禁用  | boolean |    false  |
-| onPress    | 点击按钮的点击回调函数 | (e: Object): void |   无  |
+| leftText   | 左边按钮的title | string | '' |
+| rightText   | 右边按钮的title | string | '' |
+| onPressLeft    | 左边按钮的点击回调函数 | (e: Object): void |   无  |
+| onPressRight    | 右边按钮的点击回调函数 | (e: Object): void |   无  |
+| defaultSelected | 初始选中哪个按钮 | string | 'left' |
 | style    | 自定义样式 |   Object  | 无 |
+
