@@ -13,5 +13,10 @@ export default [
 		title: 'Checkbox',
 		description: '复选框',
 		example: require('../components/checkbox/demo/basic')
+	},
+	{
+		title: 'Switch',
+		description: '滑动开关',
+		example: require('../components/switch/demo/basic')
 	}
 ]
