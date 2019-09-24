@@ -13,13 +13,27 @@ export default () => (
             backgroundColor:'#e6e6e6'
         }}
     >
-        <SegmentedControl leftText='申请' rightText='审批' style={{ marginTop:20 }} />
-        <SegmentedControl disabled leftText='申请' rightText='审批' style={{ marginTop:20 }} />
+        <SegmentedControl style={{ marginTop:20 }} />
         <SegmentedControl
-            leftText='今日遭到榜'
-            rightText='昨日工时榜'
+            disabled
+            titles={['申请','审批']}
+            segments={2}
+            onPressMethods={[() => {},() => {}]}
+            style={{ marginTop:20 }}
+        />
+        <SegmentedControl
+            titles={['left','right']}
+            segments={2}
+            onPressMethods={[() => {},() => {}]}
             type='special'
-            style={{ marginTop:20,width:300,height:40 }}
+            style={{ marginTop:20 }}
+        />
+        <SegmentedControl
+            titles={['left','center','right']}
+            segments={3}
+            onPressMethods={[() => {},() => {},() => {}]}
+            type='special'
+            style={{ marginTop:20,width:300 }}
         />
     </View>
 )
