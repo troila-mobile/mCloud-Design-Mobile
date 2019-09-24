@@ -16,22 +16,20 @@ export default class Button extends React.Component {
     static propTypes = {
         type: PropTypes.string,
         disabled: PropTypes.bool,
-        leftText:PropTypes.string,
-        rightText:PropTypes.string,
-        onPressLeft: PropTypes.func,
-        onPressRight: PropTypes.func,
+        segments: PropTypes.number,
+        titles: PropTypes.arrayOf(PropTypes.string),
+        onPressMethods: PropTypes.arrayOf(PropTypes.func),
+        selectedIndex:PropTypes.number,
         style: ViewPropTypes.style,
         styles: PropTypes.object,
-        defaultSelected:PropTypes.string,
     }
     static defaultProps = {
         type: 'default',
         disabled: false,
-        leftText:'',
-        rightText:'',
-        onPressLeft: () => {},
-        onPressRight:() => {},
-        defaultSelected:'left',
+        segments: 2,
+        titles: ['',''],
+        onPressMethods:[() => {},() => {}] ,
+        selectedIndex:0,
         style:{},
         styles:{},
     };
@@ -40,7 +38,7 @@ export default class Button extends React.Component {
         super(props)
         // 初始状态
         this.state = {
-            selectedPosition:this.props.defaultSelected === 'left' ? 0 : 1,
+            selectedIndex:this.props.selectedIndex,
         }
     }
     render() {
@@ -49,13 +47,12 @@ export default class Button extends React.Component {
             styles,
             type,
             disabled,
-            leftText,
-            rightText,
-            onPressLeft,
-            onPressRight,
+            segments,
+            titles,
+            onPressMethods,
         } = this.props
         const {
-            selectedPosition,
+            selectedIndex,
         } = this.state
         return (
             <WithTheme themeStyles={SegmentedControlStyles} styles={styles}>
@@ -65,6 +62,7 @@ export default class Button extends React.Component {
                             _styles[`${type}Container`],
                             disabled && _styles.disabled,
                             style,
+                            _styles.containerHeight
                         ]
                         const unselectedTextStyle = [
                             _styles[`${type}UnselectedText`],
@@ -73,59 +71,66 @@ export default class Button extends React.Component {
                             _styles[`${type}SelectedText`],
                         ]
                         const leftButtonStyle = [
-                            _styles.wrapperStyleLeft,
-                            selectedPosition === 0
+                            _styles.wrapperStyle,
+                            _styles.borderRadiusLeft,
+                            selectedIndex === 0
+                                ? _styles[`${type}ButtonBGSelected`]
+                                : _styles[`${type}ButtonBGUnselected`],
+                            selectedIndex === 0
+                                ? _styles[`${type}BorderRight`]
+                                : _styles[`${type}BorderRight`],
+                        ]
+                        const rightButtonStyle = [
+                            _styles.wrapperStyle,
+                            _styles.borderRadiusRight,
+                            selectedIndex === segments - 1
                                 ? _styles[`${type}ButtonBGSelected`]
                                 : _styles[`${type}ButtonBGUnselected`],
                         ]
-                        const rightButtonStyle = [
-                            _styles.wrapperStyleRight,
-                            selectedPosition === 1
-                                ? _styles[`${type}ButtonBGSelected`]
-                                : _styles[`${type}ButtonBGUnselected`],
+                        const centerButtonStyleSelected = [
+                            _styles.wrapperStyle,
+                            _styles[`${type}ButtonBGSelected`],
+                        ]
+                        const centerButtonStyleUnselected = [
+                            _styles.wrapperStyle,
+                            _styles[`${type}ButtonBGUnselected`],
+                        ]
+                        const borderRight = [
+                            _styles[`${type}BorderRight`]
                         ]
                         return (
                             <View style={[viewStyle]}>
-                                <TouchableOpacity
-                                    style={[leftButtonStyle]}
-                                    onPress={(e) => {
-                                        if ( selectedPosition === 1 ) {
-                                            this.setState({
-                                                selectedPosition:0,
-                                            })
-                                            onPressLeft && onPressLeft(e)
-                                        }
-                                    }}
-                                    disabled={disabled}
-                                >
-                                    <Text
-                                        style={selectedPosition === 0
-                                            ? selectedTextStyle
-                                            : unselectedTextStyle}
-                                    >
-                                        {leftText}
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity
-                                    style={[rightButtonStyle]}
-                                    onPress={(e) => {
-                                        if (selectedPosition === 0) {
-                                            this.setState({
-                                                selectedPosition:1,
-                                            })
-                                            onPressRight && onPressRight(e)
-                                        }
-                                    }}
-                                    disabled={disabled}
-                                >
-                                    <Text
-                                        style={selectedPosition === 1
-                                            ? selectedTextStyle
-                                            : unselectedTextStyle}
-                                    >
-                                        {rightText}
-                                    </Text>
-                                </TouchableOpacity>
+                                {
+                                    titles.map((text,i)=>(
+                                        <TouchableOpacity
+                                            style={
+                                                [i === 0
+                                                    ? leftButtonStyle
+                                                    : i === segments-1
+                                                        ? rightButtonStyle
+                                                        : i === selectedIndex
+                                                            ? centerButtonStyleSelected
+                                                            : [centerButtonStyleUnselected,borderRight]
+                                                ]}
+                                            onPress={(e) => {
+                                                this.setState({
+                                                    selectedIndex:i,
+                                                })
+                                                let onPress = onPressMethods[i]
+                                                onPress && onPress(e)
+                                            }}
+                                            disabled={disabled}
+                                        >
+                                            <Text
+                                                style={selectedIndex === i
+                                                    ? selectedTextStyle
+                                                    : unselectedTextStyle}
+                                            >
+                                                {text}
+                                            </Text>
+                                        </TouchableOpacity>
+                                    ))
+                                }
                             </View>
                         )
                     }
