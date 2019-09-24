@@ -26,7 +26,6 @@ export default function App() {
                               type='special'
                               style={{ marginTop:20,width:300,height:40 }}
                           />
-
     </SafeAreaView>
   );
 }
@@ -45,11 +44,10 @@ const styles = StyleSheet.create({
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | type    | segmentedControl类型，可选值为`default`/`special`  |   string   |   `default`  |
-| disabled   | 设置禁用  | boolean |    false  |
-| leftText   | 左边按钮的title | string | '' |
-| rightText   | 右边按钮的title | string | '' |
-| onPressLeft    | 左边按钮的点击回调函数 | (e: Object): void |   无  |
-| onPressRight    | 右边按钮的点击回调函数 | (e: Object): void |   无  |
-| defaultSelected | 初始选中哪个按钮 | string | 'left' |
+| disabled   |   设置禁用   |   boolean   |    false  |
+| segments   |   按钮的个数  |   number   |   2    |
+| titles   |   按钮的title   |   元素为string类型的数组    |    无    |
+| onPressMethods   |  按钮点击的回调函数   |   元素为函数类型的数组   |   无  |
+| selectedIndex   |   初始选中哪个按钮    |   number   |   0   |
 | style    | 自定义样式 |   Object  | 无 |
 
