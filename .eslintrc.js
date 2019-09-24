@@ -56,5 +56,7 @@ module.exports = {
     "class-methods-use-this": 0,
     "max-len": [2, 120],
     "react/forbid-prop-types":0,
+    "import/no-unresolved": [2, { "ignore": ['\.png$'] }],
+    "react/require-default-props": 0
   }
 };

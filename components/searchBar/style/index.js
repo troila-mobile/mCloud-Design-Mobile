@@ -1,0 +1,76 @@
+import { StyleSheet } from 'react-native'
+
+export default (theme) => StyleSheet.create({
+    default_wrapper: {
+        backgroundColor: '#fff',
+        height: theme.search_bar_height,
+        paddingLeft: theme.h_spacing_lg,
+        paddingRight: theme.h_spacing_lg,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    default_inputWrapper: {
+        flex: 1,
+        flexDirection: 'row',
+    },
+    default_input: {
+        backgroundColor: '#fff',
+        height: theme.search_bar_input_height,
+        color: theme.color_text_base,
+        fontSize: theme.font_size_base,
+        paddingLeft: 15 + theme.h_spacing_sm,
+        paddingRight: theme.h_spacing_sm,
+        flex: 1,
+        paddingTop: 0,
+        paddingBottom: 0,
+    },
+    default_searchView: {
+        position: 'absolute',
+        flexDirection: 'row',
+        alignSelf: 'center',
+        left: theme.h_spacing_lg,
+        marginRight: theme.h_spacing_sm,
+    },
+    default_clearView: {
+        position: 'absolute',
+        flexDirection: 'row',
+        alignSelf: 'center',
+        right: theme.h_spacing_md,
+    },
+    radius_wrapper: {
+        height: theme.search_bar_height,
+        paddingLeft: theme.h_spacing_lg,
+        paddingRight: theme.h_spacing_lg,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    radius_inputWrapper: {
+        flex: 1,
+        flexDirection: 'row',
+    },
+    radius_input: {
+        borderRadius: theme.search_bar_input_height / 2,
+        backgroundColor: '#fff',
+        height: theme.search_bar_input_height,
+        color: theme.color_text_base,
+        fontSize: theme.font_size_base,
+        paddingLeft: theme.h_spacing_lg + 13 + theme.h_spacing_sm * 2,
+        paddingRight: theme.h_spacing_lg + 23 + theme.h_spacing_sm,
+        flex: 1,
+        paddingTop: 0,
+        paddingBottom: 0,
+    },
+    radius_searchView: {
+        position: 'absolute',
+        flexDirection: 'row',
+        alignSelf: 'center',
+        left: theme.h_spacing_lg * 2 + theme.h_spacing_sm,
+        marginRight: theme.h_spacing_sm,
+    },
+    radius_clearView: {
+        position: 'absolute',
+        flexDirection: 'row',
+        alignSelf: 'center',
+        right: theme.h_spacing_lg + theme.h_spacing_md + 2,
+    },
+})
