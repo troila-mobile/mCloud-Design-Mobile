@@ -101,22 +101,23 @@ export default class Button extends React.Component {
                         return (
                             <View style={[viewStyle]}>
                                 {
-                                    titles.map((text,i)=>(
+                                    titles.map((text,i) => (
                                         <TouchableOpacity
                                             style={
                                                 [i === 0
                                                     ? leftButtonStyle
-                                                    : i === segments-1
+                                                    : i === segments - 1
                                                         ? rightButtonStyle
                                                         : i === selectedIndex
                                                             ? centerButtonStyleSelected
                                                             : [centerButtonStyleUnselected,borderRight]
-                                                ]}
+                                                ]
+                                            }
                                             onPress={(e) => {
                                                 this.setState({
                                                     selectedIndex:i,
                                                 })
-                                                let onPress = onPressMethods[i]
+                                                const onPress = onPressMethods[i]
                                                 onPress && onPress(e)
                                             }}
                                             disabled={disabled}
