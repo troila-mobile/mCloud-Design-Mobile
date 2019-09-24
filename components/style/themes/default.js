@@ -137,8 +137,10 @@ export default {
 
     // segmented_control
     segmented_control_color: brandPrimary,  // 同时应用于背景、文字颜色、边框色
-    segmented_control_height: 27,
+    segmented_control_height: 30,
+    segmented_control_width: 190,
     segmented_control_fill_tap: `${brandPrimary}10`,
+    segmented_control_background_grey:'#e6e6e6',
 
     // tab_bar
     tab_bar_fill: '#ebeeef',
