@@ -30,10 +30,14 @@
       "doc5": {
         "title": "Fifth Document"
       },
+      "SegmentedControl": {
+        "title": "SegmentedControl",
+        "sidebar_label": "SegmentedControl"
+      },
       "SearchBar": {
         "title": "SearchBar",
         "sidebar_label": "SearchBar"
-      }
+      },
     },
     "links": {
       "Docs": "Docs",
