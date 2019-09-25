@@ -121,6 +121,7 @@ export default class Button extends React.Component {
                                                 onPress && onPress(e)
                                             }}
                                             disabled={disabled}
+                                            key={`button${i+1}`}
                                         >
                                             <Text
                                                 style={selectedIndex === i
