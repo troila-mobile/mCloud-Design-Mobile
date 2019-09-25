@@ -9,6 +9,14 @@
         "title": "Button",
         "sidebar_label": "Button"
       },
+      "Checkbox": {
+        "title": "Checkbox",
+        "sidebar_label": "Checkbox"
+      },
+      "Contributing": {
+        "title": "贡献说明",
+        "sidebar_label": "Contributing"
+      },
       "doc2": {
         "title": "doc2",
         "sidebar_label": "doc2"
@@ -25,7 +33,11 @@
       "SegmentedControl": {
         "title": "SegmentedControl",
         "sidebar_label": "SegmentedControl"
-      }
+      },
+      "SearchBar": {
+        "title": "SearchBar",
+        "sidebar_label": "SearchBar"
+      },
     },
     "links": {
       "Docs": "Docs",
@@ -34,6 +46,7 @@
       "Blog": "Blog"
     },
     "categories": {
+      "Croe": "Croe",
       "First Category": "First Category",
       "Second Category": "Second Category",
       "Component": "Component"

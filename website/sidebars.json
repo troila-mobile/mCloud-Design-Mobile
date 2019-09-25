@@ -1,12 +1,15 @@
 {
   "docs": {
+    "Croe": ["Contributing"],
     "First Category": ["doc2"],
     "Second Category": ["doc3"]
   },
   "docs-other": {
     "Component": [
       "Button",
-      "SegmentedControl"
+      "SegmentedControl",
+      "SearchBar",
+      "Checkbox",
     ],
     "First Category": ["doc4", "doc5"]
   }
