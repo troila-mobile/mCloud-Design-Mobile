@@ -13,17 +13,52 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Switch } from 'mCloud-mobile';
 
+const { SwitchItem } = Switch
+
 export default () => {
-    const [value, onChange] = useState('打卡助手')
+    const [checked, onChange] = useState(false)
     return (
         <View style={styles.warp}>
             <Text style={styles.boldTitle}>
-                圆角搜索框
+                Switch
             </Text>
-            <Text style={styles.title}>
-                未输入状态
+            <Text style={styles.title}>受控</Text>
+            <Switch
+                checked={checked}
+                onChange={() => onChange(!checked)}
+                style={styles.switch}
+            />
+            <Text style={styles.title}>默认选中</Text>
+            <Switch
+                checked
+                style={styles.switch}
+            />
+            <Text style={styles.title}>不可选状态</Text>
+            <Switch
+                disabled
+                hideLine
+                style={styles.switch}
+            />
+            <Text style={styles.boldTitle}>
+                SwitchItem
             </Text>
-            <Switch type="radius" placeholder="搜索" />
+            <SwitchItem
+                checked={checked}
+                onChange={() => onChange(!checked)}
+            >
+                文本1(受控)
+            </SwitchItem>
+            <SwitchItem
+                checked
+            >
+                文本2(默认选中)
+            </SwitchItem>
+            <SwitchItem
+                disabled
+                hideLine
+            >
+                <Text style={styles.desc}>文本3(不可选状态)</Text>
+            </SwitchItem>
         </View>
     )
 }
@@ -46,17 +81,40 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         fontWeight: '500',
     },
+    desc: {
+        fontSize: 14,
+        color: '#999',
+    },
+    switch: {
+        marginBottom: 10,
+        marginLeft: 15,
+    },
 })
 
 ```
 
 
 
-## Props
+## Switch Props
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| defaultValue | 默认值 | String   |  无 |
+| checked | 默认值 | bool   |  false |
+| onChange | checked 值变化时调用的方法 | func   |  () => { } |
+| onTintColor | 开启时的背景颜色 | string   |  Theme.brand_primary |
+| thumbTintColor | 原型按钮的背景颜色 | string   |  #fff |
+| tintColor | 背景颜色 | string   |  #D8D8D8 |
+| disabledThumbTintColor | disabled 原型按钮的背景颜色 | string   |  #F5F5F5 |
+| disabledTintColor | disabled 的背景颜色 | string   |  #EEEEEE |
+| disabled | 默认值 | bool   |  false |
+
+## SwitchItem Props
+
+有 Switch 的所有 props 属性，另外还有
+
+属性 | 说明 | 类型 | 默认值
+----|-----|------|------
+| hideLine | 是否隐藏下面的线 | Boolean   |  false |
 
 
 
