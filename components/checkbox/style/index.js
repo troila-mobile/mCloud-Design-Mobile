@@ -5,7 +5,7 @@ export default (theme) => StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
-    itemWarpper: {
+    itemWrapper: {
         flexDirection: 'row',
         alignItems: 'center',
         height: theme.checkbox_item_height,

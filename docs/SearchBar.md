@@ -16,7 +16,7 @@ import { SearchBar } from 'mCloud-Design-Mobile';
 export default () => {
     const [value, onChange] = useState('打卡助手')
     return (
-        <View style={styles.warp}>
+        <View style={styles.wrap}>
             <Text style={styles.boldTitle}>
                 圆角搜索框
             </Text>
@@ -50,7 +50,7 @@ export default () => {
 }
 
 const styles = StyleSheet.create({
-    warp: {
+    wrap: {
         flex: 1,
         backgroundColor: '#E6E6E6',
     },

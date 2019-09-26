@@ -53,7 +53,7 @@ export default class CheckboxItem extends React.Component {
                 {
                     (_styles) => (
                         <TouchableWithoutFeedback onPress={this.onPress}>
-                            <View style={[_styles.itemWarpper, style]}>
+                            <View style={[_styles.itemWrapper, style]}>
                                 <Checkbox
                                     ref={(e) => {
                                         this.Checkbox = e
