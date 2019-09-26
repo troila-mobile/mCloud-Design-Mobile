@@ -86,7 +86,6 @@ export default class SwitchButton extends Component {
                                     thumbTintColor={thumbTintColor}
                                     disabledThumbTintColor={disabledThumbTintColor}
                                     disabledTintColor={disabledTintColor}
-                                    
                                 />
                                 {
                                     !hideLine && (
