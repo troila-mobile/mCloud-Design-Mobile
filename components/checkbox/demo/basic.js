@@ -8,7 +8,7 @@ export default () => {
     const [checked, onChange] = useState(true)
     const [itemChecked, onItemChange] = useState(true)
     return (
-        <View style={styles.warp}>
+        <View style={styles.wrap}>
             <Text style={styles.boldTitle}>
                 Checkbox
             </Text>
@@ -65,7 +65,7 @@ export default () => {
 }
 
 const styles = StyleSheet.create({
-    warp: {
+    wrap: {
         flex: 1,
         backgroundColor: '#E6E6E6',
     },
