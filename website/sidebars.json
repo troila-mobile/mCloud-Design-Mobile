@@ -10,7 +10,8 @@
       "SegmentedControl",
       "SearchBar",
       "Checkbox",
-      "Switch"
+      "Switch",
+      "InputItem"
     ],
     "First Category": ["doc4", "doc5"]
   }

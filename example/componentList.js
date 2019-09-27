@@ -18,5 +18,10 @@ export default [
 		title: 'Switch',
 		description: '滑动开关',
 		example: require('../components/switch/demo/basic')
+	},
+	{
+		title: 'InputItem',
+		description: '文本输入',
+		example: require('../components/inputItem/demo/basic')
 	}
 ]
