@@ -5,6 +5,11 @@ export default [
 		example: require('../components/button/demo/basic')
 	},
 	{
+		title: 'Marquee',
+		description: '滚动文字',
+		example: require('../components/marquee/demo/basic')
+	},
+	{
 		title: 'SearchBar',
 		description: '搜索栏',
 		example: require('../components/searchBar/demo/basic')
@@ -28,5 +33,5 @@ export default [
 		title: 'SegmentedControl',
 		description: 'SegmentedControl',
 		example: require('../components/segmentedControl/demo/basic')
-	}
+  }
 ]
