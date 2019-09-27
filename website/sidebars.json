@@ -7,9 +7,12 @@
   "docs-other": {
     "Component": [
       "Button",
+      "SegmentedControl",
       "SearchBar",
       "Checkbox",
-      "Marquee"
+      "Marquee",
+      "Switch",
+      "InputItem"
     ],
     "First Category": ["doc4", "doc5"]
   }

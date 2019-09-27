@@ -3,16 +3,37 @@
  */
 import React from 'react'
 import { View } from 'react-native'
-// import {SegmentedControl} from '../..'
+import { SegmentedControl } from '../..'
 
 export default () => (
-    <View style={{ flex:1 }}>
-        {/*<SegmentedControl>default</SegmentedControl>*/}
-        {/*<SegmentedControl disabled>default disabled</SegmentedControl>*/}
-
-        {/*<SegmentedControl type="primary">primary</SegmentedControl>*/}
-        {/*<SegmentedControl type="primary" disabled>*/}
-            {/*primary disabled*/}
-        {/*</SegmentedControl>*/}
+    <View
+        style={{
+            flex:1,
+            alignItems:'center',
+            backgroundColor:'#e6e6e6'
+        }}
+    >
+        <SegmentedControl style={{ marginTop:20 }} />
+        <SegmentedControl
+            disabled
+            titles={['申请','审批']}
+            segments={2}
+            onPressMethods={[() => {},() => {}]}
+            style={{ marginTop:20 }}
+        />
+        <SegmentedControl
+            titles={['left','right']}
+            segments={2}
+            onPressMethods={[() => {},() => {}]}
+            type='special'
+            style={{ marginTop:20 }}
+        />
+        <SegmentedControl
+            titles={['left','center','right']}
+            segments={3}
+            onPressMethods={[() => {},() => {},() => {}]}
+            type='special'
+            style={{ marginTop:20,width:300 }}
+        />
     </View>
 )
