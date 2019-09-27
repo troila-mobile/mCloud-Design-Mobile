@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import deepmerge from 'deepmerge'
 import React from 'react'
 import defaultTheme from './themes/default'

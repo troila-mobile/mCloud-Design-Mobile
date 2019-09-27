@@ -69,6 +69,7 @@ export default class Button extends React.Component {
                                 style={[buttonStyle]}
                                 underlayColor={underlayColor}
                                 onPress={(e) => onPress && onPress(e)}
+                                disabled={disabled}
                             >
                                 <Text style={textStyle}>{children}</Text>
                             </TouchableHighlight>

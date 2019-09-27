@@ -13,8 +13,8 @@ export default (theme) => StyleSheet.create({
         borderColor: theme.primary_button_fill,
     },
     ghostHighlight: {
-        backgroundColor: 'transparent',
-        borderColor: theme.ghost_button_fill_tap,
+        backgroundColor: theme.ghost_button_fill_tap,
+        borderColor: theme.ghost_button_color,
     },
     warningHighlight: {
         backgroundColor: theme.warning_button_fill_tap,
@@ -57,9 +57,10 @@ export default (theme) => StyleSheet.create({
     },
     primaryDisabledRaw: {
         opacity: 0.4,
+        backgroundColor: theme.primary_button_fill,
     },
     ghostDisabledRaw: {
-        borderColor: `${theme.color_text_base}1A`, // alpha 10%  https://codepen.io/chriscoyier/pen/XjbzAW
+        borderColor: `${theme.ghost_button_color}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
     },
     warningDisabledRaw: {
         opacity: 0.4,
@@ -101,7 +102,7 @@ export default (theme) => StyleSheet.create({
         color: `${theme.color_text_base_inverse}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
     },
     ghostDisabledRawText: {
-        color: `${theme.color_text_base}1A`, // alpha 10%  https://codepen.io/chriscoyier/pen/XjbzAW
+        color: `${theme.ghost_button_color}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
     },
     warningDisabledRawText: {
         color: `${theme.color_text_base_inverse}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
