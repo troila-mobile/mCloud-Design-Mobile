@@ -23,5 +23,10 @@ export default [
 		title: 'InputItem',
 		description: '文本输入',
 		example: require('../components/inputItem/demo/basic')
+  },
+  {
+		title: 'SegmentedControl',
+		description: 'SegmentedControl',
+		example: require('../components/segmentedControl/demo/basic')
 	}
 ]
