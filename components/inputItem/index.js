@@ -88,18 +88,18 @@ export default class InputItem extends React.Component {
         let newText = text
         switch (type) {
         case 'bankCard':
-            newText = text.replace(/\D/g, '')
+            newText = newText.replace(/\D/g, '')
             if (maxLength > 0) {
-                newText = text.substring(0, maxLength)
+                newText = newText.substring(0, maxLength)
             }
-            newText = text.replace(/\D/g, '').replace(/(....)(?=.)/g, '$1 ')
+            newText = newText.replace(/\D/g, '').replace(/(....)(?=.)/g, '$1 ')
             break
         case 'phone':
-            newText = text.replace(/\D/g, '').substring(0, 11)
-            if (text.length > 3 && text.length < 8) {
-                newText = `${text.substr(0, 3)} ${text.substr(3)}`
-            } else if (text.length >= 8) {
-                newText = `${text.substr(0, 3)} ${text.substr(3, 4)} ${text.substr(7)}`
+            newText = newText.replace(/\D/g, '').substring(0, 11)
+            if (newText.length > 3 && newText.length < 8) {
+                newText = `${newText.substr(0, 3)} ${newText.substr(3)}`
+            } else if (newText.length >= 8) {
+                newText = `${newText.substr(0, 3)} ${newText.substr(3, 4)} ${newText.substr(7)}`
             }
             break
         case 'password':
