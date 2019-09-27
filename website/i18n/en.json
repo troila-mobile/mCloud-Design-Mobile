@@ -33,6 +33,10 @@
       "SearchBar": {
         "title": "SearchBar",
         "sidebar_label": "SearchBar"
+      },
+      "Marquee": {
+        "title": "Marquee",
+        "sidebar_label": "Marquee"
       }
     },
     "links": {

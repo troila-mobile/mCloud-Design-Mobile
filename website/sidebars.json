@@ -8,7 +8,8 @@
     "Component": [
       "Button",
       "SearchBar",
-      "Checkbox"
+      "Checkbox",
+      "Marquee"
     ],
     "First Category": ["doc4", "doc5"]
   }
