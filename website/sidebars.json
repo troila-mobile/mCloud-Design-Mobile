@@ -9,6 +9,7 @@
       "Button",
       "SegmentedControl",
       "SearchBar",
+      "Radio",
       "Checkbox",
       "Marquee",
       "Switch",

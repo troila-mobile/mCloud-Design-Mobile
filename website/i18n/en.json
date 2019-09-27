@@ -30,13 +30,17 @@
         "title": "InputItem",
         "sidebar_label": "InputItem"
       },
-      "SearchBar": {
-        "title": "SearchBar",
-        "sidebar_label": "SearchBar"
-      },
       "Marquee": {
         "title": "Marquee",
         "sidebar_label": "Marquee"
+      },
+      "Radio": {
+        "title": "Radio",
+        "sidebar_label": "Radio"
+      },
+      "SearchBar": {
+        "title": "SearchBar",
+        "sidebar_label": "SearchBar"
       },
       "SegmentedControl": {
         "title": "SegmentedControl",
