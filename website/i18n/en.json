@@ -9,9 +9,17 @@
         "title": "Button",
         "sidebar_label": "Button"
       },
+      "Checkbox": {
+        "title": "Checkbox",
+        "sidebar_label": "Checkbox"
+      },
       "Contributing": {
         "title": "贡献说明",
         "sidebar_label": "Contributing"
+      },
+      "doc2": {
+        "title": "doc2",
+        "sidebar_label": "doc2"
       },
       "doc3": {
         "title": "This is document number 3"
@@ -21,7 +29,15 @@
       },
       "doc5": {
         "title": "Fifth Document"
-      }
+      },
+      "SegmentedControl": {
+        "title": "SegmentedControl",
+        "sidebar_label": "SegmentedControl"
+      },
+      "SearchBar": {
+        "title": "SearchBar",
+        "sidebar_label": "SearchBar"
+      },
     },
     "links": {
       "Docs": "Docs",
