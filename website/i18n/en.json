@@ -34,6 +34,10 @@
         "title": "SearchBar",
         "sidebar_label": "SearchBar"
       },
+      "Marquee": {
+        "title": "Marquee",
+        "sidebar_label": "Marquee"
+      },
       "SegmentedControl": {
         "title": "SegmentedControl",
         "sidebar_label": "SegmentedControl"
