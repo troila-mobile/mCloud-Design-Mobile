@@ -20,6 +20,11 @@ export default [
 		example: require('../components/checkbox/demo/basic')
 	},
 	{
+		title: 'Radio',
+		description: '单选框',
+		example: require('../components/radio/demo/basic')
+	},
+	{
 		title: 'Switch',
 		description: '滑动开关',
 		example: require('../components/switch/demo/basic')
