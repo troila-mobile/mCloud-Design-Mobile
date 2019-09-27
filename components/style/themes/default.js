@@ -51,6 +51,7 @@ export default {
     radius_sm: 3,
     radius_md: 5,
     radius_lg: 7,
+    radius_slg: 20,
 
     // 边框尺寸
     // ---
@@ -96,8 +97,10 @@ export default {
     actionsheet_item_font_size: 18,
 
     // button
-    button_height: 47,
+    button_height: 48,
     button_font_size: 18,
+
+    button_height_de: 40,
 
     button_height_sm: 23,
     button_font_size_sm: 12,

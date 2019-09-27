@@ -23,7 +23,6 @@ export default (theme) => StyleSheet.create({
     wrapperStyle: {
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: theme.radius_md,
         borderWidth: 1,
     },
     largeRaw: {
@@ -109,5 +108,12 @@ export default (theme) => StyleSheet.create({
     },
     indicator: {
         marginRight: theme.h_spacing_md,
+    },
+    defaultLayoutRaw: {
+        borderRadius: 0,
+    },
+    radiusLayoutRaw: {
+        borderRadius: theme.radius_slg,
+        height: theme.button_height_de,
     },
 })

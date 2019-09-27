@@ -2,6 +2,10 @@ import React from 'react'
 import { View } from 'react-native'
 import { Button } from '../..'
 
+const ViewTop = () => (
+    <View style={{ marginTop: 10 }} />
+)
+
 export default () => (
     <View style={{ flex: 1 }}>
         <Button>default</Button>
@@ -31,6 +35,13 @@ export default () => (
         </Button>
         <Button type="ghost" size="small">
             ghost
+        </Button>
+        <ViewTop />
+        <Button
+            layout="radius"
+            style={{ marginHorizontal: 15 }}
+        >
+            default
         </Button>
     </View>
 )

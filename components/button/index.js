@@ -1,6 +1,9 @@
 import React from 'react'
 import {
-    Text, TouchableHighlight, StyleSheet,ViewPropTypes,
+    Text,
+    TouchableHighlight,
+    StyleSheet,
+    ViewPropTypes,
 } from 'react-native'
 import { WithTheme } from '../style'
 import ButtonStyles from './style'
@@ -16,16 +19,18 @@ export default class Button extends React.Component {
         activeStyle: ViewPropTypes.style,
         children: PropTypes.any,
         onPress: PropTypes.func,
+        layout: PropTypes.string,
     }
     static defaultProps = {
-        size:'large',
+        size: 'large',
         type: 'default',
         disabled: false,
-        style:{},
-        styles:{},
-        activeStyle:{},
-        children:null,
-        onPress: () => {},
+        style: {},
+        styles: {},
+        activeStyle: null,
+        children: null,
+        onPress: () => { },
+        layout: 'default',
     };
     render() {
         const {
@@ -37,6 +42,7 @@ export default class Button extends React.Component {
             activeStyle,
             children,
             onPress,
+            layout,
         } = this.props
         return (
             <WithTheme themeStyles={ButtonStyles} styles={styles}>
@@ -51,6 +57,7 @@ export default class Button extends React.Component {
                             _styles.wrapperStyle,
                             _styles[`${size}Raw`],
                             _styles[`${type}Raw`],
+                            _styles[`${layout}LayoutRaw`],
                             disabled && _styles[`${type}DisabledRaw`],
                             style,
                         ]
