@@ -6,7 +6,7 @@ sidebar_label: SearchBar
 
 搜索栏
 
-## Basic Example:
+## Basic Example
 
 ```SnackPlayer name=searchBar-simple
 import React, { useState } from 'react'

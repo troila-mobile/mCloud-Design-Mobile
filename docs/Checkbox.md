@@ -6,7 +6,7 @@ sidebar_label: Checkbox
 
 复选框
 
-## Basic Example:
+## Basic Example
 
 ```SnackPlayer name=checkbox-simple
 import React, { useState } from 'react'

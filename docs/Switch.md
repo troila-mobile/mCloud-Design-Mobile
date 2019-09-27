@@ -6,7 +6,7 @@ sidebar_label: Switch
 
 滑动开关
 
-## Basic Example:
+## Basic Example
 
 ```SnackPlayer name=switch-simple
 import React, { useState } from 'react'
