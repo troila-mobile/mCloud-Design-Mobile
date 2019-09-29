@@ -34,7 +34,7 @@ export default (theme) => StyleSheet.create({
     itemText: {
         marginLeft: theme.h_spacing_lg,
         fontSize: theme.font_size_caption,
-        color: '#1F2530',
+        color: theme.color_text_title,
     },
     line: {
         backgroundColor: theme.border_color_base,

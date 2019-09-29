@@ -11,6 +11,8 @@ export default {
     color_text_caption: '#888888',               // 辅助描述
     color_text_paragraph: '#333333',             // 段落
     color_link: brandPrimary,                 // 链接
+    color_text_title: '#1F2530',             // 标题
+    color_text_info: '#A5ABB1',             // 信息文字
 
     // 背景色
     fill_base: '#ffffff',                           // 组件默认背景
