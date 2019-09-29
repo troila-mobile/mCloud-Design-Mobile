@@ -8,5 +8,10 @@ export default [
 		title: 'SegmentedControl',
 		description: 'SegmentedControl',
 		example: require('../components/segmentedControl/demo/basic')
+	},
+	{
+		title: 'Badge',
+		description: 'Badge',
+		example: require('../components/badge/demo/basic')
 	}
 ]

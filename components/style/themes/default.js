@@ -176,4 +176,11 @@ export default {
     action_sheet_zindex: 1000,
     popup_zindex: 999,
     modal_zindex: 999,
+
+    // badge
+    badge_item_height: 50,
+    badge_paddingHorizontal:15,
+    badge_color: '#F85858',
+    badge_text_font_size: 14,
+    badge_text_color:'#1F2530',
 }
