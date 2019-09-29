@@ -170,7 +170,7 @@ export default class InputItem extends React.Component {
                         } else if (type && keyboardTypeArray.indexOf(type) > -1) {
                             keyboardType = type
                         }
-                        const disabledStyle = disabled ? _styles.inputDisabled : {}
+                        const disabledStyle = (disabled || !editable) ? _styles.inputDisabled : {}
                         return (
                             <View style={[_styles.wrapper]}>
                                 <View style={[_styles.container, containerStyle]}>
