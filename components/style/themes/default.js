@@ -129,6 +129,7 @@ export default {
 
     // input
     input_label_width: 17,       // InputItem、TextareaItem 文字长度基础值
+    input_item_height: 50,
     input_font_size: 17,
     input_color_icon: '#cccccc',
     input_color_icon_tap: brandPrimary,
