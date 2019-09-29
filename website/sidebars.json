@@ -13,7 +13,8 @@
       "Checkbox",
       "Marquee",
       "Switch",
-      "InputItem"
+      "InputItem",
+      "Textarea"
     ],
     "First Category": ["doc4", "doc5"]
   }

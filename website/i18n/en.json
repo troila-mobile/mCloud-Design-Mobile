@@ -49,6 +49,10 @@
       "Switch": {
         "title": "Switch",
         "sidebar_label": "Switch"
+      },
+      "Textarea": {
+        "title": "Textarea",
+        "sidebar_label": "Textarea"
       }
     },
     "links": {
