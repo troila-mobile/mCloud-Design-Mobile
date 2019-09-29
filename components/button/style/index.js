@@ -34,6 +34,7 @@ export default (theme) => StyleSheet.create({
         height: theme.button_height_sm,
         paddingLeft: theme.h_spacing_sm,
         paddingRight: theme.h_spacing_sm,
+        borderRadius: theme.radius_sm,
     },
     defaultRaw: {
         backgroundColor: theme.fill_base,
@@ -111,7 +112,7 @@ export default (theme) => StyleSheet.create({
         marginRight: theme.h_spacing_md,
     },
     defaultLayoutRaw: {
-        borderRadius: 0,
+        // borderRadius: 0,
     },
     radiusLayoutRaw: {
         borderRadius: theme.radius_slg,

@@ -92,6 +92,29 @@ export default () => (
             warning disabled
         </Button>
         <ViewTop />
+        <View style={{ flexDirection:'row',paddingHorizontal:15 }}>
+            <Button
+                type="ghost"
+                size="small"
+                style={{ marginRight:15 }}
+            >
+                small ghost
+            </Button>
+            <Button
+                type="primary"
+                size="small"
+                style={{ marginRight: 15 }}
+            >
+                small primary
+            </Button>
+            <Button
+                type="warning"
+                size="small"
+            >
+                small warning
+            </Button>
+        </View>
+        <ViewTop />
         <Button loading>loading button</Button>
         <ViewTop />
         <Button activeStyle={false}>无点击反馈</Button>

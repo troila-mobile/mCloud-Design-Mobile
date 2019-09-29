@@ -62,7 +62,7 @@ export default {
     // 间距
     // ---
     // 水平间距
-    h_spacing_sm: 5,
+    h_spacing_sm: 12,
     h_spacing_md: 8,
     h_spacing_lg: 15,
 
@@ -102,7 +102,7 @@ export default {
 
     button_height_de: 40,
 
-    button_height_sm: 23,
+    button_height_sm: 30,
     button_font_size_sm: 12,
 
     primary_button_fill: brandPrimary,
