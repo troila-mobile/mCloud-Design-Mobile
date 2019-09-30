@@ -43,5 +43,10 @@ export default [
 		title: 'SegmentedControl',
 		description: 'SegmentedControl',
 		example: require('../components/segmentedControl/demo/basic')
-	}
+	},
+	{
+		title: 'List',
+		description: '列表',
+		example: require('../components/list/demo/basic')
+	},
 ]
