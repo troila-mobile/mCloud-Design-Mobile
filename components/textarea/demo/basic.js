@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import {
-    View,
+    TouchableOpacity,
     Text,
     StyleSheet,
     ScrollView,
+    Keyboard,
 } from 'react-native'
 import { Textarea } from '../..'
 
@@ -11,7 +12,12 @@ export default () => {
     const [leftValue, onLeftChange] = useState('')
     const [topValue, onTopChange] = useState('')
     return (
-        <View style={styles.wrap}>
+        <TouchableOpacity
+            activeOpacity={1}
+            style={styles.wrap}
+            keyboardShouldPersistTaps="always"
+            onPress={() => Keyboard.dismiss()}
+        >
             <ScrollView>
                 <Text style={styles.boldTitle}>
                     Textarea
@@ -77,7 +83,7 @@ export default () => {
                     disabled={true}
                 />
             </ScrollView>
-        </View>
+        </TouchableOpacity>
     )
 }
 
