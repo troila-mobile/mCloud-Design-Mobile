@@ -14,7 +14,8 @@
       "Marquee",
       "Switch",
       "InputItem",
-      "Textarea"
+      "Textarea",
+      "List"
     ],
     "First Category": ["doc4", "doc5"]
   }
