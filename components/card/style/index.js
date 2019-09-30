@@ -3,7 +3,7 @@ import { StyleSheet,Dimensions } from 'react-native'
 export default (theme) => StyleSheet.create({
     horizontalContainer: {
         backgroundColor: '#fff',
-        paddingVertical: 15,
+        paddingTop: 15,
         paddingLeft:15,
         width:Dimensions.get('window').width,
     },
@@ -11,7 +11,8 @@ export default (theme) => StyleSheet.create({
         backgroundColor: '#fff',
         paddingVertical: 15,
         paddingLeft:15,
-        flexDirection:'row'
+        flexDirection:'row',
+        width:Dimensions.get('window').width,
     },
     containerPaddingRight:{
         paddingRight: 16
@@ -25,6 +26,8 @@ export default (theme) => StyleSheet.create({
         fontSize: theme.font_size_base,
         color: theme.card_content_color,
         lineHeight: theme.card_lineHeight,
+        marginVertical:8,
+        // marginBottom: 12
     },
     imageStyle:{
         height: theme.card_imageHeight,
@@ -32,7 +35,4 @@ export default (theme) => StyleSheet.create({
         borderRadius: theme.radius_md,
         marginRight: 11
     },
-    imageBGColor:{
-        color: theme.card_image_BG_color
-    }
 })

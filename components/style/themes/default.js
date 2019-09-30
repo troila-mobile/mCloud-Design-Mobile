@@ -188,7 +188,7 @@ export default {
     card_title_color:'#1F2530',
     card_content_color: '#a9a9a9',
     card_lineHeight: 23,
-    card_imageWidth: 78,
-    card_imageHeight: 101,
+    card_imageWidth: 101,
+    card_imageHeight: 78,
     card_image_BG_color: '#efefef',
 }

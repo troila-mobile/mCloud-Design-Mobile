@@ -45,7 +45,6 @@ export default () => (
 | image     |   图片   |   object  |   无  |
 | imageStyle  |   图片样式  |  object   |   -  |
 | imageOnPress   |    图片的点击回调函数   |   (e: Object): void |   无  |
-| showBorderLine    | 是否显示下划线 |   bool  | true | 
 | cardOnPress    |  card的点击回调函数 | (e: Object): void |   无  |
 
 

@@ -65,7 +65,7 @@ export default class Card extends React.Component {
                 {
                     (_styles) => {
                         const containerStyle = [
-                            _styles[`${type}Style`],
+                            _styles[`${type}Container`],
                             _styles.containerPaddingRight,
                             style,
                         ]
@@ -87,11 +87,18 @@ export default class Card extends React.Component {
                         return (
                             <TouchableOpacity style={containerStyle}>
                                 {type==='vertical'&&JSON.stringify(image) !== "{}"
-                                    // eslint-disable-next-line max-len
-                                    ?<TouchableOpacity style={imageButtonStyle} onPress={() => { cardOnPress && cardOnPress }}><Image source={image} /></TouchableOpacity> : null}
+                                    ?(
+                                        <TouchableOpacity
+                                            style={imageButtonStyle}
+                                            onPress={() => { cardOnPress && cardOnPress }}
+                                        >
+                                            <Image style={imageStyle} source={image} />
+                                        </TouchableOpacity>
+                                    )
+                                    : null}
                                 <View style={{ flex:1 }}>
-                                    <Text style={titleStyle}>{title}</Text>
-                                    <Text style={contentStyle}>{content}</Text>
+                                    <Text style={titleStyle} numberOfLines={titleNumberOfLines}>{title}</Text>
+                                    <Text style={contentStyle} numberOfLines={contentNumberOfLines}>{content}</Text>
                                 </View>
                             </TouchableOpacity>
                         )
