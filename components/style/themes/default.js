@@ -122,9 +122,7 @@ export default {
     modal_button_height: 50, // 按钮高度
 
     // list
-    list_title_height: 30,
-    list_item_height_sm: 35,
-    list_item_height: 44,
+    list_item_height: 50,
 
     // checkbox
     checkbox_item_height: 60,
@@ -166,7 +164,7 @@ export default {
     notice_bar_height: 36,
 
     // switch
-    switch_fill: '#4dd865',
+    switch_fill: brandPrimary,
 
     // tag
     tag_height: 25,
