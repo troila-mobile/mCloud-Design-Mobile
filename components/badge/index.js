@@ -10,6 +10,8 @@ import { WithTheme } from '../style'
 import BadgeStyles from './style'
 import PropTypes from 'prop-types'
 
+const nextIcon = require('./assets/badge_next.png')
+
 export default class Badge extends React.Component {
     static propTypes = {
         type: PropTypes.string,
@@ -86,8 +88,7 @@ export default class Badge extends React.Component {
                                     {type==='redPoint'
                                         ? <View style={badgeStyle}></View>
                                         :null}
-                                    {/* eslint-disable-next-line global-require */}
-                                    <Image source={require('./assets/badge_next.png')} />
+                                    <Image source={nextIcon} />
                                 </View>
                             </TouchableOpacity>
                         )
