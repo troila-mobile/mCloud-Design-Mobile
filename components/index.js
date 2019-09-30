@@ -6,3 +6,5 @@ export { default as Badge } from './badge'
 export { default as Marquee } from  './marquee'
 export { default as Switch } from './switch'
 export { default as InputItem } from './inputItem'
+export { default as Card } from './card'
+

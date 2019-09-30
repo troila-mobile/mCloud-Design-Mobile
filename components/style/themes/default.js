@@ -182,6 +182,13 @@ export default {
     badge_item_height: 50,
     badge_paddingHorizontal:15,
     badge_color: '#F85858',
-    badge_text_font_size: 14,
     badge_text_color:'#1F2530',
+
+    // card
+    card_title_color:'#1F2530',
+    card_content_color: '#a9a9a9',
+    card_lineHeight: 23,
+    card_imageWidth: 78,
+    card_imageHeight: 101,
+    card_image_BG_color: '#efefef',
 }

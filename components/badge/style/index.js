@@ -29,11 +29,11 @@ export default (theme) => StyleSheet.create({
         marginRight:7,
     },
     newStyle:{
-        fontSize: theme.badge_new_font_size,
+        fontSize: theme.font_size_base,
         color: theme.badge_color
     },
     textStyle:{
-        fontSize: theme.badge_text_font_size,
+        fontSize: theme.font_size_base,
         color: theme.badge_text_color
     },
     rightView:{
