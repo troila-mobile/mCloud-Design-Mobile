@@ -13,7 +13,8 @@
       "Badge",
       "Marquee",
       "Switch",
-      "InputItem"
+      "InputItem",
+      "Card"
     ],
     "First Category": ["doc4", "doc5"]
   }
