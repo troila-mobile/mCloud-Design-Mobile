@@ -43,6 +43,11 @@ export default class Marquee extends React.Component {
         }
         return true
     }
+    componentWillUnmount() {
+        this.movingAnimate && this.movingAnimate.stop()
+        this.containerWidth = 0
+        this.textWidth = 0
+    }
     _onLayoutContainer = (e) => {
         if (!this.containerWidth) {
             this.containerWidth = e.nativeEvent.layout.width
