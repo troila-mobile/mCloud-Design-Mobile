@@ -28,5 +28,10 @@ export default [
 		title: 'SegmentedControl',
 		description: 'SegmentedControl',
 		example: require('../components/segmentedControl/demo/basic')
+	},
+	{
+		title: 'Label',
+		description: '标签',
+		example: require('../components/Label/demo/basic')
 	}
 ]

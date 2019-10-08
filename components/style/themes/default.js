@@ -133,7 +133,17 @@ export default {
     input_font_size: 17,
     input_color_icon: '#cccccc',
     input_color_icon_tap: brandPrimary,
-
+    // Label
+    small_font_size: 12,
+    small_label_height: 20,
+    small_label_width: 60,
+    middle_font_size: 15,
+    middle_label_height: 30,
+    middle_label_width: 90,
+    large_font_size: 18,
+    large_label_height: 40,
+    large_label_width:120,
+    label_bg_color:'#00C482',
     // tabs
     tabs_color: brandPrimary,
     tabs_height: 42,
