@@ -12,4 +12,5 @@ export { default as InputItem } from './inputItem'
 export { default as Label } from './Label'
 export { default as NoticeBar } from './noticeBar'
 export { default as Card } from './card'
+export { default as Picker } from './picker'
 

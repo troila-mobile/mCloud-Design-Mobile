@@ -1,5 +1,4 @@
 export default [
-
     {
         title: 'Button',
         description: '按钮',
@@ -69,6 +68,10 @@ export default [
 		title: 'Label',
 		description: '标签',
 		example: require('../components/Label/demo/basic')
+	},
+	{
+		title: 'Picker',
+		description: 'Picker',
+		example: require('../components/picker/demo/basic')
 	}
-
 ]
