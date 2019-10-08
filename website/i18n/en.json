@@ -45,6 +45,10 @@
       "Switch": {
         "title": "Switch",
         "sidebar_label": "Switch"
+      },
+      "NoticeBar": {
+        "title": "NoticeBar",
+        "sidebar_label": "NoticeBar"
       }
     },
     "links": {

@@ -13,6 +13,7 @@
     "pre-lint"
   ],
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.2",
     "deepmerge": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "16.8.6",

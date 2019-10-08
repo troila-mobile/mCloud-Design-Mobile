@@ -12,7 +12,8 @@
       "Checkbox",
       "Marquee",
       "Switch",
-      "InputItem"
+      "InputItem",
+      "NoticeBar"
     ],
     "First Category": ["doc4", "doc5"]
   }
