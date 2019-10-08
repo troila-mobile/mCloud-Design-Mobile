@@ -184,4 +184,17 @@ export default {
     // list
     v_spacing: 19,
 
+    // badge
+    badge_item_height: 50,
+    badge_paddingHorizontal:15,
+    badge_color: '#F85858',
+    badge_text_color:'#1F2530',
+
+    // card
+    card_title_color:'#1F2530',
+    card_content_color: '#a9a9a9',
+    card_lineHeight: 23,
+    card_imageWidth: 101,
+    card_imageHeight: 78,
+    card_image_BG_color: '#efefef',
 }
