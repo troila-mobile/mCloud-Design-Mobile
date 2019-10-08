@@ -65,6 +65,7 @@ export default () => {
                     const color = item.disabled ? '#999' : '#1F2530'
                     return (
                         <RadioItem
+                            key={item.value}
                             disabled={item.disabled}
                             checked={typeChecked === item.value}
                             hideLine={index === (list.length - 1)}

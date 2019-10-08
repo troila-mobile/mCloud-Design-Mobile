@@ -186,11 +186,6 @@ const styles = StyleSheet.create({
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| onPress    | 666 |   ():void  | 无 |
-| onPressIn    | 666 |   ():void  | 无 |
-| onPressOut    | 666 |   ():void  | 无 |
-| onLongPress    | 666 |   ():void  | 无 |
-| delayLongPress    | 666 |   ():void  | 无 |
 | arrow    | 箭头方向(右,上,下), 可选 `horizontal` `up` `down` |   String  | 无 |
 | thumb    | 缩略图(当为 string 类型时作为 img src) |   String/React.Element  | 无 |
 | hideLine | 是否隐藏下面的线 | Boolean   |  false |

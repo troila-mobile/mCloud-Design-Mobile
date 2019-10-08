@@ -30,6 +30,10 @@
         "title": "InputItem",
         "sidebar_label": "InputItem"
       },
+      "List": {
+        "title": "List",
+        "sidebar_label": "List"
+      },
       "Marquee": {
         "title": "Marquee",
         "sidebar_label": "Marquee"

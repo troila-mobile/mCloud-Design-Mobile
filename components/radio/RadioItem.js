@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    View, Text, TouchableWithoutFeedback, ViewPropTypes,
+    View, Text, TouchableOpacity, ViewPropTypes,
 } from 'react-native'
 import Radio from './Radio'
 import { WithTheme } from '../style'
@@ -52,7 +52,10 @@ export default class RadioItem extends React.Component {
             <WithTheme themeStyles={RadioStyles} styles={styles}>
                 {
                     (_styles) => (
-                        <TouchableWithoutFeedback onPress={this.onPress}>
+                        <TouchableOpacity
+                            activeOpacity={disabled ? 1 : 0.8}
+                            onPress={this.onPress}
+                        >
                             <View style={[_styles.itemWrapper, style]}>
                                 <Radio
                                     ref={(e) => {
@@ -76,7 +79,7 @@ export default class RadioItem extends React.Component {
                                     )
                                 }
                             </View>
-                        </TouchableWithoutFeedback>
+                        </TouchableOpacity>
                     )
                 }
             </WithTheme>
