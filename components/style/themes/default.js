@@ -3,7 +3,7 @@ const brandPrimaryTap = '#3C4DCF'
 
 export default {
     // 文字色
-    color_text_base: '#000000',                  // 基本
+    color_text_base: '#1F2530',                  // 基本
     color_text_base_inverse: '#ffffff',          // 基本 _ 反色
     color_text_secondary: '#a4a9b0',          // 辅助色
     color_text_placeholder: '#bbbbbb',           // 文本框提示
@@ -180,6 +180,9 @@ export default {
     action_sheet_zindex: 1000,
     popup_zindex: 999,
     modal_zindex: 999,
+
+    // list
+    v_spacing: 19,
 
     // badge
     badge_item_height: 50,
