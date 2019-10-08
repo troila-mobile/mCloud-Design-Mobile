@@ -58,5 +58,9 @@ export default [
 		title: 'Card',
 		description: 'Card',
 		example: require('../components/card/demo/basic')
+	}, {
+		title: 'Picker',
+		description: 'Picker',
+		example: require('../components/picker/demo/basic')
 	}
 ]
