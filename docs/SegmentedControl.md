@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| type    | segmentedControl类型，可选值为`default`/`special`  |   string   |   `default`  |
+| type    | SegmentedControl类型，可选值为`default`/`special`  |   string   |   `default`  |
 | disabled   |   设置禁用   |   boolean   |    false  |
 | segments   |   按钮的个数  |   number   |   2    |
 | titles   |   按钮的title   |   元素为string类型的数组    |    无    |

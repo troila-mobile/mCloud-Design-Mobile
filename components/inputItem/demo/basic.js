@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import {
+    Text,
+    StyleSheet,
+    Keyboard,
+    TouchableOpacity,
+} from 'react-native'
 import { InputItem } from '../..'
 
 export default () => {
@@ -11,7 +16,12 @@ export default () => {
     const [number, numberChange] = useState('')
     const [leftValue, leftValueChange] = useState('')
     return (
-        <View style={styles.wrap}>
+        <TouchableOpacity
+            activeOpacity={1}
+            style={styles.wrap}
+            keyboardShouldPersistTaps="always"
+            onPress={() => Keyboard.dismiss()}
+        >
             <Text style={styles.boldTitle}>
                 InputItem
             </Text>
@@ -91,7 +101,7 @@ export default () => {
                     leftValueChange(text)
                 }}
             />
-        </View>
+        </TouchableOpacity>
     )
 }
 
