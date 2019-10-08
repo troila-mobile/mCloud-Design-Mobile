@@ -18,7 +18,8 @@
       "NoticeBar",
       "Textarea",
       "List",
-      "Card"
+      "Card",
+      "Label"
     ],
     "First Category": ["doc4", "doc5"]
   }
