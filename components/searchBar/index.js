@@ -141,7 +141,7 @@ export default class SearchBar extends React.Component {
                                 }
                             </View>
                         )
-                        renderClear = focus && (
+                        renderClear = value !== '' && focus && (
                             <TouchableOpacity
                                 activeOpacity={1}
                                 style={_styles[`${style_prefix}clearView`]}
