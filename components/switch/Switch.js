@@ -44,7 +44,7 @@ export default class SwitchButton extends Component {
         styles: {},
         checked: false,
         onChange: () => { },
-        onTintColor: Theme.brand_primary,
+        onTintColor: Theme.switch_fill,
         thumbTintColor: '#fff',
         tintColor: '#D8D8D8',
         disabledThumbTintColor: '#F5F5F5',

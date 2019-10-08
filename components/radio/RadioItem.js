@@ -2,12 +2,12 @@ import React from 'react'
 import {
     View, Text, TouchableOpacity, ViewPropTypes,
 } from 'react-native'
-import Checkbox from './Checkbox'
+import Radio from './Radio'
 import { WithTheme } from '../style'
-import CheckboxStyles from './style'
+import RadioStyles from './style'
 import PropTypes from 'prop-types'
 
-export default class CheckboxItem extends React.Component {
+export default class RadioItem extends React.Component {
     static propTypes = {
         style: ViewPropTypes.style,
         styles: ViewPropTypes.style,
@@ -30,8 +30,8 @@ export default class CheckboxItem extends React.Component {
     }
     onPress = () => {
         const { onPress } = this.props
-        if (this.Checkbox) {
-            this.Checkbox.onPress()
+        if (this.Radio) {
+            this.Radio.onPress()
         }
         if (onPress) {
             onPress()
@@ -49,17 +49,17 @@ export default class CheckboxItem extends React.Component {
             hideLine,
         } = this.props
         return (
-            <WithTheme themeStyles={CheckboxStyles} styles={styles}>
+            <WithTheme themeStyles={RadioStyles} styles={styles}>
                 {
-                    (_styles, theme) => (
+                    (_styles) => (
                         <TouchableOpacity
                             activeOpacity={disabled ? 1 : 0.8}
                             onPress={this.onPress}
                         >
                             <View style={[_styles.itemWrapper, style]}>
-                                <Checkbox
+                                <Radio
                                     ref={(e) => {
-                                        this.Checkbox = e
+                                        this.Radio = e
                                     }}
                                     defaultChecked={defaultChecked}
                                     checked={checked}
