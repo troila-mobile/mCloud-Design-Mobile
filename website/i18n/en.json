@@ -30,13 +30,13 @@
         "title": "InputItem",
         "sidebar_label": "InputItem"
       },
-      "SearchBar": {
-        "title": "SearchBar",
-        "sidebar_label": "SearchBar"
-      },
       "Marquee": {
         "title": "Marquee",
         "sidebar_label": "Marquee"
+      },
+      "SearchBar": {
+        "title": "SearchBar",
+        "sidebar_label": "SearchBar"
       },
       "SegmentedControl": {
         "title": "SegmentedControl",
