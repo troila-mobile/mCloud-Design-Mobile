@@ -7,8 +7,14 @@
   "docs-other": {
     "Component": [
       "Button",
+      "SegmentedControl",
       "SearchBar",
-      "Checkbox"
+      "Checkbox",
+      "Badge",
+      "Marquee",
+      "Switch",
+      "InputItem",
+      "Card"
     ],
     "First Category": ["doc4", "doc5"]
   }

@@ -13,8 +13,8 @@ export default (theme) => StyleSheet.create({
         borderColor: theme.primary_button_fill,
     },
     ghostHighlight: {
-        backgroundColor: 'transparent',
-        borderColor: theme.ghost_button_fill_tap,
+        backgroundColor: theme.ghost_button_fill_tap,
+        borderColor: theme.ghost_button_color,
     },
     warningHighlight: {
         backgroundColor: theme.warning_button_fill_tap,
@@ -23,7 +23,6 @@ export default (theme) => StyleSheet.create({
     wrapperStyle: {
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: theme.radius_md,
         borderWidth: 1,
     },
     largeRaw: {
@@ -35,6 +34,7 @@ export default (theme) => StyleSheet.create({
         height: theme.button_height_sm,
         paddingLeft: theme.h_spacing_sm,
         paddingRight: theme.h_spacing_sm,
+        borderRadius: theme.radius_sm,
     },
     defaultRaw: {
         backgroundColor: theme.fill_base,
@@ -58,9 +58,10 @@ export default (theme) => StyleSheet.create({
     },
     primaryDisabledRaw: {
         opacity: 0.4,
+        backgroundColor: theme.primary_button_fill,
     },
     ghostDisabledRaw: {
-        borderColor: `${theme.color_text_base}1A`, // alpha 10%  https://codepen.io/chriscoyier/pen/XjbzAW
+        borderColor: `${theme.ghost_button_color}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
     },
     warningDisabledRaw: {
         opacity: 0.4,
@@ -102,12 +103,19 @@ export default (theme) => StyleSheet.create({
         color: `${theme.color_text_base_inverse}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
     },
     ghostDisabledRawText: {
-        color: `${theme.color_text_base}1A`, // alpha 10%  https://codepen.io/chriscoyier/pen/XjbzAW
+        color: `${theme.ghost_button_color}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
     },
     warningDisabledRawText: {
         color: `${theme.color_text_base_inverse}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
     },
     indicator: {
         marginRight: theme.h_spacing_md,
+    },
+    defaultLayoutRaw: {
+        // borderRadius: 0,
+    },
+    radiusLayoutRaw: {
+        borderRadius: theme.radius_slg,
+        height: theme.button_height_de,
     },
 })

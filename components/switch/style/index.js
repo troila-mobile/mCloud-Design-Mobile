@@ -4,35 +4,33 @@ export default (theme) => StyleSheet.create({
     wrapper: {
         flexDirection: 'row',
         alignItems: 'center',
-    },
-    itemWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
+        justifyContent: 'space-between',
         height: theme.checkbox_item_height,
-        backgroundColor: '#fff',
+        backgroundColor: theme.fill_base,
         paddingLeft: theme.h_spacing_lg,
+        paddingRight: theme.h_spacing_lg,
     },
-    icon: {
-        width: 25,
-        height: 25,
-    },
-    iconRight: {
-        marginLeft: theme.h_spacing_md,
-    },
-    agreeItem: {
+    switch: {
+        width: 51,
+        height: 31,
+        borderRadius: 31 / 2,
         flexDirection: 'row',
         alignItems: 'center',
     },
-    agreeItemCheckbox: {
-        marginLeft: theme.h_spacing_lg,
-        marginRight: theme.h_spacing_md,
+    switchBtn: {
+        width: 51,
+        height: 31,
+        borderRadius: 31 / 2,
+        flexDirection: 'row',
+        alignItems: 'center',
     },
-    checkboxItemCheckbox: {
-        marginRight: theme.h_spacing_md,
-        alignSelf: 'center',
+    switchThumb: {
+        width: 28,
+        height: 28,
+        borderRadius: 28 / 2,
+        position: 'absolute',
     },
     itemText: {
-        marginLeft: theme.h_spacing_lg,
         fontSize: theme.font_size_caption,
         color: '#1F2530',
     },
