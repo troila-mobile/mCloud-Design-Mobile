@@ -49,4 +49,14 @@ export default [
 		description: '列表',
 		example: require('../components/list/demo/basic')
 	},
+	{
+		title: 'Badge',
+		description: 'Badge',
+		example: require('../components/badge/demo/basic')
+	},
+	{
+		title: 'Card',
+		description: 'Card',
+		example: require('../components/card/demo/basic')
+	}
 ]

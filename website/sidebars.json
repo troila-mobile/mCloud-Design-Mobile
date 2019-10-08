@@ -11,11 +11,13 @@
       "SearchBar",
       "Radio",
       "Checkbox",
+      "Badge",
       "Marquee",
       "Switch",
       "InputItem",
       "Textarea",
-      "List"
+      "List",
+      "Card"
     ],
     "First Category": ["doc4", "doc5"]
   }
