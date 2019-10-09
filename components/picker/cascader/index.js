@@ -24,12 +24,17 @@ class Cascader extends React.Component {
         }
     }
     onValueChange = (value, index) => {
-        const children = arrayTreeFilter(this.props.data, (c, level) => level <= index && c.value === value[level])
+        const {
+            data: oldData,
+            cols,
+            onChange,
+        } = this.props
+        const children = arrayTreeFilter(oldData, (c, level) => level <= index && c.value === value[level])
         let data = children[index]
         let i
         for (
             i = index + 1;
-            data && data.children && data.children.length && i < this.props.cols;
+            data && data.children && data.children.length && i < cols;
             i++
         ) {
             // eslint-disable-next-line prefer-destructuring
@@ -44,13 +49,19 @@ class Cascader extends React.Component {
                 value,
             })
         }
-        if (this.props.onChange) {
-            this.props.onChange(value)
+        if (onChange) {
+            onChange(value)
         }
     };
     getValue(d, val) {
-        let data = d || this.props.data
-        const value = val || this.props.value || this.props.defaultValue
+        const {
+            data: oldData,
+            value: oldValue,
+            defaultValue,
+            cols,
+        } = this.props
+        let data = d || oldData
+        const value = val || oldValue || defaultValue
         let level = 0
         const nextValue = []
 
@@ -68,7 +79,7 @@ class Cascader extends React.Component {
             } while (data.length > 0)
         }
 
-        for (let i = level; i < this.props.cols; i++) {
+        for (let i = level; i < cols; i++) {
             if (data && data.length) {
                 nextValue[i] = data[0].value
                 data = data[0].children
@@ -117,8 +128,9 @@ class Cascader extends React.Component {
         ))
     }
     render() {
-        const { props } = this
+        const { props,state } = this
         const { rootNativeProps, style } = props
+        const { value } = state
         const cols = this.getCols()
 
         return (
@@ -130,7 +142,7 @@ class Cascader extends React.Component {
                     },
                     style,
                 ]}
-                selectedValue={this.state.value}
+                selectedValue={value}
                 rootNativeProps={rootNativeProps}
                 onValueChange={this.onValueChange}
                 onScrollChange={props.onScrollChange}

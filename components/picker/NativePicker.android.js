@@ -43,6 +43,7 @@ class Picker extends React.Component {
         children: PropTypes.any,
         itemStyle: PropTypes.object,
         style: PropTypes.object,
+
     }
     itemHeight;
     itemWidth;
@@ -51,7 +52,11 @@ class Picker extends React.Component {
     contentRef;
     indicatorRef;
     componentDidUpdate() {
-        this.props.select(this.props.selectedValue, this.itemHeight, this.scrollTo)
+        const {
+            select,
+            selectedValue,
+        } = this.props
+        select(selectedValue, this.itemHeight, this.scrollTo)
     }
     componentWillUnmount() {
         this.clearScrollBuffer()
@@ -94,8 +99,12 @@ class Picker extends React.Component {
 
             // i do no know why!...
             setTimeout(() => {
-                this.props.select(
-                    this.props.selectedValue,
+                const {
+                    select,
+                    selectedValue,
+                } = this.props
+                select(
+                    selectedValue,
                     this.itemHeight,
                     this.scrollTo,
                 )
@@ -111,19 +120,24 @@ class Picker extends React.Component {
         }
     };
     fireValueChange = (selectedValue) => {
+        const {
+            selectedValue : oldselectedValue,
+            onValueChange,
+        } = this.props
         if (
-            this.props.selectedValue !== selectedValue
-            && this.props.onValueChange
+            oldselectedValue !== selectedValue
+            && onValueChange
         ) {
-            this.props.onValueChange(selectedValue)
+            onValueChange(selectedValue)
         }
     };
     onScroll = (e) => {
         const { y } = e.nativeEvent.contentOffset
+        const { doScrollingComplete } = this.props
         this.clearScrollBuffer()
         this.scrollBuffer = setTimeout(() => {
             this.clearScrollBuffer()
-            this.props.doScrollingComplete(y, this.itemHeight, this.fireValueChange)
+            doScrollingComplete(y, this.itemHeight, this.fireValueChange)
         }, 50)
     };
     clearScrollBuffer() {

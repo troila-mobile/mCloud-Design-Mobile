@@ -47,7 +47,10 @@ export default function PopupMixin(
             }
         }
         onPickerChange = (pickerValue) => {
-            if (this.state.pickerValue !== pickerValue) {
+            const {
+                pickerValue: oldpickerValue,
+            } = this.state
+            if (oldpickerValue !== pickerValue) {
                 this.setState({
                     pickerValue,
                 })
@@ -68,10 +71,11 @@ export default function PopupMixin(
             }
         }
         getRender() {
-            const { props } = this
+            const { props,state } = this
             const { children } = props
+            const { visible } = state
             if (!children) {
-                return getModal(props, this.state.visible, {
+                return getModal(props, visible, {
                     getContent: this.getContent,
                     onOk: this.onOk,
                     hide: this.hide,
@@ -87,7 +91,7 @@ export default function PopupMixin(
             return (
                 <WrapComponent style={props.wrapStyle}>
                     {React.cloneElement(child, newChildProps)}
-                    {getModal(props, this.state.visible, {
+                    {getModal(props, visible, {
                         getContent: this.getContent,
                         onOk: this.onOk,
                         hide: this.hide,
@@ -100,45 +104,71 @@ export default function PopupMixin(
             this.picker = picker
         };
         onTriggerClick = (e) => {
-            const child = this.props.children
+            const {
+                children,
+                triggerType,
+            } = this.props
+            const {
+                visible,
+            } = this.state
+            const child = children
             const childProps = child.props || {}
-            if (childProps[this.props.triggerType]) {
-                childProps[this.props.triggerType](e)
+            if (childProps[triggerType]) {
+                childProps[triggerType](e)
             }
-            this.fireVisibleChange(!this.state.visible)
+            this.fireVisibleChange(!visible)
         };
         onOk = () => {
-            this.props.onOk(this.picker && this.picker.getValue())
+            const {
+                onOk,
+            } = this.props
+            onOk(this.picker && this.picker.getValue())
             this.fireVisibleChange(false)
         };
         getContent = () => {
-            if (this.props.picker) {
+            const {
+                picker,
+                value,
+                pickerValueProp,
+                pickerValueChangeProp,
+                content,
+            } = this.props
+            if (picker) {
                 let { pickerValue } = this.state
                 if (pickerValue === null) {
-                    pickerValue = this.props.value
+                    pickerValue = value
                 }
-                return React.cloneElement(this.props.picker, {
-                    [this.props.pickerValueProp]: pickerValue,
-                    [this.props.pickerValueChangeProp]: this.onPickerChange,
+                return React.cloneElement(picker, {
+                    [pickerValueProp]: pickerValue,
+                    [pickerValueChangeProp]: this.onPickerChange,
                     ref: this.saveRef,
                 })
             } else {
-                return this.props.content
+                return content
             }
         };
         onDismiss = () => {
-            this.props.onDismiss()
+            const {
+                onDismiss,
+            } = this.props
+            onDismiss()
             this.fireVisibleChange(false)
         };
         hide = () => {
             this.fireVisibleChange(false)
         };
         fireVisibleChange(visible) {
-            if (this.state.visible !== visible) {
+            const {
+                visible: oldvisible,
+            } = this.state
+            const {
+                onVisibleChange,
+            } = this.props
+            if (oldvisible !== visible) {
                 if (!('visible' in this.props)) {
                     this.setVisibleState(visible)
                 }
-                this.props.onVisibleChange(visible)
+                onVisibleChange(visible)
             }
         }
         render() {
