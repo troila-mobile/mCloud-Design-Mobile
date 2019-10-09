@@ -65,6 +65,10 @@
       "Label": {
         "title": "Label",
         "sidebar_label": "Label"
+      },
+      "EmptyView": {
+        "title": "EmptyView",
+        "sidebar_label": "EmptyView"
       }
     },
     "links": {

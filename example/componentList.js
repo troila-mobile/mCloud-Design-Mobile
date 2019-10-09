@@ -73,5 +73,10 @@ export default [
 		title: 'Picker',
 		description: 'Picker',
 		example: require('../components/picker/demo/basic')
+	},
+	{
+		title: 'EmptyView',
+		description: 'EmptyView',
+		example: require('../components/EmptyView/demo/basic')
 	}
 ]

@@ -147,6 +147,10 @@ export default {
     large_label_height: 40,
     large_label_width:120,
     label_bg_color:'#00C482',
+    // EmptyView
+    emptyView_height:500,
+    emptyView_text_color:'#666',
+    emptyView_touchable_marginTop:100,
     // tabs
     tabs_color: brandPrimary,
     tabs_height: 42,

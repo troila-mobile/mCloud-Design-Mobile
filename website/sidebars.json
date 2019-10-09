@@ -19,7 +19,8 @@
       "Textarea",
       "List",
       "Card",
-      "Label"
+      "Label",
+      "EmptyView"
     ],
     "First Category": ["doc4", "doc5"]
   }
