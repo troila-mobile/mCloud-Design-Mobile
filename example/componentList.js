@@ -20,19 +20,34 @@ export default [
 		example: require('../components/checkbox/demo/basic')
 	},
 	{
+		title: 'Radio',
+		description: '单选框',
+		example: require('../components/radio/demo/basic')
+	},
+	{
 		title: 'Switch',
 		description: '滑动开关',
 		example: require('../components/switch/demo/basic')
 	},
 	{
 		title: 'InputItem',
-		description: '文本输入',
+		description: '单行文本输入',
 		example: require('../components/inputItem/demo/basic')
-  },
-  {
+	},
+	{
+		title: 'Textarea',
+		description: '多行文本输入',
+		example: require('../components/textarea/demo/basic')
+	},
+	{
 		title: 'SegmentedControl',
 		description: 'SegmentedControl',
 		example: require('../components/segmentedControl/demo/basic')
+	},
+	{
+		title: 'List',
+		description: '列表',
+		example: require('../components/list/demo/basic')
 	},
 	{
 		title: 'Badge',
@@ -43,10 +58,10 @@ export default [
 		title: 'Card',
 		description: 'Card',
 		example: require('../components/card/demo/basic')
-	},
+	}, 
 	{
-		title:'Avatar',
-		description:'Avatar',
-		example:require('../components/avatar/demo/basic')
+		title: 'Picker',
+		description: 'Picker',
+		example: require('../components/picker/demo/basic')
 	}
 ]

@@ -35,14 +35,4 @@ export default (theme) => StyleSheet.create({
         padding: 2,
         alignSelf: 'center',
     },
-    extra: {
-        marginLeft: theme.h_spacing_sm,
-        fontSize: theme.font_size_subhead,
-        color: theme.color_text_caption,
-    },
-    errorIcon: {
-        marginLeft: theme.h_spacing_sm,
-        width: theme.icon_size_sm,
-        height: theme.icon_size_sm,
-    },
 })

@@ -30,9 +30,17 @@
         "title": "InputItem",
         "sidebar_label": "InputItem"
       },
+      "List": {
+        "title": "List",
+        "sidebar_label": "List"
+      },
       "Marquee": {
         "title": "Marquee",
         "sidebar_label": "Marquee"
+      },
+      "Radio": {
+        "title": "Radio",
+        "sidebar_label": "Radio"
       },
       "SearchBar": {
         "title": "SearchBar",
@@ -45,6 +53,14 @@
       "Switch": {
         "title": "Switch",
         "sidebar_label": "Switch"
+      },
+      "NoticeBar": {
+        "title": "NoticeBar",
+        "sidebar_label": "NoticeBar"
+      },
+      "Textarea": {
+        "title": "Textarea",
+        "sidebar_label": "Textarea"
       }
     },
     "links": {

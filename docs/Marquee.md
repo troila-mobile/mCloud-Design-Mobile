@@ -8,7 +8,7 @@ sidebar_label: Marquee
 
 ## Basic Example:
 
-```SnackPlayer name=button-simple
+```SnackPlayer name=marquee-simple
 import React from 'react'
 import { View } from 'react-native'
 import { Marquee } from 'mCloud-mobile'

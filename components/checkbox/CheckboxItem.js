@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    View, Text, TouchableWithoutFeedback, ViewPropTypes,
+    View, Text, TouchableOpacity, ViewPropTypes,
 } from 'react-native'
 import Checkbox from './Checkbox'
 import { WithTheme } from '../style'
@@ -51,8 +51,11 @@ export default class CheckboxItem extends React.Component {
         return (
             <WithTheme themeStyles={CheckboxStyles} styles={styles}>
                 {
-                    (_styles) => (
-                        <TouchableWithoutFeedback onPress={this.onPress}>
+                    (_styles, theme) => (
+                        <TouchableOpacity
+                            activeOpacity={disabled ? 1 : 0.8}
+                            onPress={this.onPress}
+                        >
                             <View style={[_styles.itemWrapper, style]}>
                                 <Checkbox
                                     ref={(e) => {
@@ -76,7 +79,7 @@ export default class CheckboxItem extends React.Component {
                                     )
                                 }
                             </View>
-                        </TouchableWithoutFeedback>
+                        </TouchableOpacity>
                     )
                 }
             </WithTheme>

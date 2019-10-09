@@ -9,11 +9,15 @@
       "Button",
       "SegmentedControl",
       "SearchBar",
+      "Radio",
       "Checkbox",
       "Badge",
       "Marquee",
       "Switch",
       "InputItem",
+      "NoticeBar",
+      "Textarea",
+      "List",
       "Card"
     ],
     "First Category": ["doc4", "doc5"]
