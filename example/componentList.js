@@ -43,5 +43,10 @@ export default [
 		title: 'Card',
 		description: 'Card',
 		example: require('../components/card/demo/basic')
+	},
+	{
+		title:'Avatar',
+		description:'Avatar',
+		example:require('../components/avatar/demo/basic')
 	}
 ]
