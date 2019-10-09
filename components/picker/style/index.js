@@ -1,14 +1,13 @@
 import { StyleSheet } from 'react-native'
 
 
-export default () => StyleSheet.create({
+export default (theme) => StyleSheet.create({
     modal: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'flex-end',
     },
     header: {
-        flexGrow: 1,
         height: 44,
         alignItems: 'center',
         flexDirection: 'row',
@@ -23,7 +22,7 @@ export default () => StyleSheet.create({
         justifyContent: 'center',
     },
     actionText: {
-        color: '#0ae',
+        color: theme.brand_primary,
         fontSize: 18,
         textAlign: 'center',
     },
@@ -33,5 +32,12 @@ export default () => StyleSheet.create({
         color: '#666',
         fontSize: 18,
         textAlign: 'center',
+    },
+    modelContainer:{
+        flex:1,
+    },
+    topView:{
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        flex: 1,
     },
 })

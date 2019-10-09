@@ -19,7 +19,7 @@ export default function PopupMixin(
             value: PropTypes.any,
             visible: PropTypes.bool,
             picker: PropTypes.object,
-            pickerValueChangeProp: PropTypes.object,
+            pickerValueChangeProp: PropTypes.string,
             children: PropTypes.any,
             WrapComponent: PropTypes.any,
             disabled: PropTypes.bool,

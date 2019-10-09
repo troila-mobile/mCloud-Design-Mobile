@@ -28,7 +28,7 @@ CustomChildren.propTypes = {
     extra: PropTypes.any,
 }
 
-export default class PopupExample extends React.Component {
+export default class extends React.Component {
     state = {
         data: [],
         value: [],
@@ -53,6 +53,7 @@ export default class PopupExample extends React.Component {
                         cols={3}
                         value={this.state.value}
                         onChange={this.onChange}
+                        title="Test-Title"
                     >
                         <List.Item arrow="horizontal">省市选择</List.Item>
                     </Picker>

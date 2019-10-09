@@ -1,19 +1,18 @@
 import React from 'react'
 import {
-    PixelRatio, ScrollView, StyleSheet, Text, View,
+    ScrollView, StyleSheet, Text, View,
 } from 'react-native'
 import PickerMixin from './PickerMixin'
 import PropTypes from 'prop-types'
 
-const ratio = PixelRatio.get()
 const styles = StyleSheet.create({
     indicator: {
         position: 'absolute',
         left: 0,
         top: -99,
         borderColor: '#aaa',
-        borderTopWidth: 1 / ratio,
-        borderBottomWidth: 1 / ratio,
+        borderTopWidth: StyleSheet.hairlineWidth,
+        borderBottomWidth: StyleSheet.hairlineWidth,
     },
 
     scrollView: {
@@ -22,14 +21,15 @@ const styles = StyleSheet.create({
 
     selectedItemText: {
         fontSize: 20,
-        fontWeight: 'bold',
-        color: '#000',
+        fontWeight: '300',
+        color: '#333',
     },
 
     itemText: {
-        fontSize: 20,
+        fontSize: 18,
         color: '#aaa',
         textAlign: 'center',
+        height:20,
     },
 })
 
@@ -67,7 +67,7 @@ class Picker extends React.Component {
                         styles.indicator,
                         {
                             top: height * 3,
-                            height,
+                            height: height + 2,
                             width,
                         },
                     ],
@@ -145,6 +145,9 @@ class Picker extends React.Component {
                     ref={(el) => ((this)[`item${index}`] = el)}
                     onLayout={index === 0 ? this.onItemLayout : undefined}
                     key={item.key}
+                    style={{
+                        paddingVertical:7,
+                    }}
                 >
                     <Text
                         style={[{ includeFontPadding: false }, totalStyle, itemStyle]}
