@@ -13,6 +13,7 @@ class Picker extends React.Component {
     static propTypes = {
         selectedValue: PropTypes.any,
         children: PropTypes.any,
+        style: PropTypes.any,
     }
     shouldComponentUpdate(nextProps) {
         return (
@@ -28,6 +29,8 @@ class Picker extends React.Component {
         return children && children[0] && children[0].props.value
     }
     render() {
+        console.log(this.props.style)
+
         const children = React.Children.map(this.props.children, (c) => (
             <Item
                 label={`${c.props.children}`}

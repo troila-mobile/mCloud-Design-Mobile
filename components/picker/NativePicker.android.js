@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: 0,
         top: -99,
-        borderColor: '#aaa',
-        borderTopWidth: StyleSheet.hairlineWidth,
-        borderBottomWidth: StyleSheet.hairlineWidth,
+        borderColor: '#586BFB',
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
     },
 
     scrollView: {
@@ -160,7 +160,6 @@ class Picker extends React.Component {
         })
         return (
             <View style={style}>
-                <View ref={(el) => (this.indicatorRef = el)} style={styles.indicator} />
                 <ScrollView
                     style={styles.scrollView}
                     ref={(el) => (this.scrollerRef = el)}
@@ -176,6 +175,7 @@ class Picker extends React.Component {
                 >
                     <View ref={(el) => (this.contentRef = el)}>{items}</View>
                 </ScrollView>
+                <View ref={(el) => (this.indicatorRef = el)} style={styles.indicator} />
             </View>
         )
     }

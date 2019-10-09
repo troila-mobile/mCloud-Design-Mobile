@@ -11,7 +11,6 @@ const getModal = (props, visible, {
     const {
         styles, title, okText, dismissText,
     } = props
-    console.log(styles)
 
     const titleEl = typeof title === 'string' ? (
         <Text style={[styles.title]}>{title}</Text>
@@ -49,16 +48,16 @@ const getModal = (props, visible, {
                 <View style={[styles.header]}>
                     <TouchableHighlight
                         onPress={onDismiss}
-                        style={[styles.headerItem]}
+                        style={[styles.headerItem, styles.leftHeaderItem]}
                         activeOpacity={actionTextActiveOpacity}
                         underlayColor={actionTextUnderlayColor}
                     >
                         {dismissEl}
                     </TouchableHighlight>
-                    <View style={[styles.headerItem]}>{titleEl}</View>
+                    <View style={[styles.headerItem, styles.centerHeaderItem]}>{titleEl}</View>
                     <TouchableHighlight
                         onPress={onOk}
-                        style={[styles.headerItem]}
+                        style={[styles.headerItem, styles.rightHeaderItem]}
                         activeOpacity={actionTextActiveOpacity}
                         underlayColor={actionTextUnderlayColor}
                     >

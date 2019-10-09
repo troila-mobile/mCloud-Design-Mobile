@@ -103,7 +103,7 @@ class Cascader extends React.Component {
             <Picker
                 // eslint-disable-next-line react/no-array-index-key
                 key={level}
-                style={{ flex: 1 }}
+                style={{ flex: 1,backgroundColor:'#fff' }}
                 disabled={disabled}
                 itemStyle={pickerItemStyle}
                 indicatorStyle={indicatorStyle}
