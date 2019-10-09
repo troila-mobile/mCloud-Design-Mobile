@@ -36,5 +36,5 @@ const styles = StyleSheet.create({
 ----|-----|------|------
 | type    | 缺省页类型，可选值为 `1(无image)` 、 `2(网络加载失败)` 、 `3(暂无数据)` 或者 `4(手动传image)`|   number   |   -  |
 | emptyImage    | image可选，可不传 |   Object   |   -  |
-| onRefresh    | 刷新方法,可选 |   func   |   -  |
+| onRefresh    | 刷新方法,可选,不传则没有重新加载按钮 |   func   |   -  |
 | style    | 自定义样式 |   Object  | 无 |
