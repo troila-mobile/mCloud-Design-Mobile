@@ -77,5 +77,10 @@ export default [
 		title: 'DatePicker',
 		description: '日期时间选择器',
 		example: require('../components/date-picker/demo/basic')
+	},
+	{
+		title: 'EmptyView',
+		description: 'EmptyView',
+		example: require('../components/EmptyView/demo/basic')
 	}
 ]

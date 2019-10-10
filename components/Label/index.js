@@ -35,9 +35,8 @@ export default class Label extends React.Component {
             children,
             size,
             type,
-            textType
+            textType,
         } = this.props
-        console.log('LabelStyles',LabelStyles)
         return (
             <WithTheme themeStyles={LabelStyles} styles={styles}>
                 {

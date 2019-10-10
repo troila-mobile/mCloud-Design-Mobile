@@ -19,7 +19,9 @@
       "Textarea",
       "List",
       "Card",
-      "Picker"
+      "Picker",
+      "Label",
+      "EmptyView"
     ],
     "First Category": ["doc4", "doc5"]
   }
