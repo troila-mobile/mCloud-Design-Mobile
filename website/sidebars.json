@@ -21,7 +21,8 @@
       "Card",
       "Picker",
       "Label",
-      "EmptyView"
+      "EmptyView",
+      "DatePicker"
     ],
     "First Category": ["doc4", "doc5"]
   }
