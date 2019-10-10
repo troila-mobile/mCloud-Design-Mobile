@@ -19,6 +19,7 @@
       "Textarea",
       "List",
       "Card",
+      "Picker",
       "Label",
       "EmptyView"
     ],
