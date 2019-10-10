@@ -103,7 +103,7 @@ export default class Checkbox extends React.Component {
                         }
                         return (
                             <TouchableWithoutFeedback onPress={this.onPress}>
-                                <View style={_styles.warpper}>
+                                <View style={_styles.wrapper}>
                                     {icon}
                                     {
                                         typeof children === 'string' ? (

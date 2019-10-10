@@ -6,17 +6,17 @@ sidebar_label: SearchBar
 
 搜索栏
 
-## Basic Example:
+## Basic Example
 
 ```SnackPlayer name=searchBar-simple
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { SearchBar } from 'mCloud-mobile';
+import { SearchBar } from 'mCloud-Design-Mobile';
 
 export default () => {
     const [value, onChange] = useState('打卡助手')
     return (
-        <View style={styles.warp}>
+        <View style={styles.wrap}>
             <Text style={styles.boldTitle}>
                 圆角搜索框
             </Text>
@@ -50,7 +50,7 @@ export default () => {
 }
 
 const styles = StyleSheet.create({
-    warp: {
+    wrap: {
         flex: 1,
         backgroundColor: '#E6E6E6',
     },

@@ -1,11 +1,21 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import {
+    TouchableOpacity,
+    Text,
+    StyleSheet,
+    Keyboard,
+} from 'react-native'
 import { SearchBar } from '../..'
 
 export default () => {
     const [value, onChange] = useState('打卡助手')
     return (
-        <View style={styles.warp}>
+        <TouchableOpacity
+            activeOpacity={1}
+            style={styles.wrap}
+            keyboardShouldPersistTaps="always"
+            onPress={() => Keyboard.dismiss()}
+        >
             <Text style={styles.boldTitle}>
                 圆角搜索框
             </Text>
@@ -34,12 +44,12 @@ export default () => {
                 onClear={() => onChange('')}
                 onChange={(val) => onChange(val)}
             />
-        </View>
+        </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
-    warp: {
+    wrap: {
         flex: 1,
         backgroundColor: '#E6E6E6',
     },

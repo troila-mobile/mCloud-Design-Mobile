@@ -19,7 +19,7 @@ export default class SearchBar extends React.Component {
     static propTypes = {
         style: ViewPropTypes.style,
         styles: ViewPropTypes.style,
-        type: PropTypes.string,
+        type: PropTypes.oneOf(['default', 'radius']),
         defaultValue: PropTypes.string,
         value: PropTypes.string,
         placeholder: PropTypes.string,
@@ -34,7 +34,7 @@ export default class SearchBar extends React.Component {
     static defaultProps = {
         style: {},
         styles: {},
-        type: 'default', // default | radius
+        type: 'default',
         placeholder: '',
         renderSearch: undefined,
         renderClear: undefined,
@@ -141,7 +141,7 @@ export default class SearchBar extends React.Component {
                                 }
                             </View>
                         )
-                        renderClear = focus && (
+                        renderClear = value !== '' && focus && (
                             <TouchableOpacity
                                 activeOpacity={1}
                                 style={_styles[`${style_prefix}clearView`]}
