@@ -13,7 +13,7 @@ export default (theme) => StyleSheet.create({
     },
     specialContainer:{
         flexDirection: 'row',
-        borderColor:'#fff',
+        borderColor:theme.fill_base,
         borderWidth:1,
         borderRadius:theme.radius_md,
         width:theme.segmented_control_width,
@@ -26,7 +26,7 @@ export default (theme) => StyleSheet.create({
         borderRightWidth:1
     },
     specialBorderRight:{
-        borderColor:'#fff',
+        borderColor:theme.fill_base,
         borderRightWidth:1
     },
     disabled:{
@@ -44,7 +44,7 @@ export default (theme) => StyleSheet.create({
     },
     defaultSelectedText:{
         fontSize:theme.font_size_base,
-        color:'#fff',
+        color:theme.fill_base,
     },
     specialButtonBGUnselected:{
         backgroundColor:theme.segmented_control_color,
