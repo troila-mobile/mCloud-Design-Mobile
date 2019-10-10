@@ -35,8 +35,6 @@ const ONE_DAY = 24 * 60 * 60 * 1000
 
 class DatePicker extends React.Component {
     static defaultProps = {
-        // prefixCls: 'rmc-date-picker',
-        // pickerPrefixCls: 'rmc-picker',
         mode: DATE,
         disabled: false,
         minuteStep: 1,
@@ -46,8 +44,6 @@ class DatePicker extends React.Component {
     static propTypes = {
         date: PropTypes.any,
         defaultDate: PropTypes.any,
-        // prefixCls: PropTypes.string,
-        // pickerPrefixCls: PropTypes.string,
         mode: PropTypes.string,
         disabled: PropTypes.bool,
         minuteStep: PropTypes.number,

@@ -49,7 +49,7 @@ export default class extends React.Component {
             ...restProps
         } = this.props
         const selfOkText = '确定'
-        const selfDismissText = '确定'
+        const selfDismissText = '取消'
         const selfExtra = '请选择'
         const dataPicker = (
             <DatePicker
@@ -68,6 +68,7 @@ export default class extends React.Component {
                 date={value}
                 onValueChange={onValueChange}
                 itemStyle={itemStyle}
+                style={{ backgroundColor:'#fff' }}
             />
         )
 
