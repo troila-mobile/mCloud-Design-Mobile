@@ -11,7 +11,10 @@ export default function (ComposedComponent) {
             children: PropTypes.any,
         }
         select = (value, itemHeight, scrollTo) => {
-            const children = React.Children.toArray(this.props.children)
+            const {
+                children: oldChildren,
+            } = this.props
+            const children = React.Children.toArray(oldChildren)
             for (let i = 0, len = children.length; i < len; i++) {
                 if (children[i].props.value === value) {
                     this.selectByIndex(i, itemHeight, scrollTo)
@@ -21,7 +24,10 @@ export default function (ComposedComponent) {
             this.selectByIndex(0, itemHeight, scrollTo)
         };
         doScrollingComplete = (top, itemHeight, fireValueChange) => {
-            const children = React.Children.toArray(this.props.children)
+            const {
+                children: oldChildren,
+            } = this.props
+            const children = React.Children.toArray(oldChildren)
             const index = this.computeChildIndex(top, itemHeight, children.length)
             const child = children[index]
             if (child) {
@@ -35,9 +41,12 @@ export default function (ComposedComponent) {
             return Math.min(index, childrenLength - 1)
         }
         selectByIndex(index, itemHeight, zscrollTo) {
+            const {
+                children: oldChildren,
+            } = this.props
             if (
                 index < 0
-                || index >= React.Children.count(this.props.children)
+                || index >= React.Children.count(oldChildren)
                 || !itemHeight
             ) {
                 return

@@ -1,19 +1,18 @@
 import React from 'react'
 import {
-    PixelRatio, ScrollView, StyleSheet, Text, View,
+    ScrollView, StyleSheet, Text, View,
 } from 'react-native'
 import PickerMixin from './PickerMixin'
 import PropTypes from 'prop-types'
 
-const ratio = PixelRatio.get()
 const styles = StyleSheet.create({
     indicator: {
         position: 'absolute',
         left: 0,
         top: -99,
-        borderColor: '#aaa',
-        borderTopWidth: 1 / ratio,
-        borderBottomWidth: 1 / ratio,
+        borderColor: '#586BFB',
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
     },
 
     scrollView: {
@@ -22,14 +21,15 @@ const styles = StyleSheet.create({
 
     selectedItemText: {
         fontSize: 20,
-        fontWeight: 'bold',
-        color: '#000',
+        fontWeight: '300',
+        color: '#333',
     },
 
     itemText: {
-        fontSize: 20,
+        fontSize: 18,
         color: '#aaa',
         textAlign: 'center',
+        height:20,
     },
 })
 
@@ -43,6 +43,7 @@ class Picker extends React.Component {
         children: PropTypes.any,
         itemStyle: PropTypes.object,
         style: PropTypes.object,
+
     }
     itemHeight;
     itemWidth;
@@ -51,7 +52,11 @@ class Picker extends React.Component {
     contentRef;
     indicatorRef;
     componentDidUpdate() {
-        this.props.select(this.props.selectedValue, this.itemHeight, this.scrollTo)
+        const {
+            select,
+            selectedValue,
+        } = this.props
+        select(selectedValue, this.itemHeight, this.scrollTo)
     }
     componentWillUnmount() {
         this.clearScrollBuffer()
@@ -67,7 +72,7 @@ class Picker extends React.Component {
                         styles.indicator,
                         {
                             top: height * 3,
-                            height,
+                            height: height + 2,
                             width,
                         },
                     ],
@@ -94,8 +99,12 @@ class Picker extends React.Component {
 
             // i do no know why!...
             setTimeout(() => {
-                this.props.select(
-                    this.props.selectedValue,
+                const {
+                    select,
+                    selectedValue,
+                } = this.props
+                select(
+                    selectedValue,
                     this.itemHeight,
                     this.scrollTo,
                 )
@@ -111,19 +120,24 @@ class Picker extends React.Component {
         }
     };
     fireValueChange = (selectedValue) => {
+        const {
+            selectedValue : oldselectedValue,
+            onValueChange,
+        } = this.props
         if (
-            this.props.selectedValue !== selectedValue
-            && this.props.onValueChange
+            oldselectedValue !== selectedValue
+            && onValueChange
         ) {
-            this.props.onValueChange(selectedValue)
+            onValueChange(selectedValue)
         }
     };
     onScroll = (e) => {
         const { y } = e.nativeEvent.contentOffset
+        const { doScrollingComplete } = this.props
         this.clearScrollBuffer()
         this.scrollBuffer = setTimeout(() => {
             this.clearScrollBuffer()
-            this.props.doScrollingComplete(y, this.itemHeight, this.fireValueChange)
+            doScrollingComplete(y, this.itemHeight, this.fireValueChange)
         }, 50)
     };
     clearScrollBuffer() {
@@ -145,6 +159,9 @@ class Picker extends React.Component {
                     ref={(el) => ((this)[`item${index}`] = el)}
                     onLayout={index === 0 ? this.onItemLayout : undefined}
                     key={item.key}
+                    style={{
+                        paddingVertical:7,
+                    }}
                 >
                     <Text
                         style={[{ includeFontPadding: false }, totalStyle, itemStyle]}
@@ -157,7 +174,6 @@ class Picker extends React.Component {
         })
         return (
             <View style={style}>
-                <View ref={(el) => (this.indicatorRef = el)} style={styles.indicator} />
                 <ScrollView
                     style={styles.scrollView}
                     ref={(el) => (this.scrollerRef = el)}
@@ -173,6 +189,7 @@ class Picker extends React.Component {
                 >
                     <View ref={(el) => (this.contentRef = el)}>{items}</View>
                 </ScrollView>
+                <View ref={(el) => (this.indicatorRef = el)} style={styles.indicator} />
             </View>
         )
     }
