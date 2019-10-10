@@ -182,6 +182,9 @@ export default {
 
     // switch
     switch_fill: brandPrimary,
+    switch_tint: '#D8D8D8',
+    switch_disabled_thumbtint: '#F5F5F5',
+    switch_disabled_tint: '#EEEEEE',
 
     // tag
     tag_height: 25,

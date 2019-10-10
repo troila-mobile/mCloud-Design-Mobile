@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 export default (theme) => StyleSheet.create({
     default_wrapper: {
-        backgroundColor: '#fff',
+        backgroundColor: theme.fill_base,
         height: theme.search_bar_height,
         paddingLeft: theme.h_spacing_lg,
         paddingRight: theme.h_spacing_lg,
@@ -14,7 +14,7 @@ export default (theme) => StyleSheet.create({
         flexDirection: 'row',
     },
     default_input: {
-        backgroundColor: '#fff',
+        backgroundColor: theme.fill_base,
         height: theme.search_bar_input_height,
         color: theme.color_text_base,
         fontSize: theme.font_size_base,
@@ -50,7 +50,7 @@ export default (theme) => StyleSheet.create({
     },
     radius_input: {
         borderRadius: theme.search_bar_input_height / 2,
-        backgroundColor: '#fff',
+        backgroundColor: theme.fill_base,
         height: theme.search_bar_input_height,
         color: theme.color_text_base,
         fontSize: theme.font_size_base,
