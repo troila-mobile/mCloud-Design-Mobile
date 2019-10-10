@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>SegmentedControl · mCloud Design Mobile</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="SegmentedControl"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="SegmentedControl · mCloud Design Mobile"/><meta property="og:type" content="website"/><meta property="og:url" content="https://troila-mobile.github.io/mCloud-Design-Mobile/"/><meta property="og:description" content="SegmentedControl"/><meta property="og:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/mCloud-Design-Mobile/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/atom.xml" title="mCloud Design Mobile Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/feed.xml" title="mCloud Design Mobile Blog RSS Feed"/><script type="text/javascript" src="https://snack.expo.io/embed.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/codeblocks.js"></script><script src="/mCloud-Design-Mobile/js/scrollSpy.js"></script><link rel="stylesheet" href="/mCloud-Design-Mobile/css/main.css"/><script src="/mCloud-Design-Mobile/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mCloud-Design-Mobile/"><img class="logo" src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile"/><h2 class="headerTitleWithLogo">mCloud Design Mobile</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/mCloud-Design-Mobile/docs/Contributing" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/mCloud-Design-Mobile/docs/Button" target="_self">API</a></li><li class=""><a href="/mCloud-Design-Mobile/help" target="_self">Help</a></li><li class=""><a href="/mCloud-Design-Mobile/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Component</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Component</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Button">Button</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/mCloud-Design-Mobile/docs/SegmentedControl">SegmentedControl</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/SearchBar">SearchBar</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Radio">Radio</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Checkbox">Checkbox</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Badge">Badge</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Marquee">Marquee</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Switch">Switch</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/InputItem">InputItem</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/NoticeBar">NoticeBar</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Textarea">Textarea</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/List">List</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Card">Card</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Picker">Picker</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Label">Label</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/EmptyView">EmptyView</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/DatePicker">DatePicker</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">First Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc4">Button</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc5">Fifth Document</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">SegmentedControl</h1></header><article><div><span><p>SegmentedControl</p>
+<h2><a class="anchor" aria-hidden="true" id="basic-example"></a><a href="#basic-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Example:</h2>
+<div class="snack-player"><div class="mobile-friendly-snack" style="display: none"><pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { SafeAreaView, View, FlatList, StyleSheet, Text } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
+<span class="hljs-keyword">import</span> Constants <span class="hljs-keyword">from</span> <span class="hljs-string">'expo-constants'</span>;
+<span class="hljs-keyword">import</span> { SegmentedControl } <span class="hljs-keyword">from</span> <span class="hljs-string">"mcloud-design-mobile"</span>;
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    &lt;SafeAreaView style={styles.container}&gt;
+           &lt;SegmentedControl style={{ marginTop:20 }} /&gt;
+                                        &lt;SegmentedControl
+                                            disabled
+                                            titles={['申请','审批']}
+                                            segments={2}
+                                            onPressMethods={[() =&gt; {},() =&gt; {}]}
+                                            style={{ marginTop:20 }}
+                                        /&gt;
+                                        &lt;SegmentedControl
+                                            titles={['left','right']}
+                                            segments={2}
+                                            onPressMethods={[() =&gt; {},() =&gt; {}]}
+                                            type='special'
+                                            style={{ marginTop:20 }}
+                                        /&gt;
+                                        &lt;SegmentedControl
+                                            titles={['left','center','right']}
+                                            segments={3}
+                                            onPressMethods={[() =&gt; {},() =&gt; {},() =&gt; {}]}
+                                            type='special'
+                                            style={{ marginTop:20,width:300 }}
+                                        /&gt;
+                   
+    &lt;/SafeAreaView&gt;
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+        alignItems:'center'
+  },
+});
+</code></pre></div><div class="desktop-friendly-snack" style="margin-top: 15px; margin-bottom: 15px"><div
+        data-snack-name="SegmentedControl-simple"
+        data-snack-description="Example usage"
+        data-snack-dependencies='react-navigation@3.11.1,react-native-really-awesome-button@1.4.2,prop-types@15.7.2'
+        data-snack-code="import%20React%20from%20'react'%3B%0Aimport%20%7B%20SafeAreaView%2C%20View%2C%20FlatList%2C%20StyleSheet%2C%20Text%20%7D%20from%20'react-native'%3B%0Aimport%20Constants%20from%20'expo-constants'%3B%0Aimport%20%7B%20SegmentedControl%20%7D%20from%20%22mcloud-design-mobile%22%3B%0A%0A%0Aexport%20default%20function%20App()%20%7B%0A%20%20return%20(%0A%20%20%20%20%3CSafeAreaView%20style%3D%7Bstyles.container%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%3CSegmentedControl%20style%3D%7B%7B%20marginTop%3A20%20%7D%7D%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CSegmentedControl%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20disabled%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20titles%3D%7B%5B'%E7%94%B3%E8%AF%B7'%2C'%E5%AE%A1%E6%89%B9'%5D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20segments%3D%7B2%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPressMethods%3D%7B%5B()%20%3D%3E%20%7B%7D%2C()%20%3D%3E%20%7B%7D%5D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%7B%7B%20marginTop%3A20%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CSegmentedControl%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20titles%3D%7B%5B'left'%2C'right'%5D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20segments%3D%7B2%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPressMethods%3D%7B%5B()%20%3D%3E%20%7B%7D%2C()%20%3D%3E%20%7B%7D%5D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3D'special'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%7B%7B%20marginTop%3A20%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CSegmentedControl%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20titles%3D%7B%5B'left'%2C'center'%2C'right'%5D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20segments%3D%7B3%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPressMethods%3D%7B%5B()%20%3D%3E%20%7B%7D%2C()%20%3D%3E%20%7B%7D%2C()%20%3D%3E%20%7B%7D%5D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3D'special'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%7B%7B%20marginTop%3A20%2Cwidth%3A300%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%3C%2FSafeAreaView%3E%0A%20%20)%3B%0A%7D%0A%0Aconst%20styles%20%3D%20StyleSheet.create(%7B%0A%20%20container%3A%20%7B%0A%20%20%20%20flex%3A%201%2C%0A%20%20%20%20marginTop%3A%20Constants.statusBarHeight%2C%0A%20%20%20%20%20%20%20%20alignItems%3A'center'%0A%20%20%7D%2C%0A%7D)%3B%0A"
+        data-snack-platform="web"
+        data-snack-preview="true"
+        style="
+          overflow: hidden;
+          background: #fafafa;
+          border: 1px solid rgba(0,0,0,.16);
+          border-radius: 4px;
+          height: 514px;
+          width: 100%;
+        "
+      ></div></div></div><h2><a class="anchor" aria-hidden="true" id="props"></a><a href="#props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props:</h2>
+<table>
+<thead>
+<tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
+</thead>
+<tbody>
+<tr><td>type</td><td>SegmentedControl类型，可选值为<code>default</code>/<code>special</code></td><td>string</td><td><code>default</code></td></tr>
+<tr><td>disabled</td><td>设置禁用</td><td>boolean</td><td>false</td></tr>
+<tr><td>segments</td><td>按钮的个数</td><td>number</td><td>2</td></tr>
+<tr><td>titles</td><td>按钮的title</td><td>元素为string类型的数组</td><td>无</td></tr>
+<tr><td>onPressMethods</td><td>按钮点击的回调函数</td><td>元素为函数类型的数组</td><td>无</td></tr>
+<tr><td>selectedIndex</td><td>初始选中哪个按钮</td><td>number</td><td>0</td></tr>
+<tr><td>style</td><td>自定义样式</td><td>Object</td><td>无</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mCloud-Design-Mobile/docs/Button"><span class="arrow-prev">← </span><span>Button</span></a><a class="docs-next button" href="/mCloud-Design-Mobile/docs/SearchBar"><span class="function-name-prevnext">SearchBar</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-example">Basic Example:</a></li><li><a href="#props">Props:</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/mCloud-Design-Mobile/" class="nav-home"><img src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mCloud-Design-Mobile/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc2.html">Guides (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/mCloud-Design-Mobile/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/mCloud-Design-Mobile/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/mCloud-Design-Mobile/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

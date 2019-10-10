@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Textarea · mCloud Design Mobile</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="多行文本输入"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Textarea · mCloud Design Mobile"/><meta property="og:type" content="website"/><meta property="og:url" content="https://troila-mobile.github.io/mCloud-Design-Mobile/"/><meta property="og:description" content="多行文本输入"/><meta property="og:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/mCloud-Design-Mobile/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/atom.xml" title="mCloud Design Mobile Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/feed.xml" title="mCloud Design Mobile Blog RSS Feed"/><script type="text/javascript" src="https://snack.expo.io/embed.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/codeblocks.js"></script><script src="/mCloud-Design-Mobile/js/scrollSpy.js"></script><link rel="stylesheet" href="/mCloud-Design-Mobile/css/main.css"/><script src="/mCloud-Design-Mobile/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mCloud-Design-Mobile/"><img class="logo" src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile"/><h2 class="headerTitleWithLogo">mCloud Design Mobile</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/mCloud-Design-Mobile/docs/Contributing" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/mCloud-Design-Mobile/docs/Button" target="_self">API</a></li><li class=""><a href="/mCloud-Design-Mobile/help" target="_self">Help</a></li><li class=""><a href="/mCloud-Design-Mobile/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Component</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Component</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Button">Button</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/SegmentedControl">SegmentedControl</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/SearchBar">SearchBar</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Radio">Radio</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Checkbox">Checkbox</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Badge">Badge</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Marquee">Marquee</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Switch">Switch</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/InputItem">InputItem</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/NoticeBar">NoticeBar</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/mCloud-Design-Mobile/docs/Textarea">Textarea</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/List">List</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Card">Card</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Picker">Picker</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Label">Label</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/EmptyView">EmptyView</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/DatePicker">DatePicker</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">First Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc4">Button</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc5">Fifth Document</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Textarea</h1></header><article><div><span><p>多行文本输入</p>
+<h2><a class="anchor" aria-hidden="true" id="basic-example"></a><a href="#basic-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Example</h2>
+<div class="snack-player"><div class="mobile-friendly-snack" style="display: none"><pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> React, { useState } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> {
+    View,
+    Text,
+    StyleSheet,
+    ScrollView,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>
+<span class="hljs-keyword">import</span> { Textarea } <span class="hljs-keyword">from</span> <span class="hljs-string">'mCloud-Design-Mobile'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; {
+    <span class="hljs-keyword">const</span> [leftValue, onLeftChange] = useState(<span class="hljs-string">''</span>)
+    <span class="hljs-keyword">const</span> [topValue, onTopChange] = useState(<span class="hljs-string">''</span>)
+    <span class="hljs-keyword">return</span> (
+        &lt;View style={styles.wrap}&gt;
+            &lt;ScrollView&gt;
+                &lt;Text style={styles.boldTitle}&gt;
+                    Textarea
+                &lt;/Text&gt;
+                &lt;Text style={styles.title}&gt;
+                    标题在左
+                &lt;/Text&gt;
+                &lt;Textarea
+                    label="标题"
+                    autoHeight={true}
+                    textAlign="right"
+                    labelPosition="left"
+                    placeholder="请输入标题"
+                    value={leftValue}
+                    onChange={(text) =&gt; {
+                        onLeftChange(text)
+                    }}
+                /&gt;
+                &lt;Text style={styles.title}&gt;
+                    标题在上
+                &lt;/Text&gt;
+                &lt;Textarea
+                    label="标题"
+                    placeholder="请输入标题"
+                    value={topValue}
+                    onChange={(text) =&gt; {
+                        onTopChange(text)
+                    }}
+                /&gt;
+                &lt;Text style={styles.title}&gt;
+                    规定行数
+                &lt;/Text&gt;
+                &lt;Textarea
+                    label="标题"
+                    rows={4}
+                    placeholder="请输入标题"
+                /&gt;
+                &lt;Text style={styles.title}&gt;
+                    高度自适应
+                &lt;/Text&gt;
+                &lt;Textarea
+                    label="标题"
+                    autoHeight={true}
+                    placeholder="请输入标题"
+                /&gt;
+                &lt;Text style={styles.title}&gt;
+                    多行计数
+                &lt;/Text&gt;
+                &lt;Textarea
+                    label="标题"
+                    rows={4}
+                    count={80}
+                    value="输入后文字显示很多很多很多很多很多很多很多很多输入后文字显示很多很多"
+                    placeholder="请输入标题"
+                /&gt;
+                &lt;Text style={styles.title}&gt;
+                    不可编辑
+                &lt;/Text&gt;
+                &lt;Textarea
+                    label="标题"
+                    value="输入后文字显示很多很多很多很多"
+                    placeholder="请输入标题"
+                    disabled={true}
+                /&gt;
+            &lt;/ScrollView&gt;
+        &lt;/View&gt;
+    )
+}
+
+const styles = StyleSheet.create({
+    wrap: {
+        flex: 1,
+        backgroundColor: '#E6E6E6',
+    },
+    title: {
+        fontSize: 14,
+        color: '#1F2530',
+        paddingVertical: 10,
+        paddingLeft: 15,
+    },
+    boldTitle: {
+        fontSize: 16,
+        color: '#1F2530',
+        paddingVertical: 10,
+        paddingLeft: 10,
+        fontWeight: '500',
+    },
+})
+
+</code></pre></div><div class="desktop-friendly-snack" style="margin-top: 15px; margin-bottom: 15px"><div
+        data-snack-name="textarea-simple"
+        data-snack-description="Example usage"
+        data-snack-dependencies='react-navigation@3.11.1,react-native-really-awesome-button@1.4.2,prop-types@15.7.2'
+        data-snack-code="import%20React%2C%20%7B%20useState%20%7D%20from%20'react'%0Aimport%20%7B%0A%20%20%20%20View%2C%0A%20%20%20%20Text%2C%0A%20%20%20%20StyleSheet%2C%0A%20%20%20%20ScrollView%2C%0A%7D%20from%20'react-native'%0Aimport%20%7B%20Textarea%20%7D%20from%20'mCloud-Design-Mobile'%0A%0Aexport%20default%20()%20%3D%3E%20%7B%0A%20%20%20%20const%20%5BleftValue%2C%20onLeftChange%5D%20%3D%20useState('')%0A%20%20%20%20const%20%5BtopValue%2C%20onTopChange%5D%20%3D%20useState('')%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.wrap%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CScrollView%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.boldTitle%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Textarea%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%E5%9C%A8%E5%B7%A6%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CTextarea%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20autoHeight%3D%7Btrue%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20textAlign%3D%22right%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20labelPosition%3D%22left%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20placeholder%3D%22%E8%AF%B7%E8%BE%93%E5%85%A5%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7BleftValue%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onChange%3D%7B(text)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onLeftChange(text)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%E5%9C%A8%E4%B8%8A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CTextarea%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20placeholder%3D%22%E8%AF%B7%E8%BE%93%E5%85%A5%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7BtopValue%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onChange%3D%7B(text)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onTopChange(text)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E8%A7%84%E5%AE%9A%E8%A1%8C%E6%95%B0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CTextarea%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20rows%3D%7B4%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20placeholder%3D%22%E8%AF%B7%E8%BE%93%E5%85%A5%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CTextarea%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20autoHeight%3D%7Btrue%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20placeholder%3D%22%E8%AF%B7%E8%BE%93%E5%85%A5%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E5%A4%9A%E8%A1%8C%E8%AE%A1%E6%95%B0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CTextarea%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20rows%3D%7B4%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20count%3D%7B80%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20value%3D%22%E8%BE%93%E5%85%A5%E5%90%8E%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%E8%BE%93%E5%85%A5%E5%90%8E%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20placeholder%3D%22%E8%AF%B7%E8%BE%93%E5%85%A5%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E4%B8%8D%E5%8F%AF%E7%BC%96%E8%BE%91%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CTextarea%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20value%3D%22%E8%BE%93%E5%85%A5%E5%90%8E%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%E5%BE%88%E5%A4%9A%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20placeholder%3D%22%E8%AF%B7%E8%BE%93%E5%85%A5%E6%A0%87%E9%A2%98%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20disabled%3D%7Btrue%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FScrollView%3E%0A%20%20%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%0A%7D%0A%0Aconst%20styles%20%3D%20StyleSheet.create(%7B%0A%20%20%20%20wrap%3A%20%7B%0A%20%20%20%20%20%20%20%20flex%3A%201%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20'%23E6E6E6'%2C%0A%20%20%20%20%7D%2C%0A%20%20%20%20title%3A%20%7B%0A%20%20%20%20%20%20%20%20fontSize%3A%2014%2C%0A%20%20%20%20%20%20%20%20color%3A%20'%231F2530'%2C%0A%20%20%20%20%20%20%20%20paddingVertical%3A%2010%2C%0A%20%20%20%20%20%20%20%20paddingLeft%3A%2015%2C%0A%20%20%20%20%7D%2C%0A%20%20%20%20boldTitle%3A%20%7B%0A%20%20%20%20%20%20%20%20fontSize%3A%2016%2C%0A%20%20%20%20%20%20%20%20color%3A%20'%231F2530'%2C%0A%20%20%20%20%20%20%20%20paddingVertical%3A%2010%2C%0A%20%20%20%20%20%20%20%20paddingLeft%3A%2010%2C%0A%20%20%20%20%20%20%20%20fontWeight%3A%20'500'%2C%0A%20%20%20%20%7D%2C%0A%7D)%0A%0A"
+        data-snack-platform="web"
+        data-snack-preview="true"
+        style="
+          overflow: hidden;
+          background: #fafafa;
+          border: 1px solid rgba(0,0,0,.16);
+          border-radius: 4px;
+          height: 514px;
+          width: 100%;
+        "
+      ></div></div></div><h2><a class="anchor" aria-hidden="true" id="props"></a><a href="#props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props</h2>
+<table>
+<thead>
+<tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
+</thead>
+<tbody>
+<tr><td>value</td><td>value 值(受控与否参考<a href="https://facebook.github.io/react/docs/forms.html">https://facebook.github.io/react/docs/forms.html</a>)</td><td>String</td><td>无</td></tr>
+<tr><td>defaultValue</td><td>设置初始默认值</td><td>String</td><td>-</td></tr>
+<tr><td>placeholder</td><td>placeholder</td><td>String</td><td>''</td></tr>
+<tr><td>editable</td><td>是否可编辑</td><td>bool</td><td>true</td></tr>
+<tr><td>disabled</td><td>是否禁用</td><td>bool</td><td>true</td></tr>
+<tr><td>autoFocus</td><td>是否禁用</td><td>bool</td><td>true</td></tr>
+<tr><td>clear</td><td>是否带清除功能(仅<code>editable</code>为<code>true</code>,<code>disabled</code>为<code>false</code>才生效)。在 Android 中, 处于编辑状态(focus)时 icon 才会出现, 且此组件被<code>ScrollView</code>包裹时, 设置<code>ScrollView</code>的<code>keyboardShouldPersistTaps</code>属性为<code>handled</code>或<code>always</code>时, icon才会正确响应点击事件</td><td>bool</td><td>false</td></tr>
+<tr><td>count</td><td>最大长度</td><td>number</td><td>无</td></tr>
+<tr><td>textAlign</td><td>输入框的位置，可选值有 <code>left</code> 和 <code>right</code></td><td>string</td><td>right</td></tr>
+<tr><td>onChange</td><td>change 事件触发的回调函数</td><td>(val: string): void</td><td>-</td></tr>
+<tr><td>onBlur</td><td>blur 事件触发的回调函数</td><td>(val: string): void</td><td>-</td></tr>
+<tr><td>onFocus</td><td>focus 事件触发的回调函数</td><td>(val: string): void</td><td>-</td></tr>
+<tr><td>labelNumber</td><td>标签的文字个数，可用<code>2-7</code>之间的数字</td><td>number</td><td><code>5</code></td></tr>
+<tr><td>last</td><td>如果是最后一项，则将移除<code>borderBottom</code>（默认拥有<code>borderBottom</code>）</td><td>bool</td><td>false</td></tr>
+<tr><td>rows</td><td>显示几行</td><td>number</td><td>1</td></tr>
+<tr><td>autoHeight</td><td>高度自适应, autoHeight 和 rows 请二选一</td><td>bool</td><td>false</td></tr>
+<tr><td>label</td><td>title</td><td>string</td><td>无</td></tr>
+<tr><td>labelPosition</td><td>title 的位置 ，可选值有 <code>top</code> <code>left</code></td><td>string</td><td>top</td></tr>
+<tr><td>onContentSizeChange</td><td>count变化的时候触发的方法</td><td>(event: object): void</td><td>无</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mCloud-Design-Mobile/docs/NoticeBar"><span class="arrow-prev">← </span><span class="function-name-prevnext">NoticeBar</span></a><a class="docs-next button" href="/mCloud-Design-Mobile/docs/List"><span>List</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-example">Basic Example</a></li><li><a href="#props">Props</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/mCloud-Design-Mobile/" class="nav-home"><img src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mCloud-Design-Mobile/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc2.html">Guides (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/mCloud-Design-Mobile/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/mCloud-Design-Mobile/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/mCloud-Design-Mobile/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

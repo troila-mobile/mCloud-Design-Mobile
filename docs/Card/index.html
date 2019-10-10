@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Card · mCloud Design Mobile</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Card"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Card · mCloud Design Mobile"/><meta property="og:type" content="website"/><meta property="og:url" content="https://troila-mobile.github.io/mCloud-Design-Mobile/"/><meta property="og:description" content="Card"/><meta property="og:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/mCloud-Design-Mobile/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/atom.xml" title="mCloud Design Mobile Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/feed.xml" title="mCloud Design Mobile Blog RSS Feed"/><script type="text/javascript" src="https://snack.expo.io/embed.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/codeblocks.js"></script><script src="/mCloud-Design-Mobile/js/scrollSpy.js"></script><link rel="stylesheet" href="/mCloud-Design-Mobile/css/main.css"/><script src="/mCloud-Design-Mobile/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mCloud-Design-Mobile/"><img class="logo" src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile"/><h2 class="headerTitleWithLogo">mCloud Design Mobile</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/mCloud-Design-Mobile/docs/Contributing" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/mCloud-Design-Mobile/docs/Button" target="_self">API</a></li><li class=""><a href="/mCloud-Design-Mobile/help" target="_self">Help</a></li><li class=""><a href="/mCloud-Design-Mobile/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Component</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Component</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Button">Button</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/SegmentedControl">SegmentedControl</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/SearchBar">SearchBar</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Radio">Radio</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Checkbox">Checkbox</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Badge">Badge</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Marquee">Marquee</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Switch">Switch</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/InputItem">InputItem</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/NoticeBar">NoticeBar</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Textarea">Textarea</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/List">List</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/mCloud-Design-Mobile/docs/Card">Card</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Picker">Picker</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Label">Label</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/EmptyView">EmptyView</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/DatePicker">DatePicker</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">First Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc4">Button</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc5">Fifth Document</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Card</h1></header><article><div><span><p>Card</p>
+<h2><a class="anchor" aria-hidden="true" id="basic-example"></a><a href="#basic-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Example:</h2>
+<div class="snack-player"><div class="mobile-friendly-snack" style="display: none"><pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> { View,Dimensions } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>
+<span class="hljs-keyword">import</span> { Card } <span class="hljs-keyword">from</span> <span class="hljs-string">'../..'</span>
+
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; (
+    &lt;View
+        style={{
+            flex:1,
+            alignItems:'center',
+            backgroundColor:'#e6e6e6'
+        }}
+    &gt;
+        &lt;View
+            style={{
+                backgroundColor:'#fff'
+            }}
+        &gt;
+            &lt;View style={{
+                backgroundColor:'#DEDFE0',
+                width:Dimensions.get('window').width-15,
+                marginLeft:15,
+                height:1
+            }}
+            /&gt;
+            &lt;Card
+                type='vertical'
+                title='这是标题这是标题这是标题这是标题这是标题这是标题这是标题'
+                content='这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是
+              内容这是内容这是内容这是内容这是内容这是内容这是内容'
+            /&gt;
+            &lt;View style={{
+                backgroundColor:'#DEDFE0',
+                width:Dimensions.get('window').width-15,
+                marginLeft:15,
+                height:1
+            }}
+            /&gt;
+            &lt;Card
+                type='vertical'
+                title='这是标题这是标题这是标题这是标题这是标题这是标题这是标题'
+                titleNumberOfLines={1}
+                content='这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是
+              内容这是内容这是内容这是内容这是内容这是内容这是内容'
+                image={{
+                    uri:'https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1569822013704&amp;di=1f'
+                + 'aef74531d6c1ea1ccf2962cea5b166&amp;imgtype=0&amp;src=http%3A%2F%2Fpic21.nipic.com%2F2012'
+                + '0519%2F9975192_125719517000_2.jpg'
+                }}
+            /&gt;
+        &lt;/View&gt;
+    &lt;/View&gt;
+)
+</code></pre></div><div class="desktop-friendly-snack" style="margin-top: 15px; margin-bottom: 15px"><div
+        data-snack-name="Card-simple"
+        data-snack-description="Example usage"
+        data-snack-dependencies='react-navigation@3.11.1,react-native-really-awesome-button@1.4.2,prop-types@15.7.2'
+        data-snack-code="import%20React%20from%20'react'%0Aimport%20%7B%20View%2CDimensions%20%7D%20from%20'react-native'%0Aimport%20%7B%20Card%20%7D%20from%20'..%2F..'%0A%0A%0A%0Aexport%20default%20()%20%3D%3E%20(%0A%20%20%20%20%3CView%0A%20%20%20%20%20%20%20%20style%3D%7B%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20flex%3A1%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20alignItems%3A'center'%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20backgroundColor%3A'%23e6e6e6'%0A%20%20%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%3E%0A%20%20%20%20%20%20%20%20%3CView%0A%20%20%20%20%20%20%20%20%20%20%20%20style%3D%7B%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20backgroundColor%3A'%23fff'%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20%20%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7B%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20backgroundColor%3A'%23DEDFE0'%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20width%3ADimensions.get('window').width-15%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20marginLeft%3A15%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A1%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CCard%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3D'vertical'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D'%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20content%3D'%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9'%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7B%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20backgroundColor%3A'%23DEDFE0'%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20width%3ADimensions.get('window').width-15%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20marginLeft%3A15%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A1%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CCard%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3D'vertical'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D'%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98%E8%BF%99%E6%98%AF%E6%A0%87%E9%A2%98'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20titleNumberOfLines%3D%7B1%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20content%3D'%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9%E8%BF%99%E6%98%AF%E5%86%85%E5%AE%B9'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20image%3D%7B%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20uri%3A'https%3A%2F%2Ftimgsa.baidu.com%2Ftimg%3Fimage%26quality%3D80%26size%3Db9999_10000%26sec%3D1569822013704%26di%3D1f'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20'aef74531d6c1ea1ccf2962cea5b166%26imgtype%3D0%26src%3Dhttp%253A%252F%252Fpic21.nipic.com%252F2012'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20'0519%252F9975192_125719517000_2.jpg'%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20%3C%2FView%3E%0A)%0A"
+        data-snack-platform="web"
+        data-snack-preview="true"
+        style="
+          overflow: hidden;
+          background: #fafafa;
+          border: 1px solid rgba(0,0,0,.16);
+          border-radius: 4px;
+          height: 514px;
+          width: 100%;
+        "
+      ></div></div></div><h2><a class="anchor" aria-hidden="true" id="props"></a><a href="#props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props:</h2>
+<table>
+<thead>
+<tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
+</thead>
+<tbody>
+<tr><td>type</td><td>Card类型，可选值为<code>horizontal</code>/<code>vertical</code></td><td>string</td><td><code>redPoint</code></td></tr>
+<tr><td>title</td><td>标题</td><td>string</td><td>'标题'</td></tr>
+<tr><td>titleStyle</td><td>标题样式</td><td>object</td><td>-</td></tr>
+<tr><td>titleNumberOfLines</td><td>标题行数</td><td>number</td><td>-</td></tr>
+<tr><td>content</td><td>内容</td><td>string</td><td>'内容'</td></tr>
+<tr><td>contentStyle</td><td>内容样式</td><td>object</td><td>-</td></tr>
+<tr><td>contentNumberOfLines</td><td>内容行数</td><td>number</td><td>2</td></tr>
+<tr><td>image</td><td>图片</td><td>object</td><td>无</td></tr>
+<tr><td>imageStyle</td><td>图片样式</td><td>object</td><td>-</td></tr>
+<tr><td>imageOnPress</td><td>图片的点击回调函数</td><td>(e: Object): void</td><td>无</td></tr>
+<tr><td>cardOnPress</td><td>card的点击回调函数</td><td>(e: Object): void</td><td>无</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mCloud-Design-Mobile/docs/List"><span class="arrow-prev">← </span><span>List</span></a><a class="docs-next button" href="/mCloud-Design-Mobile/docs/Picker"><span>Picker</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-example">Basic Example:</a></li><li><a href="#props">Props:</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/mCloud-Design-Mobile/" class="nav-home"><img src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mCloud-Design-Mobile/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc2.html">Guides (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/mCloud-Design-Mobile/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/mCloud-Design-Mobile/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/mCloud-Design-Mobile/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

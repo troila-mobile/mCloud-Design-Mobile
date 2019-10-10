@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>List · mCloud Design Mobile</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="列表"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="List · mCloud Design Mobile"/><meta property="og:type" content="website"/><meta property="og:url" content="https://troila-mobile.github.io/mCloud-Design-Mobile/"/><meta property="og:description" content="列表"/><meta property="og:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/mCloud-Design-Mobile/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/atom.xml" title="mCloud Design Mobile Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/feed.xml" title="mCloud Design Mobile Blog RSS Feed"/><script type="text/javascript" src="https://snack.expo.io/embed.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/codeblocks.js"></script><script src="/mCloud-Design-Mobile/js/scrollSpy.js"></script><link rel="stylesheet" href="/mCloud-Design-Mobile/css/main.css"/><script src="/mCloud-Design-Mobile/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mCloud-Design-Mobile/"><img class="logo" src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile"/><h2 class="headerTitleWithLogo">mCloud Design Mobile</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/mCloud-Design-Mobile/docs/Contributing" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/mCloud-Design-Mobile/docs/Button" target="_self">API</a></li><li class=""><a href="/mCloud-Design-Mobile/help" target="_self">Help</a></li><li class=""><a href="/mCloud-Design-Mobile/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Component</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Component</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Button">Button</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/SegmentedControl">SegmentedControl</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/SearchBar">SearchBar</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Radio">Radio</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Checkbox">Checkbox</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Badge">Badge</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Marquee">Marquee</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Switch">Switch</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/InputItem">InputItem</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/NoticeBar">NoticeBar</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Textarea">Textarea</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/mCloud-Design-Mobile/docs/List">List</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Card">Card</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Picker">Picker</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Label">Label</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/EmptyView">EmptyView</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/DatePicker">DatePicker</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">First Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc4">Button</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc5">Fifth Document</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">List</h1></header><article><div><span><p>列表</p>
+<h2><a class="anchor" aria-hidden="true" id="basic-example"></a><a href="#basic-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Example</h2>
+<div class="snack-player"><div class="mobile-friendly-snack" style="display: none"><pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> React, { useState } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> {
+    View,
+    StyleSheet,
+    ScrollView,
+    Image,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>
+<span class="hljs-keyword">import</span> { List, Switch, Checkbox } <span class="hljs-keyword">from</span> <span class="hljs-string">'mCloud-Design-Mobile'</span>
+
+<span class="hljs-keyword">const</span> { Item } = List
+<span class="hljs-keyword">const</span> { Brief } = Item
+<span class="hljs-keyword">const</span> logo = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../../example/logo.png'</span>)
+
+<span class="hljs-keyword">const</span> data = [
+    {
+        <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">label</span>: <span class="hljs-string">'选项A'</span>,
+    },
+    {
+        <span class="hljs-attr">value</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">label</span>: <span class="hljs-string">'选项B'</span>,
+    },
+]
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; {
+    <span class="hljs-keyword">const</span> [checkedValue, onChange] = useState([<span class="hljs-number">1</span>])
+    <span class="hljs-keyword">const</span> onAllChecked = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">if</span> (checkedValue.length === data.length) {
+            onChange([])
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">const</span> newValue = []
+            data.map(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> newValue.push(item.value))
+            onChange(newValue)
+        }
+    }
+    <span class="hljs-keyword">let</span> SwitchRef
+    <span class="hljs-keyword">return</span> (
+        &lt;View style={styles.wrap}&gt;
+            &lt;ScrollView&gt;
+                &lt;List
+                    renderHeader="Normal Header"
+                    renderFooter="Normal Footer"
+                &gt;
+                    &lt;Item&gt;
+                        标题
+                    &lt;/Item&gt;
+                &lt;/List&gt;
+                &lt;List renderHeader="Arrow Header"&gt;
+                    &lt;Item arrow="horizontal"&gt;
+                        标题
+                    &lt;/Item&gt;
+                    &lt;Item arrow="up"&gt;
+                        标题
+                    &lt;/Item&gt;
+                    &lt;Item arrow="down"&gt;
+                        标题
+                    &lt;/Item&gt;
+                    &lt;Item extra="详细信息" arrow="horizontal"&gt;
+                        标题
+                    &lt;/Item&gt;
+                &lt;/List&gt;
+                &lt;List renderHeader="Switch Header"&gt;
+                    &lt;Item
+                        extra={(
+                            &lt;Switch
+                                checked={true}
+                                ref={(e) =&gt; {
+                                    SwitchRef = e
+                                }}
+                            /&gt;
+                        )}
+                        onPress={() =&gt; SwitchRef &amp;&amp; SwitchRef.onToggle()}
+                    &gt;
+                        标题
+                    &lt;/Item&gt;
+                &lt;/List&gt;
+                &lt;List renderHeader="Brief Header"&gt;
+                    &lt;Item extra="详细信息" arrow="horizontal"&gt;
+                        标题
+                        &lt;Brief&gt;副标题  副标题  副标题  副标题  副标题  副标题&lt;/Brief&gt;
+                    &lt;/Item&gt;
+                    &lt;Item
+                        extra="详细信息"
+                        arrow="horizontal"
+                        thumb={(
+                            &lt;Image style={styles.logo} source={logo} /&gt;
+                        )}
+                    &gt;
+                        标题
+                        &lt;Brief&gt;副标题  副标题  副标题  副标题  副标题  副标题&lt;/Brief&gt;
+                    &lt;/Item&gt;
+                &lt;/List&gt;
+                &lt;List renderHeader="List Item Checkbox Header"&gt;
+                    &lt;Item
+                        thumb={(
+                            &lt;Checkbox
+                                checked={checkedValue.length === data.length}
+                                style={styles.thumbAll}
+                                onChange={onAllChecked}
+                            /&gt;
+                        )}
+                        onPress={onAllChecked}
+                    &gt;
+                        全选
+                    &lt;/Item&gt;
+                    {
+                        data.map((item, index) =&gt; {
+                            const onPress = () =&gt; {
+                                const checked = checkedValue.indexOf(item.value)
+                                if (checked &gt; -1) {
+                                    const newValue = [...checkedValue]
+                                    newValue.splice(checked, 1)
+                                    onChange(newValue)
+                                } else {
+                                    onChange([
+                                        ...checkedValue,
+                                        item.value,
+                                    ])
+                                }
+                            }
+                            return (
+                                &lt;Item
+                                    key={item.value}
+                                    thumb={(
+                                        &lt;Checkbox
+                                            checked={checkedValue.includes(item.value)}
+                                            style={styles.thumbStyle}
+                                            onChange={onPress}
+                                        /&gt;
+                                    )}
+                                    onPress={onPress}
+                                    hideLine={index === data.length - 1}
+                                &gt;
+                                    {item.label}
+                                &lt;/Item&gt;
+                            )
+                        })
+                    }
+                &lt;/List&gt;
+            &lt;/ScrollView&gt;
+        &lt;/View&gt;
+    )
+}
+
+const styles = StyleSheet.create({
+    wrap: {
+        flex: 1,
+        backgroundColor: '#E6E6E6',
+    },
+    thumbAll: {
+        marginRight: 10,
+    },
+    thumbStyle: {
+        marginLeft: 20,
+        marginRight: 10,
+    },
+    logo: {
+        width: 40,
+        height: 40,
+        marginRight: 10,
+    },
+})
+</code></pre></div><div class="desktop-friendly-snack" style="margin-top: 15px; margin-bottom: 15px"><div
+        data-snack-name="list-simple"
+        data-snack-description="Example usage"
+        data-snack-dependencies='react-navigation@3.11.1,react-native-really-awesome-button@1.4.2,prop-types@15.7.2'
+        data-snack-code="import%20React%2C%20%7B%20useState%20%7D%20from%20'react'%0Aimport%20%7B%0A%20%20%20%20View%2C%0A%20%20%20%20StyleSheet%2C%0A%20%20%20%20ScrollView%2C%0A%20%20%20%20Image%2C%0A%7D%20from%20'react-native'%0Aimport%20%7B%20List%2C%20Switch%2C%20Checkbox%20%7D%20from%20'mCloud-Design-Mobile'%0A%0Aconst%20%7B%20Item%20%7D%20%3D%20List%0Aconst%20%7B%20Brief%20%7D%20%3D%20Item%0Aconst%20logo%20%3D%20require('..%2F..%2F..%2Fexample%2Flogo.png')%0A%0Aconst%20data%20%3D%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20value%3A%201%2C%0A%20%20%20%20%20%20%20%20label%3A%20'%E9%80%89%E9%A1%B9A'%2C%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20value%3A%202%2C%0A%20%20%20%20%20%20%20%20label%3A%20'%E9%80%89%E9%A1%B9B'%2C%0A%20%20%20%20%7D%2C%0A%5D%0A%0Aexport%20default%20()%20%3D%3E%20%7B%0A%20%20%20%20const%20%5BcheckedValue%2C%20onChange%5D%20%3D%20useState(%5B1%5D)%0A%20%20%20%20const%20onAllChecked%20%3D%20()%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20if%20(checkedValue.length%20%3D%3D%3D%20data.length)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20onChange(%5B%5D)%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20newValue%20%3D%20%5B%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20data.map((item)%20%3D%3E%20newValue.push(item.value))%0A%20%20%20%20%20%20%20%20%20%20%20%20onChange(newValue)%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20let%20SwitchRef%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.wrap%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CScrollView%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CList%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20renderHeader%3D%22Normal%20Header%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20renderFooter%3D%22Normal%20Footer%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FList%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CList%20renderHeader%3D%22Arrow%20Header%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%20arrow%3D%22horizontal%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%20arrow%3D%22up%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%20arrow%3D%22down%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%20extra%3D%22%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%22%20arrow%3D%22horizontal%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FList%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CList%20renderHeader%3D%22Switch%20Header%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20extra%3D%7B(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CSwitch%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20checked%3D%7Btrue%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ref%3D%7B(e)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20SwitchRef%20%3D%20e%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20SwitchRef%20%26%26%20SwitchRef.onToggle()%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FList%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CList%20renderHeader%3D%22Brief%20Header%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%20extra%3D%22%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%22%20arrow%3D%22horizontal%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CBrief%3E%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%3C%2FBrief%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20extra%3D%22%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20arrow%3D%22horizontal%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20thumb%3D%7B(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CImage%20style%3D%7Bstyles.logo%7D%20source%3D%7Blogo%7D%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%A0%87%E9%A2%98%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CBrief%3E%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%20%20%E5%89%AF%E6%A0%87%E9%A2%98%3C%2FBrief%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FList%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CList%20renderHeader%3D%22List%20Item%20Checkbox%20Header%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20thumb%3D%7B(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CCheckbox%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20checked%3D%7BcheckedValue.length%20%3D%3D%3D%20data.length%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%7Bstyles.thumbAll%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onChange%3D%7BonAllChecked%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7BonAllChecked%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E5%85%A8%E9%80%89%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20data.map((item%2C%20index)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20onPress%20%3D%20()%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20checked%20%3D%20checkedValue.indexOf(item.value)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20(checked%20%3E%20-1)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20newValue%20%3D%20%5B...checkedValue%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20newValue.splice(checked%2C%201)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onChange(newValue)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onChange(%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20...checkedValue%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20item.value%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5D)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CItem%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20key%3D%7Bitem.value%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20thumb%3D%7B(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CCheckbox%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20checked%3D%7BcheckedValue.includes(item.value)%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%7Bstyles.thumbStyle%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onChange%3D%7BonPress%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7BonPress%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20hideLine%3D%7Bindex%20%3D%3D%3D%20data.length%20-%201%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7Bitem.label%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FItem%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FList%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FScrollView%3E%0A%20%20%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%0A%7D%0A%0Aconst%20styles%20%3D%20StyleSheet.create(%7B%0A%20%20%20%20wrap%3A%20%7B%0A%20%20%20%20%20%20%20%20flex%3A%201%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20'%23E6E6E6'%2C%0A%20%20%20%20%7D%2C%0A%20%20%20%20thumbAll%3A%20%7B%0A%20%20%20%20%20%20%20%20marginRight%3A%2010%2C%0A%20%20%20%20%7D%2C%0A%20%20%20%20thumbStyle%3A%20%7B%0A%20%20%20%20%20%20%20%20marginLeft%3A%2020%2C%0A%20%20%20%20%20%20%20%20marginRight%3A%2010%2C%0A%20%20%20%20%7D%2C%0A%20%20%20%20logo%3A%20%7B%0A%20%20%20%20%20%20%20%20width%3A%2040%2C%0A%20%20%20%20%20%20%20%20height%3A%2040%2C%0A%20%20%20%20%20%20%20%20marginRight%3A%2010%2C%0A%20%20%20%20%7D%2C%0A%7D)%0A"
+        data-snack-platform="web"
+        data-snack-preview="true"
+        style="
+          overflow: hidden;
+          background: #fafafa;
+          border: 1px solid rgba(0,0,0,.16);
+          border-radius: 4px;
+          height: 514px;
+          width: 100%;
+        "
+      ></div></div></div><h2><a class="anchor" aria-hidden="true" id="list-props"></a><a href="#list-props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>List Props</h2>
+<table>
+<thead>
+<tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
+</thead>
+<tbody>
+<tr><td>renderHeader</td><td>list header</td><td>String/func/React.Element</td><td>无</td></tr>
+<tr><td>renderFooter</td><td>list footer</td><td>String/func/React.Element</td><td>无</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="listitem-props"></a><a href="#listitem-props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>List.Item Props</h2>
+<table>
+<thead>
+<tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
+</thead>
+<tbody>
+<tr><td>arrow</td><td>箭头方向(右,上,下), 可选 <code>horizontal</code> <code>up</code> <code>down</code></td><td>String</td><td>无</td></tr>
+<tr><td>thumb</td><td>缩略图(当为 string 类型时作为 img src)</td><td>String/React.Element</td><td>无</td></tr>
+<tr><td>hideLine</td><td>是否隐藏下面的线</td><td>Boolean</td><td>false</td></tr>
+<tr><td>numberOfLines</td><td>行数</td><td>number</td><td>1</td></tr>
+<tr><td>extra</td><td>右边内容</td><td>String/React.Element</td><td>无</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="itembrief-props"></a><a href="#itembrief-props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Item.Brief Props</h2>
+<table>
+<thead>
+<tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
+</thead>
+<tbody>
+<tr><td>numberOfLines</td><td>行数</td><td>number</td><td>1</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mCloud-Design-Mobile/docs/Textarea"><span class="arrow-prev">← </span><span>Textarea</span></a><a class="docs-next button" href="/mCloud-Design-Mobile/docs/Card"><span>Card</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-example">Basic Example</a></li><li><a href="#list-props">List Props</a></li><li><a href="#listitem-props">List.Item Props</a></li><li><a href="#itembrief-props">Item.Brief Props</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/mCloud-Design-Mobile/" class="nav-home"><img src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mCloud-Design-Mobile/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc2.html">Guides (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/mCloud-Design-Mobile/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/mCloud-Design-Mobile/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/mCloud-Design-Mobile/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

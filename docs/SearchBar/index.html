@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>SearchBar · mCloud Design Mobile</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="搜索栏"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="SearchBar · mCloud Design Mobile"/><meta property="og:type" content="website"/><meta property="og:url" content="https://troila-mobile.github.io/mCloud-Design-Mobile/"/><meta property="og:description" content="搜索栏"/><meta property="og:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/mCloud-Design-Mobile/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/atom.xml" title="mCloud Design Mobile Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/feed.xml" title="mCloud Design Mobile Blog RSS Feed"/><script type="text/javascript" src="https://snack.expo.io/embed.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/codeblocks.js"></script><script src="/mCloud-Design-Mobile/js/scrollSpy.js"></script><link rel="stylesheet" href="/mCloud-Design-Mobile/css/main.css"/><script src="/mCloud-Design-Mobile/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mCloud-Design-Mobile/"><img class="logo" src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile"/><h2 class="headerTitleWithLogo">mCloud Design Mobile</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/mCloud-Design-Mobile/docs/Contributing" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/mCloud-Design-Mobile/docs/Button" target="_self">API</a></li><li class=""><a href="/mCloud-Design-Mobile/help" target="_self">Help</a></li><li class=""><a href="/mCloud-Design-Mobile/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Component</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Component</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Button">Button</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/SegmentedControl">SegmentedControl</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/mCloud-Design-Mobile/docs/SearchBar">SearchBar</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Radio">Radio</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Checkbox">Checkbox</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Badge">Badge</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Marquee">Marquee</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Switch">Switch</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/InputItem">InputItem</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/NoticeBar">NoticeBar</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Textarea">Textarea</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/List">List</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Card">Card</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Picker">Picker</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/Label">Label</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/EmptyView">EmptyView</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/DatePicker">DatePicker</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">First Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc4">Button</a></li><li class="navListItem"><a class="navItem" href="/mCloud-Design-Mobile/docs/doc5">Fifth Document</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">SearchBar</h1></header><article><div><span><p>搜索栏</p>
+<h2><a class="anchor" aria-hidden="true" id="basic-example"></a><a href="#basic-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Example</h2>
+<div class="snack-player"><div class="mobile-friendly-snack" style="display: none"><pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> React, { useState } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> { View, Text, StyleSheet } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>
+<span class="hljs-keyword">import</span> { SearchBar } <span class="hljs-keyword">from</span> <span class="hljs-string">'mCloud-Design-Mobile'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; {
+    <span class="hljs-keyword">const</span> [value, onChange] = useState(<span class="hljs-string">'打卡助手'</span>)
+    <span class="hljs-keyword">return</span> (
+        &lt;View style={styles.wrap}&gt;
+            &lt;Text style={styles.boldTitle}&gt;
+                圆角搜索框
+            &lt;/Text&gt;
+            &lt;Text style={styles.title}&gt;
+                未输入状态
+            &lt;/Text&gt;
+            &lt;SearchBar type="radius" placeholder="搜索" /&gt;
+            &lt;Text style={styles.title}&gt;
+                初始值
+            &lt;/Text&gt;
+            &lt;SearchBar type="radius" defaultValue="打卡助手" /&gt;
+            &lt;Text style={styles.boldTitle}&gt;
+                通栏搜索框
+            &lt;/Text&gt;
+            &lt;Text style={styles.title}&gt;
+                初始值
+            &lt;/Text&gt;
+            &lt;SearchBar defaultValue="打卡助手" /&gt;
+            &lt;Text style={styles.title}&gt;
+                受控
+            &lt;/Text&gt;
+            &lt;SearchBar
+                value={value}
+                placeholder="搜索"
+                onSubmit={(val) =&gt; console.log(val)}
+                onCancel={() =&gt; onChange('')}
+                onChange={(val) =&gt; onChange(val)}
+            /&gt;
+        &lt;/View&gt;
+    )
+}
+
+const styles = StyleSheet.create({
+    wrap: {
+        flex: 1,
+        backgroundColor: '#E6E6E6',
+    },
+    title: {
+        fontSize: 14,
+        color: '#1F2530',
+        paddingVertical: 10,
+        paddingLeft: 15,
+    },
+    boldTitle: {
+        fontSize: 16,
+        color: '#1F2530',
+        paddingVertical: 10,
+        paddingLeft: 10,
+        fontWeight: '500',
+    },
+})
+
+</code></pre></div><div class="desktop-friendly-snack" style="margin-top: 15px; margin-bottom: 15px"><div
+        data-snack-name="searchBar-simple"
+        data-snack-description="Example usage"
+        data-snack-dependencies='react-navigation@3.11.1,react-native-really-awesome-button@1.4.2,prop-types@15.7.2'
+        data-snack-code="import%20React%2C%20%7B%20useState%20%7D%20from%20'react'%0Aimport%20%7B%20View%2C%20Text%2C%20StyleSheet%20%7D%20from%20'react-native'%0Aimport%20%7B%20SearchBar%20%7D%20from%20'mCloud-Design-Mobile'%3B%0A%0Aexport%20default%20()%20%3D%3E%20%7B%0A%20%20%20%20const%20%5Bvalue%2C%20onChange%5D%20%3D%20useState('%E6%89%93%E5%8D%A1%E5%8A%A9%E6%89%8B')%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.wrap%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.boldTitle%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E5%9C%86%E8%A7%92%E6%90%9C%E7%B4%A2%E6%A1%86%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%9C%AA%E8%BE%93%E5%85%A5%E7%8A%B6%E6%80%81%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CSearchBar%20type%3D%22radius%22%20placeholder%3D%22%E6%90%9C%E7%B4%A2%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E5%88%9D%E5%A7%8B%E5%80%BC%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CSearchBar%20type%3D%22radius%22%20defaultValue%3D%22%E6%89%93%E5%8D%A1%E5%8A%A9%E6%89%8B%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.boldTitle%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E9%80%9A%E6%A0%8F%E6%90%9C%E7%B4%A2%E6%A1%86%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E5%88%9D%E5%A7%8B%E5%80%BC%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CSearchBar%20defaultValue%3D%22%E6%89%93%E5%8D%A1%E5%8A%A9%E6%89%8B%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E5%8F%97%E6%8E%A7%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CSearchBar%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7Bvalue%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20placeholder%3D%22%E6%90%9C%E7%B4%A2%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onSubmit%3D%7B(val)%20%3D%3E%20console.log(val)%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onCancel%3D%7B()%20%3D%3E%20onChange('')%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onChange%3D%7B(val)%20%3D%3E%20onChange(val)%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%0A%7D%0A%0Aconst%20styles%20%3D%20StyleSheet.create(%7B%0A%20%20%20%20wrap%3A%20%7B%0A%20%20%20%20%20%20%20%20flex%3A%201%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20'%23E6E6E6'%2C%0A%20%20%20%20%7D%2C%0A%20%20%20%20title%3A%20%7B%0A%20%20%20%20%20%20%20%20fontSize%3A%2014%2C%0A%20%20%20%20%20%20%20%20color%3A%20'%231F2530'%2C%0A%20%20%20%20%20%20%20%20paddingVertical%3A%2010%2C%0A%20%20%20%20%20%20%20%20paddingLeft%3A%2015%2C%0A%20%20%20%20%7D%2C%0A%20%20%20%20boldTitle%3A%20%7B%0A%20%20%20%20%20%20%20%20fontSize%3A%2016%2C%0A%20%20%20%20%20%20%20%20color%3A%20'%231F2530'%2C%0A%20%20%20%20%20%20%20%20paddingVertical%3A%2010%2C%0A%20%20%20%20%20%20%20%20paddingLeft%3A%2010%2C%0A%20%20%20%20%20%20%20%20fontWeight%3A%20'500'%2C%0A%20%20%20%20%7D%2C%0A%7D)%0A%0A"
+        data-snack-platform="web"
+        data-snack-preview="true"
+        style="
+          overflow: hidden;
+          background: #fafafa;
+          border: 1px solid rgba(0,0,0,.16);
+          border-radius: 4px;
+          height: 514px;
+          width: 100%;
+        "
+      ></div></div></div><h2><a class="anchor" aria-hidden="true" id="props"></a><a href="#props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props</h2>
+<table>
+<thead>
+<tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
+</thead>
+<tbody>
+<tr><td>defaultValue</td><td>默认值</td><td>String</td><td>无</td></tr>
+<tr><td>value</td><td>当前值</td><td>String</td><td>无</td></tr>
+<tr><td>placeholder</td><td>输入文本之前呈现的的提示信息</td><td>String</td><td>无</td></tr>
+<tr><td>onSubmit</td><td>submit 事件的回调</td><td>(val: String): void</td><td>无</td></tr>
+<tr><td>onChange</td><td>change 事件的回调</td><td>(val: String): void</td><td>无</td></tr>
+<tr><td>onFocus</td><td>focus 事件的回调</td><td>(val: String): void</td><td>无</td></tr>
+<tr><td>onBlur</td><td>blur 事件的回调</td><td>(val: String): void</td><td>无</td></tr>
+<tr><td>onClear</td><td>清除事件的回调</td><td>(val: String): void</td><td>无</td></tr>
+<tr><td>type</td><td>默认样式(default)、圆角样式(radius)</td><td>String</td><td>default</td></tr>
+<tr><td>renderClear</td><td>自定义清除按钮</td><td>ReactNode</td><td>clear Image</td></tr>
+<tr><td>renderSearch</td><td>自定义搜索放大镜</td><td>ReactNode</td><td>search Image</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mCloud-Design-Mobile/docs/SegmentedControl"><span class="arrow-prev">← </span><span class="function-name-prevnext">SegmentedControl</span></a><a class="docs-next button" href="/mCloud-Design-Mobile/docs/Radio"><span>Radio</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-example">Basic Example</a></li><li><a href="#props">Props</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/mCloud-Design-Mobile/" class="nav-home"><img src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mCloud-Design-Mobile/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc2.html">Guides (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/mCloud-Design-Mobile/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/mCloud-Design-Mobile/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/mCloud-Design-Mobile/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>
