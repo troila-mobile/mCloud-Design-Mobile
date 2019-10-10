@@ -61,6 +61,14 @@
       "Textarea": {
         "title": "Textarea",
         "sidebar_label": "Textarea"
+      },
+      "Label": {
+        "title": "Label",
+        "sidebar_label": "Label"
+      },
+      "EmptyView": {
+        "title": "EmptyView",
+        "sidebar_label": "EmptyView"
       }
     },
     "links": {
