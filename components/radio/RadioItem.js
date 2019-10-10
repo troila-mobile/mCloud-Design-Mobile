@@ -12,7 +12,6 @@ export default class RadioItem extends React.Component {
         style: ViewPropTypes.style,
         styles: ViewPropTypes.style,
         checked: PropTypes.bool,
-        defaultChecked: PropTypes.bool,
         disabled: PropTypes.bool,
         children: PropTypes.any,
         onChange: PropTypes.func,
@@ -41,7 +40,6 @@ export default class RadioItem extends React.Component {
         const {
             style,
             styles,
-            defaultChecked,
             checked,
             disabled,
             onChange,
@@ -61,7 +59,6 @@ export default class RadioItem extends React.Component {
                                     ref={(e) => {
                                         this.Radio = e
                                     }}
-                                    defaultChecked={defaultChecked}
                                     checked={checked}
                                     onChange={onChange}
                                     disabled={disabled}

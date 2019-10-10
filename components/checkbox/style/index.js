@@ -19,18 +19,6 @@ export default (theme) => StyleSheet.create({
     iconRight: {
         marginLeft: theme.h_spacing_md,
     },
-    agreeItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    agreeItemCheckbox: {
-        marginLeft: theme.h_spacing_lg,
-        marginRight: theme.h_spacing_md,
-    },
-    checkboxItemCheckbox: {
-        marginRight: theme.h_spacing_md,
-        alignSelf: 'center',
-    },
     itemText: {
         marginLeft: theme.h_spacing_lg,
         fontSize: theme.font_size_caption,
