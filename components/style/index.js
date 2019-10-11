@@ -4,7 +4,6 @@ import defaultTheme from './themes/default'
 import PropTypes from 'prop-types'
 
 export const ThemeContext = React.createContext(defaultTheme)
-export const Theme = defaultTheme
 export class WithTheme extends React.Component {
     static defaultProps = {
         themeStyles: () => { },
@@ -14,6 +13,7 @@ export class WithTheme extends React.Component {
         styles: PropTypes.object,
         children: PropTypes.func,
     }
+    static contextType = ThemeContext
     getStyles = (theme) => {
         const { themeStyles, styles } = this.props
         const defaultThemeStyles = themeStyles(theme)
