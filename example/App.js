@@ -32,6 +32,7 @@ export default class extends React.Component{
     state = {
         theme: 'light'
     }
+    
     render(){
         const {
             theme
@@ -40,9 +41,13 @@ export default class extends React.Component{
         const textColor = theme ==='light'?'#000':'#fff'
         return (
             <Provider theme={theme}>
-                <AppContainer />
+                <AppContainer 
+                    screenProps={{
+                        theme
+                    }}
+                />
                 <TouchableOpacity 
-                    style={[styles.themeButton, { backgroundColor: buttonColor}]}
+                    style={[styles.themeButton, { backgroundColor: buttonColor, borderColor: textColor}]}
                     onPress={this.toggleTheme}
                 >
                     <Text style={[styles.themeText, { color: textColor}]}>
@@ -68,7 +73,8 @@ const styles = StyleSheet.create({
         width:50,
         borderRadius:25,
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+        borderWidth:1
     },
     themeText:{
         fontSize:20
