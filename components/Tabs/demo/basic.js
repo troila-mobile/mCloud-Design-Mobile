@@ -18,7 +18,6 @@ export default class TabViewExample extends React.Component {
         ],
     };
     _renderScene = ({ route }) => {
-        console.log('route',route)
         switch (route.key) {
         case '1':
             return  (<View style={[styles.container, { backgroundColor: '#ff4081' }]} />)

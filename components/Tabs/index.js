@@ -49,7 +49,6 @@ export default class Tabs extends React.Component {
             <WithTheme themeStyles={TabsStyles} styles={styles}>
                 {
                     (_styles,theme) => {
-                        console.log('_styles',_styles)
                         const tabStyle = [
                             { width:labelWidth },
                             _styles.tabStyle,
