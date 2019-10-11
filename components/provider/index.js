@@ -1,11 +1,11 @@
 import React from 'react'
 import { ThemeContext } from '../style'
 import PropTypes from 'prop-types'
-import defaultTheme from '../style/themes/light'
+import lightTheme from '../style/themes/light'
 import darkTheme from '../style/themes/dark'
 
 const themeConfig = {
-    light: defaultTheme,
+    light: lightTheme,
     dark: darkTheme,
 }
 
@@ -20,7 +20,7 @@ export default class extends React.Component {
     }
     render() {
         const { children, theme } = this.props
-        const themeStyle = themeConfig[theme] || defaultTheme.light
+        const themeStyle = themeConfig[theme] || themeConfig.light
         return (
             <ThemeContext.Provider value={themeStyle}>
                 {children}
