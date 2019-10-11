@@ -5,7 +5,7 @@ export default (theme) => StyleSheet.create({
         // todo
     },
     whiteBorder:{
-        borderWidth: 2,
-        borderColor: '#f1f1f1',
+        borderWidth: theme.border_width_lg,
+        borderColor: theme.border_color_white,
     },
 })

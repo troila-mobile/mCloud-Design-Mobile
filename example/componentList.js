@@ -63,5 +63,15 @@ export default [
 		title: 'Picker',
 		description: 'Picker',
 		example: require('../components/picker/demo/basic')
+	},
+	{
+		title: 'ActionSheet',
+		description: 'ActionSheet',
+		example: require('../components/actionSheet/demo/basic')
+	},
+	{
+		title: 'Avatar',
+		description: 'Avatar',
+		example: require('../components/avatar/demo/basic')
 	}
 ]
