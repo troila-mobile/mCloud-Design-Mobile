@@ -73,7 +73,6 @@ export default class Tabs extends React.Component {
                         const initialLayout = [
                             _styles.initialLayout,
                         ]
-                        console.log('renderScene',renderScene)
                         return (
                             <TabView
                                 navigationState={navigationState}
