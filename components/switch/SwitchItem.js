@@ -6,7 +6,7 @@ import {
     ViewPropTypes,
 } from 'react-native'
 import PropTypes from 'prop-types'
-import { WithTheme, Theme } from '../style'
+import { WithTheme } from '../style'
 import Switch from './Switch'
 import SwitchStyles from './style'
 
@@ -16,11 +16,6 @@ export default class SwitchButton extends Component {
         styles: ViewPropTypes.style,
         checked: PropTypes.bool,
         onChange: PropTypes.func,
-        onTintColor: PropTypes.string,   // 开启时的背景颜色
-        thumbTintColor: PropTypes.string,   // 原型按钮的背景颜色
-        tintColor: PropTypes.string,   // 背景颜色
-        disabledThumbTintColor: PropTypes.string,   // disabled 原型按钮的背景颜色
-        disabledTintColor: PropTypes.string,   // disabled 的背景颜色
         disabled: PropTypes.bool,
         children: PropTypes.any,
         hideLine: PropTypes.bool,
@@ -30,11 +25,6 @@ export default class SwitchButton extends Component {
         styles: {},
         checked: false,
         onChange: () => { },
-        onTintColor: Theme.brand_primary,
-        thumbTintColor: Theme.fill_base,
-        tintColor: Theme.switch_tint,
-        disabledThumbTintColor: Theme.switch_disabled_thumbtint,
-        disabledTintColor: Theme.switch_disabled_tint,
         disabled: false,
         children: null,
         hideLine: false,
@@ -52,11 +42,6 @@ export default class SwitchButton extends Component {
         const {
             style,
             styles,
-            onTintColor,
-            tintColor,
-            thumbTintColor,
-            disabledThumbTintColor,
-            disabledTintColor,
             checked,
             disabled,
             children,
@@ -81,11 +66,6 @@ export default class SwitchButton extends Component {
                                     }}
                                     disabled={disabled}
                                     checked={checked}
-                                    onTintColor={onTintColor}
-                                    tintColor={tintColor}
-                                    thumbTintColor={thumbTintColor}
-                                    disabledThumbTintColor={disabledThumbTintColor}
-                                    disabledTintColor={disabledTintColor}
                                 />
                                 {
                                     !hideLine && (
