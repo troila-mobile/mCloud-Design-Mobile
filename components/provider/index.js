@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeContext } from '../style'
 import PropTypes from 'prop-types'
-import defaultTheme from '../style/themes/default'
+import defaultTheme from '../style/themes/light'
 import darkTheme from '../style/themes/dark'
 
 const themeConfig = {

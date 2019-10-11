@@ -1,4 +1,4 @@
-import defaultTheme from './default'
+import defaultTheme from './light'
 
 const brandPrimary = '#586BFB'
 const brandPrimaryTap = '#3C4DCF'

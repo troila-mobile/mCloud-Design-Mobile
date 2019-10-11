@@ -1,6 +1,6 @@
 import deepmerge from 'deepmerge'
 import React from 'react'
-import defaultTheme from './themes/default'
+import defaultTheme from './themes/light'
 import PropTypes from 'prop-types'
 
 export const ThemeContext = React.createContext(defaultTheme)
