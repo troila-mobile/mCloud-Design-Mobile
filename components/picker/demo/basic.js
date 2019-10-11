@@ -45,7 +45,7 @@ export default class extends React.Component {
             pickerValue,
         } = this.state
         return (
-            <View style={{ marginTop: 30 }}>
+            <View>
                 <List>
                     <Picker
                         data={dataSource}

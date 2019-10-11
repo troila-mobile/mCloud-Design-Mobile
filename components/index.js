@@ -13,4 +13,7 @@ export { default as Label } from './Label'
 export { default as NoticeBar } from './noticeBar'
 export { default as Card } from './card'
 export { default as Picker } from './picker'
+export { default as DatePicker } from './date-picker'
 export { default as EmptyView } from './EmptyView'
+export { default as Stepper } from './stepper'
+
