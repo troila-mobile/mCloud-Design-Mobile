@@ -3,7 +3,7 @@ const brandPrimaryTap = '#3C4DCF'
 
 export default {
     // 文字色
-    color_text_base: '#000000',                  // 基本
+    color_text_base: '#1F2530',                  // 基本
     color_text_base_inverse: '#ffffff',          // 基本 _ 反色
     color_text_secondary: '#a4a9b0',          // 辅助色
     color_text_placeholder: '#bbbbbb',           // 文本框提示
@@ -11,6 +11,8 @@ export default {
     color_text_caption: '#888888',               // 辅助描述
     color_text_paragraph: '#333333',             // 段落
     color_link: brandPrimary,                 // 链接
+    color_text_title: '#1F2530',             // 标题
+    color_text_info: '#A5ABB1',             // 信息文字
 
     // 背景色
     fill_base: '#ffffff',                           // 组件默认背景
@@ -22,7 +24,7 @@ export default {
     fill_grey: '#f7f7f7',
 
     // 透明度
-    opacity_disabled: '0.3',   // switch checkbox radio 等组件禁用的透明度
+    opacity_disabled: 0.3,   // switch checkbox radio 等组件禁用的透明度
 
     // 全局/品牌色
     brand_primary: brandPrimary,
@@ -123,9 +125,7 @@ export default {
     modal_button_height: 50, // 按钮高度
 
     // list
-    list_title_height: 30,
-    list_item_height_sm: 35,
-    list_item_height: 44,
+    list_item_height: 50,
 
     // checkbox
     checkbox_item_height: 60,
@@ -136,7 +136,21 @@ export default {
     input_font_size: 17,
     input_color_icon: '#cccccc',
     input_color_icon_tap: brandPrimary,
-
+    // Label
+    small_font_size: 12,
+    small_label_height: 20,
+    small_label_width: 60,
+    middle_font_size: 15,
+    middle_label_height: 30,
+    middle_label_width: 90,
+    large_font_size: 18,
+    large_label_height: 40,
+    large_label_width:120,
+    label_bg_color:'#00C482',
+    // EmptyView
+    emptyView_height:500,
+    emptyView_text_color:'#666',
+    emptyView_touchable_marginTop:100,
     // tabs
     tabs_color: brandPrimary,
     tabs_height: 42,
@@ -167,7 +181,10 @@ export default {
     notice_bar_height: 36,
 
     // switch
-    switch_fill: '#4dd865',
+    switch_fill: brandPrimary,
+    switch_tint: '#D8D8D8',
+    switch_disabled_thumbtint: '#F5F5F5',
+    switch_disabled_tint: '#EEEEEE',
 
     // tag
     tag_height: 25,
@@ -180,6 +197,9 @@ export default {
     action_sheet_zindex: 1000,
     popup_zindex: 999,
     modal_zindex: 999,
+
+    // list
+    v_spacing: 19,
 
     // badge
     badge_item_height: 50,

@@ -7,7 +7,7 @@ import {
     ViewPropTypes,
 } from 'react-native'
 import PropTypes from 'prop-types'
-import { WithTheme, Theme } from '../style'
+import { WithTheme } from '../style'
 import SwitchStyles from './style'
 
 const getPlatformElevation = Platform.OS === 'ios' ? (elevation) => {
@@ -32,11 +32,6 @@ export default class SwitchButton extends Component {
         styles: ViewPropTypes.style,
         checked: PropTypes.bool,
         onChange: PropTypes.func,
-        onTintColor: PropTypes.string,   // 开启时的背景颜色
-        thumbTintColor: PropTypes.string,   // 原型按钮的背景颜色
-        tintColor: PropTypes.string,   // 背景颜色
-        disabledThumbTintColor: PropTypes.string,   // disabled 原型按钮的背景颜色
-        disabledTintColor: PropTypes.string,   // disabled 的背景颜色
         disabled: PropTypes.bool,
     }
     static defaultProps = {
@@ -44,11 +39,6 @@ export default class SwitchButton extends Component {
         styles: {},
         checked: false,
         onChange: () => { },
-        onTintColor: Theme.brand_primary,
-        thumbTintColor: '#fff',
-        tintColor: '#D8D8D8',
-        disabledThumbTintColor: '#F5F5F5',
-        disabledTintColor: '#EEEEEE',
         disabled: false,
     }
     constructor(props) {
@@ -126,17 +116,12 @@ export default class SwitchButton extends Component {
         const {
             style,
             styles,
-            onTintColor,
-            tintColor,
-            thumbTintColor,
-            disabledThumbTintColor,
-            disabledTintColor,
             disabled,
         } = this.props
         return (
             <WithTheme themeStyles={SwitchStyles} styles={styles}>
                 {
-                    (_styles) => (
+                    (_styles, theme) => (
                         <TouchableWithoutFeedback disabled={disabled} onPress={this.onToggle}>
                             <Animated.View
                                 style={[
@@ -145,7 +130,7 @@ export default class SwitchButton extends Component {
                                     {
                                         backgroundColor: animatedColor.interpolate({
                                             inputRange: [0, 0.1, 1],
-                                            outputRange: [tintColor, onTintColor, onTintColor],
+                                            outputRange: [theme.switch_tint, theme.switch_fill, theme.switch_fill],
                                         }),
                                     },
                                 ]}
@@ -155,7 +140,7 @@ export default class SwitchButton extends Component {
                                         _styles.switchBtn,
                                         {
                                             transform: [{ scale }],
-                                            backgroundColor: disabled ? disabledTintColor : tintColor,
+                                            backgroundColor: disabled ? theme.switch_disabled_tint : theme.switch_tint,
                                         },
                                     ]}
                                 />
@@ -164,7 +149,8 @@ export default class SwitchButton extends Component {
                                         _styles.switchThumb,
                                         {
                                             transform: [{ translateX: left }],
-                                            backgroundColor: disabled ? disabledThumbTintColor : thumbTintColor,
+                                            backgroundColor: disabled
+                                                ? theme.switch_disabled_thumbtint : theme.fill_base,
                                         },
                                         getPlatformElevation(4),
                                     ]}
