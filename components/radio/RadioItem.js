@@ -12,10 +12,12 @@ export default class RadioItem extends React.Component {
         style: ViewPropTypes.style,
         styles: ViewPropTypes.style,
         checked: PropTypes.bool,
-        defaultChecked: PropTypes.bool,
         disabled: PropTypes.bool,
         children: PropTypes.any,
         onChange: PropTypes.func,
+        circleSize: PropTypes.number,
+        centerSize: PropTypes.number,
+        icon: PropTypes.node,
         onPress: PropTypes.func,
         hideLine: PropTypes.bool,
     }
@@ -25,6 +27,8 @@ export default class RadioItem extends React.Component {
         disabled: false,
         children: null,
         onChange: () => { },
+        circleSize: 16,
+        centerSize: 10,
         onPress: () => { },
         hideLine: false,
     }
@@ -41,11 +45,13 @@ export default class RadioItem extends React.Component {
         const {
             style,
             styles,
-            defaultChecked,
             checked,
             disabled,
             onChange,
             children,
+            circleSize,
+            centerSize,
+            icon,
             hideLine,
         } = this.props
         return (
@@ -61,10 +67,12 @@ export default class RadioItem extends React.Component {
                                     ref={(e) => {
                                         this.Radio = e
                                     }}
-                                    defaultChecked={defaultChecked}
                                     checked={checked}
                                     onChange={onChange}
                                     disabled={disabled}
+                                    circleSize={circleSize}
+                                    centerSize={centerSize}
+                                    icon={icon}
                                 />
                                 {
                                     children ? (
