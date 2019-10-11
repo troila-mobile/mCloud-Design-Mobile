@@ -78,5 +78,10 @@ export default [
 		title: 'EmptyView',
 		description: 'EmptyView',
 		example: require('../components/EmptyView/demo/basic')
+	},
+	{
+		title: 'Tabs',
+		description: 'Tabs',
+		example: require('../components/Tabs/demo/basic')
 	}
 ]

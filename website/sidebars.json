@@ -20,7 +20,8 @@
       "List",
       "Card",
       "Label",
-      "EmptyView"
+      "EmptyView",
+      "Tabs"
     ],
     "First Category": ["doc4", "doc5"]
   }
