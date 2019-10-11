@@ -24,7 +24,7 @@ export default {
     fill_grey: '#f7f7f7',
 
     // 透明度
-    opacity_disabled: '0.3',   // switch checkbox radio 等组件禁用的透明度
+    opacity_disabled: 0.3,   // switch checkbox radio 等组件禁用的透明度
 
     // 全局/品牌色
     brand_primary: brandPrimary,

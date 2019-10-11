@@ -29,10 +29,6 @@ export default () => {
                 Radio
             </Text>
             <Text style={styles.title}>
-                默认
-            </Text>
-            <Radio style={styles.checkbox} />
-            <Text style={styles.title}>
                 受控
             </Text>
             <Radio
@@ -50,13 +46,13 @@ export default () => {
                 </Text>
             </Radio>
             <Text style={styles.title}>
-                选中不可点击状态
-            </Text>
-            <Radio style={styles.checkbox} checked disabled />
-            <Text style={styles.title}>
                 不可点击状态
             </Text>
             <Radio style={styles.checkbox} disabled />
+            <Text style={styles.title}>
+                选中不可点击状态
+            </Text>
+            <Radio style={styles.checkbox} checked disabled />
             <Text style={styles.boldTitle}>
                 RadioItem
             </Text>
