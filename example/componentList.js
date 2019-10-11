@@ -43,5 +43,15 @@ export default [
 		title: 'Card',
 		description: 'Card',
 		example: require('../components/card/demo/basic')
+	},
+	{
+		title: 'ActivityIndicator',
+		description: 'ActivityIndicator',
+		example: require('../components/activityIndicator/demo/basic')
+	},
+	{
+		title: 'CountDownView',
+		description: 'CountDownView',
+		example: require('../components/countDownView/demo/basic')
 	}
 ]

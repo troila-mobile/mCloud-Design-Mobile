@@ -194,4 +194,7 @@ export default {
     card_imageWidth: 101,
     card_imageHeight: 78,
     card_image_BG_color: '#efefef',
+
+    // activityIndicator
+    activity_indicator_size:89,
 }

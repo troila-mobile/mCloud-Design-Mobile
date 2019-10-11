@@ -7,4 +7,5 @@ export { default as Marquee } from  './marquee'
 export { default as Switch } from './switch'
 export { default as InputItem } from './inputItem'
 export { default as Card } from './card'
-
+export { default as ActivityIndicator } from './activityIndicator'
+export { default as CountDownView } from './countDownView'
