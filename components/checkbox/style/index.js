@@ -9,7 +9,7 @@ export default (theme) => StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         height: theme.checkbox_item_height,
-        backgroundColor: '#fff',
+        backgroundColor: theme.fill_base,
         paddingLeft: theme.h_spacing_lg,
     },
     icon: {

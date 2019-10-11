@@ -5,9 +5,17 @@
     "previous": "Previous",
     "tagline": "一个基于 React Native 的 UI 组件库",
     "docs": {
+      "Badge": {
+        "title": "Badge",
+        "sidebar_label": "Badge"
+      },
       "Button": {
         "title": "Button",
         "sidebar_label": "Button"
+      },
+      "Card": {
+        "title": "Card",
+        "sidebar_label": "Card"
       },
       "Checkbox": {
         "title": "Checkbox",
@@ -30,6 +38,10 @@
         "title": "InputItem",
         "sidebar_label": "InputItem"
       },
+      "Label": {
+        "title": "Label",
+        "sidebar_label": "Label"
+      },
       "List": {
         "title": "List",
         "sidebar_label": "List"
@@ -37,6 +49,14 @@
       "Marquee": {
         "title": "Marquee",
         "sidebar_label": "Marquee"
+      },
+      "NoticeBar": {
+        "title": "NoticeBar",
+        "sidebar_label": "NoticeBar"
+      },
+      "Picker": {
+        "title": "Picker",
+        "sidebar_label": "Picker"
       },
       "Radio": {
         "title": "Radio",
@@ -53,10 +73,6 @@
       "Switch": {
         "title": "Switch",
         "sidebar_label": "Switch"
-      },
-      "NoticeBar": {
-        "title": "NoticeBar",
-        "sidebar_label": "NoticeBar"
       },
       "Textarea": {
         "title": "Textarea",

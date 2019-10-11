@@ -38,19 +38,28 @@ export default function (ComposedComponent) {
             }
         };
         onValueChange = (i, v) => {
-            this.onChange(i, v, this.props.onValueChange)
+            const {
+                onValueChange,
+            } = this.props
+            this.onChange(i, v, onValueChange)
         };
         onScrollChange = (i, v) => {
-            this.onChange(i, v, this.props.onScrollChange)
+            const {
+                onScrollChange,
+            } = this.props
+            this.onChange(i, v, onScrollChange)
         };
         render() {
+            const {
+                onScrollChange,
+            } = this.props
             return (
                 <ComposedComponent
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...this.props}
                     getValue={this.getValue}
                     onValueChange={this.onValueChange}
-                    onScrollChange={this.props.onScrollChange && this.onScrollChange}
+                    onScrollChange={onScrollChange && this.onScrollChange}
                 />
             )
         }

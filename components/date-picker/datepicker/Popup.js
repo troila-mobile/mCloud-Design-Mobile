@@ -1,19 +1,21 @@
 import React from 'react'
-import PopupPicker from '../Popup'
+import PopupPicker from '../../picker/Popup'
 import PropTypes from 'prop-types'
 
 
-class PopupCascader extends React.Component {
+class PopupDatePicker extends React.Component {
     static defaultProps = {
-        pickerValueProp: 'value',
-        pickerValueChangeProp: 'onChange',
+        pickerValueProp: 'date',
+        pickerValueChangeProp: 'onDateChange',
     };
     static propTypes = {
+        onChange: PropTypes.func,
+        onOk: PropTypes.func,
         pickerValueProp: PropTypes.string,
         pickerValueChangeProp: PropTypes.string,
-        onOk: PropTypes.func,
-        onChange: PropTypes.func,
-        cascader: PropTypes.any,
+        datePicker: PropTypes.any,
+        date: PropTypes.any,
+
     }
     onOk = (v) => {
         const { onChange, onOk } = this.props
@@ -23,14 +25,16 @@ class PopupCascader extends React.Component {
         if (onOk) {
             onOk(v)
         }
-    };
+    }
     render() {
         const {
-            cascader,
+            datePicker,
+            date,
         } = this.props
         return (
             <PopupPicker
-                picker={cascader}
+                picker={datePicker}
+                value={date}
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 {...this.props}
                 onOk={this.onOk}
@@ -39,4 +43,4 @@ class PopupCascader extends React.Component {
     }
 }
 
-export default PopupCascader
+export default PopupDatePicker

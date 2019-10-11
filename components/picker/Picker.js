@@ -13,22 +13,34 @@ class Picker extends React.Component {
     static propTypes = {
         selectedValue: PropTypes.any,
         children: PropTypes.any,
+        style: PropTypes.any,
     }
     shouldComponentUpdate(nextProps) {
+        const {
+            selectedValue,
+            children,
+        } = this.props
         return (
-            this.props.selectedValue !== nextProps.selectedValue
-            || this.props.children !== nextProps.children
+            selectedValue !== nextProps.selectedValue
+            || children !== nextProps.children
         )
     }
     getValue() {
+        const {
+            selectedValue,
+            children : oldChildren,
+        } = this.props
         if ('selectedValue' in this.props) {
-            return this.props.selectedValue
+            return selectedValue
         }
-        const children = React.Children.toArray(this.props.children)
+        const children = React.Children.toArray(oldChildren)
         return children && children[0] && children[0].props.value
     }
     render() {
-        const children = React.Children.map(this.props.children, (c) => (
+        const {
+            children: oldChildren,
+        } = this.props
+        const children = React.Children.map(oldChildren, (c) => (
             <Item
                 label={`${c.props.children}`}
                 value={c.props.value}
