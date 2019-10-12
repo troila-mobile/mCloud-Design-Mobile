@@ -78,6 +78,10 @@
         "title": "SegmentedControl",
         "sidebar_label": "SegmentedControl"
       },
+      "Stepper": {
+        "title": "Stepper",
+        "sidebar_label": "Stepper"
+      },
       "Switch": {
         "title": "Switch",
         "sidebar_label": "Switch"
