@@ -20,6 +20,7 @@ sidebar_label: Contributing
    - style的内部样式需要以函数内的参数的属性来实现大部分属性值
 - 组件必须由`WithTheme`类包裹，通过`children function return`方式实现
 - git-hooks配置了提交时的eslint验证机制，如验证失败请修改后提交
+- 适配`dark mode`: 在`components/style/themes`下，默认使用`light`样式，在`dark.js`内适配，`dark`默认继承自`light`，哪些属性需要变更自行编写，保持属性名和`light`内一致即可
 
 ## Doc Rules
 
