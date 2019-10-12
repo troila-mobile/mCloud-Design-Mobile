@@ -1,6 +1,9 @@
+import { Dimensions } from 'react-native'
+
 const brandPrimary = '#586BFB'
 const brandPrimaryTap = '#3C4DCF'
-
+const screenW = Dimensions.get('window').width
+const screenH = Dimensions.get('window').height
 export default {
     // 文字色
     color_text_base: '#1F2530',                  // 基本
@@ -97,7 +100,8 @@ export default {
 
     actionsheet_item_height: 50,
     actionsheet_item_font_size: 18,
-
+    screen_W:screenW,
+    screen_H:screenH,
     // button
     button_height: 48,
     button_font_size: 18,
@@ -153,9 +157,12 @@ export default {
     emptyView_touchable_marginTop:100,
     // tabs
     tabs_color: brandPrimary,
-    tabs_height: 42,
+    tabs_indicator_height: 4,
+    tabs_indicator_borderRadius: 4,
     tabs_font_size_heading: 15,
-
+    tabs_height:42,
+    tabs_elevation:0,
+    tabs_initialLayout_height:0,
     // segmented_control
     segmented_control_color: brandPrimary,  // 同时应用于背景、文字颜色、边框色
     segmented_control_height: 30,

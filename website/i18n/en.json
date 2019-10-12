@@ -85,6 +85,10 @@
       "EmptyView": {
         "title": "EmptyView",
         "sidebar_label": "EmptyView"
+      },
+      "Tabs": {
+        "title": "Tabs",
+        "sidebar_label": "Tabs"
       }
     },
     "links": {
