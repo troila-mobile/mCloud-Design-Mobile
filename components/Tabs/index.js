@@ -17,6 +17,7 @@ export default class Tabs extends React.Component {
         style_labelText: ViewPropTypes.style,
         style_wrapper:ViewPropTypes.style,
         style_indicator:ViewPropTypes.style,
+        style_initialLayout:ViewPropTypes.style,
         onIndexChange_Tabs: PropTypes.func,
         renderScene:PropTypes.func,
         navigationState:PropTypes.object,
@@ -28,6 +29,7 @@ export default class Tabs extends React.Component {
         style_labelText:{},
         style_wrapper:{},
         style_indicator:{},
+        style_initialLayout:{},
         onIndexChange_Tabs:() => {} ,
         renderScene:() => {},
         navigationState:null,
@@ -40,6 +42,7 @@ export default class Tabs extends React.Component {
             style_labelText,
             style_wrapper,
             style_indicator,
+            style_initialLayout,
             navigationState,
             renderScene,
             onIndexChange_Tabs,
@@ -70,9 +73,6 @@ export default class Tabs extends React.Component {
                             _styles.indicatorStyle,
                             style_indicator,
                         ]
-                        const initialLayout = [
-                            _styles.initialLayout,
-                        ]
                         return (
                             <TabView
                                 navigationState={navigationState}
@@ -89,7 +89,7 @@ export default class Tabs extends React.Component {
                                     />
                                 )}
                                 onIndexChange={onIndexChange_Tabs}
-                                initialLayout={initialLayout}
+                                initialLayout={style_initialLayout || _styles.initialLayout}
                             />
                         )
                     }

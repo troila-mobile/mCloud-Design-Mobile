@@ -27,7 +27,6 @@ export default class TabViewExample extends React.Component {
         ],
     };
     _renderScene = ({ route }) => {
-        console.log('route',route)
         switch (route.key) {
         case '1':
             return  (<View style={[styles.container, { backgroundColor: '#ff4081' }]} />)
@@ -50,7 +49,6 @@ export default class TabViewExample extends React.Component {
                 labelWidth={75}
                 renderScene={this._renderScene}
                 onIndexChange_Tabs={(index) => {
-                    console.log(index)
                     this.setState({ index })
                 }}
             />
@@ -77,3 +75,5 @@ const styles = StyleSheet.create({
 | style_labelText    | labelText自定义样式 |   Object  | 无 |
 | style_wrapper    | labelWrapper自定义样式 |   Object  | 无 |
 | style_indicator    | indicator自定义样式 |   Object  | 无 |
+| style_initialLayout    | initialLayout自定义样式 |   Object  | 无 |
+
