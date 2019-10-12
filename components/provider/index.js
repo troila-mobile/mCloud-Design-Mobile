@@ -3,6 +3,7 @@ import { ThemeContext } from '../style'
 import PropTypes from 'prop-types'
 import lightTheme from '../style/themes/light'
 import darkTheme from '../style/themes/dark'
+import ModalProvider from '../modal/provider'
 
 const themeConfig = {
     light: lightTheme,
@@ -23,7 +24,9 @@ export default class extends React.Component {
         const themeStyle = themeConfig[theme] || themeConfig.light
         return (
             <ThemeContext.Provider value={themeStyle}>
-                {children}
+                <ModalProvider>
+                    {children}
+                </ModalProvider>
             </ThemeContext.Provider>
         )
     }
