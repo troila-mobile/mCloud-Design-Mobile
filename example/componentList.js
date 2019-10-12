@@ -89,6 +89,26 @@ export default [
 		example: require('../components/Tabs/demo/basic')
 	},
 	{
+		title: 'Card',
+		description: 'Card',
+		example: require('../components/card/demo/basic')
+	}, 
+	{
+		title: 'Picker',
+		description: 'Picker',
+		example: require('../components/picker/demo/basic')
+	},
+	{
+		title: 'ActionSheet',
+		description: 'ActionSheet',
+		example: require('../components/actionSheet/demo/basic')
+	},
+	{
+		title: 'Avatar',
+		description: 'Avatar',
+		example: require('../components/avatar/demo/basic')
+  },
+  {
 		title: 'stepper',
 		description: 'stepper',
 		example: require('../components/stepper/demo/basic')

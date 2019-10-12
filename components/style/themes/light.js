@@ -40,6 +40,7 @@ export default {
 
     // 边框色
     border_color_base: '#DEDFE0',
+    border_color_white: '#f1f1f1',
 
     // 字体尺寸
     // ---
@@ -221,4 +222,7 @@ export default {
     card_imageWidth: 101,
     card_imageHeight: 78,
     card_image_BG_color: '#efefef',
+
+    // actionSheet
+    sheet_title_backgroundcolor:'#F3F5F8',
 }
