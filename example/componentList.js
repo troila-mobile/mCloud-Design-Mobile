@@ -84,6 +84,11 @@ export default [
 		example: require('../components/EmptyView/demo/basic')
 	},
 	{
+		title: 'Tabs',
+		description: 'Tabs',
+		example: require('../components/Tabs/demo/basic')
+	},
+	{
 		title: 'stepper',
 		description: 'stepper',
 		example: require('../components/stepper/demo/basic')
