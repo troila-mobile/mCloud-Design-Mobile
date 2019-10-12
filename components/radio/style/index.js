@@ -12,24 +12,17 @@ export default (theme) => StyleSheet.create({
         backgroundColor: theme.fill_base,
         paddingLeft: theme.h_spacing_lg,
     },
-    icon: {
-        width: 25,
-        height: 25,
+    circleStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: theme.border_width_md,
+        borderColor: theme.border_color_base,
+    },
+    centerStyle: {
+        backgroundColor: theme.brand_primary,
     },
     iconRight: {
         marginLeft: theme.h_spacing_md,
-    },
-    agreeItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    agreeItemCheckbox: {
-        marginLeft: theme.h_spacing_lg,
-        marginRight: theme.h_spacing_md,
-    },
-    checkboxItemCheckbox: {
-        marginRight: theme.h_spacing_md,
-        alignSelf: 'center',
     },
     itemText: {
         marginLeft: theme.h_spacing_lg,

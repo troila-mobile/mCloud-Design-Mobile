@@ -76,12 +76,46 @@ export default [
 	},
 	{
 		title: 'Picker',
-		description: 'Picker',
+		description: '选择器',
 		example: require('../components/picker/demo/basic')
+	}, {
+		title: 'DatePicker',
+		description: '日期时间选择器',
+		example: require('../components/date-picker/demo/basic')
 	},
 	{
 		title: 'EmptyView',
 		description: 'EmptyView',
 		example: require('../components/EmptyView/demo/basic')
+	},
+	{
+		title: 'Tabs',
+		description: 'Tabs',
+		example: require('../components/Tabs/demo/basic')
+	},
+	{
+		title: 'Card',
+		description: 'Card',
+		example: require('../components/card/demo/basic')
+	}, 
+	{
+		title: 'Picker',
+		description: 'Picker',
+		example: require('../components/picker/demo/basic')
+	},
+	{
+		title: 'ActionSheet',
+		description: 'ActionSheet',
+		example: require('../components/actionSheet/demo/basic')
+	},
+	{
+		title: 'Avatar',
+		description: 'Avatar',
+		example: require('../components/avatar/demo/basic')
+  },
+  {
+		title: 'stepper',
+		description: 'stepper',
+		example: require('../components/stepper/demo/basic')
 	}
 ]
