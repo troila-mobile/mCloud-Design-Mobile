@@ -22,6 +22,7 @@ export default {
     fill_mask: 'rgba(0, 0, 0, .4)',              // 遮罩背景
     color_icon_base: '#cccccc',                     // 许多小图标的背景，比如一些小圆点，加减号
     fill_grey: '#f7f7f7',
+    fill_black: '#000',
 
     // 透明度
     opacity_disabled: '0.3',   // switch checkbox radio 等组件禁用的透明度
@@ -121,8 +122,10 @@ export default {
 
     // modal
     modal_font_size_heading: 18,
-    modal_button_font_size: 18, // 按钮字号
-    modal_button_height: 50, // 按钮高度
+    modal_font_size_content: 14,
+    modal_button_font_size: 16, // 按钮字号
+    modal_button_height: 46, // 按钮高度
+    toast_background_color: 'rgba(0,0,0,.7)',
 
     // list
     list_item_height: 50,
