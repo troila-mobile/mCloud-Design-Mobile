@@ -27,34 +27,45 @@ const getModal = (props, visible, {
     ) : (
         dismissText
     )
-
+    const {
+        actionTextActiveOpacity,
+        actionTextUnderlayColor,
+    } = props
     return (
         <Modal
-            animationType="slide-up"
+            animated={true}
+            animationType="fade"
             wrapStyle={styles.modal}
             visible={visible}
             onClose={hide}
+            transparent={true}
         >
-            <View style={[styles.header]}>
-                <TouchableHighlight
+            <View style={styles.modelContainer}>
+                <Text
+                    style={styles.topView}
                     onPress={onDismiss}
-                    style={[styles.headerItem]}
-                    activeOpacity={props.actionTextActiveOpacity}
-                    underlayColor={props.actionTextUnderlayColor}
-                >
-                    {dismissEl}
-                </TouchableHighlight>
-                <View style={[styles.headerItem]}>{titleEl}</View>
-                <TouchableHighlight
-                    onPress={onOk}
-                    style={[styles.headerItem]}
-                    activeOpacity={props.actionTextActiveOpacity}
-                    underlayColor={props.actionTextUnderlayColor}
-                >
-                    {okEl}
-                </TouchableHighlight>
+                />
+                <View style={[styles.header]}>
+                    <TouchableHighlight
+                        onPress={onDismiss}
+                        style={[styles.headerItem, styles.leftHeaderItem]}
+                        activeOpacity={actionTextActiveOpacity}
+                        underlayColor={actionTextUnderlayColor}
+                    >
+                        {dismissEl}
+                    </TouchableHighlight>
+                    <View style={[styles.headerItem, styles.centerHeaderItem]}>{titleEl}</View>
+                    <TouchableHighlight
+                        onPress={onOk}
+                        style={[styles.headerItem, styles.rightHeaderItem]}
+                        activeOpacity={actionTextActiveOpacity}
+                        underlayColor={actionTextUnderlayColor}
+                    >
+                        {okEl}
+                    </TouchableHighlight>
+                </View>
+                {getContent()}
             </View>
-            {getContent()}
         </Modal>
     )
 }

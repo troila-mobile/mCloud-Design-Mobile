@@ -18,7 +18,12 @@
       "NoticeBar",
       "Textarea",
       "List",
-      "Card"
+      "Card",
+      "Picker",
+      "Label",
+      "EmptyView",
+      "Tabs",
+      "DatePicker"
     ],
     "First Category": ["doc4", "doc5"]
   }

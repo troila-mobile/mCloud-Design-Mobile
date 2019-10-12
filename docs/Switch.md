@@ -101,11 +101,6 @@ const styles = StyleSheet.create({
 ----|-----|------|------
 | checked | 默认值 | bool   |  false |
 | onChange | checked 值变化时调用的方法 | func   |  () => { } |
-| onTintColor | 开启时的背景颜色 | string   |  Theme.brand_primary |
-| thumbTintColor | 原型按钮的背景颜色 | string   |  #fff |
-| tintColor | 背景颜色 | string   |  #D8D8D8 |
-| disabledThumbTintColor | disabled 原型按钮的背景颜色 | string   |  #F5F5F5 |
-| disabledTintColor | disabled 的背景颜色 | string   |  #EEEEEE |
 | disabled | 默认值 | bool   |  false |
 
 ## SwitchItem Props

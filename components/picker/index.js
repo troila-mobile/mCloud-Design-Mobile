@@ -71,7 +71,7 @@ export default class Picker extends React.Component {
             <RMCPicker
                 // eslint-disable-next-line react/no-array-index-key
                 key={`picker-${index}`}
-                style={{ flex: 1 }}
+                style={{ flex: 1,backgroundColor:'#fff' }}
                 itemStyle={itemStyle}
                 indicatorStyle={indicatorStyle}
             >
