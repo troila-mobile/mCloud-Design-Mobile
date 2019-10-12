@@ -25,17 +25,14 @@ ComponentList.map((item) => {
 })
 
 const AppNavigator = createStackNavigator(scenes,{
-    defaultNavigationOptions: ({ screenProps:{theme} })=>{
-        return {
-            headerTintColor: theme==='dark'?'#fff':'#000',
-            headerStyle:{
-                backgroundColor: theme === 'dark' ? '#000' : '#fff',
-            }
-        }
-    },
-    cardStyle:{
-        // backgroundColor:'red'
-    }
+    // defaultNavigationOptions: ({ screenProps:{theme} })=>{
+    //     return {
+    //         headerTintColor: theme==='dark'?'#fff':'#000',
+    //         headerStyle:{
+    //             backgroundColor: theme === 'dark' ? '#000' : '#fff',
+    //         }
+    //     }
+    // },
 })
 
 const AppContainer = createAppContainer(AppNavigator)
@@ -44,7 +41,6 @@ export default class extends React.Component{
     state = {
         theme: 'light'
     }
-    
     render(){
         const {
             theme
@@ -57,6 +53,7 @@ export default class extends React.Component{
                     screenProps={{
                         theme
                     }}
+                    theme={theme}
                 />
                 <TouchableOpacity 
                     style={[styles.themeButton, { backgroundColor: buttonColor, borderColor: textColor}]}
