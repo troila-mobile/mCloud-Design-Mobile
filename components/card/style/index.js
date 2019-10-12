@@ -2,13 +2,13 @@ import { StyleSheet,Dimensions } from 'react-native'
 
 export default (theme) => StyleSheet.create({
     horizontalContainer: {
-        backgroundColor: '#fff',
+        backgroundColor: theme.card_background_color,
         paddingTop: 15,
         paddingLeft:15,
         width:Dimensions.get('window').width,
     },
     verticalContainer:{
-        backgroundColor: '#fff',
+        backgroundColor: theme.card_background_color,
         paddingVertical: 15,
         paddingLeft:15,
         flexDirection:'row',
