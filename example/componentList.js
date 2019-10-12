@@ -4,6 +4,11 @@ export default [
         description: '按钮',
         example: require('../components/button/demo/basic'),
     },
+	{
+		title: 'Modal',
+		description: '弹窗',
+		example: require('../components/modal/demo/basic')
+	},
     {
         title: 'Marquee',
         description: '滚动文字',
