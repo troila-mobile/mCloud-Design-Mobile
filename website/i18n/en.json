@@ -89,6 +89,10 @@
       "Textarea": {
         "title": "Textarea",
         "sidebar_label": "Textarea"
+      },
+      "Tabs": {
+        "title": "Tabs",
+        "sidebar_label": "Tabs"
       }
     },
     "links": {
