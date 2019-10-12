@@ -37,7 +37,7 @@ export default (theme) => StyleSheet.create({
         marginTop: StyleSheet.hairlineWidth,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: theme.color_text_base_inverse,
     },
     titleBox: {
         height:50,
@@ -56,7 +56,9 @@ export default (theme) => StyleSheet.create({
     body: {
         flex: 1,
         alignSelf: 'flex-end',
-        backgroundColor: '#e5e5e5',
+        backgroundColor: theme.color_text_base_inverse,
+        borderTopLeftRadius:10,
+        borderTopRightRadius:10,
     },
     wrapper: {
         flex: 1,

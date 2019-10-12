@@ -180,8 +180,6 @@ export default class ActionSheet extends React.Component {
                         const body = [_styles.body,{
                             height,
                             transform: [{ translateY: sheetAnim }] ,
-                            borderTopLeftRadius:10,
-                            borderTopRightRadius:10,
                         }]
                         const wrapper = [_styles.wrapper]
                         return (

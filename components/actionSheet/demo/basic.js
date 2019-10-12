@@ -32,7 +32,7 @@ export default class extends React.Component {
                     options={options}
                     disabledIndexArrary={[5]}
                     title="zhe是标题dfshdfshuhgiuhdubhdsfiubhdsiufhb"
-                    showCancel={false}
+                    // showCancel={false}
                 />
             </TouchableOpacity>
         )
