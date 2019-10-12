@@ -87,5 +87,10 @@ export default [
 		title: 'stepper',
 		description: 'stepper',
 		example: require('../components/stepper/demo/basic')
-	}
+	},
+	{
+		title: 'steps',
+		description: '步骤进度条',
+		example: require('../components/steps/demo/basic')
+	},
 ]
