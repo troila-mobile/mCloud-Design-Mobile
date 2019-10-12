@@ -13,65 +13,68 @@ import { TabBar, TabView } from 'react-native-tab-view'
 export default class Tabs extends React.Component {
     static propTypes = {
         styles: ViewPropTypes.style,
-        style_tab: ViewPropTypes.style,
-        style_labelText: ViewPropTypes.style,
-        style_wrapper:ViewPropTypes.style,
-        style_indicator:ViewPropTypes.style,
-        style_initialLayout:ViewPropTypes.style,
+        tabStyle: ViewPropTypes.style,
+        labelStyle: ViewPropTypes.style,
+        tabBarStyle:ViewPropTypes.style,
+        indicatorStyle:ViewPropTypes.style,
+        initialLayout:ViewPropTypes.style,
         onIndexChange_Tabs: PropTypes.func,
         renderScene:PropTypes.func,
         navigationState:PropTypes.object,
         labelWidth:PropTypes.number,
+        scrollEnabled:PropTypes.bool,
     }
     static defaultProps = {
         styles: {},
-        style_tab:{},
-        style_labelText:{},
-        style_wrapper:{},
-        style_indicator:{},
-        style_initialLayout:{},
+        tabStyle:{},
+        labelStyle:{},
+        tabBarStyle:{},
+        indicatorStyle:{},
+        initialLayout:{},
         onIndexChange_Tabs:() => {} ,
         renderScene:() => {},
         navigationState:null,
         labelWidth:null,
+        scrollEnabled:true,
     };
     render() {
         const {
             styles,
-            style_tab,
-            style_labelText,
-            style_wrapper,
-            style_indicator,
-            style_initialLayout,
+            tabStyle,
+            labelStyle,
+            tabBarStyle,
+            indicatorStyle,
+            initialLayout,
             navigationState,
             renderScene,
             onIndexChange_Tabs,
             labelWidth,
+            scrollEnabled,
         } = this.props
         return (
             <WithTheme themeStyles={TabsStyles} styles={styles}>
                 {
                     (_styles,theme) => {
-                        const tabStyle = [
+                        const _tabStyle = [
                             { width:labelWidth },
                             _styles.tabStyle,
-                            style_tab,
+                            tabStyle,
                         ]
-                        const labelStyle = [
+                        const _labelStyle = [
                             _styles.labelStyle,
-                            style_labelText,
+                            labelStyle,
                         ]
-                        const style_type = [
+                        const _tabBarStyle = [
                             _styles.style_type,
-                            style_wrapper,
+                            tabBarStyle,
                         ]
-                        const indicatorStyle = [
+                        const _indicatorStyle = [
                             {
                                 width: labelWidth * 0.6 ,
                                 left: labelWidth * 0.2 ,
                             },
                             _styles.indicatorStyle,
-                            style_indicator,
+                            indicatorStyle,
                         ]
                         return (
                             <TabView
@@ -81,15 +84,15 @@ export default class Tabs extends React.Component {
                                     <TabBar
                                         /* eslint-disable-next-line react/jsx-props-no-spreading */
                                         {...props}
-                                        tabStyle={tabStyle}
-                                        labelStyle={labelStyle}
-                                        style={style_type}
-                                        indicatorStyle={indicatorStyle}
-                                        scrollEnabled={true}
+                                        tabStyle={_tabStyle}
+                                        labelStyle={_labelStyle}
+                                        style={_tabBarStyle}
+                                        indicatorStyle={_indicatorStyle}
+                                        scrollEnabled={scrollEnabled}
                                     />
                                 )}
                                 onIndexChange={onIndexChange_Tabs}
-                                initialLayout={style_initialLayout || _styles.initialLayout}
+                                initialLayout={initialLayout || _styles.initialLayout}
                             />
                         )
                     }

@@ -71,9 +71,10 @@ const styles = StyleSheet.create({
 | navigationState    | 获取当前state |   object   |   -  |
 | renderScene    |回调，返回一个react元素以呈现为分页的页面。接收包含路由作为参数的对象： |   func  |   -  |
 | onIndexChange_Tabs    |回调，返回当前页面的index： |   func  |   -  |
-| style_tab    | tab自定义样式 |   Object  | 无 |
-| style_labelText    | labelText自定义样式 |   Object  | 无 |
-| style_wrapper    | labelWrapper自定义样式 |   Object  | 无 |
-| style_indicator    | indicator自定义样式 |   Object  | 无 |
-| style_initialLayout    | initialLayout自定义样式 |   Object  | 无 |
+| scrollEnabled    |tabbar是否滑动,默认为true |   bool  |   -  |
+| tabStyle    | tab自定义样式 |   Object  | 无 |
+| labelStyle    | label自定义样式 |   Object  | 无 |
+| tabBarStyle    | tabBar自定义样式 |   Object  | 无 |
+| indicatorStyle    | indicator自定义样式 |   Object  | 无 |
+| initialLayout    | initialLayout自定义样式 |   Object  | 无 |
 
