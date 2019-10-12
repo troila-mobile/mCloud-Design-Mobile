@@ -25,7 +25,8 @@
     "react-native-reanimated": "^1.2.0",
     "react-native-screens": "^1.0.0-alpha.23",
     "react-navigation": "^4.0.5",
-    "react-navigation-stack": "^1.8.0"
+    "react-navigation-stack": "^1.8.0",
+    "react-native-tab-view": "2.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",

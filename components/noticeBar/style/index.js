@@ -19,7 +19,6 @@ export default (theme) => StyleSheet.create({
     textStyle: {
         color: '#FE821E',
         fontSize: theme.font_size_base,
-        flex: 1,
     },
     iconStyle: {
         width: 20,

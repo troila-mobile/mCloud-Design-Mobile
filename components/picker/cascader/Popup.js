@@ -25,9 +25,12 @@ class PopupCascader extends React.Component {
         }
     };
     render() {
+        const {
+            cascader,
+        } = this.props
         return (
             <PopupPicker
-                picker={this.props.cascader}
+                picker={cascader}
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 {...this.props}
                 onOk={this.onOk}

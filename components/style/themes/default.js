@@ -1,6 +1,9 @@
+import { Dimensions } from 'react-native'
+
 const brandPrimary = '#586BFB'
 const brandPrimaryTap = '#3C4DCF'
-
+const screenW = Dimensions.get('window').width
+const screenH = Dimensions.get('window').height
 export default {
     // 文字色
     color_text_base: '#1F2530',                  // 基本
@@ -24,7 +27,7 @@ export default {
     fill_grey: '#f7f7f7',
 
     // 透明度
-    opacity_disabled: '0.3',   // switch checkbox radio 等组件禁用的透明度
+    opacity_disabled: 0.3,   // switch checkbox radio 等组件禁用的透明度
 
     // 全局/品牌色
     brand_primary: brandPrimary,
@@ -98,7 +101,8 @@ export default {
 
     actionsheet_item_height: 50,
     actionsheet_item_font_size: 18,
-
+    screen_W:screenW,
+    screen_H:screenH,
     // button
     button_height: 48,
     button_font_size: 18,
@@ -137,12 +141,29 @@ export default {
     input_font_size: 17,
     input_color_icon: '#cccccc',
     input_color_icon_tap: brandPrimary,
-
+    // Label
+    small_font_size: 12,
+    small_label_height: 20,
+    small_label_width: 60,
+    middle_font_size: 15,
+    middle_label_height: 30,
+    middle_label_width: 90,
+    large_font_size: 18,
+    large_label_height: 40,
+    large_label_width:120,
+    label_bg_color:'#00C482',
+    // EmptyView
+    emptyView_height:500,
+    emptyView_text_color:'#666',
+    emptyView_touchable_marginTop:100,
     // tabs
     tabs_color: brandPrimary,
-    tabs_height: 42,
+    tabs_indicator_height: 4,
+    tabs_indicator_borderRadius: 4,
     tabs_font_size_heading: 15,
-
+    tabs_height:42,
+    tabs_elevation:0,
+    tabs_initialLayout_height:0,
     // segmented_control
     segmented_control_color: brandPrimary,  // 同时应用于背景、文字颜色、边框色
     segmented_control_height: 30,
@@ -169,6 +190,9 @@ export default {
 
     // switch
     switch_fill: brandPrimary,
+    switch_tint: '#D8D8D8',
+    switch_disabled_thumbtint: '#F5F5F5',
+    switch_disabled_tint: '#EEEEEE',
 
     // tag
     tag_height: 25,
