@@ -2,7 +2,7 @@ import React from 'react'
 import {
     View,
 } from 'react-native'
-import Avatar from '../index'
+import { Avatar } from '../..'
 
 export default class AvatarDemo extends React.Component {
     render() {

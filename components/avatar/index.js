@@ -38,33 +38,21 @@ export default class Avatar extends React.Component {
                         const borderStyle = [
                             _styles[`${type}Border`],
                         ]
-
+                        const ImageComponent = web ? Image : FastImage
                         return (
-                            web ? (
-                                <Image
-                                    style={[
-                                        {
-                                            width: size,
-                                            height: size,
-                                            borderRadius: size / 2,
-                                        },
-                                        ...borderStyle,
-                                    ]}
-                                    source={source || defaultAvatar}
-                                />
-                            ) : (
-                                <FastImage
-                                    style={[
-                                        {
-                                            width: size,
-                                            height: size,
-                                            borderRadius: size / 2,
-                                        },
-                                        ...borderStyle,
-                                    ]}
-                                    source={source || defaultAvatar}
-                                />
-                            )
+
+                            <ImageComponent
+                                style={[
+                                    {
+                                        width: size,
+                                        height: size,
+                                        borderRadius: size / 2,
+                                    },
+                                    ...borderStyle,
+                                ]}
+                                source={source || defaultAvatar}
+                            />
+
                         )
                     }
                 }

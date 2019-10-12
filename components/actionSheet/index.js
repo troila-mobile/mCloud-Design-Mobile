@@ -56,20 +56,18 @@ export default class ActionSheet extends React.Component {
             props.showCancel && (tempHeight += 50)
         }
 
-        return {
+        return state.height === tempHeight ? null : {
             scrollEnabled:props.options && props.options.length > 5,
             height:tempHeight,
             sheetAnim:new Animated.Value(tempHeight),
         }
     }
     show = () => {
-        this.setState({ visible: true },() => this._showSheet())
+        this.setState({ visible: true },this._showSheet)
     }
-    hide = (index) => {
+    hide = (callback) => {
         this._hideSheet(() => {
-            this.setState({ visible: false }, () => {
-                // this.props.onPress(index)
-            })
+            this.setState({ visible: false }, callback)
         })
     }
     _renderCanceButton = () => {
@@ -80,8 +78,7 @@ export default class ActionSheet extends React.Component {
             <TouchableOpacity
                 style={this._styles.cancelButton}
                 onPress={() => {
-                    cancel()
-                    this.hide()
+                    this.hide(cancel)
                 }}
             >
                 <Text
@@ -167,6 +164,7 @@ export default class ActionSheet extends React.Component {
             showCancel,
             styles,
             title,
+            cancel,
         } = this.props
 
         return (
@@ -186,13 +184,13 @@ export default class ActionSheet extends React.Component {
                             <Modal
                                 visible={visible}
                                 animationType="fade"
-                                onRequestClose={() => console.log('dd')}
+                                onRequestClose={() => this.hide(cancel)}
                                 transparent={true}
                             >
                                 <SafeAreaView style={wrapper}>
                                     <Text
                                         style={overlay}
-                                        onPress={this.hide}
+                                        onPress={() => this.hide(cancel)}
                                     />
                                     <Animated.View
                                         style={body}
