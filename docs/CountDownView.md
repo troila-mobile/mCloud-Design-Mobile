@@ -11,7 +11,7 @@ CountDownView
 ```SnackPlayer name=activity-indicator-simple
 import React from 'react'
 import { View,ScrollView } from 'react-native'
-import CountDownView from "../index";
+import { CountDownView } from "mCloud-Design-Mobile";
 
 const ViewTop = () => (
     <View style={{ marginTop: 10 }} />
