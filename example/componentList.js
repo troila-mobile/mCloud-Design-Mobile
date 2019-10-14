@@ -4,6 +4,11 @@ export default [
         description: '按钮',
         example: require('../components/button/demo/basic'),
     },
+	{
+		title: 'Modal',
+		description: '弹窗',
+		example: require('../components/modal/demo/basic')
+	},
     {
         title: 'Marquee',
         description: '滚动文字',
@@ -84,6 +89,31 @@ export default [
 		example: require('../components/EmptyView/demo/basic')
 	},
 	{
+		title: 'Tabs',
+		description: 'Tabs',
+		example: require('../components/Tabs/demo/basic')
+	},
+	{
+		title: 'Card',
+		description: 'Card',
+		example: require('../components/card/demo/basic')
+	}, 
+	{
+		title: 'Picker',
+		description: 'Picker',
+		example: require('../components/picker/demo/basic')
+	},
+	{
+		title: 'ActionSheet',
+		description: 'ActionSheet',
+		example: require('../components/actionSheet/demo/basic')
+	},
+	{
+		title: 'Avatar',
+		description: 'Avatar',
+		example: require('../components/avatar/demo/basic')
+  },
+  {
 		title: 'stepper',
 		description: 'stepper',
 		example: require('../components/stepper/demo/basic')

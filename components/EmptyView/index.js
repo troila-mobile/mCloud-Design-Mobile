@@ -32,12 +32,6 @@ export default class EmptyView extends React.Component {
         emptyImage: null,
         onRefresh: null,
     }
-    constructor(props) {
-        super(props)
-        this.state = {
-            emptyImageView: props.emptyImage,
-        }
-    }
     render() {
         const {
             styles,
@@ -51,23 +45,16 @@ export default class EmptyView extends React.Component {
             <WithTheme themeStyles={EmptyViewStyles} styles={styles}>
                 {
                     (_styles, theme) => {
+                        let emptyImageView
                         if (type === 0) {
-                            this.state = {
-                                emptyImageView : emptyImage,
-                            }
+                            emptyImageView = emptyImage
                         } else if ( type === 1) {
-                            this.state = {
-                                emptyImageView : network_failedSource,
-                            }
+                            emptyImageView = network_failedSource
                         }
                         else if ( type === 2) {
-                            this.state = {
-                                emptyImageView : no_dataSource,
-                            }
+                            emptyImageView = no_dataSource
                         } else {
-                            this.state = {
-                                emptyImageView : emptyImage,
-                            }
+                            emptyImageView = emptyImage
                         }
                         const textStyle = [
                             _styles.text,
@@ -85,7 +72,7 @@ export default class EmptyView extends React.Component {
                         return (
                             <View style={EmptyViewStyle}>
                                 {
-                                    type === 0 ? null : <Image source={this.state.emptyImageView} />
+                                    type === 0 ? null : <Image source={emptyImageView} />
                                 }
                                 <Text style={textStyle}>
                                     {children}

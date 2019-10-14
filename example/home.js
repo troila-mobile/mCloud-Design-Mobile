@@ -14,14 +14,14 @@ import {
 } from 'react-native/Libraries/NewAppScreen'
 import ComponentList from './componentList'
 
-const Header = () => (
+const Header = (props) => (
 	<View style={{ overflow: 'hidden', height: 250 }}>
 		<ImageBackground
 			accessibilityRole={'image'}
 			source={require('./logo.png')}
 			style={styles.background}
 			imageStyle={styles.logo}>
-			<Text style={styles.text}>Welcome to mCloud Design</Text>
+			<Text style={[styles.text, { color: props.theme === 'dark' ? Colors.lighter: Colors.black}]}>Welcome to mCloud Design</Text>
 		</ImageBackground>
 	</View>
 
@@ -39,8 +39,8 @@ const LinkList = (props) => (
 							props.navigation.navigate(item.title)
 						}}
 						style={styles.linkContainer}>
-						<Text style={styles.link}>{item.title}</Text>
-						<Text style={styles.description}>{item.description}</Text>
+						<Text style={[styles.link, { color: props.theme === 'dark' ? Colors.lighter : Colors.primary}]}>{item.title}</Text>
+						<Text style={[styles.description, { color: props.theme === 'dark' ? Colors.primary : Colors.dark}]}>{item.description}</Text>
 					</TouchableOpacity>
 				</React.Fragment>
 			);
@@ -52,10 +52,11 @@ const LinkList = (props) => (
 export default class Home extends Component {
 	render() {
 		const {
-			navigation
+			navigation,
+			screenProps
 		} = this.props
 		return (
-			<SafeAreaView style={styles.body}>
+			<SafeAreaView style={styles[`${screenProps.theme}Body`]}>
 				<StatusBar barStyle="dark-content" />
 				<ScrollView
 					contentInsetAdjustmentBehavior="automatic"
@@ -63,9 +64,11 @@ export default class Home extends Component {
 				>
 					<Header
 						navigation={navigation}
+						theme={screenProps.theme}
 					/>
 					<LinkList
 						navigation={navigation}
+						theme={screenProps.theme}
 					/>
 				</ScrollView>
 			</SafeAreaView>
@@ -75,10 +78,14 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
 	scrollView: {
-		backgroundColor: Colors.lighter,
+		// backgroundColor: Colors.lighter,
 	},
-	body: {
-		backgroundColor: Colors.white,
+	lightBody: {
+		backgroundColor: Colors.lighter,
+		flex: 1
+	},
+	darkBody: {
+		backgroundColor: Colors.black,
 		flex: 1
 	},
 	container: {
@@ -113,7 +120,7 @@ const styles = StyleSheet.create({
 		paddingBottom: 40,
 		paddingTop: 96,
 		paddingHorizontal: 32,
-		backgroundColor: Colors.lighter,
+		// backgroundColor: Colors.lighter,
 	},
 	logo: {
 		opacity: 0.2,

@@ -25,8 +25,16 @@
         "title": "贡献说明",
         "sidebar_label": "Contributing"
       },
+      "DatePicker": {
+        "title": "DatePicker",
+        "sidebar_label": "DatePicker"
+      },
       "doc3": {
         "title": "This is document number 3"
+      },
+      "EmptyView": {
+        "title": "EmptyView",
+        "sidebar_label": "EmptyView"
       },
       "doc4": {
         "title": "Button"
@@ -70,6 +78,10 @@
         "title": "SegmentedControl",
         "sidebar_label": "SegmentedControl"
       },
+      "Stepper": {
+        "title": "Stepper",
+        "sidebar_label": "Stepper"
+      },
       "Switch": {
         "title": "Switch",
         "sidebar_label": "Switch"
@@ -78,13 +90,9 @@
         "title": "Textarea",
         "sidebar_label": "Textarea"
       },
-      "Label": {
-        "title": "Label",
-        "sidebar_label": "Label"
-      },
-      "EmptyView": {
-        "title": "EmptyView",
-        "sidebar_label": "EmptyView"
+      "Tabs": {
+        "title": "Tabs",
+        "sidebar_label": "Tabs"
       }
     },
     "links": {
