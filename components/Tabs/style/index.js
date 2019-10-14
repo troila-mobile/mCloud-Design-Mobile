@@ -11,7 +11,7 @@ export default (theme) => StyleSheet.create({
         justifyContent: 'center',
     },
     labelStyle: {
-        color: theme.color_text_base,
+        color: theme.label_textColor,
     },
     style_type:{
         height: theme.tabs_height,

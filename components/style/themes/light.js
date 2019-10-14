@@ -161,6 +161,7 @@ export default {
     emptyView_touchable_marginTop:100,
     // tabs
     tabs_color: brandPrimary,
+    label_textColor:'#A5ABB1',
     tabs_indicator_height: 4,
     tabs_indicator_borderRadius: 4,
     tabs_font_size_heading: 15,
