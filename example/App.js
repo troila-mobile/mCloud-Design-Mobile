@@ -41,13 +41,13 @@ export default class extends React.Component{
         const textColor = theme ==='light'?'#000':'#fff'
         return (
             <Provider theme={theme}>
-                <AppContainer 
+                <AppContainer
                     screenProps={{
                         theme
                     }}
                     theme={theme}
                 />
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={[styles.themeButton, { backgroundColor: buttonColor, borderColor: textColor}]}
                     onPress={this.toggleTheme}
                 >
