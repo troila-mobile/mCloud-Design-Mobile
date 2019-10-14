@@ -94,22 +94,22 @@ export default (theme) => StyleSheet.create({
         paddingTop: theme.v_spacing_lg,
     },
     tail_default_small: {
-        width: theme.border_width_sm,
         height: 30,
+        width: 50,
         marginLeft: theme.h_spacing_md,
     },
     tail_default_small_horizontal: {
-        height: theme.border_width_sm,
+        height: 30,
         width: 50,
         marginTop: theme.v_spacing_sm,
     },
     tail_default_large: {
-        width: theme.border_width_md,
         height: 40,
+        width: 60,
         marginLeft: theme.h_spacing_sm,
     },
     tail_default_large_horizontal: {
-        height: theme.border_width_md,
+        height: 40,
         width: 60,
         marginTop: theme.v_spacing_md,
     },
