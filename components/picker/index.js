@@ -21,6 +21,7 @@ export function getDefaultProps() {
         cols: 3,
         cascade: true,
         title: '',
+        itemStyle:{},
     }
 }
 
@@ -64,19 +65,22 @@ export default class Picker extends React.Component {
             )
         )
     };
-    getPickerCol = () => {
+    getPickerCol = ({ _styles }) => {
         const { data, itemStyle, indicatorStyle } = this.props
-
         return data.map((col, index) => (
             <RMCPicker
                 // eslint-disable-next-line react/no-array-index-key
                 key={`picker-${index}`}
-                style={{ flex: 1,backgroundColor:'#fff' }}
+                style={[{ flex: 1 }, _styles.pickerContainer]}
                 itemStyle={itemStyle}
                 indicatorStyle={indicatorStyle}
             >
                 {col.map((item) => (
-                    <RMCPicker.Item key={item.value} value={item.value}>
+                    <RMCPicker.Item
+                        key={item.value}
+                        value={item.value}
+                        color={_styles.pickerItem.color}
+                    >
                         {item.label}
                     </RMCPicker.Item>
                 ))}
@@ -146,6 +150,7 @@ export default class Picker extends React.Component {
         cols,
         itemStyle,
         indicatorStyle,
+        _styles
     ) => {
         let cascader
         let popupMoreProps = {}
@@ -158,6 +163,8 @@ export default class Picker extends React.Component {
                     onScrollChange={this.setCasecadeScrollValue}
                     pickerItemStyle={itemStyle}
                     indicatorStyle={indicatorStyle}
+                    style={_styles.pickerContainer}
+                    styles={_styles}
                 />
             )
         } else {
@@ -166,7 +173,7 @@ export default class Picker extends React.Component {
                     style={{ flexDirection: 'row', alignItems: 'center' }}
                     onScrollChange={this.setScrollValue}
                 >
-                    {this.getPickerCol()}
+                    {this.getPickerCol({ _styles })}
                 </MultiPicker>
             )
             popupMoreProps = {
@@ -192,43 +199,47 @@ export default class Picker extends React.Component {
             onOk,
             ...restProps
         } = this.props
-
-        const {
-            cascader,
-            popupMoreProps,
-        } = this.getCascade(
-            cascade,
-            data,
-            cols,
-            itemStyle,
-            indicatorStyle,
-        )
         return (
             <WithTheme styles={restProps.styles} themeStyles={PickerStyles}>
-                {(styles) => (
-                    <RMCPopupCascader
-                        cascader={cascader}
-                        // eslint-disable-next-line react/jsx-props-no-spreading
-                        {...this.popupProps}
-                        // eslint-disable-next-line react/jsx-props-no-spreading
-                        {...restProps}
-                        styles={styles}
-                        value={value}
-                        dismissText={dismissText || '取消'}
-                        okText={okText || '确定'}
-                        // eslint-disable-next-line react/jsx-props-no-spreading
-                        {...popupMoreProps}
-                        ref={this.fixOnOk}
-                        onVisibleChange={this.onVisibleChange}
-                    >
-                        {children
-                            && typeof children !== 'string'
-                            && React.isValidElement(children)
-                            && React.cloneElement(children, {
-                                extra: this.getSel() || extra || '请选择',
-                            })}
-                    </RMCPopupCascader>
-                )}
+                {
+                    (_styles) => {
+                        const {
+                            cascader,
+                            popupMoreProps,
+                        } = this.getCascade(
+                            cascade,
+                            data,
+                            cols,
+                            itemStyle,
+                            indicatorStyle,
+                            _styles
+                        )
+                        return (
+                            <RMCPopupCascader
+                                cascader={cascader}
+                                // eslint-disable-next-line react/jsx-props-no-spreading
+                                {...this.popupProps}
+                                // eslint-disable-next-line react/jsx-props-no-spreading
+                                {...restProps}
+                                styles={_styles}
+                                value={value}
+                                dismissText={dismissText || '取消'}
+                                okText={okText || '确定'}
+                                // eslint-disable-next-line react/jsx-props-no-spreading
+                                {...popupMoreProps}
+                                ref={this.fixOnOk}
+                                onVisibleChange={this.onVisibleChange}
+                            >
+                                {children
+                                    && typeof children !== 'string'
+                                    && React.isValidElement(children)
+                                    && React.cloneElement(children, {
+                                        extra: this.getSel() || extra || '请选择',
+                                    })}
+                            </RMCPopupCascader>
+                        )
+                    }
+                }
             </WithTheme>
         )
     }

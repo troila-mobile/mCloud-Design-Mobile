@@ -23,7 +23,7 @@ export default class Button extends React.Component {
     }
     static defaultProps = {
         size: 'large',
-        type: 'default',
+        type: 'primary',
         disabled: false,
         style: {},
         styles: {},
