@@ -47,29 +47,36 @@ export default class Steps extends React.Component {
             <WithTheme themeStyles={StepsStyles} styles={styles}>
                 {
                     (_styles) => {
-                        <View style={[_styles.stepsContainer, { flexDirection: direction }]}>
-                            {
-                                React.Children.map(children, (item, index) => {
-                                    let errorTail = -1
-                                    if (index < children.length - 1) {
-                                        const status = children[index + 1].props.status
-                                        if (status === 'error') {
-                                            errorTail = index
+                        const container = [
+                            _styles.stepsContainer,
+                            style,
+                        ]
+
+                        return (
+                            <View style={[container, { flexDirection: direction }]}>
+                                {
+                                    React.Children.map(children, (item, index) => {
+                                        let errorTail = -1
+                                        if (index < children.length - 1) {
+                                            const status = children[index + 1].props.status
+                                            if (status === 'error') {
+                                                errorTail = index
+                                            }
                                         }
-                                    }
-                                    return React.cloneElement(item as PropTypes.any, {
-                                        index: index,
-                                        last: index === (children as PropTypes.any).length - 1,
-                                        direction: direction,
-                                        current: current,
-                                        size: size,
-                                        errorTail: errorTail,
-                                        styles: styles,
-                                        style: style,
+                                        return React.cloneElement(item as PropTypes.any, {
+                                            index: index,
+                                            last: index === (children as PropTypes.any).length - 1,
+                                            direction: direction,
+                                            current: current,
+                                            size: size,
+                                            errorTail: errorTail,
+                                            styles: styles,
+                                            style: style,
+                                        })
                                     })
-                                })
-                            }
-                        </View>
+                                }
+                            </View>
+                        )
                     }
                 }
             </WithTheme>

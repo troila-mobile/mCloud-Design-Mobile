@@ -159,7 +159,7 @@ export default class StepsItem extends React.Component {
                         }
 
                         return (
-                            <View style={parentStyle}>
+                            <View style={[parentStyle, style]}>
                                 <View style={childStyle}>
                                     <View style={[_styles[`steps_head${size}`], _styles[headStepColor]]}>
                                         {React.isValidElement(imageSource) ? imageSource : null}

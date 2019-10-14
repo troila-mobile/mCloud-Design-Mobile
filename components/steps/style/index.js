@@ -60,20 +60,20 @@ export default (theme) => StyleSheet.create({
         backgroundColor: theme.brand_error,
     },
     title_style_small: {
-        fontSize: 16,
+        fontSize: theme.font_size_caption,
         textColor: theme.steps_text_black_color,
     },
     title_style_large: {
-        fontSize: 16,
+        fontSize: theme.font_size_caption,
         fontWeight: 'bold',
         textColor: theme.steps_text_black_color,
     },
     description_style_small: {
-        fontSize: 14,
+        fontSize: theme.font_size_base,
         textColor: theme.steps_text_normal_color,
     },
     description_style_large: {
-        fontSize: 14,
+        fontSize: theme.font_size_base,
         fontWeight: 'bold',
         textColor: theme.steps_text_normal_color,
     },
