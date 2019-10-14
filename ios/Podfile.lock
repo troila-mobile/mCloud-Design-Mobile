@@ -11,30 +11,15 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - libwebp (1.0.2):
-    - libwebp/core (= 1.0.2)
-    - libwebp/dec (= 1.0.2)
-    - libwebp/demux (= 1.0.2)
-    - libwebp/dsp (= 1.0.2)
-    - libwebp/enc (= 1.0.2)
-    - libwebp/mux (= 1.0.2)
-    - libwebp/utils (= 1.0.2)
-    - libwebp/webp (= 1.0.2)
-  - libwebp/core (1.0.2):
+  - libwebp (1.0.3):
+    - libwebp/demux (= 1.0.3)
+    - libwebp/mux (= 1.0.3)
+    - libwebp/webp (= 1.0.3)
+  - libwebp/demux (1.0.3):
     - libwebp/webp
-  - libwebp/dec (1.0.2):
-    - libwebp/core
-  - libwebp/demux (1.0.2):
-    - libwebp/core
-  - libwebp/dsp (1.0.2):
-    - libwebp/core
-  - libwebp/enc (1.0.2):
-    - libwebp/core
-  - libwebp/mux (1.0.2):
-    - libwebp/core
-  - libwebp/utils (1.0.2):
-    - libwebp/core
-  - libwebp/webp (1.0.2)
+  - libwebp/mux (1.0.3):
+    - libwebp/demux
+  - libwebp/webp (1.0.3)
   - React (0.60.5):
     - React-Core (= 0.60.5)
     - React-DevSupport (= 0.60.5)
@@ -115,10 +100,10 @@ PODS:
     - React
   - RNScreens (1.0.0-alpha.23):
     - React
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
-  - SDWebImageWebPCoder (0.2.3):
+  - SDWebImage (5.1.1):
+    - SDWebImage/Core (= 5.1.1)
+  - SDWebImage/Core (5.1.1)
+  - SDWebImageWebPCoder (0.2.4):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.0)
   - yoga (0.60.5.React)
@@ -217,7 +202,7 @@ SPEC CHECKSUMS:
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  libwebp: 10b2bf3c62bfa28046ff701771c9a75a7683d49b
+  libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
   React: c438ccc7e14e86d4702bb92d7e262f549ffaa995
   React-Core: c76495f5c14e73c0f803b89c3fa83f804da61bd6
   React-cxxreact: f64bc64cf4682d6ea5a064f6017da72482858682
@@ -240,8 +225,8 @@ SPEC CHECKSUMS:
   RNGestureHandler: 311e3b1cef021a7c9ef31e97e7dc31970cc6288d
   RNReanimated: 9f7976535c5cde50189acd84751871f5414190b9
   RNScreens: 354046589421edc3d83d5c6212475bf1fb9a731d
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
-  SDWebImageWebPCoder: 7568737603c50f6237850afedd7e9e28e5917e6b
+  SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
+  SDWebImageWebPCoder: cc72085bb20368b2f8dbb21b7e355c667e1309b7
   yoga: 88c514f310aff89b94a14c5fbf44b95735af0cb7
 
 PODFILE CHECKSUM: da7de38ce73f3b6f7e1c1714c2d790f427280adf
