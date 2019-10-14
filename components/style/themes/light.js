@@ -232,4 +232,7 @@ export default {
 
     // actionSheet
     sheet_title_backgroundcolor:'#F3F5F8',
+
+    // activityIndicator
+    activity_indicator_size:89,
 }
