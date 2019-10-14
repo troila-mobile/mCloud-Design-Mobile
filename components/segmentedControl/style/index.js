@@ -6,14 +6,14 @@ import { StyleSheet } from 'react-native'
 export default (theme) => StyleSheet.create({
     defaultContainer: {
         flexDirection: 'row',
-        borderColor:theme.segmented_control_color,
+        borderColor:theme.sc_selected_bg_color_default,
         borderWidth:1,
         borderRadius:theme.radius_md,
         width:theme.segmented_control_width,
     },
     specialContainer:{
         flexDirection: 'row',
-        borderColor:theme.fill_base,
+        borderColor:theme.sc_sepcial_border_color,
         borderWidth:1,
         borderRadius:theme.radius_md,
         width:theme.segmented_control_width,
@@ -22,43 +22,43 @@ export default (theme) => StyleSheet.create({
         height:theme.segmented_control_height,
     },
     defaultBorderRight:{
-        borderColor:theme.segmented_control_color,
+        borderColor:theme.sc_selected_bg_color_default,
         borderRightWidth:1
     },
     specialBorderRight:{
-        borderColor:theme.fill_base,
+        borderColor:theme.sc_selected_bg_color_special,
         borderRightWidth:1
     },
     disabled:{
         opacity:0.6,
     },
     defaultButtonBGUnselected:{
-        backgroundColor:theme.segmented_control_background_grey,
+        backgroundColor:theme.sc_unselected_bg_color_default,
     },
     defaultButtonBGSelected:{
-        backgroundColor:theme.segmented_control_color,
+        backgroundColor:theme.sc_selected_bg_color_default,
     },
     defaultUnselectedText:{
         fontSize:theme.font_size_base,
-        color:theme.segmented_control_color,
+        color:theme.sc_unselected_text_color_default,
     },
     defaultSelectedText:{
         fontSize:theme.font_size_base,
-        color:theme.fill_base,
+        color:theme.sc_selected_text_color_default,
     },
     specialButtonBGUnselected:{
-        backgroundColor:theme.segmented_control_color,
+        backgroundColor:theme.sc_selected_bg_color_default,
     },
     specialButtonBGSelected:{
-        backgroundColor:'#fff',
+        backgroundColor:theme.sc_selected_bg_color_special,
     },
     specialUnselectedText:{
         fontSize:theme.font_size_base,
-        color:'#fff'
+        color:theme.sc_unselected_text_color_special
     },
     specialSelectedText:{
         fontSize:theme.font_size_base,
-        color:theme.segmented_control_color,
+        color:theme.sc_selected_text_color_special,
     },
     borderRadiusLeft: {
         flex:1,

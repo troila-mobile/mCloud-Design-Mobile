@@ -12,7 +12,7 @@ export default () => (
             alignItems:'center',
         }}
     >
-        <SegmentedControl style={{ marginTop:20 }} />
+        <SegmentedControl style={{ marginTop:20 }} titles={['申请','审批']} />
         <SegmentedControl
             disabled
             titles={['申请','审批']}

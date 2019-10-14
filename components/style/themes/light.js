@@ -168,11 +168,16 @@ export default {
     tabs_elevation:0,
     tabs_initialLayout_height:0,
     // segmented_control
-    segmented_control_color: brandPrimary,  // 同时应用于背景、文字颜色、边框色   darkMode: #262B48
+    sc_selected_bg_color_default: brandPrimary,  // 同时应用于背景、文字颜色、边框色
     segmented_control_height: 30,
     segmented_control_width: 190,
-    segmented_control_fill_tap: `${brandPrimary}10`,
-    segmented_control_background_grey:'#e6e6e6',  // darkMode: #030722
+    sc_unselected_bg_color_default:'#e6e6e6',  // darkMode: #030722
+    sc_selected_text_color_default:'#fff',
+    sc_unselected_text_color_default:brandPrimary,
+    sc_selected_bg_color_special:'#fff', // 同时应用于背景、文字颜色、边框色
+    sc_selected_text_color_special:brandPrimary,
+    sc_unselected_text_color_special:'#fff',
+    sc_sepcial_border_color:'#fff',
 
     // tab_bar
     tab_bar_fill: '#ebeeef',
