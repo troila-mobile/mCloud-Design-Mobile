@@ -27,6 +27,21 @@ export default class ModalDemo extends React.Component {
                 >
                     Toast
                 </Button>
+                <Button
+                    onPress={() => {
+                        Modal.prompt('Title', '', 'default', (input) => console.log(input),
+                            {
+                                errorHint: (input) => {
+                                    if (input.length < 6) return 'Too Short'
+                                    return false
+                                },
+                            })
+                    }}
+                    type="primary"
+                    style={{ marginTop: 20 }}
+                >
+                    Prompt
+                </Button>
             </View>
         )
     }

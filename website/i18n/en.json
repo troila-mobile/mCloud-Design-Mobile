@@ -93,7 +93,11 @@
       "Tabs": {
         "title": "Tabs",
         "sidebar_label": "Tabs"
-      }
+      },
+      "Modal": {
+        "title": "Modal",
+        "sidebar_label": "Modal"
+      },
     },
     "links": {
       "Docs": "Docs",

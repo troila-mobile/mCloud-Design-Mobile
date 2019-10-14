@@ -131,6 +131,10 @@ export default {
     modal_button_font_size: 16, // 按钮字号
     modal_button_height: 46, // 按钮高度
     toast_background_color: 'rgba(0,0,0,.7)',
+    positive_text_color: brandPrimary,
+    invalid_text_color: '#DEDFE0',
+    error_hint_color: '#F85858',
+    error_hint_font_size: 11,
 
     // list
     list_item_height: 50,
