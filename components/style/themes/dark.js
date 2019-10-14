@@ -8,4 +8,7 @@ export default {
 
     // 背景色
     fill_base: '#000000',                           // 组件默认背景
+    // Tabs indicator Color
+    tabs_indicator_Color:'#262B48',
+    labelBackgroundColor:'#262B48',
 }

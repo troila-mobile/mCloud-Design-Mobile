@@ -167,7 +167,10 @@ export default {
     tabs_font_size_heading: 15,
     tabs_height:42,
     tabs_elevation:0,
+    tabs_label_paddingTop:16,
     tabs_initialLayout_height:0,
+    tabs_indicator_Color:'#FFF',
+    labelBackgroundColor:'#FFF',
     // segmented_control
     segmented_control_color: brandPrimary,  // 同时应用于背景、文字颜色、边框色
     segmented_control_height: 30,

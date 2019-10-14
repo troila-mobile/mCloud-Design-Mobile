@@ -4,24 +4,23 @@
 import { StyleSheet } from 'react-native'
 
 export default (theme) => StyleSheet.create({
-    wrapper: { flex:1 },
+    wrapper: {
+        flex:1,
+    },
     tabStyle:{
+        height:theme.tabs_height,
         alignItems: 'center',
-        height: theme.tabs_height,
-        justifyContent: 'center',
+    },
+    TabBarWrapper:{
+        flexDirection: 'row',
+        height:theme.tabs_height,
+        width:theme.screen_W,
+        backgroundColor:theme.labelBackgroundColor,
     },
     labelStyle: {
-        color: theme.label_textColor,
-    },
-    style_type:{
-        height: theme.tabs_height,
-        borderColor: theme.color_icon_base,
-        borderBottomWidth: theme.border_width_md,
-        backgroundColor: theme.fill_base,
-        elevation: theme.tabs_elevation,
+        paddingTop:theme.tabs_label_paddingTop,
     },
     indicatorStyle:{
-        backgroundColor: theme.tabs_color,
         height: theme.tabs_indicator_height,
         borderRadius: theme.tabs_indicator_borderRadius,
     },

@@ -17,6 +17,7 @@ import { Label } from 'mCloud-Design-Mobile';
 
 export default class TabViewExample extends React.Component {
     state = {
+        // eslint-disable-next-line react/no-unused-state
         index: 0,
         routes: [
             { key: '1', title: '新闻' },
@@ -46,9 +47,12 @@ export default class TabViewExample extends React.Component {
         return (
             <Tabs
                 navigationState={this.state}
-                labelWidth={75}
+                UIColor="#586BFB"
+                labelWidth={60}
+                routesArray={this.state.routes}
                 renderScene={this._renderScene}
                 onIndexChange_Tabs={(index) => {
+                    // eslint-disable-next-line react/no-unused-state
                     this.setState({ index })
                 }}
             />
@@ -62,19 +66,19 @@ const styles = StyleSheet.create({
     },
 })
 
+
 ```
 ## Props:
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| labelWidth    | 标题标签长度  |   number   |   -  |
+| labelWidth    | 标签长度  |   number   |   -  |
+| UIColor    | 标题和下划线选中颜色  |   string   |   -  |
 | navigationState    | 获取当前state |   object   |   -  |
 | renderScene    |回调，返回一个react元素以呈现为分页的页面。接收包含路由作为参数的对象： |   func  |   -  |
 | onIndexChange_Tabs    |回调，返回当前页面的index： |   func  |   -  |
-| scrollEnabled    |tabbar是否滑动,默认为true |   bool  |   -  |
 | tabStyle    | tab自定义样式 |   Object  | 无 |
 | labelStyle    | label自定义样式 |   Object  | 无 |
-| tabBarStyle    | tabBar自定义样式 |   Object  | 无 |
 | indicatorStyle    | indicator自定义样式 |   Object  | 无 |
 | initialLayout    | initialLayout自定义样式 |   Object  | 无 |
 
