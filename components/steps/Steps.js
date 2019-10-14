@@ -1,12 +1,17 @@
 import React from 'react'
 import {
-    ViewPropTypes, Image, Text, View,
+    ViewPropTypes, View,
 } from 'react-native'
 import { WithTheme } from '../style'
 import StepsStyles from './style'
 import PropTypes from 'prop-types'
+import StepsItem from './StepsItem'
+
+Steps.Step = StepsItem
 
 export default class Steps extends React.Component {
+    static Step: typeof StepsItem
+
     static propTypes = {
         style: ViewPropTypes.style,
         styles: ViewPropTypes.style,
@@ -27,9 +32,6 @@ export default class Steps extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            value: 1,
-        }
     }
 
     render() {
@@ -37,15 +39,38 @@ export default class Steps extends React.Component {
             style,
             styles,
             current,
-            size,
-            direction,
+            size = this.props.size === 'large' ? 'large' : 'small',
+            direction = this.props.direction === 'horizontal' ? 'row' : 'column',
             children,
         } = this.props
-        const { value } = this.state
         return (
             <WithTheme themeStyles={StepsStyles} styles={styles}>
                 {
-
+                    (_styles) => {
+                        <View style={[_styles.stepsContainer, { flexDirection: direction }]}>
+                            {
+                                React.Children.map(children, (item, index) => {
+                                    let errorTail = -1
+                                    if (index < children.length - 1) {
+                                        const status = children[index + 1].props.status
+                                        if (status === 'error') {
+                                            errorTail = index
+                                        }
+                                    }
+                                    return React.cloneElement(item as PropTypes.any, {
+                                        index: index,
+                                        last: index === (children as PropTypes.any).length - 1,
+                                        direction: direction,
+                                        current: current,
+                                        size: size,
+                                        errorTail: errorTail,
+                                        styles: styles,
+                                        style: style,
+                                    })
+                                })
+                            }
+                        </View>
+                    }
                 }
             </WithTheme>
         )
