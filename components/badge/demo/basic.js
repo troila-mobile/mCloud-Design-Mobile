@@ -7,7 +7,6 @@ export default () => (
         style={{
             flex:1,
             alignItems:'center',
-            backgroundColor:'#e6e6e6'
         }}
     >
         <Badge text="文本" style={{ marginBottom:4 }} />
