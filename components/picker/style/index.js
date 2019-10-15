@@ -61,4 +61,15 @@ export default (theme) => StyleSheet.create({
     pickerItem:{
         color: theme.color_text_base,
     },
+    pickerAndroidSelectedItemText:{
+        fontSize: 20,
+        fontWeight: '300',
+        color: theme.picker_android_selected_item_text_color,
+    },
+    pickerAndroidItemText: {
+        fontSize: 18,
+        color: theme.picker_android_item_text_color,
+        textAlign: 'center',
+        height: 20,
+    },
 })

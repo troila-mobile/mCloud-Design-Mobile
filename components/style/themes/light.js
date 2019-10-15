@@ -208,6 +208,8 @@ export default {
     picker_header_background_color: '#F3F5F8',
     picker_title_text_color: '#1F2530',
     picker_dismiss_text_color: '#1F2530',
+    picker_android_selected_item_text_color: '#333',
+    picker_android_item_text_color:'#aaa',
 
     toast_zindex: 1999,
     action_sheet_zindex: 1000,

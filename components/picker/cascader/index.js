@@ -119,6 +119,7 @@ class Cascader extends React.Component {
                 disabled={disabled}
                 itemStyle={pickerItemStyle}
                 indicatorStyle={indicatorStyle}
+                styles={styles}
             >
                 {children.map((item) => (
                     <Picker.Item

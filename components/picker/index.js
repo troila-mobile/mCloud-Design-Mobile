@@ -74,6 +74,7 @@ export default class Picker extends React.Component {
                 style={[{ flex: 1 }, _styles.pickerContainer]}
                 itemStyle={itemStyle}
                 indicatorStyle={indicatorStyle}
+                styles={_styles}
             >
                 {col.map((item) => (
                     <RMCPicker.Item

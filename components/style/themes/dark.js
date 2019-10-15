@@ -12,5 +12,6 @@ export default {
     picker_dismiss_text_color: '#A5ABB1',
     color_text_base: '#ffffff',
     picker_title_text_color: '#ffffff',
-
+    picker_android_selected_item_text_color: '#ffffff',
+    picker_android_item_text_color: '#50546B',
 }
