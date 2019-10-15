@@ -216,11 +216,7 @@ export default {
     card_image_BG_color: '#efefef',
 
     // steps
-    steps_item_height: 60,
     steps_paddingHorizontal:20,
-    steps_image_finish_color: '#3C4DCF',
-    steps_image_error_color: '#F85858',
-    steps_image_wait_color: '#888888',
     steps_text_normal_color: '#1F2530',
     steps_text_black_color: '#000000',
 }
