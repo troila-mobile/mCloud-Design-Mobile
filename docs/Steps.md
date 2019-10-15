@@ -4,7 +4,7 @@ title: Steps
 sidebar_label: Steps
 ---
 
-步骤进度条
+Steps
 
 ## Basic Example:
 
@@ -13,40 +13,44 @@ import React from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import { Steps } from '../..'
 
-const Step = Steps.StepsItem
+const { StepsItem } = Steps
+const ViewTop = () => (
+    <View style={{ marginTop: 20 }}/>
+)
+
 const stepsOne = [
     {
-        title: 'Finished',
-        description: 'Finished',
+        title: '第一步',
+        description: '完成',
     },
     {
-        title: 'In Progress',
-        description: 'In Progress',
+        title: '第二步',
+        description: '进行中',
     },
     {
-        title: 'Waiting',
-        description: 'Waiting',
+        title: '第三步',
+        description: '等待',
     },
 ]
 const stepsTwo = [
     {
-        title: 'Finished',
-        description: 'Finished',
+        title: '第一步',
+        description: '完成',
         status: 'finish',
     },
     {
-        title: 'In Progress',
-        description: 'In Progress',
+        title: '第二步',
+        description: '进行中',
         status: 'process',
     },
     {
-        title: 'Waiting',
-        description: 'Waiting',
+        title: '第三步',
+        description: '出错',
         status: 'error',
     },
     {
-        title: 'Waiting',
-        description: 'Waiting',
+        title: '第四步',
+        description: '等待',
         status: 'wait',
     },
 ]
@@ -59,67 +63,27 @@ export default () => (
             style={{ flex: 1 }}
             automaticallyAdjustContentInsets={false}
             showsVerticalScrollIndicator={false}>
-            <View style={{ marginTop: 60 }}>
-                <Steps size='small' current={1} direction="horizontal">
-                    {stepsOne.map((item, index) => (
-                        <Step
-                            key={index}
-                            title={
-                                <View>
-                                    <Text>
-                                        {item.title}
-                                    </Text>
-                                </View>
-                            }
-                            status={item.status}
-                        />
-                    ))}
-                </Steps>
-            </View>
-            <View style={{ marginTop: 60 }}>
-                <Steps size="small" current={1}>
-                    {stepsOne.map((item, index) => (
-                        <Step
-                            key={index}
-                            title={
-                                <View>
-                                    <Text>title:{item.title}</Text>
-                                </View>
-                            }
-                            description={
-                                <View>
-                                    <Text>desc:{item.description}</Text>
-                                </View>
-                            }
-                            status={item.status}
-                        />
-                    ))}
-                </Steps>
-            </View>
-            <View style={{ marginTop: 60 }}>
-                <Steps size="small">
-                    {stepsTwo.map((item, index) => (
-                        <Step
-                            key={index}
-                            title={item.title}
-                            description={item.description}
-                            status={item.status}
-                        />
-                    ))}
-                </Steps>
-            </View>
-            <View style={{ marginTop: 60 }}>
-                <Steps>
-                    {stepsTwo.map((item, index) => (
-                        <Step
-                            key={index}
-                            title={item.title}
-                            description={item.description}
-                            status={item.status}
-                        />
-                    ))}
-                </Steps>
-            </View>
+            <ViewTop/>
+            <Steps size='small' current={1} direction="horizontal">
+                {stepsOne.map((item, index) => (
+                    <StepsItem
+                        key={index}
+                        title={item.title}
+                        status={item.status}
+                    />
+                ))}
+            </Steps>
+            <ViewTop/>
+            <Steps size="small" current={1}>
+                {stepsOne.map((item, index) => (
+                    <StepsItem
+                        key={index}
+                        title={item.title}
+                        description={item.description}
+                        status={item.status}
+                    />
+                ))}
+            </Steps>
         </ScrollView>
     </View>
 )
@@ -140,5 +104,3 @@ export default () => (
 | status | 状态值，可选值为`wait`/`process`/`finish`/`error` | String | `wait` |
 | title | 标题 | String   |  无 |
 | description | 描述(可选) | String   |  无 |
-| icon | 图标(可选) | String   |  无 |
-| renderIcon | 自定义步骤图标(可选) | (params: { finish: boolean; error: boolean; wait: boolean}) | 无 |

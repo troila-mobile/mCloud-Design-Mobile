@@ -6,111 +6,85 @@ export default (theme) => StyleSheet.create({
         backgroundColor: theme.fill_base,
         paddingHorizontal: theme.steps_paddingHorizontal,
     },
-    steps_head_small: {
-        width: 18,
-        height: 18,
-        backgroundColor: theme.fill_base,
-        borderRadius: 18,
-        borderWidth: theme.border_width_sm,
-        borderColor: theme.brand_primary,
-        borderStyle: 'solid',
-        overflow: 'hidden',
+    // 图片
+    image_style_small: {
+        height: 40,
+        width: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    steps_head_large: {
-        width: 24,
-        height: 24,
-        backgroundColor: theme.fill_base,
-        borderRadius: 18,
-        borderWidth: theme.border_width_md,
-        borderColor: theme.brand_primary,
-        borderStyle: 'solid',
-        overflow: 'hidden',
+    image_style_large: {
+        height: 50,
+        width: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    head_blue_small: {
-        borderColor: theme.brand_primary,
-    },
-    head_gray_small: {
-        borderColor: theme.color_text_placeholder,
-    },
-    head_red_small: {
-        borderColor: theme.brand_error,
-    },
-    head_blue_large: {
-        borderColor: theme.brand_primary,
-        backgroundColor: theme.brand_primary,
-    },
-    head_gray_large: {
-        borderColor: theme.color_text_placeholder,
+    // 中间线
+    line_gray: {
         backgroundColor: theme.color_text_placeholder,
     },
-    head_red_large: {
-        borderColor: theme.brand_error,
-        backgroundColor: theme.brand_error,
-    },
-    tail_gray: {
-        backgroundColor: theme.color_text_placeholder,
-    },
-    tail_blue: {
+    line_blue: {
         backgroundColor: theme.brand_primary,
     },
-    tail_last: {
+    line_last: {
         backgroundColor: 'transparent',
     },
-    tail_error: {
+    line_error: {
         backgroundColor: theme.brand_error,
     },
+    line_default_small: {
+        height: 30,
+        width: theme.border_width_md,
+        marginLeft: 20,
+    },
+    line_default_small_horizontal: {
+        height: theme.border_width_md,
+        width: 50,
+        marginTop: 20,
+    },
+    line_default_large: {
+        height: 30,
+        width: theme.border_width_md,
+        marginLeft: 25,
+    },
+    line_default_large_horizontal: {
+        height: theme.border_width_md,
+        width: 50,
+        marginTop: 25,
+    },
+    // 内容
+    content_small: {
+        paddingLeft: theme.h_spacing_md,
+    },
+    content_small_horizontal: {
+        paddingTop: theme.v_spacing_sm,
+    },
+    content_large: {
+        paddingLeft: theme.h_spacing_sm,
+    },
+    content_large_horizontal: {
+        paddingTop: theme.v_spacing_lg,
+    },
+    // 标题
     title_style_small: {
-        fontSize: theme.font_size_caption,
-        textColor: theme.steps_text_black_color,
+        fontSize: theme.font_size_base,
+        color: theme.steps_text_black_color,
+        paddingBottom: theme.v_spacing_md,
     },
     title_style_large: {
         fontSize: theme.font_size_caption,
         fontWeight: 'bold',
-        textColor: theme.steps_text_black_color,
+        paddingBottom: theme.v_spacing_md,
+        color: theme.steps_text_black_color,
     },
+    // 描述
     description_style_small: {
-        fontSize: theme.font_size_base,
-        textColor: theme.steps_text_normal_color,
+        fontSize: theme.font_size_caption_sm,
+        color: theme.steps_text_normal_color,
     },
     description_style_large: {
         fontSize: theme.font_size_base,
         fontWeight: 'bold',
-        textColor: theme.steps_text_normal_color,
-    },
-    content_small: {
-        paddingLeft: theme.h_spacing_sm,
-        paddingTop: theme.v_spacing_sm,
-    },
-    content_small_horizontal: {
-        paddingLeft: theme.h_spacing_sm,
-        paddingTop: theme.v_spacing_sm,
-    },
-    content_large: {
-        paddingLeft: theme.h_spacing_lg,
-        paddingTop: theme.v_spacing_lg,
-    },
-    content_large_horizontal: {
-        paddingLeft: theme.h_spacing_lg,
-        paddingTop: theme.v_spacing_lg,
-    },
-    tail_default_small: {
-        height: 30,
-        width: 50,
-        marginLeft: theme.h_spacing_md,
-    },
-    tail_default_small_horizontal: {
-        height: 30,
-        width: 50,
-        marginTop: theme.v_spacing_sm,
-    },
-    tail_default_large: {
-        height: 40,
-        width: 60,
-        marginLeft: theme.h_spacing_sm,
-    },
-    tail_default_large_horizontal: {
-        height: 40,
-        width: 60,
-        marginTop: theme.v_spacing_md,
+        color: theme.steps_text_normal_color,
     },
 })

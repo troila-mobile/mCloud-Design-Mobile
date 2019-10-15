@@ -19,7 +19,6 @@ export default class StepsItem extends React.Component {
         title: PropTypes.string,
         description: PropTypes.string,
         icon: PropTypes.string,
-        renderIcon: PropTypes.string,
 
         width: PropTypes.number,
         size: PropTypes.string,
@@ -28,10 +27,6 @@ export default class StepsItem extends React.Component {
         last: PropTypes.bool,
         direction: PropTypes.string,
         errorTail: PropTypes.number,
-
-        finish: PropTypes.bool,
-        error: PropTypes.bool,
-        wait: PropTypes.bool,
     }
 
     static defaultProps = {
@@ -40,8 +35,6 @@ export default class StepsItem extends React.Component {
         status: 'wait',
         title: '',
         description: '',
-        icon: null,
-        renderIcon: null,
 
         width: 60,
         size: 'large',
@@ -50,10 +43,6 @@ export default class StepsItem extends React.Component {
         last: false,
         direction: 'vertical',
         errorTail: 0,
-
-        finish: false,
-        error: false,
-        wait: false,
     }
 
     constructor(props) {
@@ -67,8 +56,6 @@ export default class StepsItem extends React.Component {
             status,
             title,
             description,
-            icon,
-            renderIcon,
 
             width,
             size,
@@ -77,80 +64,48 @@ export default class StepsItem extends React.Component {
             last,
             direction,
             errorTail,
-
-            finish = index < current || status === 'finish' || index === current || status === 'process',
-            error = status === 'error',
-            wait = index > current || status === 'wait',
         } = this.props
+        const finish = index < current || status === 'finish' || index === current || status === 'process'
+        const error = status === 'error'
+        const wait = status === 'wait'
         return (
             <WithTheme themeStyles={StepsStyles} styles={styles}>
                 {
                     (_styles) => {
-                        let headStepColor: string = ''
-                        let topStepColor: string = ''
-                        let bottomStepColor: string = ''
-                        const size: string = size === 'large' ? '_large' : '_small'
+                        let topStepColor = ''
+                        let bottomStepColor = ''
+                        const itemSize = size === 'large' ? '_large' : '_small'
 
                         if (index < current || status === 'finish') {
-                            headStepColor = `head_blue${size}`
-                            topStepColor = 'tail_blue'
-                            bottomStepColor = 'tail_blue'
+                            topStepColor = 'line_blue'
+                            bottomStepColor = 'line_blue'
                         } else if (index === current || status === 'process') {
-                            headStepColor = `head_blue${size}`
-                            topStepColor = 'tail_blue'
-                            bottomStepColor = 'tail_gray'
+                            topStepColor = 'line_blue'
+                            bottomStepColor = 'line_gray'
                         } else if (index > current || status === 'wait') {
-                            headStepColor = `head_gray${size}`
-                            topStepColor = 'tail_gray'
-                            bottomStepColor = 'tail_gray'
+                            topStepColor = 'line_gray'
+                            bottomStepColor = 'line_gray'
                         } else if (status === 'error') {
-                            headStepColor = `head_red${size}`
-                            topStepColor = 'tail_gray'
-                            bottomStepColor = 'tail_gray'
+                            topStepColor = 'line_gray'
+                            bottomStepColor = 'line_gray'
                         }
 
                         if (last) {
-                            topStepColor = 'tail_last'
-                            bottomStepColor = 'tail_last'
+                            topStepColor = 'line_last'
+                            bottomStepColor = 'line_last'
                         }
 
                         if (errorTail > -1) {
-                            bottomStepColor = 'tail_error'
-                        }
-
-                        let imageSource
-                        if (renderIcon) {
-                            imageSource = renderIcon({
-                                finish,
-                                wait,
-                                error,
-                            })
-                        } else {
-                            if (finish) {
-                                imageSource = (
-                                    <Image source={steps_finish}/>
-                                )
-                            } else if (wait) {
-                                imageSource = (
-                                    <Image source={steps_wait}/>
-                                )
-                                if (!!icon) {
-                                    imageSource = icon
-                                }
-                            } else if (error) {
-                                imageSource = (
-                                    <Image source={steps_error}/>
-                                )
-                            }
+                            bottomStepColor = 'line_error'
                         }
 
                         const isHorizontal = direction === 'horizontal'
                         const parentStyle: ViewStyle = isHorizontal ? {
-                            flexDirection: 'row',
-                        } : { flexDirection: 'column' }
+                            flexDirection: 'column',
+                        } : { flexDirection: 'row' }
                         const childStyle: ViewStyle = isHorizontal ? {
                             flexDirection: 'row',
-                            flex: 1,
+                            flew: 1,
                         } : { flexDirection: 'column' }
 
                         let styleSuffix: string = ''
@@ -158,41 +113,55 @@ export default class StepsItem extends React.Component {
                             styleSuffix = '_horizontal'
                         }
 
+                        let imageSource
+                        if (finish) {
+                            imageSource = (
+                                <Image source={steps_finish}
+                                       resizeMode="stretch"/>
+                            )
+                        } else if (error) {
+                            imageSource = (
+                                <Image source={steps_error}
+                                       resizeMode="stretch"/>
+                            )
+                        } else if (wait) {
+                            imageSource = (
+                                <Image source={steps_wait}
+                                       resizeMode="stretch"/>
+                            )
+                        }
+
                         return (
                             <View style={[parentStyle, style]}>
                                 <View style={childStyle}>
-                                    <View style={[_styles[`steps_head${size}`], _styles[headStepColor]]}>
+                                    <View style={_styles[`image_style${itemSize}`]}>
                                         {React.isValidElement(imageSource) ? imageSource : null}
                                     </View>
                                     {
-                                        <View>
-                                            {
-                                                <View
-                                                    style={[
-                                                        _styles[`tail_default${size}${styleSuffix}`],
-                                                        _styles[topStepColor],
-                                                    ]}
-                                                />
-                                            }
-                                            {
-                                                <View
-                                                    style={[
-                                                        _styles[`tail_default${size}${styleSuffix}`],
-                                                        _styles[bottomStepColor],
-                                                    ]}
-                                                />
-                                            }
-                                        </View>
+                                        <View
+                                            style={[
+                                                _styles[`line_default${itemSize}${styleSuffix}`],
+                                                _styles[topStepColor],
+                                            ]}
+                                        />
+                                    }
+                                    {
+                                        <View
+                                            style={[
+                                                _styles[`line_default${itemSize}${styleSuffix}`],
+                                                _styles[bottomStepColor],
+                                            ]}
+                                        />
                                     }
                                 </View>
-                                <View style={_styles[`content${size}${styleSuffix}`]}>
+                                <View style={_styles[`content${itemSize}${styleSuffix}`]}>
                                     {typeof title !== 'object' ? (
-                                        <Text style={[_styles[`title_style${size}`]]}>{title}</Text>
+                                        <Text style={[_styles[`title_style${itemSize}`]]}>{title}</Text>
                                     ) : (
                                         <View>{title}</View>
                                     )}
                                     {typeof description !== 'object' ? (
-                                        <Text style={[_styles[`description_style${size}`]]}>
+                                        <Text style={[_styles[`description_style${itemSize}`]]}>
                                             {description}
                                         </Text>
                                     ) : (

@@ -90,7 +90,7 @@ export default [
 	},
 	{
 		title: 'steps',
-		description: '步骤进度条',
+		description: 'steps',
 		example: require('../components/steps/demo/basic')
 	},
 ]

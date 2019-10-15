@@ -5,19 +5,14 @@ import {
 import { WithTheme } from '../style'
 import StepsStyles from './style'
 import PropTypes from 'prop-types'
-import StepsItem from './StepsItem'
-
-Steps.Step = StepsItem
 
 export default class Steps extends React.Component {
-    static Step: typeof StepsItem
-
     static propTypes = {
         style: ViewPropTypes.style,
         styles: ViewPropTypes.style,
         current: PropTypes.number,
         size: PropTypes.string,
-        direction: PropTypes.string,
+        direction: 'vertical' | 'horizontal',
         children: PropTypes.any,
     }
 
@@ -32,17 +27,19 @@ export default class Steps extends React.Component {
 
     constructor(props) {
         super(props)
+        this.setState = ({})
     }
 
     render() {
         const {
             style,
             styles,
+            size,
+            direction,
             current,
-            size = this.props.size === 'large' ? 'large' : 'small',
-            direction = this.props.direction === 'horizontal' ? 'row' : 'column',
             children,
         } = this.props
+        const stepDirection = direction === 'vertical' ? 'column' : 'row'
         return (
             <WithTheme themeStyles={StepsStyles} styles={styles}>
                 {
@@ -53,7 +50,7 @@ export default class Steps extends React.Component {
                         ]
 
                         return (
-                            <View style={[container, { flexDirection: direction }]}>
+                            <View style={[container, { flexDirection: stepDirection }]}>
                                 {
                                     React.Children.map(children, (item, index) => {
                                         let errorTail = -1
@@ -63,9 +60,9 @@ export default class Steps extends React.Component {
                                                 errorTail = index
                                             }
                                         }
-                                        return React.cloneElement(item as PropTypes.any, {
+                                        return React.cloneElement(item, {
                                             index: index,
-                                            last: index === (children as PropTypes.any).length - 1,
+                                            last: index === children.length - 1,
                                             direction: direction,
                                             current: current,
                                             size: size,
