@@ -23,7 +23,8 @@
       "Label",
       "EmptyView",
       "Tabs",
-      "DatePicker"
+      "DatePicker",
+      "Modal",
     ],
     "First Category": ["doc4", "doc5"]
   }
