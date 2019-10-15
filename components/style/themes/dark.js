@@ -34,4 +34,5 @@ export default {
     card_background_color:'#12162F',
     card_title_color:'#fff',
     card_content_color: '#A5ABB1',
+
 }
