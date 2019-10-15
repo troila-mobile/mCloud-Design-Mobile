@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native'
 
-const brandPrimary = '#586BFB'
-const brandPrimaryTap = '#3C4DCF'
+export const brandPrimary = '#586BFB'
+export const brandPrimaryTap = '#3C4DCF'
 const screenW = Dimensions.get('window').width
 const screenH = Dimensions.get('window').height
 export default {

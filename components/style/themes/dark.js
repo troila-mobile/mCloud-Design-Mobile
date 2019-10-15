@@ -1,8 +1,7 @@
-import defaultTheme from './light'
+import defaultTheme, { brandPrimary } from './light'
 
 export default {
     ...defaultTheme,
-
 
     fill_base: '#000000',
     ghost_button_fill_tap: '#ffffff1A',
