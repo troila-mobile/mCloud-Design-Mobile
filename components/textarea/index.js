@@ -44,6 +44,7 @@ export default class TextAreaItem extends React.Component {
         onChange: PropTypes.func,
         onContentSizeChange: PropTypes.func,
         textAlign: PropTypes.oneOf(['left', 'right']),
+        placeholderTextColor: PropTypes.string,
     }
     static defaultProps = {
         styles: { },
@@ -158,6 +159,7 @@ export default class TextAreaItem extends React.Component {
             disabled,
             editable,
             textAlign,
+            placeholderTextColor,
         } = this.props
         const { inputCount, focus } = this.state
         return (
@@ -211,7 +213,7 @@ export default class TextAreaItem extends React.Component {
                                         value={value}
                                         defaultValue={defaultValue}
                                         placeholder={placeholder}
-                                        placeholderTextColor={theme.color_text_placeholder}
+                                        placeholderTextColor={placeholderTextColor || theme.color_text_placeholder}
                                         onChange={(event) => this.onChange(event.nativeEvent.text)}
                                         onContentSizeChange={this.onContentSizeChange(theme)}
                                         multiline={rows > 1 || autoHeight}

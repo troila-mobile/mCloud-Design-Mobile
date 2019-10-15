@@ -30,6 +30,7 @@ export default class SearchBar extends React.Component {
         onFocus: PropTypes.func,
         onBlur: PropTypes.func,
         onClear: PropTypes.func,
+        placeholderTextColor: PropTypes.string,
     }
     static defaultProps = {
         style: {},
@@ -121,6 +122,7 @@ export default class SearchBar extends React.Component {
             styles,
             type,
             placeholder,
+            placeholderTextColor,
         } = this.props
         const style_prefix = type === 'radius' ? 'radius_' : 'default_'
         const search_source = type === 'default' ? searchBigImage : searchSmallImage
@@ -166,7 +168,7 @@ export default class SearchBar extends React.Component {
                                         underlineColorAndroid="transparent"
                                         returnKeyType="search"
                                         placeholder={placeholder}
-                                        placeholderTextColor={theme.color_text_placeholder}
+                                        placeholderTextColor={placeholderTextColor || theme.color_text_placeholder}
                                         value={value}
                                         onChangeText={this.onChangeText}
                                         onSubmitEditing={this.onSubmit}

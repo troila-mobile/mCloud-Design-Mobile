@@ -51,46 +51,42 @@ export default class CheckboxItem extends React.Component {
         return (
             <WithTheme themeStyles={CheckboxStyles} styles={styles}>
                 {
-                    (_styles, theme) => (
-                        <TouchableOpacity
-                            activeOpacity={disabled ? 1 : 0.8}
-                            onPress={this.onPress}
-                        >
-                            <View style={[_styles.itemWrapper, style]}>
-                                <Checkbox
-                                    ref={(e) => {
-                                        this.Checkbox = e
-                                    }}
-                                    defaultChecked={defaultChecked}
-                                    checked={checked}
-                                    onChange={onChange}
-                                    disabled={disabled}
-                                />
-                                {
-                                    children ? (
-                                        typeof children === 'string'
-                                            ? (
-                                                <Text
-                                                    style={[
-                                                        _styles.itemText,
-                                                        disabled ? {
-                                                            color: theme.color_text_info,
-                                                        } : null,
-                                                    ]}
-                                                >
-                                                    {children}
-                                                </Text>
-                                            ) : children
-                                    ) : null
-                                }
-                                {
-                                    !hideLine && (
-                                        <View style={_styles.line} />
-                                    )
-                                }
-                            </View>
-                        </TouchableOpacity>
-                    )
+                    (_styles) => {
+                        const itemText = [
+                            _styles.itemText,
+                            disabled && _styles.disabledItemText,
+                        ]
+                        return (
+                            <TouchableOpacity
+                                activeOpacity={disabled ? 1 : 0.8}
+                                onPress={this.onPress}
+                            >
+                                <View style={[_styles.itemWrapper, style]}>
+                                    <Checkbox
+                                        ref={(e) => {
+                                            this.Checkbox = e
+                                        }}
+                                        defaultChecked={defaultChecked}
+                                        checked={checked}
+                                        onChange={onChange}
+                                        disabled={disabled}
+                                    />
+                                    {
+                                        children ? (
+                                            typeof children === 'string'
+                                                ? <Text style={itemText}>{children}</Text>
+                                                : children
+                                        ) : null
+                                    }
+                                    {
+                                        !hideLine && (
+                                            <View style={_styles.line} />
+                                        )
+                                    }
+                                </View>
+                            </TouchableOpacity>
+                        )
+                    }
                 }
             </WithTheme>
         )

@@ -50,6 +50,7 @@ export default class InputItem extends React.Component {
         children: PropTypes.any,
         autoFocus: PropTypes.bool,
         focus: PropTypes.bool,
+        placeholderTextColor: PropTypes.string,
     }
     static defaultProps = {
         styles: {},
@@ -148,6 +149,7 @@ export default class InputItem extends React.Component {
             style,
             textAlign,
             placeholder,
+            placeholderTextColor,
         } = this.props
         const { focus } = this.state
         return (
@@ -192,7 +194,7 @@ export default class InputItem extends React.Component {
                                         value={value}
                                         defaultValue={defaultValue}
                                         placeholder={placeholder}
-                                        placeholderTextColor={theme.color_text_placeholder}
+                                        placeholderTextColor={placeholderTextColor || theme.color_text_placeholder}
                                         style={[
                                             _styles.input,
                                             disabledStyle,

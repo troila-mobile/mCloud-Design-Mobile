@@ -34,6 +34,9 @@ export default (theme) => StyleSheet.create({
         fontSize: theme.font_size_caption,
         color: theme.color_text_base,
     },
+    disabledItemText: {
+        color: theme.color_text_info,
+    },
     line: {
         backgroundColor: theme.border_color_base,
         height: theme.border_width_sm,
