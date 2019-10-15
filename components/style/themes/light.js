@@ -172,11 +172,16 @@ export default {
     tabs_elevation:0,
     tabs_initialLayout_height:0,
     // segmented_control
-    segmented_control_color: brandPrimary,  // 同时应用于背景、文字颜色、边框色
+    sc_selected_bg_color_default: brandPrimary,  // 同时应用于背景、文字颜色、边框色
     segmented_control_height: 30,
     segmented_control_width: 190,
-    segmented_control_fill_tap: `${brandPrimary}10`,
-    segmented_control_background_grey:'#e6e6e6',
+    sc_unselected_bg_color_default:'#e6e6e6',  // darkMode: #030722
+    sc_selected_text_color_default:'#fff',
+    sc_unselected_text_color_default:brandPrimary,
+    sc_selected_bg_color_special:'#fff', // 同时应用于背景、文字颜色、边框色
+    sc_selected_text_color_special:brandPrimary,
+    sc_unselected_text_color_special:'#fff',
+    sc_sepcial_border_color:'#fff',
 
     // tab_bar
     tab_bar_fill: '#ebeeef',
@@ -217,12 +222,14 @@ export default {
     v_spacing: 19,
 
     // badge
+    badge_background_color:'#fff',
     badge_item_height: 50,
     badge_paddingHorizontal:15,
     badge_color: '#F85858',
     badge_text_color:'#1F2530',
 
     // card
+    card_background_color:'#fff',
     card_title_color:'#1F2530',
     card_content_color: '#a9a9a9',
     card_lineHeight: 23,
