@@ -3,14 +3,20 @@ import defaultTheme, { brandPrimary } from './light'
 export default {
     ...defaultTheme,
 
-    fill_base: '#000000',
+    // 文字色
+    color_text_base: '#FFFFFF',             // 标题
+
+    // 背景色
+    fill_base: '#12162F',                           // 组件默认背景
+
+    // 边框色
+    border_color_base: '#262B48',
+
     ghost_button_fill_tap: '#ffffff1A',
     ghost_button_background_color: '#ffffff33',
     picker_background_color: '#292D4B',
     picker_header_background_color: '#141933',
-    border_color_base: '#141933',
     picker_dismiss_text_color: '#A5ABB1',
-    color_text_base: '#ffffff',
     picker_title_text_color: '#ffffff',
     picker_android_selected_item_text_color: '#ffffff',
     picker_android_item_text_color: '#50546B',
@@ -40,4 +46,14 @@ export default {
     card_title_color:'#fff',
     card_content_color: '#A5ABB1',
 
+    // radio
+    radio_circle_border_color: '#555768',
+
+    // search_bar
+    search_bar_border_color: '#262B48',
+
+    // switch
+    switch_tint: '#2C304E',
+    switch_disabled_tint: '#2C304E',
+    switch_disabled_thumbtint: 'rgba(255,255,255,.4)',
 }

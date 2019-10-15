@@ -38,18 +38,18 @@ export default (theme) => StyleSheet.create({
         width: 1,
     },
     title: {
-        color: theme.color_text_title,
+        color: theme.color_text_base,
         fontSize: theme.modal_font_size_heading,
         fontWeight: 'bold',
         textAlign: 'center',
     },
     content: {
-        color: theme.color_text_title,
+        color: theme.color_text_base,
         fontSize: theme.modal_font_size_content,
         textAlign: 'center',
     },
     action: {
-        color: theme.color_text_title,
+        color: theme.color_text_base,
         fontSize: theme.modal_button_font_size,
         fontWeight: 'bold',
     },

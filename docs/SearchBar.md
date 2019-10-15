@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
 | defaultValue | 默认值 | String   |  无 |
 | value | 当前值 | String   |  无 |
 | placeholder | 输入文本之前呈现的的提示信息 | String   |  无 |
+| placeholderTextColor      | placeholderTextColor        | String | theme.color_text_placeholder  |
 | onSubmit | submit 事件的回调 | (val: String): void   |  无 |
 | onChange | change 事件的回调 | (val: String): void   |  无 |
 | onFocus | focus 事件的回调 | (val: String): void   |  无 |
