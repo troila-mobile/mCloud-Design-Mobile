@@ -53,6 +53,16 @@ export default class ModalDemo extends React.Component {
                 >
                     Prompt
                 </Button>
+                <Button
+                    onPress={() => {
+                        Modal.showLoading()
+                        setTimeout(() => Modal.hideLoading(), 2000)
+                    }}
+                    type="primary"
+                    style={{ marginTop: 20 }}
+                >
+                    Loading
+                </Button>
             </View>
         )
     }
@@ -133,3 +143,19 @@ key | 说明 | 类型 | 默认值
 | maxLength  | 最大长度 | number | 50 |
 | placeholder  | 提示文字 | string | '' |
 | errorHint  | 格式校验错误文字, ''或false表示校验通过 | func | null |
+
+### showLoading
+
+```
+static showLoading(title?)
+```
+
+参数 | 说明 | 类型 | 默认值
+----|-----|------|------
+| title    | 标题  |   string   |   ''  |
+
+### hideLoading
+
+```
+static hideLoading()
+```

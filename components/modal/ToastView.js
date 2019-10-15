@@ -74,7 +74,7 @@ export default class ToastView extends React.Component {
                                             : (
                                                 <Image
                                                     source={this.getIcon(icon)}
-                                                    style={{ marginBottom: 16 }}
+                                                    style={_styles.iconMargin}
                                                 />
                                             )
                                     }

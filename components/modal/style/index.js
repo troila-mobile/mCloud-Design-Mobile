@@ -112,4 +112,19 @@ export default (theme) => StyleSheet.create({
         paddingHorizontal: 12,
         paddingVertical: 6,
     },
+    iconMargin: {
+        marginBottom: 16,
+    },
+    loadingMargin: {
+        marginBottom: 25,
+    },
+    loadingContainer: {
+        backgroundColor: theme.toast_background_color,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 5,
+        width: 120,
+        height: 120,
+        paddingTop: 10,
+    },
 })

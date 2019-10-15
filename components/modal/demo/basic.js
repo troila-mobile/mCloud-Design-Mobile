@@ -42,6 +42,16 @@ export default class ModalDemo extends React.Component {
                 >
                     Prompt
                 </Button>
+                <Button
+                    onPress={() => {
+                        Modal.showLoading()
+                        setTimeout(() => Modal.hideLoading(), 2000)
+                    }}
+                    type="primary"
+                    style={{ marginTop: 20 }}
+                >
+                    Loading
+                </Button>
             </View>
         )
     }
