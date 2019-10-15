@@ -3,6 +3,7 @@ import defaultTheme from './light'
 export default {
     ...defaultTheme,
 
+
     fill_base: '#000000',
     ghost_button_fill_tap: '#ffffff1A',
     ghost_button_background_color: '#ffffff33',
@@ -14,4 +15,25 @@ export default {
     picker_title_text_color: '#ffffff',
     picker_android_selected_item_text_color: '#ffffff',
     picker_android_item_text_color: '#50546B',
+
+    // segmented_control
+    sc_selected_bg_color_default: '#262B48',  // 同时应用于背景、文字颜色、边框色
+    sc_unselected_bg_color_default:'#030722',  // darkMode:
+    sc_selected_text_color_default:brandPrimary,
+    sc_unselected_text_color_default:'#969FB5',
+    sc_selected_bg_color_special:brandPrimary, // 同时应用于背景、文字颜色、边框色
+    sc_selected_text_color_special:'#fff',
+    sc_unselected_text_color_special:'#969FB5',
+    sc_sepcial_border_color:'#262B48',
+
+    // badge
+    badge_background_color:'#12162F',
+    badge_text_color:'#fff',
+
+
+    // card
+    card_background_color:'#12162F',
+    card_title_color:'#fff',
+    card_content_color: '#A5ABB1',
+  
 }

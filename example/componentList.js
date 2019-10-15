@@ -117,5 +117,15 @@ export default [
 		title: 'stepper',
 		description: 'stepper',
 		example: require('../components/stepper/demo/basic')
-	}
+	},
+    {
+        title: 'ActivityIndicator',
+        description: 'ActivityIndicator',
+        example: require('../components/activityIndicator/demo/basic')
+    },
+    {
+        title: 'CountDownView',
+        description: 'CountDownView',
+        example: require('../components/countDownView/demo/basic')
+    }
 ]
