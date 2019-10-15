@@ -97,6 +97,7 @@ class Cascader extends React.Component {
             disabled,
             pickerItemStyle,
             indicatorStyle,
+            styles,
         } = this.props
         const { value } = this.state
         const childrenTree = arrayTreeFilter(data, (c, level) => c.value === value[level]).map((c) => c.children)
@@ -114,13 +115,18 @@ class Cascader extends React.Component {
             <Picker
                 // eslint-disable-next-line react/no-array-index-key
                 key={level}
-                style={{ flex: 1,backgroundColor:'#fff' }}
+                style={{ flex: 1 }}
                 disabled={disabled}
                 itemStyle={pickerItemStyle}
                 indicatorStyle={indicatorStyle}
+                styles={styles}
             >
                 {children.map((item) => (
-                    <Picker.Item value={item.value} key={item.value}>
+                    <Picker.Item
+                        value={item.value}
+                        key={item.value}
+                        color={styles.pickerItem.color}
+                    >
                         {item.label}
                     </Picker.Item>
                 ))}

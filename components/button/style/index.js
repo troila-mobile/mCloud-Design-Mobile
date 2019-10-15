@@ -62,6 +62,7 @@ export default (theme) => StyleSheet.create({
     },
     ghostDisabledRaw: {
         borderColor: `${theme.ghost_button_color}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
+        backgroundColor: theme.ghost_button_background_color,
     },
     warningDisabledRaw: {
         opacity: 0.4,

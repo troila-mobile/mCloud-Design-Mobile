@@ -6,6 +6,7 @@ import ComponentList from './componentList'
 import Home from './home'
 import {Provider} from '../components'
 
+
 const scenes = {
     Home: {
         screen: Home,
@@ -24,16 +25,7 @@ ComponentList.map((item) => {
     }
 })
 
-const AppNavigator = createStackNavigator(scenes,{
-    // defaultNavigationOptions: ({ screenProps:{theme} })=>{
-    //     return {
-    //         headerTintColor: theme==='dark'?'#fff':'#000',
-    //         headerStyle:{
-    //             backgroundColor: theme === 'dark' ? '#000' : '#fff',
-    //         }
-    //     }
-    // },
-})
+const AppNavigator = createStackNavigator(scenes)
 
 const AppContainer = createAppContainer(AppNavigator)
 
