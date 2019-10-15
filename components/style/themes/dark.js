@@ -15,6 +15,11 @@ export default {
     picker_android_selected_item_text_color: '#ffffff',
     picker_android_item_text_color: '#50546B',
 
+    // Tabs indicator Color
+    tabs_indicator_Color:'#262B48',
+    labelBackgroundColor:'#262B48',
+
+
     // segmented_control
     sc_selected_bg_color_default: '#262B48',  // 同时应用于背景、文字颜色、边框色
     sc_unselected_bg_color_default:'#030722',  // darkMode:
