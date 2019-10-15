@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native'
 
-const brandPrimary = '#586BFB'
-const brandPrimaryTap = '#3C4DCF'
+export const brandPrimary = '#586BFB'
+export const brandPrimaryTap = '#3C4DCF'
 const screenW = Dimensions.get('window').width
 const screenH = Dimensions.get('window').height
 export default {
@@ -117,6 +117,7 @@ export default {
 
     ghost_button_color: brandPrimary,    // 同时应用于背景、文字颜色、边框色
     ghost_button_fill_tap: `${brandPrimary}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
+    ghost_button_background_color: 'transparent',
 
     warning_button_fill: '#F85858',
     warning_button_fill_tap: '#DF2F2F',
@@ -130,6 +131,10 @@ export default {
     modal_button_font_size: 16, // 按钮字号
     modal_button_height: 46, // 按钮高度
     toast_background_color: 'rgba(0,0,0,.7)',
+    positive_text_color: brandPrimary,
+    invalid_text_color: '#DEDFE0',
+    error_hint_color: '#F85858',
+    error_hint_font_size: 11,
 
     // list
     list_item_height: 50,
@@ -163,12 +168,16 @@ export default {
     emptyView_touchable_marginTop:100,
     // tabs
     tabs_color: brandPrimary,
+    label_textColor:'#A5ABB1',
     tabs_indicator_height: 4,
     tabs_indicator_borderRadius: 4,
     tabs_font_size_heading: 15,
     tabs_height:42,
     tabs_elevation:0,
+    tabs_label_paddingTop:16,
     tabs_initialLayout_height:0,
+    tabs_indicator_Color:'#FFF',
+    labelBackgroundColor:'#FFF',
     // segmented_control
     sc_selected_bg_color_default: brandPrimary,  // 同时应用于背景、文字颜色、边框色
     segmented_control_height: 30,
@@ -210,6 +219,12 @@ export default {
 
     // picker
     option_height: 42,            // picker 标题的高度
+    picker_background_color: '#ffffff',
+    picker_header_background_color: '#F3F5F8',
+    picker_title_text_color: '#1F2530',
+    picker_dismiss_text_color: '#1F2530',
+    picker_android_selected_item_text_color: '#333',
+    picker_android_item_text_color:'#aaa',
 
     toast_zindex: 1999,
     action_sheet_zindex: 1000,

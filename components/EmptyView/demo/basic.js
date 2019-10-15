@@ -6,11 +6,12 @@ const network_failedSource = require('../assets/empty_network_failed.png')
 
 export default () => (
     <View style={styles.wrap}>
-        <EmptyView type={3} emptyImage={network_failedSource} onRefresh={() => { }}>
+        <EmptyView type='custom' emptyImage={network_failedSource} onRefresh={() => { }}>
             暂无数据
         </EmptyView>
     </View>
 )
+
 const styles = StyleSheet.create({
     wrap: {
         flex: 1,

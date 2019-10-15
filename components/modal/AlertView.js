@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Text, View, TouchableOpacity, Image, Animated,
+    Text, View, TouchableOpacity, Image,
 } from 'react-native'
 import MaskView from './MaskView'
 import PropTypes from 'prop-types'
