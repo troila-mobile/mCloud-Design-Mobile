@@ -166,12 +166,16 @@ export default {
     emptyView_touchable_marginTop:100,
     // tabs
     tabs_color: brandPrimary,
+    label_textColor:'#A5ABB1',
     tabs_indicator_height: 4,
     tabs_indicator_borderRadius: 4,
     tabs_font_size_heading: 15,
     tabs_height:42,
     tabs_elevation:0,
+    tabs_label_paddingTop:16,
     tabs_initialLayout_height:0,
+    tabs_indicator_Color:'#FFF',
+    labelBackgroundColor:'#FFF',
     // segmented_control
     sc_selected_bg_color_default: brandPrimary,  // 同时应用于背景、文字颜色、边框色
     segmented_control_height: 30,
