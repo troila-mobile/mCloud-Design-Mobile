@@ -12,10 +12,12 @@ export default (theme) => StyleSheet.create({
         alignItems: 'center',
     },
     TabBarWrapper:{
-        flexDirection: 'row',
         height:theme.tabs_height,
         width:theme.screen_W,
         backgroundColor:theme.labelBackgroundColor,
+    },
+    TabBarWrapperScrollView:{
+        flexDirection: 'row',
     },
     labelStyle: {
         paddingTop:theme.tabs_label_paddingTop,
