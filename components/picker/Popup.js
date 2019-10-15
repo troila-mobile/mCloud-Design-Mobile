@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Text, TouchableHighlight, View, Modal,
+    Text, TouchableOpacity, View, Modal,
 } from 'react-native'
 import PopupMixin from './PopupMixin'
 import PropTypes from 'prop-types'
@@ -29,7 +29,6 @@ const getModal = (props, visible, {
     )
     const {
         actionTextActiveOpacity,
-        actionTextUnderlayColor,
     } = props
     return (
         <Modal
@@ -46,23 +45,21 @@ const getModal = (props, visible, {
                     onPress={onDismiss}
                 />
                 <View style={[styles.header]}>
-                    <TouchableHighlight
+                    <TouchableOpacity
                         onPress={onDismiss}
                         style={[styles.headerItem, styles.leftHeaderItem]}
                         activeOpacity={actionTextActiveOpacity}
-                        underlayColor={actionTextUnderlayColor}
                     >
                         {dismissEl}
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                     <View style={[styles.headerItem, styles.centerHeaderItem]}>{titleEl}</View>
-                    <TouchableHighlight
+                    <TouchableOpacity
                         onPress={onOk}
                         style={[styles.headerItem, styles.rightHeaderItem]}
                         activeOpacity={actionTextActiveOpacity}
-                        underlayColor={actionTextUnderlayColor}
                     >
                         {okEl}
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 </View>
                 {getContent()}
             </View>
@@ -76,12 +73,10 @@ getModal.propTypes = {
     okText: PropTypes.string,
     dismissText: PropTypes.string,
     actionTextActiveOpacity: PropTypes.number,
-    actionTextUnderlayColor: PropTypes.string,
 }
 
 export default PopupMixin(getModal, {
-    actionTextUnderlayColor: '#ddd',
-    actionTextActiveOpacity: 1,
+    actionTextActiveOpacity: 0.7,
     triggerType: 'onPress',
     styles: {},
     WrapComponent: View,

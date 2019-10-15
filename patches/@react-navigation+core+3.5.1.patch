@@ -1,0 +1,9 @@
+diff --git a/node_modules/@react-navigation/core/lib/module/ThemeColors.js b/node_modules/@react-navigation/core/lib/module/ThemeColors.js
+index f4abb13..fade339 100644
+--- a/node_modules/@react-navigation/core/lib/module/ThemeColors.js
++++ b/node_modules/@react-navigation/core/lib/module/ThemeColors.js
+@@ -1,2 +1,2 @@
+-export default{light:{header:'#fff',headerBorder:'#a7a7aa',body:'#fff',bodyBorder:'#a7a7aa',bodyContent:'#fff',label:'rgba(0, 0, 0, 0.9)'},dark:{header:'#2a2a2a',headerBorder:'#3a3a3a',body:'#000',bodyBorder:'#343434',bodyContent:'#2a2a2a',label:'#fff'}};
++export default { light: { header: '#fff', headerBorder: '#a7a7aa', body: '#E6E6E6', bodyBorder: '#a7a7aa', bodyContent: '#fff', label: 'rgba(0, 0, 0, 0.9)' }, dark: { header: '#2a2a2a', headerBorder: '#3a3a3a', body:'#030722',bodyBorder:'#343434',bodyContent:'#2a2a2a',label:'#fff'}};
+ //# sourceMappingURL=ThemeColors.js.map
+\ No newline at end of file
