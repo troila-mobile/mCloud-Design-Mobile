@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
 ----|-----|------|------
 | labelWidth    | 标签长度  |   number   |   -  |
 | UIColor    | 标题和下划线选中颜色  |   string   |   -  |
+| scrollEnabled    | 标题栏是否滑动,默认为false  |   bool   |   -  |
 | navigationState    | 获取当前state |   object   |   -  |
 | renderScene    |回调，返回一个react元素以呈现为分页的页面。接收包含路由作为参数的对象： |   func  |   -  |
 | onIndexChange_Tabs    |回调，返回当前页面的index： |   func  |   -  |

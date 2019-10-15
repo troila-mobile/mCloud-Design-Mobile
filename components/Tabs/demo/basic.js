@@ -60,6 +60,7 @@ export default class TabViewExample extends React.Component {
                 navigationState={this.state}
                 UIColor="#586BFB"
                 labelWidth={100}
+                scrollEnabled={true}
                 routesArray={this.state.routes}
                 renderScene={this._renderScene}
                 onIndexChange_Tabs={(index) => {

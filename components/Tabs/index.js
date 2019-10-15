@@ -26,6 +26,7 @@ export default class Tabs extends React.Component {
         labelWidth:PropTypes.number,
         routesArray:PropTypes.array,
         UIColor:PropTypes.string,
+        scrollEnabled:PropTypes.bool,
     }
     static defaultProps = {
         styles: {},
@@ -39,6 +40,7 @@ export default class Tabs extends React.Component {
         navigationState:null,
         labelWidth:null,
         routesArray:[],
+        scrollEnabled:false,
     };
     constructor(props) {
         super(props)
@@ -77,6 +79,7 @@ _renderTabBar = (props) => {
         UIColor,
         indicatorStyle,
         labelWidth,
+        scrollEnabled,
     } = this.props
     return (
         <WithTheme themeStyles={TabsStyles} styles={styles}>
@@ -107,7 +110,7 @@ _renderTabBar = (props) => {
                                 style={_styles.TabBarWrapperScrollView}
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
-                                scrollEnabled={false}
+                                scrollEnabled={scrollEnabled}
                                 ref={(scrollView) => this.scrollView = scrollView}
                             >
                                 {this.props.routesArray.map((route, i) => (
