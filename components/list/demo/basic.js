@@ -145,7 +145,6 @@ export default () => {
 const styles = StyleSheet.create({
     wrap: {
         flex: 1,
-        backgroundColor: '#E6E6E6',
     },
     thumbAll: {
         marginRight: 10,

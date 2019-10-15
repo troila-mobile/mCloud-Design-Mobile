@@ -150,7 +150,7 @@ export default class SwitchButton extends Component {
                                         {
                                             transform: [{ translateX: left }],
                                             backgroundColor: disabled
-                                                ? theme.switch_disabled_thumbtint : theme.fill_base,
+                                                ? theme.switch_disabled_thumbtint : theme.switch_thumbtint,
                                         },
                                         getPlatformElevation(4),
                                     ]}

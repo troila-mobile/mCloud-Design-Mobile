@@ -166,6 +166,7 @@ export default class SearchBar extends React.Component {
                                         underlineColorAndroid="transparent"
                                         returnKeyType="search"
                                         placeholder={placeholder}
+                                        placeholderTextColor={theme.color_text_placeholder}
                                         value={value}
                                         onChangeText={this.onChangeText}
                                         onSubmitEditing={this.onSubmit}

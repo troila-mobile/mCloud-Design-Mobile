@@ -192,6 +192,7 @@ export default class InputItem extends React.Component {
                                         value={value}
                                         defaultValue={defaultValue}
                                         placeholder={placeholder}
+                                        placeholderTextColor={theme.color_text_placeholder}
                                         style={[
                                             _styles.input,
                                             disabledStyle,

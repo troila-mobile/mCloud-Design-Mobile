@@ -57,7 +57,7 @@ export default class RadioItem extends React.Component {
         return (
             <WithTheme themeStyles={RadioStyles} styles={styles}>
                 {
-                    (_styles) => (
+                    (_styles, theme) => (
                         <TouchableOpacity
                             activeOpacity={disabled ? 1 : 0.8}
                             onPress={this.onPress}
@@ -77,7 +77,18 @@ export default class RadioItem extends React.Component {
                                 {
                                     children ? (
                                         typeof children === 'string'
-                                            ? <Text style={_styles.itemText}>{children}</Text>
+                                            ? (
+                                                <Text
+                                                    style={[
+                                                        _styles.itemText,
+                                                        disabled ? {
+                                                            color: theme.color_text_info,
+                                                        } : null,
+                                                    ]}
+                                                >
+                                                    {children}
+                                                </Text>
+                                            )
                                             : children
                                     ) : null
                                 }

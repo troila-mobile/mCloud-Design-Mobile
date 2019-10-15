@@ -50,13 +50,24 @@ export default class SwitchButton extends Component {
         return (
             <WithTheme themeStyles={SwitchStyles} styles={styles}>
                 {
-                    (_styles) => (
+                    (_styles, theme) => (
                         <TouchableWithoutFeedback disabled={disabled} onPress={this.onPress}>
                             <View style={[_styles.wrapper, style]}>
                                 {
                                     children ? (
                                         typeof children === 'string'
-                                            ? <Text style={_styles.itemText}>{children}</Text>
+                                            ? (
+                                                <Text
+                                                    style={[
+                                                        _styles.itemText,
+                                                        disabled ? {
+                                                            color: theme.color_text_info,
+                                                        } : null,
+                                                    ]}
+                                                >
+                                                    {children}
+                                                </Text>
+                                            )
                                             : children
                                     ) : null
                                 }

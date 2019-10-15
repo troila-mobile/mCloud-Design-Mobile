@@ -69,8 +69,18 @@ export default class CheckboxItem extends React.Component {
                                 {
                                     children ? (
                                         typeof children === 'string'
-                                            ? <Text style={_styles.itemText}>{children}</Text>
-                                            : children
+                                            ? (
+                                                <Text
+                                                    style={[
+                                                        _styles.itemText,
+                                                        disabled ? {
+                                                            color: theme.color_text_info,
+                                                        } : null,
+                                                    ]}
+                                                >
+                                                    {children}
+                                                </Text>
+                                            ) : children
                                     ) : null
                                 }
                                 {

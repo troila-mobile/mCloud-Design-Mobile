@@ -9,12 +9,11 @@ export default {
     color_text_base: '#1F2530',                  // 基本
     color_text_base_inverse: '#ffffff',          // 基本 _ 反色
     color_text_secondary: '#a4a9b0',          // 辅助色
-    color_text_placeholder: '#bbbbbb',           // 文本框提示
+    color_text_placeholder: '#A5ABB1',           // 文本框提示
     color_text_disabled: '#bbbbbb',              // 失效
     color_text_caption: '#888888',               // 辅助描述
     color_text_paragraph: '#333333',             // 段落
     color_link: brandPrimary,                 // 链接
-    color_text_title: '#1F2530',             // 标题
     color_text_info: '#A5ABB1',             // 信息文字
 
     // 背景色
@@ -138,6 +137,9 @@ export default {
     // checkbox
     checkbox_item_height: 60,
 
+    // radio
+    radio_circle_border_color: '#DEDFE0',
+
     // input
     input_label_width: 17,       // InputItem、TextareaItem 文字长度基础值
     input_item_height: 50,
@@ -187,10 +189,9 @@ export default {
     toast_fill: 'rgba(0, 0, 0, .8)',
 
     // search_bar
-    search_bar_fill: '#efeff4',
     search_bar_height: 50,
     search_bar_input_height: 30,
-    search_bar_font_size: 15,
+    search_bar_border_color: '#ffffff',
 
     // notice_bar
     notice_bar_fill: '#fffada',
@@ -199,8 +200,9 @@ export default {
     // switch
     switch_fill: brandPrimary,
     switch_tint: '#D8D8D8',
-    switch_disabled_thumbtint: '#F5F5F5',
+    switch_thumbtint: '#ffffff',
     switch_disabled_tint: '#EEEEEE',
+    switch_disabled_thumbtint: '#F5F5F5',
 
     // tag
     tag_height: 25,

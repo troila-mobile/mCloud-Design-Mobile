@@ -211,6 +211,7 @@ export default class TextAreaItem extends React.Component {
                                         value={value}
                                         defaultValue={defaultValue}
                                         placeholder={placeholder}
+                                        placeholderTextColor={theme.color_text_placeholder}
                                         onChange={(event) => this.onChange(event.nativeEvent.text)}
                                         onContentSizeChange={this.onContentSizeChange(theme)}
                                         multiline={rows > 1 || autoHeight}
