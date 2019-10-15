@@ -45,6 +45,7 @@ class Picker extends React.Component {
                 label={`${c.props.children}`}
                 value={c.props.value}
                 key={c.key}
+                color={c.props.color}
             />
         ))
         // eslint-disable-next-line react/jsx-props-no-spreading

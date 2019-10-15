@@ -13,10 +13,10 @@ export default (theme) => StyleSheet.create({
         flexDirection: 'row',
         justifyContent:'center',
         borderBottomWidth: 1,
-        borderBottomColor: '#DEDFE0',
+        borderBottomColor: theme.border_color_base,
         borderTopLeftRadius:theme.radius_lg,
         borderTopRightRadius:theme.radius_lg,
-        backgroundColor:'#F3F5F8',
+        backgroundColor: theme.picker_header_background_color,
     },
     headerItem: {
         height: 44,
@@ -31,10 +31,10 @@ export default (theme) => StyleSheet.create({
         color: theme.brand_primary,
     },
     dismissText: {
-        color: theme.color_text_base,
+        color: theme.picker_dismiss_text_color,
     },
     title: {
-        color: theme.color_text_base,
+        color: theme.picker_title_text_color,
         fontSize: theme.font_size_caption,
         textAlign: 'center',
     },
@@ -54,5 +54,22 @@ export default (theme) => StyleSheet.create({
     },
     centerHeaderItem:{
         alignItems: 'center',
+    },
+    pickerContainer:{
+        backgroundColor: theme.picker_background_color,
+    },
+    pickerItem:{
+        color: theme.color_text_base,
+    },
+    pickerAndroidSelectedItemText:{
+        fontSize: 20,
+        fontWeight: '300',
+        color: theme.picker_android_selected_item_text_color,
+    },
+    pickerAndroidItemText: {
+        fontSize: 18,
+        color: theme.picker_android_item_text_color,
+        textAlign: 'center',
+        height: 20,
     },
 })

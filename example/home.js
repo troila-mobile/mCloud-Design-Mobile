@@ -56,7 +56,7 @@ export default class Home extends Component {
 			screenProps
 		} = this.props
 		return (
-			<SafeAreaView style={styles[`${screenProps.theme}Body`]}>
+			<SafeAreaView style={styles[`body`]}>
 				<StatusBar barStyle="dark-content" />
 				<ScrollView
 					contentInsetAdjustmentBehavior="automatic"
@@ -80,12 +80,7 @@ const styles = StyleSheet.create({
 	scrollView: {
 		// backgroundColor: Colors.lighter,
 	},
-	lightBody: {
-		backgroundColor: Colors.lighter,
-		flex: 1
-	},
-	darkBody: {
-		backgroundColor: Colors.black,
+	body: {
 		flex: 1
 	},
 	container: {
