@@ -13,7 +13,7 @@ import PropTypes from 'prop-types'
 import { WithTheme } from '../style'
 import ActionSheetStyle from './style/index'
 
-const MAXHEIGHT = 380
+const MAXHEIGHT = 410
 export default class ActionSheet extends React.Component {
     static propTypes = {
         options: PropTypes.array,
@@ -38,6 +38,7 @@ export default class ActionSheet extends React.Component {
         scrollEnabled:false,
         sheetAnim: new Animated.Value(MAXHEIGHT),
         height:MAXHEIGHT,
+        scrollViewHeight:250,
     }
     _styles = ActionSheetStyle
     componentDidMount() {
@@ -51,7 +52,7 @@ export default class ActionSheet extends React.Component {
     static getDerivedStateFromProps(props, state) {
         let tempHeight = MAXHEIGHT
         if (props.options.length <= 5) {
-            tempHeight = props.options.length * 50
+            tempHeight = props.options.length * 50 + 30
             props.title && (tempHeight += 50)
             props.showCancel && (tempHeight += 50)
         }
@@ -60,6 +61,7 @@ export default class ActionSheet extends React.Component {
             scrollEnabled:props.options && props.options.length > 5,
             height:tempHeight,
             sheetAnim:new Animated.Value(tempHeight),
+            scrollViewHeight:props.options && props.options.length > 5 ? 250 : props.options * 50,
         }
     }
     show = () => {
@@ -157,7 +159,7 @@ export default class ActionSheet extends React.Component {
             visible,
             scrollEnabled,
             sheetAnim,
-            height,
+            scrollViewHeight,
         } = this.state
 
         const {
@@ -175,10 +177,7 @@ export default class ActionSheet extends React.Component {
                         const overlay = [
                             _styles.overlay,
                         ]
-                        const body = [_styles.body,{
-                            height,
-                            transform: [{ translateY: sheetAnim }] ,
-                        }]
+                        const body = [_styles.body]
                         const wrapper = [_styles.wrapper]
                         return (
                             <Modal
@@ -192,15 +191,20 @@ export default class ActionSheet extends React.Component {
                                         style={overlay}
                                         onPress={() => this.hide(cancel)}
                                     />
+
                                     <Animated.View
-                                        style={body}
+                                        style={[...body,{ transform: [{ translateY: sheetAnim }]  }]}
                                     >
                                         {title && this._renderTitle()}
-                                        <ScrollView scrollEnabled={scrollEnabled}>
+                                        <ScrollView
+                                            scrollEnabled={scrollEnabled}
+                                            style={{ height:scrollViewHeight }}
+                                        >
                                             {this._renderOptions()}
                                         </ScrollView>
                                         {showCancel && this._renderCanceButton()}
                                     </Animated.View>
+
 
                                 </SafeAreaView>
                             </Modal>

@@ -2,21 +2,10 @@ import { StyleSheet } from 'react-native'
 
 export default (theme) => StyleSheet.create({
     overlay: {
-        position: 'absolute',
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-        opacity: 0.4,
-        backgroundColor:theme.fill_grey,
-
-    },
-    textStyle:{
-        color: 2,
-        borderColor: '#f1f1f1',
+        flex:1,
     },
     normalText:{
-        color:theme.color_text_base,
+        color:theme.sheet_title_color,
         fontSize:theme.font_size_caption,
         textAlign:'center',
     },
@@ -30,17 +19,18 @@ export default (theme) => StyleSheet.create({
         marginTop: 4,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: theme.sheet_title_backgroundcolor,
+        backgroundColor: theme.sheet_backgroundColor,
     },
     buttonStyle: {
         height: 50,
         marginTop: StyleSheet.hairlineWidth,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: theme.color_text_base_inverse,
+        backgroundColor: theme.sheet_backgroundColor,
     },
     titleBox: {
-        height:50,
+        // flex:1,
+        paddingVertical:10,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: theme.sheet_title_backgroundcolor,
@@ -50,19 +40,19 @@ export default (theme) => StyleSheet.create({
     },
     titleStyle:{
         textAlign:'center',
-        color:theme.color_text_base,
+        color:theme.sheet_title_color,
         fontSize:theme.font_size_base,
+
     },
     body: {
-        flex: 1,
-        alignSelf: 'flex-end',
-        backgroundColor: theme.color_text_base_inverse,
+        justifyContent:'flex-end',
+        backgroundColor: theme.sheet_title_backgroundcolor,
         borderTopLeftRadius:10,
         borderTopRightRadius:10,
     },
     wrapper: {
         flex: 1,
-        flexDirection: 'row',
+        backgroundColor:`${theme.fill_grey}66`,
         borderTopLeftRadius:10,
         borderTopRightRadius:10,
     },
