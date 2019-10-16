@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 export default (theme) => StyleSheet.create({
     ListWrapper: {
-        backgroundColor: theme.fill_tap,
+        // backgroundColor: theme.fill_tap,
     },
     Header: {
         fontSize: theme.font_size_base,

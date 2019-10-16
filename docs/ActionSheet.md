@@ -12,7 +12,7 @@ import React from 'react'
 import {
     ActionSheet,
     Button,
-} from '../..'
+} from 'mCloud-Design-Mobile'
 
 export default class extends React.Component {
     state={

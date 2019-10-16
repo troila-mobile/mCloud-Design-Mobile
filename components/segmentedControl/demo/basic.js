@@ -10,10 +10,9 @@ export default () => (
         style={{
             flex:1,
             alignItems:'center',
-            backgroundColor:'#e6e6e6'
         }}
     >
-        <SegmentedControl style={{ marginTop:20 }} />
+        <SegmentedControl style={{ marginTop:20 }} titles={['申请','审批']} />
         <SegmentedControl
             disabled
             titles={['申请','审批']}
