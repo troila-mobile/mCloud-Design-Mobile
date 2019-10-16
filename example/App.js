@@ -6,6 +6,7 @@ import ComponentList from './componentList'
 import Home from './home'
 import {Provider} from '../components'
 
+
 const scenes = {
     Home: {
         screen: Home,
@@ -24,16 +25,7 @@ ComponentList.map((item) => {
     }
 })
 
-const AppNavigator = createStackNavigator(scenes,{
-    // defaultNavigationOptions: ({ screenProps:{theme} })=>{
-    //     return {
-    //         headerTintColor: theme==='dark'?'#fff':'#000',
-    //         headerStyle:{
-    //             backgroundColor: theme === 'dark' ? '#000' : '#fff',
-    //         }
-    //     }
-    // },
-})
+const AppNavigator = createStackNavigator(scenes)
 
 const AppContainer = createAppContainer(AppNavigator)
 
@@ -49,13 +41,13 @@ export default class extends React.Component{
         const textColor = theme ==='light'?'#000':'#fff'
         return (
             <Provider theme={theme}>
-                <AppContainer 
+                <AppContainer
                     screenProps={{
                         theme
                     }}
                     theme={theme}
                 />
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={[styles.themeButton, { backgroundColor: buttonColor, borderColor: textColor}]}
                     onPress={this.toggleTheme}
                 >

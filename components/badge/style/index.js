@@ -2,7 +2,7 @@ import { StyleSheet,Dimensions } from 'react-native'
 
 export default (theme) => StyleSheet.create({
     badgeContainer: {
-        backgroundColor: '#fff',
+        backgroundColor: theme.badge_background_color,
         paddingHorizontal: theme.badge_paddingHorizontal,
         alignItems: 'center',
         justifyContent: 'space-between',

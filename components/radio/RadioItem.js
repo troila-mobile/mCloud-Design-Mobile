@@ -57,38 +57,44 @@ export default class RadioItem extends React.Component {
         return (
             <WithTheme themeStyles={RadioStyles} styles={styles}>
                 {
-                    (_styles) => (
-                        <TouchableOpacity
-                            activeOpacity={disabled ? 1 : 0.8}
-                            onPress={this.onPress}
-                        >
-                            <View style={[_styles.itemWrapper, style]}>
-                                <Radio
-                                    ref={(e) => {
-                                        this.Radio = e
-                                    }}
-                                    checked={checked}
-                                    onChange={onChange}
-                                    disabled={disabled}
-                                    circleSize={circleSize}
-                                    centerSize={centerSize}
-                                    icon={icon}
-                                />
-                                {
-                                    children ? (
-                                        typeof children === 'string'
-                                            ? <Text style={_styles.itemText}>{children}</Text>
-                                            : children
-                                    ) : null
-                                }
-                                {
-                                    !hideLine && (
-                                        <View style={_styles.line} />
-                                    )
-                                }
-                            </View>
-                        </TouchableOpacity>
-                    )
+                    (_styles) => {
+                        const itemText = [
+                            _styles.itemText,
+                            disabled && _styles.disabledItemText,
+                        ]
+                        return (
+                            <TouchableOpacity
+                                activeOpacity={disabled ? 1 : 0.8}
+                                onPress={this.onPress}
+                            >
+                                <View style={[_styles.itemWrapper, style]}>
+                                    <Radio
+                                        ref={(e) => {
+                                            this.Radio = e
+                                        }}
+                                        checked={checked}
+                                        onChange={onChange}
+                                        disabled={disabled}
+                                        circleSize={circleSize}
+                                        centerSize={centerSize}
+                                        icon={icon}
+                                    />
+                                    {
+                                        children ? (
+                                            typeof children === 'string'
+                                                ? <Text style={itemText}>{children}</Text>
+                                                : children
+                                        ) : null
+                                    }
+                                    {
+                                        !hideLine && (
+                                            <View style={_styles.line} />
+                                        )
+                                    }
+                                </View>
+                            </TouchableOpacity>
+                        )
+                    }
                 }
             </WithTheme>
         )

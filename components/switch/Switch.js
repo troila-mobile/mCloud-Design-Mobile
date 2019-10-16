@@ -125,34 +125,35 @@ export default class SwitchButton extends Component {
                         <TouchableWithoutFeedback disabled={disabled} onPress={this.onToggle}>
                             <Animated.View
                                 style={[
-                                    _styles.switch,
-                                    style,
                                     {
                                         backgroundColor: animatedColor.interpolate({
                                             inputRange: [0, 0.1, 1],
                                             outputRange: [theme.switch_tint, theme.switch_fill, theme.switch_fill],
                                         }),
                                     },
+                                    _styles.switch,
+                                    style,
                                 ]}
                             >
                                 <Animated.View
                                     style={[
-                                        _styles.switchBtn,
                                         {
                                             transform: [{ scale }],
-                                            backgroundColor: disabled ? theme.switch_disabled_tint : theme.switch_tint,
+                                            backgroundColor: disabled
+                                                ? theme.switch_disabled_tint : theme.switch_tint,
                                         },
+                                        _styles.switchBtn,
                                     ]}
                                 />
                                 <Animated.View
                                     style={[
-                                        _styles.switchThumb,
                                         {
                                             transform: [{ translateX: left }],
                                             backgroundColor: disabled
-                                                ? theme.switch_disabled_thumbtint : theme.fill_base,
+                                                ? theme.switch_disabled_thumbtint : theme.switch_thumbtint,
                                         },
                                         getPlatformElevation(4),
+                                        _styles.switchThumb,
                                     ]}
                                 />
                             </Animated.View>

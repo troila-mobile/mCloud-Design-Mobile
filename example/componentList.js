@@ -4,6 +4,11 @@ export default [
         description: '按钮',
         example: require('../components/button/demo/basic'),
     },
+	{
+		title: 'Modal',
+		description: '弹窗',
+		example: require('../components/modal/demo/basic')
+	},
     {
         title: 'Marquee',
         description: '滚动文字',
@@ -116,5 +121,15 @@ export default [
 		title:'ShareSheet',
 		description: '分享',
 		example: require('../components/shareSheet/demo/basic')
-	}
+	},
+    {
+        title: 'ActivityIndicator',
+        description: 'ActivityIndicator',
+        example: require('../components/activityIndicator/demo/basic')
+    },
+    {
+        title: 'CountDownView',
+        description: 'CountDownView',
+        example: require('../components/countDownView/demo/basic')
+    }
 ]
