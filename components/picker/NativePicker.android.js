@@ -189,7 +189,7 @@ class Picker extends React.Component {
                 >
                     <View ref={(el) => (this.contentRef = el)}>{items}</View>
                 </ScrollView>
-                <View ref={(el) => (this.indicatorRef = el)} style={styles.indicator} />
+                <View ref={(el) => (this.indicatorRef = el)} style={styles.indicator} pointerEvents="none" />
             </View>
         )
     }
