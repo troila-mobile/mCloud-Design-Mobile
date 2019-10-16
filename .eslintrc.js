@@ -59,6 +59,7 @@ module.exports = {
     "import/no-unresolved": [2, { "ignore": ['\.png$'] }],
     "react/require-default-props": 0,
     "react/state-in-constructor": [1,"never"],
-    "global-require":0
+    "global-require":0,
+    "linebreak-style":"off"
   }
 };
