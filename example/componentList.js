@@ -117,6 +117,10 @@ export default [
 		title: 'stepper',
 		description: 'stepper',
 		example: require('../components/stepper/demo/basic')
+	},{
+		title:'ShareSheet',
+		description: '分享',
+		example: require('../components/shareSheet/demo/basic')
 	},
     {
         title: 'ActivityIndicator',

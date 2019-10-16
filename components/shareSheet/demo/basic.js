@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    ActionSheet,
+    ShareSheet,
     Button,
 } from '../..'
 
@@ -25,11 +25,12 @@ export default class extends React.Component {
                 >
                     show
                 </Button>
-                <ActionSheet
+                <ShareSheet
                     ref={(e) => this.actionSheet = e}
-                    options={options}
+                    options={['qq','qzone']}
                     disabledIndexArrary={[5]}
-                    title="zhe是标题dfshdfshuhgconst tempHeight = event.nativeEvent.layout.height"
+                    title="zhe是标题dfshdfshuhgiuhdubhdsfiubhdsiufhb"
+                    onPress={(key) => console.log(key)}
                 />
             </>
         )

@@ -252,6 +252,11 @@ export default {
 
     // actionSheet
     sheet_title_backgroundcolor:'#F3F5F8',
+    sheet_backgroundColor:'#fff',
+    sheet_title_color:'#1F2530',
+    sheet_item_title_color:'#1F2530',
+    sheet_spre_color:'#DEDFE0',
+    sheet_item_backgroundColor:'#F3F5F8',
 
     // activityIndicator
     activity_indicator_size:89,
