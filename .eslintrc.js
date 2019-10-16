@@ -58,6 +58,7 @@ module.exports = {
     "react/forbid-prop-types":0,
     "import/no-unresolved": [2, { "ignore": ['\.png$'] }],
     "react/require-default-props": 0,
-    "react/state-in-constructor": [1,"never"]
+    "react/state-in-constructor": [1,"never"],
+    "linebreak-style":"off"
   }
 };
