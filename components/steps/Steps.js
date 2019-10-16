@@ -25,11 +25,6 @@ export default class Steps extends React.Component {
         children: null,
     }
 
-    constructor(props) {
-        super(props)
-        this.setState = ({})
-    }
-
     render() {
         const {
             style,

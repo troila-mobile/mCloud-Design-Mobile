@@ -11,7 +11,7 @@ Steps
 ```SnackPlayer name=Steps-simple
 import React from 'react'
 import { View, Text, ScrollView } from 'react-native'
-import { Steps } from '../..'
+import { Steps } from 'mCloud-Design-Mobile';
 
 const { StepsItem } = Steps
 const ViewTop = () => (

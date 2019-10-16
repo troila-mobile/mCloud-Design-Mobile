@@ -45,10 +45,6 @@ export default class StepsItem extends React.Component {
         errorTail: 0,
     }
 
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         const {
             style,
