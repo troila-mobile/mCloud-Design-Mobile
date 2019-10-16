@@ -67,7 +67,7 @@ export default class StepsItem extends React.Component {
         } = this.props
         const finish = index < current || status === 'finish' || index === current || status === 'process'
         const error = status === 'error'
-        const wait = status === 'wait'
+        const wait = index > current || status === 'wait'
         return (
             <WithTheme themeStyles={StepsStyles} styles={styles}>
                 {
