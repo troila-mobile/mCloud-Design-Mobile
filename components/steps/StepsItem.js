@@ -156,12 +156,12 @@ export default class StepsItem extends React.Component {
                                 </View>
                                 <View style={_styles[`content${itemSize}${styleSuffix}`]}>
                                     {typeof title !== 'object' ? (
-                                        <Text style={[_styles[`title_style${itemSize}`]]}>{title}</Text>
+                                        <Text style={[_styles[`title_style${itemSize}`]]} numberOfLines={1}>{title}</Text>
                                     ) : (
                                         <View>{title}</View>
                                     )}
                                     {typeof description !== 'object' ? (
-                                        <Text style={[_styles[`description_style${itemSize}`]]}>
+                                        <Text style={[_styles[`description_style${itemSize}`]]} numberOfLines={3}>
                                             {description}
                                         </Text>
                                     ) : (

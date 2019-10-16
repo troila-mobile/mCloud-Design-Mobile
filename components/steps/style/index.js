@@ -55,36 +55,44 @@ export default (theme) => StyleSheet.create({
     // 内容
     content_small: {
         paddingLeft: theme.h_spacing_md,
+        paddingRight: 20,
     },
     content_small_horizontal: {
         paddingTop: theme.v_spacing_sm,
+        paddingRight: 20,
     },
     content_large: {
         paddingLeft: theme.h_spacing_sm,
+        paddingRight: 20,
     },
     content_large_horizontal: {
         paddingTop: theme.v_spacing_lg,
+        paddingRight: 20,
     },
     // 标题
     title_style_small: {
         fontSize: theme.font_size_base,
         color: theme.steps_text_black_color,
         paddingBottom: theme.v_spacing_md,
+        paddingRight: 20,
     },
     title_style_large: {
         fontSize: theme.font_size_caption,
         fontWeight: 'bold',
         paddingBottom: theme.v_spacing_md,
         color: theme.steps_text_black_color,
+        paddingRight: 20,
     },
     // 描述
     description_style_small: {
         fontSize: theme.font_size_caption_sm,
         color: theme.steps_text_normal_color,
+        paddingRight: 20,
     },
     description_style_large: {
         fontSize: theme.font_size_base,
         fontWeight: 'bold',
         color: theme.steps_text_normal_color,
+        paddingRight: 20,
     },
 })
