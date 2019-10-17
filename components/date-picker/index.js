@@ -51,48 +51,50 @@ export default class extends React.Component {
         const selfOkText = '确定'
         const selfDismissText = '取消'
         const selfExtra = '请选择'
-        const dataPicker = (
-            <DatePicker
-                minuteStep={minuteStep}
-                locale={{
-                    year: '年',
-                    month: '月',
-                    day: '日',
-                    hour: '时',
-                    minute: '分',
-                }}
-                mode={mode}
-                minDate={minDate}
-                maxDate={maxDate}
-                defaultDate={defaultDate}
-                date={value}
-                onValueChange={onValueChange}
-                itemStyle={itemStyle}
-                style={{ backgroundColor:'#fff' }}
-            />
-        )
-
         return (
             <WithTheme styles={restProps.styles} themeStyles={PickerStyles}>
-                {(styles) => (
-                    <PopupDatePicker
-                        datePicker={dataPicker}
-                        // eslint-disable-next-line react/jsx-props-no-spreading
-                        {...restProps}
-                        styles={styles}
-                        date={value}
-                        dismissText={dismissText || selfDismissText}
-                        okText={okText || selfOkText}
-                    >
-                        {children
-                            && React.isValidElement(children)
-                            && React.cloneElement(children, {
-                                extra: value
-                                    ? formatProps(this.props, value)
-                                    : extra || selfExtra,
-                            })}
-                    </PopupDatePicker>
-                )}
+                {(_styles) => {
+                    const dataPicker = (
+                        <DatePicker
+                            minuteStep={minuteStep}
+                            locale={{
+                                year: '年',
+                                month: '月',
+                                day: '日',
+                                hour: '时',
+                                minute: '分',
+                            }}
+                            mode={mode}
+                            minDate={minDate}
+                            maxDate={maxDate}
+                            defaultDate={defaultDate}
+                            date={value}
+                            onValueChange={onValueChange}
+                            itemStyle={itemStyle}
+                            style={_styles.pickerContainer}
+                            styles={_styles}
+                        />
+                    )
+                    return (
+                        <PopupDatePicker
+                            datePicker={dataPicker}
+                            // eslint-disable-next-line react/jsx-props-no-spreading
+                            {...restProps}
+                            styles={_styles}
+                            date={value}
+                            dismissText={dismissText || selfDismissText}
+                            okText={okText || selfOkText}
+                        >
+                            {children
+                                && React.isValidElement(children)
+                                && React.cloneElement(children, {
+                                    extra: value
+                                        ? formatProps(this.props, value)
+                                        : extra || selfExtra,
+                                })}
+                        </PopupDatePicker>
+                    )
+                }}
             </WithTheme>
         )
     }

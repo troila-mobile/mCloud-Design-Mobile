@@ -50,31 +50,37 @@ export default class SwitchButton extends Component {
         return (
             <WithTheme themeStyles={SwitchStyles} styles={styles}>
                 {
-                    (_styles) => (
-                        <TouchableWithoutFeedback disabled={disabled} onPress={this.onPress}>
-                            <View style={[_styles.wrapper, style]}>
-                                {
-                                    children ? (
-                                        typeof children === 'string'
-                                            ? <Text style={_styles.itemText}>{children}</Text>
-                                            : children
-                                    ) : null
-                                }
-                                <Switch
-                                    ref={(e) => {
-                                        this.Switch = e
-                                    }}
-                                    disabled={disabled}
-                                    checked={checked}
-                                />
-                                {
-                                    !hideLine && (
-                                        <View style={_styles.line} />
-                                    )
-                                }
-                            </View>
-                        </TouchableWithoutFeedback>
-                    )
+                    (_styles) => {
+                        const itemText = [
+                            _styles.itemText,
+                            disabled && _styles.disabledItemText,
+                        ]
+                        return (
+                            <TouchableWithoutFeedback disabled={disabled} onPress={this.onPress}>
+                                <View style={[_styles.wrapper, style]}>
+                                    {
+                                        children ? (
+                                            typeof children === 'string'
+                                                ? <Text style={itemText}>{children}</Text>
+                                                : children
+                                        ) : null
+                                    }
+                                    <Switch
+                                        ref={(e) => {
+                                            this.Switch = e
+                                        }}
+                                        disabled={disabled}
+                                        checked={checked}
+                                    />
+                                    {
+                                        !hideLine && (
+                                            <View style={_styles.line} />
+                                        )
+                                    }
+                                </View>
+                            </TouchableWithoutFeedback>
+                        )
+                    }
                 }
             </WithTheme>
         )
