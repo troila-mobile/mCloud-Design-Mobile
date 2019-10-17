@@ -97,7 +97,7 @@ export default [
 		title: 'Card',
 		description: 'Card',
 		example: require('../components/card/demo/basic')
-	}, 
+	},
 	{
 		title: 'Picker',
 		description: 'Picker',
@@ -131,5 +131,10 @@ export default [
         title: 'CountDownView',
         description: 'CountDownView',
         example: require('../components/countDownView/demo/basic')
-    }
+    },
+	{
+		title: 'steps',
+		description: 'steps',
+		example: require('../components/steps/demo/basic')
+	},
 ]

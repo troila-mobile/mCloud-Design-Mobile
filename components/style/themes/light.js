@@ -260,4 +260,9 @@ export default {
 
     // activityIndicator
     activity_indicator_size:89,
+
+    // steps
+    steps_paddingHorizontal:20,
+    steps_text_normal_color: '#1F2530',
+    steps_text_black_color: '#000000',
 }
