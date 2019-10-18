@@ -8,6 +8,9 @@ export default (theme) => StyleSheet.create({
         paddingRight: theme.h_spacing_lg,
         flexDirection: 'row',
         alignItems: 'center',
+        borderTopWidth: theme.border_width_sm,
+        borderBottomWidth: theme.border_width_sm,
+        borderColor: theme.search_bar_border_color,
     },
     default_inputWrapper: {
         flex: 1,
@@ -59,6 +62,8 @@ export default (theme) => StyleSheet.create({
         flex: 1,
         paddingTop: 0,
         paddingBottom: 0,
+        borderWidth: theme.border_width_sm,
+        borderColor: theme.search_bar_border_color,
     },
     radius_searchView: {
         position: 'absolute',

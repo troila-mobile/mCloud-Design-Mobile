@@ -97,7 +97,7 @@ export default [
 		title: 'Card',
 		description: 'Card',
 		example: require('../components/card/demo/basic')
-	}, 
+	},
 	{
 		title: 'Picker',
 		description: 'Picker',
@@ -117,6 +117,10 @@ export default [
 		title: 'stepper',
 		description: 'stepper',
 		example: require('../components/stepper/demo/basic')
+	},{
+		title:'ShareSheet',
+		description: '分享',
+		example: require('../components/shareSheet/demo/basic')
 	},
     {
         title: 'ActivityIndicator',
@@ -127,5 +131,10 @@ export default [
         title: 'CountDownView',
         description: 'CountDownView',
         example: require('../components/countDownView/demo/basic')
-    }
+    },
+	{
+		title: 'steps',
+		description: 'steps',
+		example: require('../components/steps/demo/basic')
+	},
 ]

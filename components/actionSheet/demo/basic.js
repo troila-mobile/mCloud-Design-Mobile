@@ -18,7 +18,7 @@ export default class extends React.Component {
                     onPress={
                         () => {
                             this.setState({
-                                options:['text','value'],
+                                options:['text','value','value','value','value','value','value','value','value'],
                             },() => this.actionSheet.show())
                         }
                     }
@@ -29,7 +29,7 @@ export default class extends React.Component {
                     ref={(e) => this.actionSheet = e}
                     options={options}
                     disabledIndexArrary={[5]}
-                    title="zhe是标题dfshdfshuhgiuhdubhdsfiubhdsiufhb"
+                    title="zhe是标题dfshdfshuhgconst tempHeight = event.nativeEvent.layout.height"
                 />
             </>
         )

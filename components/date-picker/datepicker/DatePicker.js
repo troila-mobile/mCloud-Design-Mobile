@@ -59,7 +59,7 @@ class DatePicker extends React.Component {
         rootNativeProps: PropTypes.object,
         style: ViewPropTypes.style,
         itemStyle: ViewPropTypes.style,
-
+        styles: PropTypes.object,
     }
     state = {
         date: this.props.date || this.props.defaultDate,
@@ -505,7 +505,7 @@ class DatePicker extends React.Component {
     render() {
         const { value, cols } = this.getValueCols()
         const {
-            disabled, rootNativeProps, style, itemStyle,
+            disabled, rootNativeProps, style, itemStyle, styles,
         } = this.props
 
         return (
@@ -522,9 +522,14 @@ class DatePicker extends React.Component {
                         key={p.key}
                         disabled={disabled}
                         itemStyle={itemStyle}
+                        styles={styles}
                     >
                         {p.props.children.map((item) => (
-                            <Picker.Item key={item.value} value={item.value}>
+                            <Picker.Item
+                                key={item.value}
+                                value={item.value}
+                                color={styles.pickerItem.color}
+                            >
                                 {item.label}
                             </Picker.Item>
                         ))}
