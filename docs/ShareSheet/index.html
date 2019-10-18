@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>ShareSheet · mCloud Design Mobile</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="ShareSheet"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="ShareSheet · mCloud Design Mobile"/><meta property="og:type" content="website"/><meta property="og:url" content="https://troila-mobile.github.io/mCloud-Design-Mobile/"/><meta property="og:description" content="ShareSheet"/><meta property="og:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://troila-mobile.github.io/mCloud-Design-Mobile/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/mCloud-Design-Mobile/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/atom.xml" title="mCloud Design Mobile Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://troila-mobile.github.io/mCloud-Design-Mobile/blog/feed.xml" title="mCloud Design Mobile Blog RSS Feed"/><script type="text/javascript" src="https://snack.expo.io/embed.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/codeblocks.js"></script><script src="/mCloud-Design-Mobile/js/scrollSpy.js"></script><link rel="stylesheet" href="/mCloud-Design-Mobile/css/main.css"/><script src="/mCloud-Design-Mobile/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mCloud-Design-Mobile/"><img class="logo" src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile"/><h2 class="headerTitleWithLogo">mCloud Design Mobile</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/mCloud-Design-Mobile/docs/Contributing" target="_self">Docs</a></li><li class=""><a href="/mCloud-Design-Mobile/docs/Button" target="_self">API</a></li><li class=""><a href="/mCloud-Design-Mobile/help" target="_self">Help</a></li><li class=""><a href="/mCloud-Design-Mobile/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">ShareSheet</h1></header><article><div><span><p>ShareSheet</p>
+<h2><a class="anchor" aria-hidden="true" id="basic-example"></a><a href="#basic-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Example:</h2>
+<div class="snack-player"><div class="mobile-friendly-snack" style="display: none"><pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> {
+    ShareSheet,
+    Button,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'mcloud-mobile'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    state={
+        <span class="hljs-attr">options</span>:[<span class="hljs-string">'text'</span>,<span class="hljs-string">'value'</span>],
+    }
+    render() {
+        <span class="hljs-keyword">const</span> {
+            options,
+        } = <span class="hljs-keyword">this</span>.state
+        <span class="hljs-keyword">return</span> (
+            &lt;&gt;
+                &lt;Button
+                    onPress={
+                        () =&gt; {
+                            this.setState({
+                                options:['text','value','value','value','value','value','value','value','value'],
+                            },() =&gt; this.actionSheet.show())
+                        }
+                    }
+                &gt;
+                    show
+                &lt;/Button&gt;
+                &lt;ShareSheet
+                    ref={(e) =&gt; this.actionSheet = e}
+                    options={['qq','qzone']}
+                    disabledIndexArrary={[5]}
+                    title="zhe是标题dfshdfshuhgiuhdubhdsfiubhdsiufhb"
+                    onPress={(key) =&gt; console.log(key)}
+                /&gt;
+            &lt;/&gt;
+        )
+    }
+}
+
+
+</code></pre></div><div class="desktop-friendly-snack" style="margin-top: 15px; margin-bottom: 15px"><div
+        data-snack-name="ShareSheet-simple"
+        data-snack-description="Example usage"
+        data-snack-dependencies='react-navigation@3.11.1,react-native-really-awesome-button@1.4.2,prop-types@15.7.2,mcloud-mobile@1.0.0'
+        data-snack-code="import%20React%20from%20'react'%0Aimport%20%7B%0A%20%20%20%20ShareSheet%2C%0A%20%20%20%20Button%2C%0A%7D%20from%20'mcloud-mobile'%0A%0Aexport%20default%20class%20extends%20React.Component%20%7B%0A%20%20%20%20state%3D%7B%0A%20%20%20%20%20%20%20%20options%3A%5B'text'%2C'value'%5D%2C%0A%20%20%20%20%7D%0A%20%20%20%20render()%20%7B%0A%20%20%20%20%20%20%20%20const%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20options%2C%0A%20%20%20%20%20%20%20%20%7D%20%3D%20this.state%0A%20%20%20%20%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20()%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20this.setState(%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20options%3A%5B'text'%2C'value'%2C'value'%2C'value'%2C'value'%2C'value'%2C'value'%2C'value'%2C'value'%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C()%20%3D%3E%20this.actionSheet.show())%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20show%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FButton%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CShareSheet%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ref%3D%7B(e)%20%3D%3E%20this.actionSheet%20%3D%20e%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20options%3D%7B%5B'qq'%2C'qzone'%5D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20disabledIndexArrary%3D%7B%5B5%5D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%22zhe%E6%98%AF%E6%A0%87%E9%A2%98dfshdfshuhgiuhdubhdsfiubhdsiufhb%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B(key)%20%3D%3E%20console.log(key)%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2F%3E%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20%7D%0A%7D%0A%0A%0A"
+        data-snack-platform="web"
+        data-snack-preview="true"
+        style="
+          overflow: hidden;
+          background: #fafafa;
+          border: 1px solid rgba(0,0,0,.16);
+          border-radius: 4px;
+          height: 514px;
+          width: 100%;
+        "
+      ></div></div></div><h2><a class="anchor" aria-hidden="true" id="props"></a><a href="#props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props:</h2>
+<table>
+<thead>
+<tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
+</thead>
+<tbody>
+<tr><td>options</td><td>选项可选项['qq','qzone','friend','wechat','weibo']</td><td>array</td><td>无</td></tr>
+<tr><td>customItem</td><td>自定义分享类型，遵循格式：[{ image:'', title:'', key:'' }]</td><td>array</td><td>无</td></tr>
+<tr><td>cancel</td><td>取消点击事件</td><td>func</td><td>无</td></tr>
+<tr><td>onPress</td><td>按钮选中事件(key)=&gt;{}  ,key为分享类型</td><td>func</td><td>无</td></tr>
+<tr><td>styles</td><td>自定义样式</td><td>Object</td><td>无</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-example">Basic Example:</a></li><li><a href="#props">Props:</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/mCloud-Design-Mobile/" class="nav-home"><img src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mCloud-Design-Mobile/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc2.html">Guides (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/mCloud-Design-Mobile/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/mCloud-Design-Mobile/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/mCloud-Design-Mobile/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>
