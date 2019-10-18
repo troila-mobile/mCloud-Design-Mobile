@@ -63,4 +63,8 @@ export default {
     switch_tint: '#2C304E',
     switch_disabled_tint: '#2C304E',
     switch_disabled_thumbtint: 'rgba(255,255,255,.4)',
+
+    // steps
+    steps_text_black_color:'#fff',
+    steps_text_normal_color: '#A5ABB1',
 }
