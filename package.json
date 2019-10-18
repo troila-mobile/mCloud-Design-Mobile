@@ -1,12 +1,11 @@
 {
   "name": "mcloud-mobile",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main":"components/index.js",
   "scripts": {
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "postinstall": "patch-package",
     "pre-lint": "eslint $(git diff-index --cached HEAD --name-only --diff-filter ACMR | egrep '.js$')"
   },
   "pre-commit": [
