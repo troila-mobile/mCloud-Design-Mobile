@@ -16,7 +16,7 @@ import {
     StyleSheet,
     ScrollView,
 } from 'react-native'
-import { Textarea } from 'mCloud-Design-Mobile'
+import { Textarea } from 'mcloud-mobile'
 
 export default () => {
     const [leftValue, onLeftChange] = useState('')

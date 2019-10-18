@@ -11,7 +11,7 @@ Badge
 ```SnackPlayer name=Badge-simple
 import React from 'react'
 import { View } from 'react-native'
-import { DatePicker, List } from 'mCloud-Design-Mobile'
+import { DatePicker, List } from 'mcloud-mobile'
 
 export default class extends React.Component {
     state = {
