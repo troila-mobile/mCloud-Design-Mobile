@@ -16,7 +16,7 @@ import {
     ScrollView,
     Image,
 } from 'react-native'
-import { List, Switch, Checkbox } from 'mCloud-Design-Mobile'
+import { List, Switch, Checkbox } from 'mcloud-mobile'
 
 const { Item } = List
 const { Brief } = Item

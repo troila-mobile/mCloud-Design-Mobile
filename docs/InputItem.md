@@ -11,7 +11,7 @@ sidebar_label: InputItem
 ```SnackPlayer name=inputItem-simple
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { InputItem } from 'mCloud-Design-Mobile'
+import { InputItem } from 'mcloud-mobile'
 
 export default () => {
     const [value, onChange] = useState('')

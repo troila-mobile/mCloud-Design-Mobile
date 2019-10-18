@@ -11,7 +11,7 @@ sidebar_label: Switch
 ```SnackPlayer name=switch-simple
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Switch } from 'mCloud-Design-Mobile';
+import { Switch } from 'mcloud-mobile';
 
 const { SwitchItem } = Switch
 

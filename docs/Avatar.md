@@ -12,7 +12,7 @@ import React from 'react'
 import {
     View,
 } from 'react-native'
-import { Avatar } from 'mCloud-Design-Mobile'
+import { Avatar } from 'mcloud-mobile'
 
 export default class AvatarDemo extends React.Component {
     render() {
