@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Text, View, TouchableOpacity, TextInput, Image, KeyboardAvoidingView,
+    Text, View, TouchableOpacity, TextInput, Image, KeyboardAvoidingView, BackHandler,
 } from 'react-native'
 import MaskView from './MaskView'
 import PropTypes from 'prop-types'
@@ -46,6 +46,14 @@ export default class PromptView extends React.Component {
     }
     componentDidMount() {
         this.modal.show()
+        BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid)
+    }
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid)
+    }
+    onBackAndroid = () => {
+        this.modal.hide(() => this.onDismiss())
+        return true
     }
     onAction = (action) => {
         if (action) {
