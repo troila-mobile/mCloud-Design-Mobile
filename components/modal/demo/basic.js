@@ -2,7 +2,10 @@ import React from 'react'
 import { View } from 'react-native'
 import { Button, Modal } from '../..'
 
+const testIcon = require('../assets/icon_modal_success.png')
+
 export default class ModalDemo extends React.Component {
+    count = 0
     render() {
         return (
             <View style={{ flex: 1 }}>
@@ -51,6 +54,17 @@ export default class ModalDemo extends React.Component {
                     style={{ marginTop: 20 }}
                 >
                     Loading
+                </Button>
+                <Button
+                    onPress={() => {
+                        Modal.notice(`${this.count} Item`,`This is the ${this.count}th item`,
+                            testIcon, () => console.log('Item Pressed'), () => console.log('Item Dismiss'))
+                        this.count++
+                    }}
+                    type="primary"
+                    style={{ marginTop: 20 }}
+                >
+                    Notice
                 </Button>
             </View>
         )

@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    View, Text, ActivityIndicator,
+    View, Text, ActivityIndicator, Platform, StatusBar,
 } from 'react-native'
 import { WithTheme } from '../style'
 import ModalStyles from './style'
@@ -12,6 +12,12 @@ export default class LoadingView extends React.Component {
     }
     static defaultProps = {
         text: '数据加载中',
+    }
+    componentDidMount() {
+        if (Platform.OS === 'ios') StatusBar.setNetworkActivityIndicatorVisible(true)
+    }
+    componentWillUnmount() {
+        if (Platform.OS === 'ios') StatusBar.setNetworkActivityIndicatorVisible(false)
     }
     render() {
         return (
