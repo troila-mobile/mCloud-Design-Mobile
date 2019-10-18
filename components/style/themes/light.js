@@ -128,6 +128,7 @@ export default {
     // modal
     modal_font_size_heading: 18,
     modal_font_size_content: 14,
+    modal_font_size_small: 12,
     modal_button_font_size: 16, // 按钮字号
     modal_button_height: 46, // 按钮高度
     toast_background_color: 'rgba(0,0,0,.7)',

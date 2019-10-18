@@ -127,4 +127,47 @@ export default (theme) => StyleSheet.create({
         height: 120,
         paddingTop: 10,
     },
+    noticeContainer: {
+        backgroundColor: theme.fill_base,
+        position: 'absolute',
+        left: 15,
+        right: 15,
+        top: 53,
+        height: 82,
+        borderRadius: 5,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+        shadowColor: '#000',
+        elevation: 3,
+    },
+    noticeContent: {
+        padding: 15,
+        justifyContent: 'space-between',
+        flex: 1,
+    },
+    noticeTopView: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    noticeIcon: {
+        height: 30,
+        width: 30,
+        marginRight: 10,
+    },
+    noticeTitle: {
+        flex: 1,
+        fontWeight: 'bold',
+        fontSize: theme.modal_font_size_content,
+        color: theme.color_text_base,
+        marginRight: 10,
+    },
+    actionTitle: {
+        color: theme.color_text_info,
+        fontSize: theme.modal_font_size_content,
+    },
+    noticeText: {
+        color: theme.color_text_info,
+        fontSize: theme.modal_font_size_small,
+    },
 })

@@ -12,10 +12,9 @@ export default class Steps extends React.Component {
         styles: ViewPropTypes.style,
         current: PropTypes.number,
         size: PropTypes.string,
-        direction: 'vertical' | 'horizontal',
+        direction: PropTypes.oneOf(['vertical', 'horizontal']),
         children: PropTypes.any,
     }
-
     static defaultProps = {
         style: {},
         styles: {},
@@ -24,7 +23,6 @@ export default class Steps extends React.Component {
         direction: 'vertical',
         children: null,
     }
-
     render() {
         const {
             style,
@@ -50,20 +48,20 @@ export default class Steps extends React.Component {
                                     React.Children.map(children, (item, index) => {
                                         let errorTail = -1
                                         if (index < children.length - 1) {
-                                            const status = children[index + 1].props.status
+                                            const { status } = children[index + 1].props
                                             if (status === 'error') {
                                                 errorTail = index
                                             }
                                         }
                                         return React.cloneElement(item, {
-                                            index: index,
+                                            index,
                                             last: index === children.length - 1,
-                                            direction: direction,
-                                            current: current,
-                                            size: size,
-                                            errorTail: errorTail,
-                                            styles: styles,
-                                            style: style,
+                                            direction,
+                                            current,
+                                            size,
+                                            errorTail,
+                                            styles,
+                                            style,
                                         })
                                     })
                                 }

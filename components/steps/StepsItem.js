@@ -18,8 +18,6 @@ export default class StepsItem extends React.Component {
         status: PropTypes.string,
         title: PropTypes.string,
         description: PropTypes.string,
-        icon: PropTypes.string,
-
         width: PropTypes.number,
         size: PropTypes.string,
         current: PropTypes.number,
@@ -28,14 +26,12 @@ export default class StepsItem extends React.Component {
         direction: PropTypes.string,
         errorTail: PropTypes.number,
     }
-
     static defaultProps = {
         style: {},
         styles: {},
         status: 'wait',
         title: '',
         description: '',
-
         width: 60,
         size: 'large',
         current: 0,
@@ -44,7 +40,6 @@ export default class StepsItem extends React.Component {
         direction: 'vertical',
         errorTail: 0,
     }
-
     render() {
         const {
             style,
@@ -52,7 +47,6 @@ export default class StepsItem extends React.Component {
             status,
             title,
             description,
-
             width,
             size,
             current,
@@ -112,18 +106,24 @@ export default class StepsItem extends React.Component {
                         let imageSource
                         if (finish) {
                             imageSource = (
-                                <Image source={steps_finish}
-                                       resizeMode="stretch"/>
+                                <Image
+                                    source={steps_finish}
+                                    resizeMode="stretch"
+                                />
                             )
                         } else if (error) {
                             imageSource = (
-                                <Image source={steps_error}
-                                       resizeMode="stretch"/>
+                                <Image
+                                    source={steps_error}
+                                    resizeMode="stretch"
+                                />
                             )
                         } else if (wait) {
                             imageSource = (
-                                <Image source={steps_wait}
-                                       resizeMode="stretch"/>
+                                <Image
+                                    source={steps_wait}
+                                    resizeMode="stretch"
+                                />
                             )
                         }
 
@@ -151,11 +151,14 @@ export default class StepsItem extends React.Component {
                                     }
                                 </View>
                                 <View style={_styles[`content${itemSize}${styleSuffix}`]}>
-                                    {typeof title !== 'object' ? (
-                                        <Text style={[_styles[`title_style${itemSize}`]]} numberOfLines={1}>{title}</Text>
-                                    ) : (
-                                        <View>{title}</View>
-                                    )}
+                                    {typeof title !== 'object'
+                                        ? (
+                                            <Text style={[_styles[`title_style${itemSize}`]]} numberOfLines={1}>
+                                                {title}
+                                            </Text>
+                                        ) : (
+                                            <View>{title}</View>
+                                        )}
                                     {typeof description !== 'object' ? (
                                         <Text style={[_styles[`description_style${itemSize}`]]} numberOfLines={3}>
                                             {description}

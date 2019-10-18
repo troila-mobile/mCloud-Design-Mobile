@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Text, View, TouchableOpacity, Image,
+    Text, View, TouchableOpacity, Image, BackHandler,
 } from 'react-native'
 import MaskView from './MaskView'
 import PropTypes from 'prop-types'
@@ -55,6 +55,17 @@ export default class AlertView extends React.Component {
     }
     componentDidMount() {
         this.getReadState()
+        BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid)
+    }
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid)
+    }
+    onBackAndroid = () => {
+        this.modal.hide(() => {
+            const { onDialogDismiss } = this.props
+            onDialogDismiss && onDialogDismiss()
+        })
+        return true
     }
     onAction = (item) => {
         this.modal.hide(() => {

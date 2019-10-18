@@ -4,7 +4,7 @@ import { Steps } from '../..'
 
 const { StepsItem } = Steps
 const ViewTop = () => (
-    <View style={{ marginTop: 20 }}/>
+    <View style={{ marginTop: 20 }} />
 )
 
 const stepsOne = [
@@ -47,25 +47,29 @@ const stepsTwo = [
 export default () => (
     <View style={{
         flex: 1,
-    }}>
+    }}
+    >
         <ScrollView
             style={{ flex: 1 }}
             automaticallyAdjustContentInsets={false}
-            showsVerticalScrollIndicator={false}>
-            <ViewTop/>
-            <Steps size='small' current={1} direction="horizontal">
+            showsVerticalScrollIndicator={false}
+        >
+            <ViewTop />
+            <Steps size="small" current={1} direction="horizontal">
                 {stepsOne.map((item, index) => (
                     <StepsItem
+                        /* eslint-disable-next-line react/no-array-index-key */
                         key={index}
                         title={item.title}
                         status={item.status}
                     />
                 ))}
             </Steps>
-            <ViewTop/>
+            <ViewTop />
             <Steps size="small" current={1}>
                 {stepsTwo.map((item, index) => (
                     <StepsItem
+                        /* eslint-disable-next-line react/no-array-index-key */
                         key={index}
                         title={item.title}
                         description={item.description}
@@ -73,10 +77,11 @@ export default () => (
                     />
                 ))}
             </Steps>
-            <ViewTop/>
+            <ViewTop />
             <Steps current={1}>
                 {stepsOne.map((item, index) => (
                     <StepsItem
+                        /* eslint-disable-next-line react/no-array-index-key */
                         key={index}
                         title={item.title}
                         description={item.description}
@@ -84,10 +89,11 @@ export default () => (
                     />
                 ))}
             </Steps>
-            <ViewTop/>
+            <ViewTop />
             <Steps>
                 {stepsTwo.map((item, index) => (
                     <StepsItem
+                        /* eslint-disable-next-line react/no-array-index-key */
                         key={index}
                         title={item.title}
                         description={item.description}
