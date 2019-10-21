@@ -27,6 +27,10 @@ export default (theme) => StyleSheet.create({
         borderRadius: theme.tabs_indicator_borderRadius,
     },
     initialLayout:{
+        height:0,
+        width: theme.screen_W ,
+    },
+    initialLayoutTwo:{
         height: theme.tabs_initialLayout_height,
         width:theme.screen_W,
     },
