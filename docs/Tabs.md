@@ -8,7 +8,7 @@ Label
 
 ## Basic Example:
 
-```
+```SnackPlayer name=tabs-simple
 import React  from 'react'
 import {
     View,  StyleSheet ,

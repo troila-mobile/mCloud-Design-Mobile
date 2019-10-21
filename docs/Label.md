@@ -8,7 +8,7 @@ Label
 
 ## Basic Example:
 
-```
+```SnackPlayer name=label-simple
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Label } from 'mCloud-Design-Mobile';
