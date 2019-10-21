@@ -11,7 +11,7 @@ Badge
 ```SnackPlayer name=Badge-simple
 import React from 'react'
 import { View } from 'react-native'
-import { Badge } from '../..'
+import { Badge } from 'mcloud-mobile'
 
 export default () => (
     <View

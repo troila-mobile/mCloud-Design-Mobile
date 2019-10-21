@@ -1,13 +1,11 @@
 {
   "name": "mcloud-mobile",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.7",
   "main":"components/index.js",
   "scripts": {
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "postinstall": "patch-package",
     "pre-lint": "eslint $(git diff-index --cached HEAD --name-only --diff-filter ACMR | egrep '.js$')"
   },
   "pre-commit": [
@@ -19,10 +17,10 @@
     "deepmerge": "^4.0.0",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
-    "react-native-fast-image": "^7.0.2",
     "react-native-tab-view": "2.10.0"
   },
   "devDependencies": {
+    "react-native-fast-image": "^7.0.2",
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-gesture-handler": "^1.4.1",
