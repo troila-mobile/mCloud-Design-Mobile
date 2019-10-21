@@ -8,7 +8,7 @@ EmptyView
 
 ## Basic Example:
 
-```
+```SnackPlayer name=empty-simple
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { EmptyView } from 'mcloud-mobile';
