@@ -11,7 +11,7 @@ sidebar_label: Radio
 ```SnackPlayer name=radio-simple
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Radio } from 'mCloud-Design-Mobile'
+import { Radio } from 'mcloud-mobile'
 
 const { RadioItem } = Radio
 const list = [

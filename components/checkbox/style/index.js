@@ -22,7 +22,10 @@ export default (theme) => StyleSheet.create({
     itemText: {
         marginLeft: theme.h_spacing_lg,
         fontSize: theme.font_size_caption,
-        color: theme.color_text_title,
+        color: theme.color_text_base,
+    },
+    disabledItemText: {
+        color: theme.color_text_info,
     },
     line: {
         backgroundColor: theme.border_color_base,

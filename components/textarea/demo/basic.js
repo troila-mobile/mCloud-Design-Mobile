@@ -90,7 +90,6 @@ export default () => {
 const styles = StyleSheet.create({
     wrap: {
         flex: 1,
-        backgroundColor: '#E6E6E6',
     },
     title: {
         fontSize: 14,

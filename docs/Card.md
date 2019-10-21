@@ -11,7 +11,7 @@ Card
 ```SnackPlayer name=Card-simple
 import React from 'react'
 import { View,Dimensions } from 'react-native'
-import { Card } from '../..'
+import { Card } from 'mcloud-mobile'
 
 
 

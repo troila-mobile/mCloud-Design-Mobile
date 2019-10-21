@@ -13,7 +13,7 @@ import React  from 'react'
 import {
     View,  StyleSheet ,
 } from 'react-native'
-import { Label } from 'mCloud-Design-Mobile';
+import { Label } from 'mcloud-mobile';
 
 export default class TabViewExample extends React.Component {
     state = {

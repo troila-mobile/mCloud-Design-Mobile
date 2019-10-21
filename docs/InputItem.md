@@ -11,7 +11,7 @@ sidebar_label: InputItem
 ```SnackPlayer name=inputItem-simple
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { InputItem } from 'mCloud-Design-Mobile'
+import { InputItem } from 'mcloud-mobile'
 
 export default () => {
     const [value, onChange] = useState('')
@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
 | value    | value 值(受控与否参考https://facebook.github.io/react/docs/forms.html)  | String |  无  |
 | defaultValue    | 设置初始默认值        | String |  -  |
 | placeholder      | placeholder        | String | ''  |
+| placeholderTextColor      | placeholderTextColor        | String | theme.color_text_placeholder  |
 | editable    | 是否可编辑        | bool |  true  |
 | disabled    | 是否禁用        | bool |  true  |
 | autoFocus    | 是否禁用        | bool |  true  |

@@ -25,6 +25,9 @@
       "Tabs",
       "DatePicker",
       "Modal",
+      "Avatar",
+      "ActionSheet",
+      "ShareSheet"
     ],
     "First Category": ["doc4", "doc5"]
   }

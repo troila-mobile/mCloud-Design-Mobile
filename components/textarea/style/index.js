@@ -8,7 +8,7 @@ export default (theme) => StyleSheet.create({
     },
     label: {
         fontSize: 14,
-        color: theme.color_text_title,
+        color: theme.color_text_base,
         marginHorizontal: theme.h_spacing_lg,
         marginTop: theme.h_spacing_lg,
         marginBottom: theme.v_spacing_sm,

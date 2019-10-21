@@ -12,7 +12,7 @@ import React from 'react'
 import {
     View,
 } from 'react-native'
-import { Avatar } from 'mCloud-Design-Mobile'
+import { Avatar } from 'mcloud-mobile'
 
 export default class AvatarDemo extends React.Component {
     render() {
@@ -28,15 +28,12 @@ export default class AvatarDemo extends React.Component {
                 <Avatar
                     source={{ uri:'http://wx3.sinaimg.cn/orj360/006Ja9YYly1fy5iqie8muj30j60j6q3n.jpg' }}
                     type="white"
-                    web={true}
                 />
                 <Avatar
                     source={{ uri:'http://wx3.sinaimg.cn/orj360/006Ja9YYly1fy5iqie8muj30j60j6q3n.jpg' }}
-                    web={true}
                 />
                 <Avatar
                     type="white"
-                    web={true}
                 />
             </View>
         )
@@ -54,4 +51,3 @@ export default class AvatarDemo extends React.Component {
 | styles   |   样式集合  |   object   |   无    |
 | type   |   头像边框样式，可选值（'normal', 'white'）   |   string    |    'normal'    |
 | defaultAvatar   |  默认头像   |   object   |   require('./assets/default.png')  |
-| web   |  展示平台是否是web端   |   bool   |   false  |

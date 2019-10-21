@@ -16,7 +16,7 @@ export default (theme) => StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderWidth: theme.border_width_md,
-        borderColor: theme.border_color_base,
+        borderColor: theme.radio_circle_border_color,
     },
     centerStyle: {
         backgroundColor: theme.brand_primary,
@@ -27,7 +27,10 @@ export default (theme) => StyleSheet.create({
     itemText: {
         marginLeft: theme.h_spacing_lg,
         fontSize: theme.font_size_caption,
-        color: theme.color_text_title,
+        color: theme.color_text_base,
+    },
+    disabledItemText: {
+        color: theme.color_text_info,
     },
     line: {
         backgroundColor: theme.border_color_base,
