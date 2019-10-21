@@ -2,8 +2,7 @@ import React from 'react'
 import { WithTheme } from '../style'
 import AvatarStyles from './style'
 import PropTypes from 'prop-types'
-import FastImage from 'react-native-fast-image'
-import { Image } from 'react-native'
+import Image from './Avatar'
 
 const defaultImage = require('./assets/default.png')
 
@@ -13,7 +12,7 @@ export default class Avatar extends React.Component {
         size: PropTypes.number,
         styles: PropTypes.object,
         type: PropTypes.string,// normal
-        defaultAvatar:PropTypes.object,
+        defaultAvatar:PropTypes.any,
         web:PropTypes.bool,
     }
     static defaultProps = {
@@ -38,10 +37,10 @@ export default class Avatar extends React.Component {
                         const borderStyle = [
                             _styles[`${type}Border`],
                         ]
-                        const ImageComponent = web ? Image : FastImage
+                        
                         return (
 
-                            <ImageComponent
+                            <Image
                                 style={[
                                     {
                                         width: size,
