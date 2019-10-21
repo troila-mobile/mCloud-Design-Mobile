@@ -56,51 +56,51 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Tabs</h1></header><article><div><span><p>Label</p>
 <h2><a class="anchor" aria-hidden="true" id="basic-example"></a><a href="#basic-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Example:</h2>
-<pre><code class="hljs"><span class="hljs-keyword">import</span> React  from <span class="hljs-string">'react'</span>
+<div class="snack-player"><div class="mobile-friendly-snack" style="display: none"><pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> React  <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
 <span class="hljs-keyword">import</span> {
     View,  StyleSheet ,
-} from <span class="hljs-string">'react-native'</span>
-<span class="hljs-keyword">import</span> { Label } from <span class="hljs-string">'mcloud-mobile'</span>;
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>
+<span class="hljs-keyword">import</span> { Label } <span class="hljs-keyword">from</span> <span class="hljs-string">'mcloud-mobile'</span>;
 
-export <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TabViewExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> {</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TabViewExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     state = {
         <span class="hljs-comment">// eslint-disable-next-line react/no-unused-state</span>
-<span class="hljs-symbol">        index:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">        routes:</span> [
-            { <span class="hljs-string">key:</span> <span class="hljs-string">'1'</span>, <span class="hljs-string">title:</span> <span class="hljs-string">'新闻'</span> },
-            { <span class="hljs-string">key:</span> <span class="hljs-string">'2'</span>, <span class="hljs-string">title:</span> <span class="hljs-string">'视频'</span> },
-            { <span class="hljs-string">key:</span> <span class="hljs-string">'3'</span>, <span class="hljs-string">title:</span> <span class="hljs-string">'篮球'</span> },
-            { <span class="hljs-string">key:</span> <span class="hljs-string">'4'</span>, <span class="hljs-string">title:</span> <span class="hljs-string">'综艺'</span> },
-            { <span class="hljs-string">key:</span> <span class="hljs-string">'5'</span>, <span class="hljs-string">title:</span> <span class="hljs-string">'电影'</span> },
+        index: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">routes</span>: [
+            { <span class="hljs-attr">key</span>: <span class="hljs-string">'1'</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'新闻'</span> },
+            { <span class="hljs-attr">key</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'视频'</span> },
+            { <span class="hljs-attr">key</span>: <span class="hljs-string">'3'</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'篮球'</span> },
+            { <span class="hljs-attr">key</span>: <span class="hljs-string">'4'</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'综艺'</span> },
+            { <span class="hljs-attr">key</span>: <span class="hljs-string">'5'</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'电影'</span> },
         ],
     };
-    _renderScene = ({ route }) =&gt; {
+    _renderScene = <span class="hljs-function">(<span class="hljs-params">{ route }</span>) =&gt;</span> {
         <span class="hljs-keyword">switch</span> (route.key) {
         <span class="hljs-keyword">case</span> <span class="hljs-string">'1'</span>:
-            <span class="hljs-keyword">return</span>  (&lt;View style={[styles.container, { <span class="hljs-string">backgroundColor:</span> <span class="hljs-string">'#ff4081'</span> }]} /&gt;)
-        <span class="hljs-keyword">case</span> <span class="hljs-string">'2'</span>:
-            <span class="hljs-keyword">return</span>  (&lt;View style={[styles.container, { <span class="hljs-string">backgroundColor:</span> <span class="hljs-string">'#673ab7'</span> }]} /&gt;)
-        <span class="hljs-keyword">case</span> <span class="hljs-string">'3'</span>:
-            <span class="hljs-keyword">return</span>  (&lt;View style={[styles.container, { <span class="hljs-string">backgroundColor:</span> <span class="hljs-string">'red'</span> }]} /&gt;)
-        <span class="hljs-keyword">case</span> <span class="hljs-string">'4'</span>:
-            <span class="hljs-keyword">return</span>  (&lt;View style={[styles.container, { <span class="hljs-string">backgroundColor:</span> <span class="hljs-string">'blue'</span> }]} /&gt;)
-        <span class="hljs-keyword">case</span> <span class="hljs-string">'5'</span>:
-            <span class="hljs-keyword">return</span>  (&lt;View style={[styles.container, { <span class="hljs-string">backgroundColor:</span> <span class="hljs-string">'black'</span> }]} /&gt;)
-<span class="hljs-symbol">        default:</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>
+            <span class="hljs-keyword">return</span>  (&lt;View style={[styles.container, { backgroundColor: '#ff4081' }]} /&gt;)
+        case '2':
+            return  (&lt;View style={[styles.container, { backgroundColor: '#673ab7' }]} /&gt;)
+        case '3':
+            return  (&lt;View style={[styles.container, { backgroundColor: 'red' }]} /&gt;)
+        case '4':
+            return  (&lt;View style={[styles.container, { backgroundColor: 'blue' }]} /&gt;)
+        case '5':
+            return  (&lt;View style={[styles.container, { backgroundColor: 'black' }]} /&gt;)
+        default:
+            return null
         }
     }
     render() {
-        <span class="hljs-keyword">return</span> (
+        return (
             &lt;Tabs
-                navigationState={<span class="hljs-keyword">this</span>.state}
-                UIColor=<span class="hljs-string">"#586BFB"</span>
-                labelWidth={<span class="hljs-number">60</span>}
-                routesArray={<span class="hljs-keyword">this</span>.state.routes}
-                renderScene={<span class="hljs-keyword">this</span>._renderScene}
+                navigationState={this.state}
+                UIColor="#586BFB"
+                labelWidth={60}
+                routesArray={this.state.routes}
+                renderScene={this._renderScene}
                 onIndexChange_Tabs={(index) =&gt; {
-                    <span class="hljs-comment">// eslint-disable-next-line react/no-unused-state</span>
-                    <span class="hljs-keyword">this</span>.setState({ index })
+                    // eslint-disable-next-line react/no-unused-state
+                    this.setState({ index })
                 }}
             /&gt;
         )
@@ -108,14 +108,28 @@ export <span class="hljs-keyword">default</span> <span class="hljs-class"><span 
 }
 
 const styles = StyleSheet.create({
-<span class="hljs-symbol">    container:</span> {
-<span class="hljs-symbol">        flex:</span> <span class="hljs-number">1</span>,
+    container: {
+        flex: 1,
     },
 })
 
 
-</code></pre>
-<h2><a class="anchor" aria-hidden="true" id="props"></a><a href="#props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props:</h2>
+</code></pre></div><div class="desktop-friendly-snack" style="margin-top: 15px; margin-bottom: 15px"><div
+        data-snack-name="tabs-simple"
+        data-snack-description="Example usage"
+        data-snack-dependencies='react-navigation@3.11.1,prop-types@15.7.2,mcloud-mobile@1.0.12,react-native-tab-view@2.10.0'
+        data-snack-code="import%20React%20%20from%20'react'%0Aimport%20%7B%0A%20%20%20%20View%2C%20%20StyleSheet%20%2C%0A%7D%20from%20'react-native'%0Aimport%20%7B%20Label%20%7D%20from%20'mcloud-mobile'%3B%0A%0Aexport%20default%20class%20TabViewExample%20extends%20React.Component%20%7B%0A%20%20%20%20state%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20eslint-disable-next-line%20react%2Fno-unused-state%0A%20%20%20%20%20%20%20%20index%3A%200%2C%0A%20%20%20%20%20%20%20%20routes%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7B%20key%3A%20'1'%2C%20title%3A%20'%E6%96%B0%E9%97%BB'%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7B%20key%3A%20'2'%2C%20title%3A%20'%E8%A7%86%E9%A2%91'%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7B%20key%3A%20'3'%2C%20title%3A%20'%E7%AF%AE%E7%90%83'%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7B%20key%3A%20'4'%2C%20title%3A%20'%E7%BB%BC%E8%89%BA'%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7B%20key%3A%20'5'%2C%20title%3A%20'%E7%94%B5%E5%BD%B1'%20%7D%2C%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%7D%3B%0A%20%20%20%20_renderScene%20%3D%20(%7B%20route%20%7D)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20switch%20(route.key)%20%7B%0A%20%20%20%20%20%20%20%20case%20'1'%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%20(%3CView%20style%3D%7B%5Bstyles.container%2C%20%7B%20backgroundColor%3A%20'%23ff4081'%20%7D%5D%7D%20%2F%3E)%0A%20%20%20%20%20%20%20%20case%20'2'%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%20(%3CView%20style%3D%7B%5Bstyles.container%2C%20%7B%20backgroundColor%3A%20'%23673ab7'%20%7D%5D%7D%20%2F%3E)%0A%20%20%20%20%20%20%20%20case%20'3'%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%20(%3CView%20style%3D%7B%5Bstyles.container%2C%20%7B%20backgroundColor%3A%20'red'%20%7D%5D%7D%20%2F%3E)%0A%20%20%20%20%20%20%20%20case%20'4'%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%20(%3CView%20style%3D%7B%5Bstyles.container%2C%20%7B%20backgroundColor%3A%20'blue'%20%7D%5D%7D%20%2F%3E)%0A%20%20%20%20%20%20%20%20case%20'5'%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%20(%3CView%20style%3D%7B%5Bstyles.container%2C%20%7B%20backgroundColor%3A%20'black'%20%7D%5D%7D%20%2F%3E)%0A%20%20%20%20%20%20%20%20default%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20null%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20render()%20%7B%0A%20%20%20%20%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CTabs%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20navigationState%3D%7Bthis.state%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20UIColor%3D%22%23586BFB%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20labelWidth%3D%7B60%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20routesArray%3D%7Bthis.state.routes%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20renderScene%3D%7Bthis._renderScene%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onIndexChange_Tabs%3D%7B(index)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20eslint-disable-next-line%20react%2Fno-unused-state%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20this.setState(%7B%20index%20%7D)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20%7D%0A%7D%0A%0Aconst%20styles%20%3D%20StyleSheet.create(%7B%0A%20%20%20%20container%3A%20%7B%0A%20%20%20%20%20%20%20%20flex%3A%201%2C%0A%20%20%20%20%7D%2C%0A%7D)%0A%0A%0A"
+        data-snack-platform="web"
+        data-snack-preview="true"
+        style="
+          overflow: hidden;
+          background: #fafafa;
+          border: 1px solid rgba(0,0,0,.16);
+          border-radius: 4px;
+          height: 514px;
+          width: 100%;
+        "
+      ></div></div></div><h2><a class="anchor" aria-hidden="true" id="props"></a><a href="#props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props:</h2>
 <table>
 <thead>
 <tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
@@ -130,7 +144,6 @@ const styles = StyleSheet.create({
 <tr><td>tabStyle</td><td>tab自定义样式</td><td>Object</td><td>无</td></tr>
 <tr><td>labelStyle</td><td>label自定义样式</td><td>Object</td><td>无</td></tr>
 <tr><td>indicatorStyle</td><td>indicator自定义样式</td><td>Object</td><td>无</td></tr>
-<tr><td>initialLayout</td><td>initialLayout自定义样式</td><td>Object</td><td>无</td></tr>
 </tbody>
 </table>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mCloud-Design-Mobile/docs/EmptyView"><span class="arrow-prev">← </span><span class="function-name-prevnext">EmptyView</span></a><a class="docs-next button" href="/mCloud-Design-Mobile/docs/DatePicker"><span class="function-name-prevnext">DatePicker</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-example">Basic Example:</a></li><li><a href="#props">Props:</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/mCloud-Design-Mobile/" class="nav-home"><img src="/mCloud-Design-Mobile/img/favicon.ico" alt="mCloud Design Mobile" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mCloud-Design-Mobile/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc2.html">Guides (or other categories)</a><a href="/mCloud-Design-Mobile/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/mCloud-Design-Mobile/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/mCloud-Design-Mobile/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/mCloud-Design-Mobile/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

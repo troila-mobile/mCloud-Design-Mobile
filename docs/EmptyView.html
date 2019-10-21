@@ -56,7 +56,7 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">EmptyView</h1></header><article><div><span><p>EmptyView</p>
 <h2><a class="anchor" aria-hidden="true" id="basic-example"></a><a href="#basic-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Example:</h2>
-<pre><code class="hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<div class="snack-player"><div class="mobile-friendly-snack" style="display: none"><pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
 <span class="hljs-keyword">import</span> { View, StyleSheet } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>
 <span class="hljs-keyword">import</span> { EmptyView } <span class="hljs-keyword">from</span> <span class="hljs-string">'mcloud-mobile'</span>;
 
@@ -76,8 +76,22 @@
     },
 })
 
-</code></pre>
-<h2><a class="anchor" aria-hidden="true" id="props"></a><a href="#props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props:</h2>
+</code></pre></div><div class="desktop-friendly-snack" style="margin-top: 15px; margin-bottom: 15px"><div
+        data-snack-name="empty-simple"
+        data-snack-description="Example usage"
+        data-snack-dependencies='react-navigation@3.11.1,prop-types@15.7.2,mcloud-mobile@1.0.12,react-native-tab-view@2.10.0'
+        data-snack-code="import%20React%20from%20'react'%0Aimport%20%7B%20View%2C%20StyleSheet%20%7D%20from%20'react-native'%0Aimport%20%7B%20EmptyView%20%7D%20from%20'mcloud-mobile'%3B%0A%0Aconst%20network_failedSource%20%3D%20require('..%2Fassets%2Fempty_network_failed.png')%0A%0Aexport%20default%20()%20%3D%3E%20(%0A%20%20%20%20%3CView%20style%3D%7Bstyles.wrap%7D%3E%0A%20%20%20%20%20%20%20%20%3CEmptyView%20type%3D'custom'%20emptyImage%3D%7Bnetwork_failedSource%7D%20onRefresh%3D%7B()%20%3D%3E%20%7B%20%7D%7D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%E6%9A%82%E6%97%A0%E6%95%B0%E6%8D%AE%0A%20%20%20%20%20%20%20%20%3C%2FEmptyView%3E%0A%20%20%20%20%3C%2FView%3E%0A)%0Aconst%20styles%20%3D%20StyleSheet.create(%7B%0A%20%20%20%20wrap%3A%20%7B%0A%20%20%20%20%20%20%20%20flex%3A%201%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20'%23E6E6E6'%2C%0A%20%20%20%20%7D%2C%0A%7D)%0A%0A"
+        data-snack-platform="web"
+        data-snack-preview="true"
+        style="
+          overflow: hidden;
+          background: #fafafa;
+          border: 1px solid rgba(0,0,0,.16);
+          border-radius: 4px;
+          height: 514px;
+          width: 100%;
+        "
+      ></div></div></div><h2><a class="anchor" aria-hidden="true" id="props"></a><a href="#props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props:</h2>
 <table>
 <thead>
 <tr><th>属性</th><th>说明</th><th>类型</th><th>默认值</th></tr>
