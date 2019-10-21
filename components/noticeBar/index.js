@@ -5,7 +5,7 @@ import {
 import { WithTheme } from '../style'
 import NoticeBarStyles from './style'
 import PropTypes from 'prop-types'
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from '../utils/AsyncStorage'
 import Marquee from '../marquee'
 
 const defaultIconSource = require('./assets/notice_hint.png')
