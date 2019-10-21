@@ -81,5 +81,3 @@ const styles = StyleSheet.create({
 | tabStyle    | tab自定义样式 |   Object  | 无 |
 | labelStyle    | label自定义样式 |   Object  | 无 |
 | indicatorStyle    | indicator自定义样式 |   Object  | 无 |
-| initialLayout    | initialLayout自定义样式 |   Object  | 无 |
-
