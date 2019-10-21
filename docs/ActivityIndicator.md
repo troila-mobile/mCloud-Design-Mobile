@@ -11,7 +11,7 @@ ActivityIndicator
 ```SnackPlayer name=activity-indicator-simple
 import React from 'react'
 import { View,ScrollView } from 'react-native'
-import { ActivityIndicator } from "mCloud-Design-Mobile";
+import { ActivityIndicator } from "mcloud-mobile";
 
 const ViewTop = () => (
     <View style={{ marginTop: 10 }} />

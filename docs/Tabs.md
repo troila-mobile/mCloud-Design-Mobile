@@ -13,7 +13,7 @@ import React  from 'react'
 import {
     View,  StyleSheet ,
 } from 'react-native'
-import { Label } from 'mCloud-Design-Mobile';
+import { Label } from 'mcloud-mobile';
 
 export default class TabViewExample extends React.Component {
     state = {
@@ -81,5 +81,3 @@ const styles = StyleSheet.create({
 | tabStyle    | tab自定义样式 |   Object  | 无 |
 | labelStyle    | label自定义样式 |   Object  | 无 |
 | indicatorStyle    | indicator自定义样式 |   Object  | 无 |
-| initialLayout    | initialLayout自定义样式 |   Object  | 无 |
-

@@ -11,7 +11,7 @@ sidebar_label: SearchBar
 ```SnackPlayer name=searchBar-simple
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { SearchBar } from 'mCloud-Design-Mobile';
+import { SearchBar } from 'mcloud-mobile';
 
 export default () => {
     const [value, onChange] = useState('打卡助手')

@@ -9,7 +9,7 @@ import { List, Switch, Checkbox } from '../..'
 
 const { Item } = List
 const { Brief } = Item
-const logo = require('../../../example/logo.png')
+const uri = 'https://github.com/troila-mobile/mCloud-Design-Mobile/blob/master/example/logo.png'
 
 const data = [
     {
@@ -83,7 +83,12 @@ export default () => {
                         extra="详细信息"
                         arrow="horizontal"
                         thumb={(
-                            <Image style={styles.logo} source={logo} />
+                            <Image
+                                style={styles.logo}
+                                source={{
+                                    uri,
+                                }}
+                            />
                         )}
                     >
                         标题

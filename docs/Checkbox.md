@@ -11,7 +11,7 @@ sidebar_label: Checkbox
 ```SnackPlayer name=checkbox-simple
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Checkbox } from 'mCloud-Design-Mobile';
+import { Checkbox } from 'mcloud-mobile';
 
 const { CheckboxItem } = Checkbox
 

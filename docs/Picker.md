@@ -12,7 +12,7 @@ sidebar_label: Picker
 ```SnackPlayer name=button-simple
 import React from 'react';
 import { View, Text,TouchableOpacity } from 'react-native';
-import { List, Picker } from 'mCloud-Design-Mobile'
+import { List, Picker } from 'mcloud-mobile'
 import PropTypes from 'prop-types'
 
 const CustomChildren = (props) => (

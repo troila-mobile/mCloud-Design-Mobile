@@ -33,6 +33,7 @@ export default class SwitchButton extends Component {
         checked: PropTypes.bool,
         onChange: PropTypes.func,
         disabled: PropTypes.bool,
+        onTintColor: PropTypes.string,
     }
     static defaultProps = {
         style: {},
@@ -117,48 +118,52 @@ export default class SwitchButton extends Component {
             style,
             styles,
             disabled,
+            onTintColor,
         } = this.props
         return (
             <WithTheme themeStyles={SwitchStyles} styles={styles}>
                 {
-                    (_styles, theme) => (
-                        <TouchableWithoutFeedback disabled={disabled} onPress={this.onToggle}>
-                            <Animated.View
-                                style={[
-                                    {
-                                        backgroundColor: animatedColor.interpolate({
-                                            inputRange: [0, 0.1, 1],
-                                            outputRange: [theme.switch_tint, theme.switch_fill, theme.switch_fill],
-                                        }),
-                                    },
-                                    _styles.switch,
-                                    style,
-                                ]}
-                            >
+                    (_styles, theme) => {
+                        const tintColor = !!onTintColor ? onTintColor : theme.switch_tint
+                        return (
+                            <TouchableWithoutFeedback disabled={disabled} onPress={this.onToggle}>
                                 <Animated.View
                                     style={[
                                         {
-                                            transform: [{ scale }],
-                                            backgroundColor: disabled
-                                                ? theme.switch_disabled_tint : theme.switch_tint,
+                                            backgroundColor: animatedColor.interpolate({
+                                                inputRange: [0, 0.1, 1],
+                                                outputRange: [tintColor, theme.switch_fill, theme.switch_fill],
+                                            }),
                                         },
-                                        _styles.switchBtn,
+                                        _styles.switch,
+                                        style,
                                     ]}
-                                />
-                                <Animated.View
-                                    style={[
-                                        {
-                                            transform: [{ translateX: left }],
-                                            backgroundColor: disabled
-                                                ? theme.switch_disabled_thumbtint : theme.switch_thumbtint,
-                                        },
-                                        getPlatformElevation(4),
-                                        _styles.switchThumb,
-                                    ]}
-                                />
-                            </Animated.View>
-                        </TouchableWithoutFeedback>
-                    )
+                                >
+                                    <Animated.View
+                                        style={[
+                                            {
+                                                transform: [{ scale }],
+                                                backgroundColor: disabled
+                                                    ? theme.switch_disabled_tint : tintColor,
+                                            },
+                                            _styles.switchBtn,
+                                        ]}
+                                    />
+                                    <Animated.View
+                                        style={[
+                                            {
+                                                transform: [{ translateX: left }],
+                                                backgroundColor: disabled
+                                                    ? theme.switch_disabled_thumbtint : theme.switch_thumbtint,
+                                            },
+                                            getPlatformElevation(4),
+                                            _styles.switchThumb,
+                                        ]}
+                                    />
+                                </Animated.View>
+                            </TouchableWithoutFeedback>
+                        )
+                    }
                 }
             </WithTheme>
         )
