@@ -11,7 +11,7 @@ sidebar_label: NoticeBar
 ```SnackPlayer name=notice-simple
 import React from 'react'
 import { View } from 'react-native'
-import { NoticeBar } from 'mCloud-mobile'
+import { NoticeBar } from 'mcloud-mobile'
 
 const apiText = 'Some very long text needed scroll to view all of them and loop over.'
 
