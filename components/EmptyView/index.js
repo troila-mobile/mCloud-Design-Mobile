@@ -20,7 +20,7 @@ export default class EmptyView extends React.Component {
         styles: ViewPropTypes.style,
         style: ViewPropTypes.style,
         children: PropTypes.any,
-        type: PropTypes.number,
+        type: PropTypes.string,
         emptyImage: PropTypes.any,
         onRefresh: PropTypes.func,
     }
@@ -28,15 +28,9 @@ export default class EmptyView extends React.Component {
         styles: {},
         style: {},
         children: null,
-        type: 0,
+        type: '',
         emptyImage: null,
         onRefresh: null,
-    }
-    constructor(props) {
-        super(props)
-        this.state = {
-            emptyImageView: props.emptyImage,
-        }
     }
     render() {
         const {
@@ -51,23 +45,17 @@ export default class EmptyView extends React.Component {
             <WithTheme themeStyles={EmptyViewStyles} styles={styles}>
                 {
                     (_styles, theme) => {
-                        if (type === 0) {
-                            this.state = {
-                                emptyImageView : emptyImage,
-                            }
-                        } else if ( type === 1) {
-                            this.state = {
-                                emptyImageView : network_failedSource,
-                            }
-                        }
-                        else if ( type === 2) {
-                            this.state = {
-                                emptyImageView : no_dataSource,
-                            }
+                        let emptyImageView
+                        if (type === 'no_image') {
+                            emptyImageView = emptyImage
+                        } else if ( type === 'network_failed') {
+                            emptyImageView = network_failedSource
+                        } else if ( type === 'no_data') {
+                            emptyImageView = no_dataSource
+                        } else if (type === 'custom') {
+                            emptyImageView = emptyImage
                         } else {
-                            this.state = {
-                                emptyImageView : emptyImage,
-                            }
+                            emptyImageView = emptyImage
                         }
                         const textStyle = [
                             _styles.text,
@@ -85,7 +73,7 @@ export default class EmptyView extends React.Component {
                         return (
                             <View style={EmptyViewStyle}>
                                 {
-                                    type === 0 ? null : <Image source={this.state.emptyImageView} />
+                                    type === 0 ? null : <Image source={emptyImageView} />
                                 }
                                 <Text style={textStyle}>
                                     {children}

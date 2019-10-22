@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 export default (theme) => StyleSheet.create({
     ListWrapper: {
-        backgroundColor: theme.fill_tap,
+        // backgroundColor: theme.fill_tap,
     },
     Header: {
         fontSize: theme.font_size_base,
@@ -60,10 +60,10 @@ export default (theme) => StyleSheet.create({
         textAlignVertical: 'center',
     },
     Extra: {
-        color: theme.color_text_caption,
         fontSize: theme.font_size_base,
         textAlign: 'right',
         textAlignVertical: 'center',
+        color: theme.color_text_base,
     },
     Brief: {
         minHeight: theme.font_size_icontext,

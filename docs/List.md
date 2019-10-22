@@ -16,11 +16,10 @@ import {
     ScrollView,
     Image,
 } from 'react-native'
-import { List, Switch, Checkbox } from 'mCloud-Design-Mobile'
+import { List, Switch, Checkbox } from 'mcloud-mobile'
 
 const { Item } = List
 const { Brief } = Item
-const logo = require('../../../example/logo.png')
 
 const data = [
     {
@@ -85,6 +84,21 @@ export default () => {
                         标题
                     </Item>
                 </List>
+                <List renderHeader="Extra Header">
+                    <Item extra="默认暗提示">
+                        标题
+                    </Item>
+                    <Item
+                        extra="自定义提示颜色"
+                        styles={{
+                            Extra: {
+                                color: 'red',
+                            },
+                        }}
+                    >
+                        标题
+                    </Item>
+                </List>
                 <List renderHeader="Brief Header">
                     <Item extra="详细信息" arrow="horizontal">
                         标题
@@ -94,7 +108,7 @@ export default () => {
                         extra="详细信息"
                         arrow="horizontal"
                         thumb={(
-                            <Image style={styles.logo} source={logo} />
+                            <Image style={styles.logo} source={{ uri: 'https://github.com/troila-mobile/mCloud-Design-Mobile/blob/master/example/logo.png' }} />
                         )}
                     >
                         标题

@@ -46,7 +46,7 @@ export default () => {
                 disabled
                 hideLine
             >
-                <Text style={styles.desc}>文本3(不可选状态)</Text>
+                文本3(不可选状态)
             </SwitchItem>
         </View>
     )
@@ -55,7 +55,6 @@ export default () => {
 const styles = StyleSheet.create({
     wrap: {
         flex: 1,
-        backgroundColor: '#E6E6E6',
     },
     title: {
         fontSize: 14,
@@ -69,10 +68,6 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingLeft: 10,
         fontWeight: '500',
-    },
-    desc: {
-        fontSize: 14,
-        color: '#999',
     },
     switch: {
         marginBottom: 10,

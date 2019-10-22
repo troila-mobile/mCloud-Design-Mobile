@@ -93,7 +93,7 @@ function SnackPlayer(md) {
       `<div
         data-snack-name="${name}"
         data-snack-description="${description}"
-        data-snack-dependencies='react-navigation@3.11.1,react-native-really-awesome-button@1.4.2,prop-types@15.7.2'
+        data-snack-dependencies='react-navigation@3.11.1,prop-types@15.7.2,mcloud-mobile@1.0.12,react-native-tab-view@2.10.0'
         data-snack-code="${encodedSampleCode}"
         data-snack-platform="${platform}"
         data-snack-preview="true"

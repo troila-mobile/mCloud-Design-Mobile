@@ -12,7 +12,7 @@ SegmentedControl
 import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text } from 'react-native';
 import Constants from 'expo-constants';
-import { SegmentedControl } from "mcloud-design-mobile";
+import { SegmentedControl } from "mcloud-mobile";
 
 
 export default function App() {

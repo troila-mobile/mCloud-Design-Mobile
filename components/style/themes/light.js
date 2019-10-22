@@ -1,17 +1,19 @@
-const brandPrimary = '#586BFB'
-const brandPrimaryTap = '#3C4DCF'
+import { Dimensions } from 'react-native'
 
+export const brandPrimary = '#586BFB'
+export const brandPrimaryTap = '#3C4DCF'
+const screenW = Dimensions.get('window').width
+const screenH = Dimensions.get('window').height
 export default {
     // 文字色
     color_text_base: '#1F2530',                  // 基本
     color_text_base_inverse: '#ffffff',          // 基本 _ 反色
     color_text_secondary: '#a4a9b0',          // 辅助色
-    color_text_placeholder: '#bbbbbb',           // 文本框提示
+    color_text_placeholder: '#A5ABB1',           // 文本框提示
     color_text_disabled: '#bbbbbb',              // 失效
     color_text_caption: '#888888',               // 辅助描述
     color_text_paragraph: '#333333',             // 段落
     color_link: brandPrimary,                 // 链接
-    color_text_title: '#1F2530',             // 标题
     color_text_info: '#A5ABB1',             // 信息文字
 
     // 背景色
@@ -22,9 +24,10 @@ export default {
     fill_mask: 'rgba(0, 0, 0, .4)',              // 遮罩背景
     color_icon_base: '#cccccc',                     // 许多小图标的背景，比如一些小圆点，加减号
     fill_grey: '#f7f7f7',
+    fill_black: '#000',
 
     // 透明度
-    opacity_disabled: '0.3',   // switch checkbox radio 等组件禁用的透明度
+    opacity_disabled: 0.3,   // switch checkbox radio 等组件禁用的透明度
 
     // 全局/品牌色
     brand_primary: brandPrimary,
@@ -37,6 +40,7 @@ export default {
 
     // 边框色
     border_color_base: '#DEDFE0',
+    border_color_white: '#f1f1f1',
 
     // 字体尺寸
     // ---
@@ -97,7 +101,8 @@ export default {
 
     actionsheet_item_height: 50,
     actionsheet_item_font_size: 18,
-
+    screen_W:screenW,
+    screen_H:screenH,
     // button
     button_height: 48,
     button_font_size: 18,
@@ -112,6 +117,7 @@ export default {
 
     ghost_button_color: brandPrimary,    // 同时应用于背景、文字颜色、边框色
     ghost_button_fill_tap: `${brandPrimary}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
+    ghost_button_background_color: 'transparent',
 
     warning_button_fill: '#F85858',
     warning_button_fill_tap: '#DF2F2F',
@@ -121,14 +127,24 @@ export default {
 
     // modal
     modal_font_size_heading: 18,
-    modal_button_font_size: 18, // 按钮字号
-    modal_button_height: 50, // 按钮高度
+    modal_font_size_content: 14,
+    modal_font_size_small: 12,
+    modal_button_font_size: 16, // 按钮字号
+    modal_button_height: 46, // 按钮高度
+    toast_background_color: 'rgba(0,0,0,.7)',
+    positive_text_color: brandPrimary,
+    invalid_text_color: '#DEDFE0',
+    error_hint_color: '#F85858',
+    error_hint_font_size: 11,
 
     // list
     list_item_height: 50,
 
     // checkbox
     checkbox_item_height: 60,
+
+    // radio
+    radio_circle_border_color: '#DEDFE0',
 
     // input
     input_label_width: 17,       // InputItem、TextareaItem 文字长度基础值
@@ -153,15 +169,27 @@ export default {
     emptyView_touchable_marginTop:100,
     // tabs
     tabs_color: brandPrimary,
-    tabs_height: 42,
+    label_textColor:'#A5ABB1',
+    tabs_indicator_height: 4,
+    tabs_indicator_borderRadius: 4,
     tabs_font_size_heading: 15,
-
+    tabs_height:42,
+    tabs_elevation:0,
+    tabs_label_paddingTop:16,
+    tabs_initialLayout_height:40,
+    tabs_indicator_Color:'#FFF',
+    labelBackgroundColor:'#FFF',
     // segmented_control
-    segmented_control_color: brandPrimary,  // 同时应用于背景、文字颜色、边框色
+    sc_selected_bg_color_default: brandPrimary,  // 同时应用于背景、文字颜色、边框色
     segmented_control_height: 30,
     segmented_control_width: 190,
-    segmented_control_fill_tap: `${brandPrimary}10`,
-    segmented_control_background_grey:'#e6e6e6',
+    sc_unselected_bg_color_default:'#e6e6e6',  // darkMode: #030722
+    sc_selected_text_color_default:'#fff',
+    sc_unselected_text_color_default:brandPrimary,
+    sc_selected_bg_color_special:'#fff', // 同时应用于背景、文字颜色、边框色
+    sc_selected_text_color_special:brandPrimary,
+    sc_unselected_text_color_special:'#fff',
+    sc_sepcial_border_color:'#fff',
 
     // tab_bar
     tab_bar_fill: '#ebeeef',
@@ -171,10 +199,9 @@ export default {
     toast_fill: 'rgba(0, 0, 0, .8)',
 
     // search_bar
-    search_bar_fill: '#efeff4',
     search_bar_height: 50,
     search_bar_input_height: 30,
-    search_bar_font_size: 15,
+    search_bar_border_color: '#ffffff',
 
     // notice_bar
     notice_bar_fill: '#fffada',
@@ -183,8 +210,9 @@ export default {
     // switch
     switch_fill: brandPrimary,
     switch_tint: '#D8D8D8',
-    switch_disabled_thumbtint: '#F5F5F5',
+    switch_thumbtint: '#ffffff',
     switch_disabled_tint: '#EEEEEE',
+    switch_disabled_thumbtint: '#F5F5F5',
 
     // tag
     tag_height: 25,
@@ -192,6 +220,12 @@ export default {
 
     // picker
     option_height: 42,            // picker 标题的高度
+    picker_background_color: '#ffffff',
+    picker_header_background_color: '#F3F5F8',
+    picker_title_text_color: '#1F2530',
+    picker_dismiss_text_color: '#1F2530',
+    picker_android_selected_item_text_color: '#333',
+    picker_android_item_text_color:'#aaa',
 
     toast_zindex: 1999,
     action_sheet_zindex: 1000,
@@ -202,16 +236,34 @@ export default {
     v_spacing: 19,
 
     // badge
+    badge_background_color:'#fff',
     badge_item_height: 50,
     badge_paddingHorizontal:15,
     badge_color: '#F85858',
     badge_text_color:'#1F2530',
 
     // card
+    card_background_color:'#fff',
     card_title_color:'#1F2530',
     card_content_color: '#a9a9a9',
     card_lineHeight: 23,
     card_imageWidth: 101,
     card_imageHeight: 78,
     card_image_BG_color: '#efefef',
+
+    // actionSheet
+    sheet_title_backgroundcolor:'#F3F5F8',
+    sheet_backgroundColor:'#fff',
+    sheet_title_color:'#1F2530',
+    sheet_item_title_color:'#1F2530',
+    sheet_spre_color:'#DEDFE0',
+    sheet_item_backgroundColor:'#F3F5F8',
+
+    // activityIndicator
+    activity_indicator_size:89,
+
+    // steps
+    steps_paddingHorizontal:20,
+    steps_text_normal_color: '#1F2530',
+    steps_text_black_color: '#000000',
 }

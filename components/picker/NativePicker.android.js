@@ -43,7 +43,7 @@ class Picker extends React.Component {
         children: PropTypes.any,
         itemStyle: PropTypes.object,
         style: PropTypes.object,
-
+        styles: PropTypes.object,
     }
     itemHeight;
     itemWidth;
@@ -147,12 +147,12 @@ class Picker extends React.Component {
     }
     render() {
         const {
-            children, itemStyle, selectedValue, style,
+            children, itemStyle, selectedValue, style, styles: _styles,
         } = this.props
         const items = React.Children.map(children, (item, index) => {
-            const totalStyle = [styles.itemText]
+            const totalStyle = [_styles.pickerAndroidItemText]
             if (selectedValue === item.props.value) {
-                totalStyle.push(styles.selectedItemText)
+                totalStyle.push(_styles.pickerAndroidSelectedItemText)
             }
             return (
                 <View
@@ -189,7 +189,7 @@ class Picker extends React.Component {
                 >
                     <View ref={(el) => (this.contentRef = el)}>{items}</View>
                 </ScrollView>
-                <View ref={(el) => (this.indicatorRef = el)} style={styles.indicator} />
+                <View ref={(el) => (this.indicatorRef = el)} style={styles.indicator} pointerEvents="none" />
             </View>
         )
     }

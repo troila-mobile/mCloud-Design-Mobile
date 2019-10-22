@@ -29,10 +29,6 @@ export default () => {
                 Radio
             </Text>
             <Text style={styles.title}>
-                默认
-            </Text>
-            <Radio style={styles.checkbox} />
-            <Text style={styles.title}>
                 受控
             </Text>
             <Radio
@@ -50,37 +46,32 @@ export default () => {
                 </Text>
             </Radio>
             <Text style={styles.title}>
-                选中不可点击状态
-            </Text>
-            <Radio style={styles.checkbox} checked disabled />
-            <Text style={styles.title}>
                 不可点击状态
             </Text>
             <Radio style={styles.checkbox} disabled />
+            <Text style={styles.title}>
+                选中不可点击状态
+            </Text>
+            <Radio style={styles.checkbox} checked disabled />
             <Text style={styles.boldTitle}>
                 RadioItem
             </Text>
             {
-                list.map((item,index) => {
-                    const color = item.disabled ? '#999' : '#1F2530'
-                    return (
-                        <RadioItem
-                            key={item.value}
-                            disabled={item.disabled}
-                            checked={typeChecked === item.value}
-                            hideLine={index === (list.length - 1)}
-                            onChange={() => {
-                                onItemChange(item.value)
-                            }}
-                        >
-                            <Text style={[styles.text, { color }]}>
-                                {
-                                    item.label
-                                }
-                            </Text>
-                        </RadioItem>
-                    )
-                })
+                list.map((item, index) => (
+                    <RadioItem
+                        key={item.value}
+                        disabled={item.disabled}
+                        checked={typeChecked === item.value}
+                        hideLine={index === (list.length - 1)}
+                        onChange={() => {
+                            onItemChange(item.value)
+                        }}
+                    >
+                        {
+                            item.label
+                        }
+                    </RadioItem>
+                ))
             }
         </View>
     )
@@ -89,7 +80,6 @@ export default () => {
 const styles = StyleSheet.create({
     wrap: {
         flex: 1,
-        backgroundColor: '#E6E6E6',
     },
     title: {
         fontSize: 14,

@@ -11,7 +11,7 @@ sidebar_label: Radio
 ```SnackPlayer name=radio-simple
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Radio } from 'mCloud-Design-Mobile'
+import { Radio } from 'mcloud-mobile'
 
 const { RadioItem } = Radio
 const list = [
@@ -40,10 +40,6 @@ export default () => {
                 Radio
             </Text>
             <Text style={styles.title}>
-                默认
-            </Text>
-            <Radio style={styles.checkbox} />
-            <Text style={styles.title}>
                 受控
             </Text>
             <Radio
@@ -61,13 +57,13 @@ export default () => {
                 </Text>
             </Radio>
             <Text style={styles.title}>
-                选中不可点击状态
-            </Text>
-            <Radio style={styles.checkbox} checked disabled />
-            <Text style={styles.title}>
                 不可点击状态
             </Text>
             <Radio style={styles.checkbox} disabled />
+            <Text style={styles.title}>
+                选中不可点击状态
+            </Text>
+            <Radio style={styles.checkbox} checked disabled />
             <Text style={styles.boldTitle}>
                 RadioItem
             </Text>
@@ -76,6 +72,7 @@ export default () => {
                     const color = item.disabled ? '#999' : '#1F2530'
                     return (
                         <RadioItem
+                            key={item.value}
                             disabled={item.disabled}
                             checked={typeChecked === item.value}
                             hideLine={index === (list.length - 1)}
@@ -138,10 +135,12 @@ const styles = StyleSheet.create({
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| defaultChecked | 是否默认选中 | Boolean   |  无 |
 | checked | 当前是否选中 | Boolean   |  无 |
 | disabled | 禁用 | Boolean   |  false |
 | onChange | change事件触发的回调函数 | (e: Object): void | 无 |
+| circleSize | Radio 大小 | Number | 16 |
+| centerSize | Radio 选中部分大小 | Number | 10 |
+| icon | 自定义 Radio 样式 | ReactNode | 无 |
 
 ## RadioItem Props
 

@@ -5,6 +5,18 @@
     "previous": "Previous",
     "tagline": "一个基于 React Native 的 UI 组件库",
     "docs": {
+      "ActionSheet": {
+        "title": "ActionSheet",
+        "sidebar_label": "ActionSheet"
+      },
+      "ActivityIndicator": {
+        "title": "ActivityIndicator",
+        "sidebar_label": "ActivityIndicator"
+      },
+      "Avatar": {
+        "title": "Avatar",
+        "sidebar_label": "Avatar"
+      },
       "Badge": {
         "title": "Badge",
         "sidebar_label": "Badge"
@@ -25,8 +37,20 @@
         "title": "贡献说明",
         "sidebar_label": "Contributing"
       },
+      "CountDownView": {
+        "title": "CountDownView",
+        "sidebar_label": "CountDownView"
+      },
+      "DatePicker": {
+        "title": "DatePicker",
+        "sidebar_label": "DatePicker"
+      },
       "doc3": {
         "title": "This is document number 3"
+      },
+      "EmptyView": {
+        "title": "EmptyView",
+        "sidebar_label": "EmptyView"
       },
       "doc4": {
         "title": "Button"
@@ -50,6 +74,10 @@
         "title": "Marquee",
         "sidebar_label": "Marquee"
       },
+      "Modal": {
+        "title": "Modal",
+        "sidebar_label": "Modal"
+      },
       "NoticeBar": {
         "title": "NoticeBar",
         "sidebar_label": "NoticeBar"
@@ -70,9 +98,25 @@
         "title": "SegmentedControl",
         "sidebar_label": "SegmentedControl"
       },
+      "ShareSheet": {
+        "title": "ShareSheet",
+        "sidebar_label": "ShareSheet"
+      },
+      "Stepper": {
+        "title": "Stepper",
+        "sidebar_label": "Stepper"
+      },
+      "Steps": {
+        "title": "Steps",
+        "sidebar_label": "Steps"
+      },
       "Switch": {
         "title": "Switch",
         "sidebar_label": "Switch"
+      },
+      "Tabs": {
+        "title": "Tabs",
+        "sidebar_label": "Tabs"
       },
       "Textarea": {
         "title": "Textarea",
