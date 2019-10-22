@@ -74,6 +74,24 @@ export default () => {
                         标题
                     </Item>
                 </List>
+                <List renderHeader="Extra Header">
+                    <Item extra="默认暗提示">
+                        标题
+                    </Item>
+                    <Item extra="详细信息" extraType="light">
+                        标题
+                    </Item>
+                    <Item
+                        extra="自定义提示颜色"
+                        styles={{
+                            darkExtra: {
+                                color: 'red',
+                            },
+                        }}
+                    >
+                        标题
+                    </Item>
+                </List>
                 <List renderHeader="Brief Header">
                     <Item extra="详细信息" arrow="horizontal">
                         标题
