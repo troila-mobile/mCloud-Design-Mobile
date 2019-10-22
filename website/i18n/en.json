@@ -85,6 +85,10 @@
       "EmptyView": {
         "title": "EmptyView",
         "sidebar_label": "EmptyView"
+      },
+      "Stepper": {
+        "title": "Stepper",
+        "sidebar_label": "Stepper"
       }
     },
     "links": {

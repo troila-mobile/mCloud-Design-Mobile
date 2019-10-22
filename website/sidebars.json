@@ -21,7 +21,8 @@
       "Card",
       "Picker",
       "Label",
-      "EmptyView"
+      "EmptyView",
+      "stepper"
     ],
     "First Category": ["doc4", "doc5"]
   }
