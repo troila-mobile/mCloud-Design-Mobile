@@ -67,4 +67,5 @@ export default {
     // steps
     steps_text_black_color:'#fff',
     steps_text_normal_color: '#A5ABB1',
+
 }
