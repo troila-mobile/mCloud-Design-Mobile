@@ -63,12 +63,7 @@ export default (theme) => StyleSheet.create({
         fontSize: theme.font_size_base,
         textAlign: 'right',
         textAlignVertical: 'center',
-    },
-    darkExtra: {
-        color: theme.dark_extra_color,
-    },
-    lightExtra: {
-        color: theme.light_extra_color,
+        color: theme.color_text_base,
     },
     Brief: {
         minHeight: theme.font_size_icontext,

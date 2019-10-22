@@ -139,8 +139,6 @@ export default {
 
     // list
     list_item_height: 50,
-    dark_extra_color: '#A5ABB1',
-    light_extra_color: '#1F2530',
 
     // checkbox
     checkbox_item_height: 60,

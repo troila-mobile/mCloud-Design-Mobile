@@ -68,7 +68,4 @@ export default {
     steps_text_black_color:'#fff',
     steps_text_normal_color: '#A5ABB1',
 
-    // list
-    dark_extra_color: '#A5ABB1',
-    light_extra_color: '#FFFFFF',
 }

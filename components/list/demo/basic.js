@@ -78,13 +78,10 @@ export default () => {
                     <Item extra="默认暗提示">
                         标题
                     </Item>
-                    <Item extra="详细信息" extraType="light">
-                        标题
-                    </Item>
                     <Item
                         extra="自定义提示颜色"
                         styles={{
-                            darkExtra: {
+                            Extra: {
                                 color: 'red',
                             },
                         }}

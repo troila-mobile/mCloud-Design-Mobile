@@ -28,7 +28,6 @@ export default class Item extends React.Component {
         hideLine: PropTypes.bool,
         numberOfLines: PropTypes.number,
         extra: PropTypes.node,
-        extraType: PropTypes.oneOf(['dark', 'light']),
         children: PropTypes.any,
     }
     static defaultProps = {
@@ -36,7 +35,6 @@ export default class Item extends React.Component {
         styles: {},
         hideLine: false,
         numberOfLines: 1,
-        extraType: 'dark',
     }
     render() {
         const {
@@ -52,7 +50,6 @@ export default class Item extends React.Component {
             hideLine,
             numberOfLines,
             extra,
-            extraType,
             children,
         } = this.props
         return (
@@ -110,14 +107,10 @@ export default class Item extends React.Component {
                             'up': <Image source={upSource} style={_styles.Arrow} />,
                         }
                         let renderExtra
-                        const extraStyle = [
-                            _styles.Extra,
-                            _styles[`${extraType}Extra`],
-                        ]
                         if (extra) {
                             renderExtra = (
                                 <View style={[_styles.column]}>
-                                    <Text style={extraStyle} numberOfLines={numberOfLines}>
+                                    <Text style={_styles.Extra} numberOfLines={numberOfLines}>
                                         {extra}
                                     </Text>
                                 </View>
@@ -131,7 +124,7 @@ export default class Item extends React.Component {
                                             temprenderExtra.push(
                                                 <Text
                                                     numberOfLines={numberOfLines}
-                                                    style={extraStyle}
+                                                    style={_styles.Extra}
                                                     key={String(index)}
                                                 >
                                                     {el}

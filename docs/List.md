@@ -88,13 +88,10 @@ export default () => {
                     <Item extra="默认暗提示">
                         标题
                     </Item>
-                    <Item extra="详细信息" extraType="light">
-                        标题
-                    </Item>
                     <Item
                         extra="自定义提示颜色"
                         styles={{
-                            darkExtra: {
+                            Extra: {
                                 color: 'red',
                             },
                         }}
@@ -208,7 +205,6 @@ const styles = StyleSheet.create({
 | hideLine | 是否隐藏下面的线 | Boolean   |  false |
 | numberOfLines    | 行数 |   number  | 1 |
 | extra    | 右边内容 |   String/React.Element  | 无 |
-| extraType  | 右边提示类型（暗提示,亮提示）可选 `dark`  `light` |  String   | dark |
 
 
 ## Item.Brief Props
