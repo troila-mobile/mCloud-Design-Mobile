@@ -22,7 +22,7 @@
       "Picker",
       "Label",
       "EmptyView",
-      "stepper"
+      "Stepper"
       "Tabs",
       "DatePicker",
       "Modal",
