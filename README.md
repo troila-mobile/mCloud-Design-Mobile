@@ -30,7 +30,7 @@ react-native link
 **目前实现的组件**
 
 | 组件 | 描述 |
-| ——— |——— |
+| ---- |---- |
 | Button | 按钮|
 | Modal | 弹窗 |
 | Marquee |滚动文字|
