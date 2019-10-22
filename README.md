@@ -11,7 +11,7 @@ react-native link
 
 # 背景
 
-卓朗科技的[打卡助手](https://idaka.vip)由 _react-native _实现主业务开发，我们的产品即将面临_version 8.0_的产品迭代，我们面临的主要问题是_view_层的大改版和_old code_的历史包袱，我们在曾经使用很多第三方的_view library_，**But** 这些都无法满足我们的全部定制化需求，**So** 经过团队内部的讨论后，我们决定由我们 **(troila-daka-mobile团队) **来自己实现一套view library
+卓朗科技的[打卡助手](https://idaka.vip)由 react-native实现主业务开发，我们的产品即将面临 version 8.0 的产品迭代，我们面临的主要问题是_view_层的大改版和 old code 的历史包袱，我们在曾经使用很多第三方的 view library，**But** 这些都无法满足我们的全部定制化需求，**So** 经过团队内部的讨论后，我们决定由我们 **(troila-daka-mobile团队) **来自己实现一套view library
 
 # 需求
 
@@ -23,9 +23,9 @@ react-native link
 
 **在这样的背景和需求之下，我们的[mCloud-Design-Mobile](https://troila-mobile.github.io/mCloud-Design-Mobile/)诞生了。**
 **我们的mCloud-Design-Mobile是开源的，分享给更多的开发者使用，也希望有更多的开发者和我们一起共同维护这个仓库**
-**Github: **[https://github.com/troila-mobile/mCloud-Design-Mobile](https://github.com/troila-mobile/mCloud-Design-Mobile)
-**Npm:** [https://www.npmjs.com/package/mcloud-mobile](https://www.npmjs.com/package/mcloud-mobile)
-**Website:** [https://troila-mobile.github.io/mCloud-Design-Mobile/](https://troila-mobile.github.io/mCloud-Design-Mobile/)
+* Github: [https://github.com/troila-mobile/mCloud-Design-Mobile](https://github.com/troila-mobile/mCloud-Design-Mobile)
+* Npm: [https://www.npmjs.com/package/mcloud-mobile](https://www.npmjs.com/package/mcloud-mobile)
+* Website: [https://troila-mobile.github.io/mCloud-Design-Mobile/](https://troila-mobile.github.io/mCloud-Design-Mobile/)
 
 **目前实现的组件**
 
