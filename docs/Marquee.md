@@ -11,11 +11,10 @@ sidebar_label: Marquee
 ```SnackPlayer name=marquee-simple
 import React from 'react'
 import { View } from 'react-native'
-import { Marquee } from 'mCloud-mobile'
+import { Marquee } from 'mcloud-mobile'
 
 export default class MarqueeDemo extends React.Component {
     render() {
-        const { text } = this.state
         return (
             <View style={{ flex: 1 }}>
                 <Marquee text='Some very long text needed scroll to view all of them and loop over.' />

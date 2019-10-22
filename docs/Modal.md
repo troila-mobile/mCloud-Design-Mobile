@@ -11,7 +11,7 @@ sidebar_label: Modal
 ```SnackPlayer name=modal-simple
 import React from 'react'
 import { View } from 'react-native'
-import { Button, Modal } from 'mCloud-mobile'
+import { Button, Modal } from 'mcloud-mobile'
 
 export default class ModalDemo extends React.Component {
     render() {
