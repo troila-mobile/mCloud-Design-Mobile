@@ -102,9 +102,13 @@ export default class Item extends React.Component {
                             }
                         }
                         const arrowList = {
-                            'horizontal': <Image source={horizontalSource} style={_styles.Arrow} />,
-                            'down': <Image source={downSource} style={_styles.Arrow} />,
-                            'up': <Image source={upSource} style={_styles.Arrow} />,
+                            'horizontal': <Image
+                                source={horizontalSource}
+                                style={_styles.Arrow}
+                                resizeMode="contain"
+                            />,
+                            'down': <Image source={downSource} style={_styles.Arrow} resizeMode="contain" />,
+                            'up': <Image source={upSource} style={_styles.Arrow} resizeMode="contain" />,
                         }
                         let renderExtra
                         if (extra) {
@@ -116,30 +120,7 @@ export default class Item extends React.Component {
                                 </View>
                             )
                             if (React.isValidElement(extra)) {
-                                const extraChildren = (extra.props).children
-                                if (Array.isArray(extraChildren)) {
-                                    const temprenderExtra = []
-                                    extraChildren.forEach((el, index) => {
-                                        if (typeof el === 'string') {
-                                            temprenderExtra.push(
-                                                <Text
-                                                    numberOfLines={numberOfLines}
-                                                    style={_styles.Extra}
-                                                    key={String(index)}
-                                                >
-                                                    {el}
-                                                </Text>,
-                                            )
-                                        } else {
-                                            temprenderExtra.push(el)
-                                        }
-                                    })
-                                    renderExtra = (
-                                        <View style={[_styles.column]}>{temprenderExtra}</View>
-                                    )
-                                } else {
-                                    renderExtra = extra
-                                }
+                                renderExtra = extra
                             }
                         }
                         return (
