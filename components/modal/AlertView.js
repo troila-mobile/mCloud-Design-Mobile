@@ -6,7 +6,7 @@ import MaskView from './MaskView'
 import PropTypes from 'prop-types'
 import ModalStyles from './style'
 import { WithTheme } from '../style'
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from '../utils/AsyncStorage'
 
 const modalCloseIcon = require('./assets/icon_modal_close.png')
 const modalNeverSelected = require('./assets/icon_modal_selected.png')

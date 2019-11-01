@@ -59,7 +59,7 @@ export default class TabViewExample extends React.Component {
             <Tabs
                 navigationState={this.state}
                 UIColor="#586BFB"
-                labelWidth={100}
+                labelWidth={70}
                 scrollEnabled={true}
                 routesArray={this.state.routes}
                 renderScene={this._renderScene}

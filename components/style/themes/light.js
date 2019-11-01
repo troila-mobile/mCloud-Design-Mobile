@@ -176,7 +176,7 @@ export default {
     tabs_height:42,
     tabs_elevation:0,
     tabs_label_paddingTop:16,
-    tabs_initialLayout_height:0,
+    tabs_initialLayout_height:40,
     tabs_indicator_Color:'#FFF',
     labelBackgroundColor:'#FFF',
     // segmented_control

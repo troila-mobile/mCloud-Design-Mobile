@@ -45,9 +45,6 @@
         "title": "DatePicker",
         "sidebar_label": "DatePicker"
       },
-      "doc3": {
-        "title": "This is document number 3"
-      },
       "EmptyView": {
         "title": "EmptyView",
         "sidebar_label": "EmptyView"
@@ -57,6 +54,9 @@
       },
       "doc5": {
         "title": "Fifth Document"
+      },
+      "index": {
+        "title": "mCloud-Design-Mobile"
       },
       "InputItem": {
         "title": "InputItem",
@@ -121,6 +121,18 @@
       "Textarea": {
         "title": "Textarea",
         "sidebar_label": "Textarea"
+      },
+      "Label": {
+        "title": "Label",
+        "sidebar_label": "Label"
+      },
+      "EmptyView": {
+        "title": "EmptyView",
+        "sidebar_label": "EmptyView"
+      },
+      "Stepper": {
+        "title": "Stepper",
+        "sidebar_label": "Stepper"
       }
     },
     "links": {

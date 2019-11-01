@@ -19,7 +19,6 @@ export default class Tabs extends React.Component {
         tabStyle: ViewPropTypes.style,
         labelStyle: ViewPropTypes.style,
         indicatorStyle:ViewPropTypes.style,
-        initialLayout:ViewPropTypes.style,
         onIndexChange_Tabs: PropTypes.func,
         renderScene:PropTypes.func,
         navigationState:PropTypes.object,
@@ -34,7 +33,6 @@ export default class Tabs extends React.Component {
         labelStyle:{},
         indicatorStyle:{},
         UIColor:'#000',
-        initialLayout:{},
         onIndexChange_Tabs:() => {} ,
         renderScene:() => {} ,
         navigationState:null,
@@ -152,7 +150,6 @@ _renderTabBar = (props) => {
 render() {
     const {
         styles,
-        initialLayout,
         navigationState,
         onIndexChange_Tabs,
         renderScene,
@@ -170,7 +167,7 @@ render() {
                             this._isScroll(index)
                             onIndexChange_Tabs && onIndexChange_Tabs(index)
                         }}
-                        initialLayout={initialLayout || _styles.initialLayout}
+                        initialLayout={_styles.initialLayout}
                     />
                 )
             }
