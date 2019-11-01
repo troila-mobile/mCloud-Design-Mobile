@@ -8,7 +8,7 @@ const defaultImage = require('./assets/default.png')
 
 export default class Avatar extends React.Component {
     static propTypes = {
-        source: PropTypes.object,
+        source: PropTypes.any,
         size: PropTypes.number,
         styles: PropTypes.object,
         type: PropTypes.string,// normal
