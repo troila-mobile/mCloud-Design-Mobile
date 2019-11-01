@@ -16,6 +16,7 @@ export default () => (
             step={2}
             defaultValue={60}
             onChange={(e) => {}}
+            canInput={true}
         />
     </View>
 )
