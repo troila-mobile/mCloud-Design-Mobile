@@ -51,7 +51,9 @@ export default class ActionSheet extends React.Component {
     }
     hide = (callback) => {
         this._hideSheet(() => {
-            this.setState({ visible: false }, callback)
+            this.setState({ visible: false }, () => {
+                setTimeout(callback,500)
+            })
         })
     }
     _renderCanceButton = () => {
@@ -176,7 +178,7 @@ export default class ActionSheet extends React.Component {
                     key={`share-${item.key}`}
                     styles={this._styles}
                     onPress={() => {
-                        this.hide(onPress(item.key))
+                        this.hide(() => onPress(item.key))
                     }}
                     item={item}
                 />
