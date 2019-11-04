@@ -215,7 +215,6 @@ export default class ActionSheet extends React.Component {
                         return (
                             <Modal
                                 visible={visible}
-                                animationType="fade"
                                 onRequestClose={() => this.hide(cancel)}
                                 transparent={true}
                             >
