@@ -38,8 +38,6 @@ export default (theme) => StyleSheet.create({
         paddingRight: theme.h_spacing_lg,
         paddingVertical: theme.v_spacing_lg,
         minHeight: theme.list_item_height,
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        borderBottomColor: theme.border_color_base,
     },
     Line: {
         backgroundColor: theme.border_color_base,
