@@ -114,7 +114,8 @@ export default class SearchBar extends React.Component {
         this.setState({
             value: '',
         })
-        const { onClear } = this.props
+        const { onClear, onChange } = this.props
+        onChange('')
         if (onClear) {
             onClear()
         }

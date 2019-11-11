@@ -80,6 +80,7 @@ export default (theme) => StyleSheet.create({
         flexDirection: 'column',
     },
     ContentView: {
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
     },
