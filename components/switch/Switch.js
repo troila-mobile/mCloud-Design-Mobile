@@ -52,6 +52,11 @@ export default class SwitchButton extends Component {
             checked,
         }
     }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.checked !== this.state.checked) {
+            this.onToggle()
+        }
+    }
     onToggle = () => {
         const {
             checked,
@@ -64,7 +69,7 @@ export default class SwitchButton extends Component {
             this.setState((preState) => ({
                 checked: !preState.checked,
             }), () => {
-                onChange(checked)
+                onChange(this.state.checked)
                 Animated.parallel([
                     Animated.timing(scale, {
                         toValue: 0.01,
@@ -89,7 +94,7 @@ export default class SwitchButton extends Component {
             this.setState((preState) => ({
                 checked: !preState.checked,
             }), () => {
-                onChange(checked)
+                onChange(this.state.checked)
                 Animated.parallel([
                     Animated.timing(scale, {
                         toValue: 1,
