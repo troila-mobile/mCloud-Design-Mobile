@@ -18,7 +18,7 @@ export default () => {
             keyboardShouldPersistTaps="always"
             onPress={() => Keyboard.dismiss()}
         >
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps="handled">
                 <Text style={styles.boldTitle}>
                     Textarea
                 </Text>
