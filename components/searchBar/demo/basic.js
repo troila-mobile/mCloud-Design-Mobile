@@ -22,7 +22,7 @@ export default () => {
             <Text style={styles.title}>
                 未输入状态
             </Text>
-            <SearchBar type="radius" placeholder="搜索" />
+            <SearchBar autoFocus type="radius" placeholder="搜索" />
             <Text style={styles.title}>
                 初始值
             </Text>

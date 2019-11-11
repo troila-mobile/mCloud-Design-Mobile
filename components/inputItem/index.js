@@ -51,6 +51,7 @@ export default class InputItem extends React.Component {
         autoFocus: PropTypes.bool,
         focus: PropTypes.bool,
         placeholderTextColor: PropTypes.string,
+        required: PropTypes.bool,
     }
     static defaultProps = {
         styles: {},
@@ -65,6 +66,7 @@ export default class InputItem extends React.Component {
         textAlign: 'right',
         last: false,
         children: null,
+        required: false,
     }
     constructor(props) {
         super(props)
@@ -150,6 +152,7 @@ export default class InputItem extends React.Component {
             textAlign,
             placeholder,
             placeholderTextColor,
+            required,
         } = this.props
         const { focus } = this.state
         return (
@@ -176,15 +179,20 @@ export default class InputItem extends React.Component {
                         return (
                             <View style={[_styles.wrapper]}>
                                 <View style={[_styles.container, containerStyle]}>
-                                    {
-                                        children ? (
-                                            typeof children === 'string' ? (
-                                                <Text style={[_styles.text, textStyle]}>{children}</Text>
-                                            ) : (
-                                                <View style={textStyle}>{children}</View>
-                                            )
-                                        ) : null
-                                    }
+                                    <View style={_styles.ContentView}>
+                                        {
+                                            required && <Text style={_styles.RequiredText}>*</Text>
+                                        }
+                                        {
+                                            children ? (
+                                                typeof children === 'string' ? (
+                                                    <Text style={[_styles.text, textStyle]}>{children}</Text>
+                                                ) : (
+                                                    <View style={textStyle}>{children}</View>
+                                                )
+                                            ) : null
+                                        }
+                                    </View>
                                     <TextInput
                                         editable={!disabled && editable}
                                         underlineColorAndroid="transparent"

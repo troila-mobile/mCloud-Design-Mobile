@@ -79,4 +79,13 @@ export default (theme) => StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
     },
+    ContentView: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    RequiredText: {
+        fontSize: theme.font_size_caption,
+        marginRight: theme.h_spacing_md,
+        color: 'red',
+    },
 })
