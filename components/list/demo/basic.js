@@ -41,7 +41,7 @@ export default () => {
                     renderHeader="Normal Header"
                     renderFooter="Normal Footer"
                 >
-                    <Item hideLine>
+                    <Item hideLine required>
                         标题
                     </Item>
                 </List>

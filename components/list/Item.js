@@ -29,12 +29,14 @@ export default class Item extends React.Component {
         numberOfLines: PropTypes.number,
         extra: PropTypes.node,
         children: PropTypes.any,
+        required: PropTypes.bool,
     }
     static defaultProps = {
         style: {},
         styles: {},
         hideLine: false,
         numberOfLines: 1,
+        required: false,
     }
     render() {
         const {
@@ -51,6 +53,7 @@ export default class Item extends React.Component {
             numberOfLines,
             extra,
             children,
+            required,
         } = this.props
         return (
             <WithTheme themeStyles={ItemStyles} styles={styles}>
@@ -136,9 +139,14 @@ export default class Item extends React.Component {
                                         renderThumb
                                     }
                                     <View style={_styles.RightView}>
-                                        {
-                                            renderContent
-                                        }
+                                        <View style={_styles.ContentView}>
+                                            {
+                                                required && <Text style={_styles.RequiredText}>*</Text>
+                                            }
+                                            {
+                                                renderContent
+                                            }
+                                        </View>
                                         {
                                             renderExtra
                                         }
