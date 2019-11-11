@@ -29,6 +29,7 @@ export default () => {
                 默认
             </Text>
             <InputItem
+                required
                 value={value}
                 onChange={(text) => {
                     onChange(text)
@@ -94,6 +95,7 @@ export default () => {
             </Text>
             <InputItem
                 clear
+                required
                 textAlign="left"
                 placeholder="请输入内容"
                 value={leftValue}
