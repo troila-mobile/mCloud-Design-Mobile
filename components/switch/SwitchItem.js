@@ -16,6 +16,7 @@ export default class SwitchButton extends Component {
         styles: ViewPropTypes.style,
         checked: PropTypes.bool,
         onChange: PropTypes.func,
+        onPress: PropTypes.func,
         disabled: PropTypes.bool,
         children: PropTypes.any,
         hideLine: PropTypes.bool,
@@ -25,17 +26,18 @@ export default class SwitchButton extends Component {
         styles: {},
         checked: false,
         onChange: () => { },
+        onPress: () => { },
         disabled: false,
         children: null,
         hideLine: false,
     }
     onPress = () => {
-        const { onChange } = this.props
+        const { onPress } = this.props
         if (this.Switch) {
             this.Switch.onToggle()
         }
-        if (onChange) {
-            onChange()
+        if (onPress) {
+            onPress()
         }
     }
     render() {
@@ -46,6 +48,7 @@ export default class SwitchButton extends Component {
             disabled,
             children,
             hideLine,
+            onChange,
         } = this.props
         return (
             <WithTheme themeStyles={SwitchStyles} styles={styles}>
@@ -71,6 +74,7 @@ export default class SwitchButton extends Component {
                                         }}
                                         disabled={disabled}
                                         checked={checked}
+                                        onChange={onChange}
                                     />
                                     {
                                         !hideLine && (

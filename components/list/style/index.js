@@ -38,8 +38,6 @@ export default (theme) => StyleSheet.create({
         paddingRight: theme.h_spacing_lg,
         paddingVertical: theme.v_spacing_lg,
         minHeight: theme.list_item_height,
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        borderBottomColor: theme.border_color_base,
     },
     Line: {
         backgroundColor: theme.border_color_base,
@@ -60,10 +58,10 @@ export default (theme) => StyleSheet.create({
         textAlignVertical: 'center',
     },
     Extra: {
-        color: theme.color_text_caption,
         fontSize: theme.font_size_base,
         textAlign: 'right',
         textAlignVertical: 'center',
+        color: theme.color_text_base,
     },
     Brief: {
         minHeight: theme.font_size_icontext,
@@ -80,5 +78,14 @@ export default (theme) => StyleSheet.create({
     column: {
         flex: 1,
         flexDirection: 'column',
+    },
+    ContentView: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    RequiredText: {
+        fontSize: theme.font_size_caption,
+        marginRight: theme.h_spacing_md,
+        color: 'red',
     },
 })

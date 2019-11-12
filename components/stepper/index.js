@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    ViewPropTypes, Image, TouchableOpacity, Text, View
+    ViewPropTypes, Image, TouchableOpacity, Text, View, TextInput,
 } from 'react-native'
 import { WithTheme } from '../style'
 import StepperStyles from './style'
@@ -24,8 +24,10 @@ export default class Stepper extends React.Component {
         value: PropTypes.number,
         unit: PropTypes.string,
         disabledAdd: PropTypes.bool,
+        canInput: PropTypes.bool,
         disabledSubtract: PropTypes.bool,
         onChange: PropTypes.func,
+
     }
     static defaultProps = {
         style: {},
@@ -33,10 +35,11 @@ export default class Stepper extends React.Component {
         min: 0,
         max: 100,
         step: 1,
-        unit: "",
+        unit: '',
         defaultValue: 50,
         disabledAdd: false,
         disabledSubtract: false,
+        canInput: false,
         onChange: () => {
         },
 
@@ -47,35 +50,57 @@ export default class Stepper extends React.Component {
             value: props.defaultValue || props.value || 0,
         }
     }
-    onAddPress = () => {
+onAddPress = () => {
+    const {
+        disabledAdd,
+        onChange,
+        step,
+        max,
+    } = this.props
+    if (disabledAdd) return
+    const { value } = this.state
+    let num = value + step
+    if (num > max) {
+        num = max
+    }
+    if (onChange) {
+        onChange({ value: num })
+    }
+    this.setState({ value: num })
+}
+    onSubtractPress = () => {
         const {
-            disabledAdd,
+            disabledSubtract,
             onChange,
             step,
-            max
+            min,
         } = this.props
-        if (disabledAdd) return
+        if (disabledSubtract) return
         const { value } = this.state
-        let num = value + step
-        if (num > max) {
-            num = max
+        let num = value - step
+        if (num < min) {
+            num = min
         }
         if (onChange) {
             onChange({ value: num })
         }
         this.setState({ value: num })
     }
-    onSubtractPress = () => {
+    _setLimit() {
         const {
-            disabledSubtract,
+            value,
+        } = this.state
+        const {
+            max,
+            min,
             onChange,
-            step,
-            min
         } = this.props
-        if (disabledSubtract) return
-        const { value } = this.state
-        let num = value - step
-        if (num < min) {
+        let num = value
+        if (num) num = parseInt(num)
+        if (num > max) {
+            num = max
+        } else if (num <= min
+        ) {
             num = min
         }
         if (onChange) {
@@ -92,6 +117,7 @@ export default class Stepper extends React.Component {
             unit,
             disabledSubtract,
             disabledAdd,
+            canInput,
         } = this.props
         const { value } = this.state
         return (
@@ -121,7 +147,7 @@ export default class Stepper extends React.Component {
                             )
                         }
                         if (value > min) {
-                            iconSubtract =(
+                            iconSubtract = (
                                 <Image
                                     style={[styles.icon, style]}
                                     source={stepperSubtract}
@@ -150,7 +176,23 @@ export default class Stepper extends React.Component {
                                         {iconSubtract}
                                     </View>
                                 </TouchableOpacity>
-                                <Text style={_styles.radius_text}>{value+unit}</Text>
+                                {canInput ? (
+                                    <TextInput
+                                        style={_styles.radius_text}
+                                        keyboardType="numeric"
+                                        onChangeText={(text) => {
+                                            this.setState({ value: text ? parseInt(text) : '' })
+                                            clearTimeout(this.timer)
+                                            this.timer = setTimeout(() => {
+                                                this._setLimit()
+                                            }, 2000)
+                                        }}
+                                        defaultValue={`${value}`}
+                                    />
+                                )
+                                    : <Text style={_styles.radius_text}>{value}</Text>}
+
+                                <Text style={_styles.radius_text}>{unit}</Text>
                                 <TouchableOpacity
                                     onPress={this.onAddPress}
                                     disabled={disabledAdd}

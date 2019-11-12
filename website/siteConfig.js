@@ -36,7 +36,7 @@ const siteConfig = {
 
 	// For no header links in the top nav bar -> headerLinks: [],
 	headerLinks: [
-		{ doc: 'Contributing', label: 'Docs' },
+		{ doc: 'index', label: 'Docs' },
 		{ doc: 'Button', label: 'API' },
 		{ page: 'help', label: 'Help' },
 		{ blog: true, label: 'Blog' },
@@ -46,9 +46,9 @@ const siteConfig = {
 	users,
 
 	/* path to images for header/footer */
-	headerIcon: 'img/favicon.ico',
-	footerIcon: 'img/favicon.ico',
-	favicon: 'img/favicon.ico',
+	headerIcon: 'img/favicon.png',
+	footerIcon: 'img/favicon.png',
+	favicon: 'img/favicon.png',
 
 	/* Colors for website */
 	colors: {
@@ -108,7 +108,7 @@ const siteConfig = {
 
 	// You may provide arbitrary config keys to be used as needed by your
 	// template. For example, if you need your repo's URL...
-	//   repoUrl: 'https://github.com/facebook/test-site',
+	repoUrl: 'https://github.com/troila-mobile/mCloud-Design-Mobile',
 };
 
 module.exports = siteConfig;

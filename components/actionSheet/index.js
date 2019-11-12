@@ -69,7 +69,9 @@ export default class ActionSheet extends React.Component {
     }
     hide = (callback) => {
         this._hideSheet(() => {
-            this.setState({ visible: false }, callback)
+            this.setState({ visible: false }, () => {
+                setTimeout(callback,500)
+            })
         })
     }
     _renderCanceButton = () => {
@@ -136,8 +138,7 @@ export default class ActionSheet extends React.Component {
                 disabled={exitDisabled > -1}
                 key={`cell${index}`}
                 onPress={() => {
-                    onPress(index)
-                    this.hide()
+                    this.hide(() => onPress(index))
                 }}
             >
                 <Text
@@ -182,7 +183,6 @@ export default class ActionSheet extends React.Component {
                         return (
                             <Modal
                                 visible={visible}
-                                animationType="fade"
                                 onRequestClose={() => this.hide(cancel)}
                                 transparent={true}
                             >

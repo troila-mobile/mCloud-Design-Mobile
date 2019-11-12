@@ -47,8 +47,8 @@ export default class TextAreaItem extends React.Component {
         placeholderTextColor: PropTypes.string,
     }
     static defaultProps = {
-        styles: { },
-        style: { },
+        styles: {},
+        style: {},
         clear: true,
         rows: 1,
         count: 0,
@@ -99,7 +99,7 @@ export default class TextAreaItem extends React.Component {
         if (autoHeight) {
             height = event.nativeEvent.contentSize.height
         } else if (rows > 1) {
-            height = 6 * rows * 4
+            height = Math.round(1.3 * theme.font_size_base) * rows
         } else {
             height = theme.list_item_height
         }
@@ -117,7 +117,7 @@ export default class TextAreaItem extends React.Component {
             return height
         }
         return rows !== undefined && rows > 1
-            ? 6 * rows * 4
+            ? Math.round(1.3 * theme.font_size_base) * rows
             : theme.list_item_height
     }
     onInputBlur = () => {

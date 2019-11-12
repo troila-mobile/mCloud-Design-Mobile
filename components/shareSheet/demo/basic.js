@@ -17,9 +17,7 @@ export default class extends React.Component {
                 <Button
                     onPress={
                         () => {
-                            this.setState({
-                                options:['text','value','value','value','value','value','value','value','value'],
-                            },() => this.actionSheet.show())
+                            this.actionSheet.show()
                         }
                     }
                 >

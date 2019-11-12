@@ -41,7 +41,7 @@ export default () => {
                     renderHeader="Normal Header"
                     renderFooter="Normal Footer"
                 >
-                    <Item>
+                    <Item hideLine required>
                         标题
                     </Item>
                 </List>
@@ -55,7 +55,7 @@ export default () => {
                     <Item arrow="down">
                         标题
                     </Item>
-                    <Item extra="详细信息" arrow="horizontal">
+                    <Item extra="详细信息" arrow="horizontal" hideLine>
                         标题
                     </Item>
                 </List>
@@ -70,6 +70,23 @@ export default () => {
                             />
                         )}
                         onPress={() => SwitchRef && SwitchRef.onToggle()}
+                        hideLine
+                    >
+                        标题
+                    </Item>
+                </List>
+                <List renderHeader="Extra Header">
+                    <Item extra="默认暗提示">
+                        标题
+                    </Item>
+                    <Item
+                        extra="自定义提示颜色"
+                        styles={{
+                            Extra: {
+                                color: 'red',
+                            },
+                        }}
+                        hideLine
                     >
                         标题
                     </Item>
@@ -90,6 +107,7 @@ export default () => {
                                 }}
                             />
                         )}
+                        hideLine
                     >
                         标题
                         <Brief>副标题  副标题  副标题  副标题  副标题  副标题</Brief>
