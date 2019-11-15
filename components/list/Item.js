@@ -128,13 +128,14 @@ export default class Item extends React.Component {
                         }
                         return (
                             <TouchableHighlight
+                                style={style}
                                 onPress={onPress}
                                 onPressIn={onPressIn}
                                 onPressOut={onPressOut}
                                 onLongPress={onLongPress}
                                 delayLongPress={delayLongPress}
                             >
-                                <View style={[_styles.Item, style]}>
+                                <View style={_styles.Item}>
                                     {
                                         renderThumb
                                     }
