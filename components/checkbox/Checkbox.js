@@ -28,7 +28,7 @@ export default class Checkbox extends React.Component {
         disabled: false,
         children: null,
         onChange: () => {},
-        pointerEvents: 'none',
+        pointerEvents: 'auto',
     }
     constructor(props) {
         super(props)
@@ -105,11 +105,8 @@ export default class Checkbox extends React.Component {
                             )
                         }
                         return (
-                            <TouchableWithoutFeedback onPress={this.onPress}>
-                                <View
-                                    style={_styles.wrapper}
-                                    pointerEvents={pointerEvents}
-                                >
+                            <TouchableWithoutFeedback pointerEvents={pointerEvents} onPress={this.onPress}>
+                                <View style={_styles.wrapper}>
                                     {icon}
                                     {
                                         typeof children === 'string' ? (

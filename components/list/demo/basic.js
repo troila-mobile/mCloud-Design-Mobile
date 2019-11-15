@@ -119,7 +119,8 @@ export default () => {
                             <Checkbox
                                 checked={checkedValue.length === data.length}
                                 style={styles.thumbAll}
-                                onChange={onAllChecked}
+                                pointerEvents="none"
+                                // onChange={onAllChecked}
                             />
                         )}
                         onPress={onAllChecked}
