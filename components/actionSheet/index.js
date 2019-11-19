@@ -27,7 +27,7 @@ export default class ActionSheet extends React.Component {
         disabledIndexArrary: PropTypes.array,
         styles: PropTypes.object,
         title: PropTypes.string,
-        checkedIndex: PropTypes.number
+        checkedIndex: PropTypes.number,
     }
     static defaultProps = {
         options: [],
@@ -37,7 +37,7 @@ export default class ActionSheet extends React.Component {
         styles: {},
         title: null,
         onPress: () => { },
-        checkedIndex: -1
+        checkedIndex: -1,
     }
     state = {
         visible: false,

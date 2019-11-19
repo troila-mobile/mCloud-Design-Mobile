@@ -59,3 +59,4 @@ export default class extends React.Component {
 | disabledIndexArrary   |  不可选择选项数组   |   array   |   无  |
 | styles    | 自定义样式 |   Object  | 无 |
 | title    | 标题，最多显示两行 | string |   无  |
+| checkedIndex    | 选中的索引(-1即为不带选中样式) | number |   -1  |
