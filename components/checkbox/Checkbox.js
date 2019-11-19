@@ -20,6 +20,7 @@ export default class Checkbox extends React.Component {
         disabled: PropTypes.bool,
         children: PropTypes.any,
         onChange: PropTypes.func,
+        pointerEvents: PropTypes.oneOf(['box-none', 'none', 'box-only', 'auto']),
     }
     static defaultProps = {
         style: {},
@@ -27,6 +28,7 @@ export default class Checkbox extends React.Component {
         disabled: false,
         children: null,
         onChange: () => {},
+        pointerEvents: 'auto',
     }
     constructor(props) {
         super(props)
@@ -70,6 +72,7 @@ export default class Checkbox extends React.Component {
             styles,
             children,
             disabled,
+            pointerEvents,
         } = this.props
         return (
             <WithTheme themeStyles={CheckboxStyles} styles={styles}>
@@ -102,7 +105,7 @@ export default class Checkbox extends React.Component {
                             )
                         }
                         return (
-                            <TouchableWithoutFeedback onPress={this.onPress}>
+                            <TouchableWithoutFeedback pointerEvents={pointerEvents} onPress={this.onPress}>
                                 <View style={_styles.wrapper}>
                                     {icon}
                                     {
