@@ -3,6 +3,8 @@ import { StyleSheet } from 'react-native'
 export default (theme) => StyleSheet.create({
     overlay: {
         flex:1,
+        opacity: 0.6,
+        backgroundColor: '#000',
     },
     normalText:{
         color:theme.sheet_title_color,
@@ -52,8 +54,10 @@ export default (theme) => StyleSheet.create({
     },
     wrapper: {
         flex: 1,
-        backgroundColor:`${theme.fill_grey}66`,
+        // backgroundColor:`${theme.fill_grey}66`,
         borderTopLeftRadius:10,
         borderTopRightRadius:10,
+        opacity: 0.6,
+        backgroundColor: '#000',
     },
 })
