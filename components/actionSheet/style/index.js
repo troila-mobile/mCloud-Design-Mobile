@@ -2,7 +2,9 @@ import { StyleSheet } from 'react-native'
 
 export default (theme) => StyleSheet.create({
     overlay: {
-        flex: 1,
+        flex:1,
+        opacity: 0.6,
+        backgroundColor: '#000',
     },
     normalText: {
         color: theme.sheet_title_color,
@@ -53,14 +55,16 @@ export default (theme) => StyleSheet.create({
     },
     wrapper: {
         flex: 1,
-        backgroundColor: `${theme.fill_grey}66`,
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
+        // backgroundColor:`${theme.fill_grey}66`,
+        borderTopLeftRadius:10,
+        borderTopRightRadius:10,
+        opacity: 0.6,
+        backgroundColor: '#000',
     },
     CheckImage: {
-        marginRight: theme.h_spacing_lg
+        marginRight: theme.h_spacing_lg,
     },
     SafeAreaView: {
-        backgroundColor: theme.sheet_backgroundColor
-    }
+        backgroundColor: theme.sheet_backgroundColor,
+    },
 })

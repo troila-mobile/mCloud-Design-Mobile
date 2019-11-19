@@ -16,7 +16,7 @@ export default class AvatarDemo extends React.Component {
                 }}
             >
                 <Avatar
-                    source={{ uri:'http://wx3.sinaimg.cn/orj360/006Ja9YYly1fy5iqie8muj30j60j6q3n.jpg' }}
+                    source={{ uri:'http://wx3.sinaimg.cn/orj360/006Ja9Ymuj30j60j6q3n.jpg' }}
                     type="white"
                 />
                 <Avatar
@@ -24,6 +24,7 @@ export default class AvatarDemo extends React.Component {
                 />
                 <Avatar
                     type="white"
+                    style={{ marginTop:20 , borderRadius:20 }}
                 />
             </View>
         )

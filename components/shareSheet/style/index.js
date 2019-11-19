@@ -7,8 +7,8 @@ export default (theme) => StyleSheet.create({
         right: 0,
         bottom: 0,
         left: 0,
-        opacity: 0.4,
-        backgroundColor:theme.sheet_backgroundColor,
+        opacity: 0.6,
+        backgroundColor:'#000',
 
     },
     textStyle:{
