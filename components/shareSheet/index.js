@@ -95,8 +95,6 @@ export default class ActionSheet extends React.Component {
         }).start()
     }
     _loadSources() {
-        // options: PropTypes.array,// ['qq','qzone','friend','wechat','weibo']
-        // customItem: PropTypes.array, // [{ image:'', title:'', key:'' },{ image:'', title:'', key:'' }]
         const {
             options,
             customItem,

@@ -13,30 +13,40 @@ export default class Avatar extends React.Component {
         styles: PropTypes.object,
         type: PropTypes.string,// normal
         defaultAvatar:PropTypes.any,
+        style: PropTypes.object,
     }
     static defaultProps = {
         size:70,
         type:'normal',
         defaultAvatar:defaultImage,
+        style:{},
+    }
+    state={
+        imageSource: defaultImage,
+    }
+    componentDidMount() {
+        const { source, defaultAvatar } = this.props
+        this.setState({
+            imageSource: source || defaultAvatar,
+        })
     }
     render() {
         const {
             styles,
             size,
-            source,
             type,
             defaultAvatar,
+            style,
         } = this.props
+        const { imageSource } = this.state
         return (
             <WithTheme themeStyles={AvatarStyles} styles={styles}>
                 {
                     (_styles) => {
                         const borderStyle = [
-                            _styles[`${type}Border`],
+                            _styles[`${type}Border`],style,
                         ]
-
                         return (
-
                             <Image
                                 style={[
                                     {
@@ -46,7 +56,11 @@ export default class Avatar extends React.Component {
                                     },
                                     ...borderStyle,
                                 ]}
-                                source={source || defaultAvatar}
+                                source={imageSource}
+                                onError={() => {
+                                    this.setState({
+                                        imageSource: defaultAvatar,
+                                    }) }}
                             />
 
                         )
