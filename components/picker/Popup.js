@@ -32,7 +32,6 @@ const getModal = (props, visible, {
     } = props
     return (
         <Modal
-            animated={true}
             animationType="fade"
             wrapStyle={styles.modal}
             visible={visible}

@@ -30,10 +30,24 @@ export default () => (
             LargeLabel
         </Text>
         <View style={styles.cellStyle}>
-            <Label type="white" size="large" textType="largeText" style={styles.defaultStyle}>
+            <Label
+                type="white"
+                size="large"
+                textType="largeText"
+                style={styles.defaultStyle}
+                disabled={false}
+                onPress={() => {}}
+            >
                 三个字
             </Label>
-            <Label type="black" size="large" textType="largeText" style={styles.multiStyle}>
+            <Label
+                type="black"
+                size="large"
+                textType="largeText"
+                style={styles.multiStyle}
+                disabled={false}
+                onPress={() => {}}
+            >
                 这里是长度固定的三个字
             </Label>
         </View>

@@ -13,11 +13,10 @@ import React  from 'react'
 import {
     View,  StyleSheet ,
 } from 'react-native'
-import { Label } from 'mcloud-mobile';
+import { Tabs } from 'mcloud-mobile';
 
 export default class TabViewExample extends React.Component {
     state = {
-        // eslint-disable-next-line react/no-unused-state
         index: 0,
         routes: [
             { key: '1', title: '新闻' },
@@ -52,7 +51,6 @@ export default class TabViewExample extends React.Component {
                 routesArray={this.state.routes}
                 renderScene={this._renderScene}
                 onIndexChange_Tabs={(index) => {
-                    // eslint-disable-next-line react/no-unused-state
                     this.setState({ index })
                 }}
             />

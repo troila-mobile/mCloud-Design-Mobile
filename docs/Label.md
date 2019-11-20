@@ -41,12 +41,26 @@ export default () => (
             LargeLabel
         </Text>
         <View style={styles.cellStyle}>
-            <Label type="white" size="large" textType="largeText" style={styles.defaultStyle}>
-                三个字
-            </Label>
-            <Label type="black" size="large" textType="largeText" style={styles.multiStyle}>
-                这里是可变的三个字
-            </Label>
+              <Label
+                    type="white"
+                    size="large"
+                    textType="largeText"
+                    style={styles.defaultStyle}
+                    disabled={false}
+                     onPress={() => {}}
+              >
+              三个字
+              </Label>
+              <Label
+               type="black"
+               size="large"
+               textType="largeText"
+               style={styles.multiStyle}
+               disabled={false}
+               onPress={() => {}}
+               >
+               这里是长度固定的三个字
+               </Label>
         </View>
     </View>
 )
@@ -82,5 +96,7 @@ const styles = StyleSheet.create({
 ----|-----|------|------
 | type    | 标签文本颜色，可选值为 `white(白色)` 或者 `black(黑色)`  |   string   |   -  |
 | textType    | 标签文本大小，可选值为 `smallText(小)` 或者 `middleText(中)` 或者 `largeText(大)` |   string   |   -  |
+| disabled    | 标签是否可点击, 不可点击 (true),  可设置点击(false) |   bool   |  不可点击(true)  |
+| onPress    | 点击事件  |   func   |   -  |
 | size    | 标签大小，可选值为 `small(小)` 或者 `middle(中)` 或者 `large(大)` |   string   |   -  |
 | style    | 自定义样式 |   Object  | 无 |

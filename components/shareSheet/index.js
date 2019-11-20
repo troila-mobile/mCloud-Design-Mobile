@@ -51,7 +51,9 @@ export default class ActionSheet extends React.Component {
     }
     hide = (callback) => {
         this._hideSheet(() => {
-            this.setState({ visible: false }, callback)
+            this.setState({ visible: false }, () => {
+                setTimeout(callback,500)
+            })
         })
     }
     _renderCanceButton = () => {
@@ -93,8 +95,6 @@ export default class ActionSheet extends React.Component {
         }).start()
     }
     _loadSources() {
-        // options: PropTypes.array,// ['qq','qzone','friend','wechat','weibo']
-        // customItem: PropTypes.array, // [{ image:'', title:'', key:'' },{ image:'', title:'', key:'' }]
         const {
             options,
             customItem,
@@ -176,7 +176,7 @@ export default class ActionSheet extends React.Component {
                     key={`share-${item.key}`}
                     styles={this._styles}
                     onPress={() => {
-                        this.hide(onPress(item.key))
+                        this.hide(() => onPress(item.key))
                     }}
                     item={item}
                 />
@@ -213,7 +213,6 @@ export default class ActionSheet extends React.Component {
                         return (
                             <Modal
                                 visible={visible}
-                                animationType="fade"
                                 onRequestClose={() => this.hide(cancel)}
                                 transparent={true}
                             >

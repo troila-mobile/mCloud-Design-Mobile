@@ -29,12 +29,14 @@ export default class Item extends React.Component {
         numberOfLines: PropTypes.number,
         extra: PropTypes.node,
         children: PropTypes.any,
+        required: PropTypes.bool,
     }
     static defaultProps = {
         style: {},
         styles: {},
         hideLine: false,
         numberOfLines: 1,
+        required: false,
     }
     render() {
         const {
@@ -51,6 +53,7 @@ export default class Item extends React.Component {
             numberOfLines,
             extra,
             children,
+            required,
         } = this.props
         return (
             <WithTheme themeStyles={ItemStyles} styles={styles}>
@@ -102,9 +105,13 @@ export default class Item extends React.Component {
                             }
                         }
                         const arrowList = {
-                            'horizontal': <Image source={horizontalSource} style={_styles.Arrow} />,
-                            'down': <Image source={downSource} style={_styles.Arrow} />,
-                            'up': <Image source={upSource} style={_styles.Arrow} />,
+                            'horizontal': <Image
+                                source={horizontalSource}
+                                style={_styles.Arrow}
+                                resizeMode="contain"
+                            />,
+                            'down': <Image source={downSource} style={_styles.Arrow} resizeMode="contain" />,
+                            'up': <Image source={upSource} style={_styles.Arrow} resizeMode="contain" />,
                         }
                         let renderExtra
                         if (extra) {
@@ -116,48 +123,31 @@ export default class Item extends React.Component {
                                 </View>
                             )
                             if (React.isValidElement(extra)) {
-                                const extraChildren = (extra.props).children
-                                if (Array.isArray(extraChildren)) {
-                                    const temprenderExtra = []
-                                    extraChildren.forEach((el, index) => {
-                                        if (typeof el === 'string') {
-                                            temprenderExtra.push(
-                                                <Text
-                                                    numberOfLines={numberOfLines}
-                                                    style={_styles.Extra}
-                                                    key={String(index)}
-                                                >
-                                                    {el}
-                                                </Text>,
-                                            )
-                                        } else {
-                                            temprenderExtra.push(el)
-                                        }
-                                    })
-                                    renderExtra = (
-                                        <View style={[_styles.column]}>{temprenderExtra}</View>
-                                    )
-                                } else {
-                                    renderExtra = extra
-                                }
+                                renderExtra = extra
                             }
                         }
                         return (
                             <TouchableHighlight
+                                style={style}
                                 onPress={onPress}
                                 onPressIn={onPressIn}
                                 onPressOut={onPressOut}
                                 onLongPress={onLongPress}
                                 delayLongPress={delayLongPress}
                             >
-                                <View style={[_styles.Item, style]}>
+                                <View style={_styles.Item}>
                                     {
                                         renderThumb
                                     }
                                     <View style={_styles.RightView}>
-                                        {
-                                            renderContent
-                                        }
+                                        <View style={_styles.ContentView}>
+                                            {
+                                                required && <Text style={_styles.RequiredText}>*</Text>
+                                            }
+                                            {
+                                                renderContent
+                                            }
+                                        </View>
                                         {
                                             renderExtra
                                         }

@@ -35,4 +35,13 @@ export default (theme) => StyleSheet.create({
         padding: 2,
         alignSelf: 'center',
     },
+    ContentView: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    RequiredText: {
+        fontSize: theme.font_size_caption,
+        marginRight: theme.h_spacing_md,
+        color: 'red',
+    },
 })

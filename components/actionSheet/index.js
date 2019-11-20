@@ -7,13 +7,17 @@ import {
     ScrollView,
     Animated,
     Easing,
-    SafeAreaView,
+    Image
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { WithTheme } from '../style'
 import ActionSheetStyle from './style/index'
+import { SafeAreaView } from 'react-navigation'
+
+const checkSource = require('./assets/check.png')
 
 const MAXHEIGHT = 410
+
 export default class ActionSheet extends React.Component {
     static propTypes = {
         options: PropTypes.array,
@@ -23,22 +27,24 @@ export default class ActionSheet extends React.Component {
         disabledIndexArrary: PropTypes.array,
         styles: PropTypes.object,
         title: PropTypes.string,
+        checkedIndex: PropTypes.number,
     }
     static defaultProps = {
-        options:[],
-        showCancel:true,
-        cancel: () => {},
-        disabledIndexArrary:[],
-        styles:{},
-        title:null,
-        onPress:() => {},
+        options: [],
+        showCancel: true,
+        cancel: () => { },
+        disabledIndexArrary: [],
+        styles: {},
+        title: null,
+        onPress: () => { },
+        checkedIndex: -1,
     }
     state = {
-        visible:false,
-        scrollEnabled:false,
+        visible: false,
+        scrollEnabled: false,
         sheetAnim: new Animated.Value(MAXHEIGHT),
-        height:MAXHEIGHT,
-        scrollViewHeight:250,
+        height: MAXHEIGHT,
+        scrollViewHeight: 250,
     }
     _styles = ActionSheetStyle
     componentDidMount() {
@@ -46,7 +52,7 @@ export default class ActionSheet extends React.Component {
             options,
         } = this.props
         this.setState({
-            scrollEnabled:options.length > 5,
+            scrollEnabled: options.length > 5,
         })
     }
     static getDerivedStateFromProps(props, state) {
@@ -58,18 +64,20 @@ export default class ActionSheet extends React.Component {
         }
 
         return state.height === tempHeight ? null : {
-            scrollEnabled:props.options && props.options.length > 5,
-            height:tempHeight,
-            sheetAnim:new Animated.Value(tempHeight),
-            scrollViewHeight:props.options && props.options.length > 5 ? 250 : props.options * 50,
+            scrollEnabled: props.options && props.options.length > 5,
+            height: tempHeight,
+            sheetAnim: new Animated.Value(tempHeight),
+            scrollViewHeight: props.options && props.options.length > 5 ? 250 : props.options * 50,
         }
     }
     show = () => {
-        this.setState({ visible: true },this._showSheet)
+        this.setState({ visible: true }, this._showSheet)
     }
     hide = (callback) => {
         this._hideSheet(() => {
-            this.setState({ visible: false }, callback)
+            this.setState({ visible: false }, () => {
+                setTimeout(callback, 500)
+            })
         })
     }
     _renderCanceButton = () => {
@@ -124,10 +132,11 @@ export default class ActionSheet extends React.Component {
             duration: 200,
         }).start(callback)
     }
-    _renderCell(item,index) {
+    _renderCell(item, index) {
         const {
             disabledIndexArrary,
             onPress,
+            checkedIndex,
         } = this.props
         const exitDisabled = disabledIndexArrary.find((mitem) => mitem === index)
         return (
@@ -136,10 +145,17 @@ export default class ActionSheet extends React.Component {
                 disabled={exitDisabled > -1}
                 key={`cell${index}`}
                 onPress={() => {
-                    onPress(index)
-                    this.hide()
+                    this.hide(() => onPress(index))
                 }}
             >
+                {
+                    checkedIndex !== -1 && checkedIndex === index && (
+                        <Image
+                            source={checkSource}
+                            style={this._styles.CheckImage}
+                        />
+                    )
+                }
                 <Text
                     style={exitDisabled ? this._styles.disableTextStyle : this._styles.normalText}
                 >
@@ -152,7 +168,7 @@ export default class ActionSheet extends React.Component {
         const {
             options,
         } = this.props
-        return options.map((item,index) => this._renderCell(item,index))
+        return options.map((item, index) => this._renderCell(item, index))
     }
     render() {
         const {
@@ -182,31 +198,28 @@ export default class ActionSheet extends React.Component {
                         return (
                             <Modal
                                 visible={visible}
-                                animationType="fade"
                                 onRequestClose={() => this.hide(cancel)}
                                 transparent={true}
                             >
-                                <SafeAreaView style={wrapper}>
+                                <View style={wrapper}>
                                     <Text
                                         style={overlay}
                                         onPress={() => this.hide(cancel)}
                                     />
-
                                     <Animated.View
-                                        style={[...body,{ transform: [{ translateY: sheetAnim }]  }]}
+                                        style={[...body, { transform: [{ translateY: sheetAnim }] }]}
                                     >
                                         {title && this._renderTitle()}
                                         <ScrollView
                                             scrollEnabled={scrollEnabled}
-                                            style={{ height:scrollViewHeight }}
+                                            style={{ height: scrollViewHeight }}
                                         >
                                             {this._renderOptions()}
                                         </ScrollView>
                                         {showCancel && this._renderCanceButton()}
                                     </Animated.View>
-
-
-                                </SafeAreaView>
+                                    <SafeAreaView style={_styles.SafeAreaView} />
+                                </View>
                             </Modal>
                         )
                     }

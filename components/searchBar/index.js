@@ -31,6 +31,7 @@ export default class SearchBar extends React.Component {
         onBlur: PropTypes.func,
         onClear: PropTypes.func,
         placeholderTextColor: PropTypes.string,
+        autoFocus: PropTypes.bool,
     }
     static defaultProps = {
         style: {},
@@ -67,6 +68,13 @@ export default class SearchBar extends React.Component {
             }
         }
         return null
+    }
+    componentDidMount() {
+        const { autoFocus } = this.props
+        if (this.inputRef && autoFocus) {
+            this.inputRef.focus()
+            this.onFocus()
+        }
     }
     onSubmit = () => {
         const { value } = this.state
@@ -106,7 +114,8 @@ export default class SearchBar extends React.Component {
         this.setState({
             value: '',
         })
-        const { onClear } = this.props
+        const { onClear, onChange } = this.props
+        onChange('')
         if (onClear) {
             onClear()
         }
@@ -174,6 +183,9 @@ export default class SearchBar extends React.Component {
                                         onSubmitEditing={this.onSubmit}
                                         onFocus={this.onFocus}
                                         onBlur={this.onBlur}
+                                        ref={(e) => {
+                                            this.inputRef = e
+                                        }}
                                     />
                                 </View>
                                 {
