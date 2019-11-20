@@ -30,6 +30,7 @@ export default class Item extends React.Component {
         extra: PropTypes.node,
         children: PropTypes.any,
         required: PropTypes.bool,
+        disabled: PropTypes.bool,
     }
     static defaultProps = {
         style: {},
@@ -37,6 +38,7 @@ export default class Item extends React.Component {
         hideLine: false,
         numberOfLines: 1,
         required: false,
+        disabled: false,
     }
     render() {
         const {
@@ -54,6 +56,7 @@ export default class Item extends React.Component {
             extra,
             children,
             required,
+            disabled,
         } = this.props
         return (
             <WithTheme themeStyles={ItemStyles} styles={styles}>
@@ -134,6 +137,7 @@ export default class Item extends React.Component {
                                 onPressOut={onPressOut}
                                 onLongPress={onLongPress}
                                 delayLongPress={delayLongPress}
+                                disabled={disabled}
                             >
                                 <View style={_styles.Item}>
                                     {
