@@ -23,6 +23,9 @@ export default class Brief extends React.Component {
             children,
             numberOfLines,
         } = this.props
+        if (!children) {
+            return null
+        }
         return (
             <WithTheme themeStyles={BriefStyles} styles={styles}>
                 {
