@@ -39,6 +39,9 @@ export default (theme) => StyleSheet.create({
         paddingVertical: theme.v_spacing_lg,
         minHeight: theme.list_item_height,
     },
+    RightViewMargin: {
+        marginLeft: theme.h_spacing_md,
+    },
     Line: {
         backgroundColor: theme.border_color_base,
         height: theme.border_width_sm,
@@ -78,14 +81,14 @@ export default (theme) => StyleSheet.create({
     Arrow: {
         marginLeft: theme.h_spacing_md,
     },
-    column: {
-        flex: 1,
-        flexDirection: 'column',
-    },
-    ContentView: {
+    ContentViewWarp: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+    },
+    ContentView: {
+        flex: 1,
+        flexDirection: 'column',
     },
     RequiredText: {
         fontSize: theme.font_size_caption,
