@@ -119,7 +119,7 @@ export default class Item extends React.Component {
                         let renderExtra
                         if (extra) {
                             renderExtra = (
-                                <View style={[_styles.column]}>
+                                <View style={_styles.ExtraView}>
                                     <Text style={_styles.Extra} numberOfLines={numberOfLines}>
                                         {extra}
                                     </Text>

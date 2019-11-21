@@ -57,6 +57,9 @@ export default (theme) => StyleSheet.create({
         fontSize: theme.font_size_caption,
         textAlignVertical: 'center',
     },
+    ExtraView: {
+        maxWidth: theme.list_item_extra_max_width,
+    },
     Extra: {
         fontSize: theme.font_size_base,
         textAlign: 'right',

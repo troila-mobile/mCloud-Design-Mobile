@@ -139,6 +139,7 @@ export default {
 
     // list
     list_item_height: 50,
+    list_item_extra_max_width: 150,
 
     // checkbox
     checkbox_item_height: 60,
