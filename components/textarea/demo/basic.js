@@ -27,7 +27,8 @@ export default () => {
                 </Text>
                 <Textarea
                     label="标题"
-                    autoHeight={true}
+                    autoHeight
+                    required
                     textAlign="right"
                     labelPosition="left"
                     placeholder="请输入标题"
@@ -40,6 +41,7 @@ export default () => {
                     标题在上
                 </Text>
                 <Textarea
+                    required
                     label="标题"
                     placeholder="请输入标题"
                     value={topValue}
@@ -90,6 +92,7 @@ export default () => {
 const styles = StyleSheet.create({
     wrap: {
         flex: 1,
+        backgroundColor: '#f8f8f8',
     },
     title: {
         fontSize: 14,

@@ -4,12 +4,12 @@ import {
     StyleSheet,
     ScrollView,
     Image,
+    SafeAreaView,
 } from 'react-native'
 import { List, Switch, Checkbox } from '../..'
 
 const { Item } = List
 const { Brief } = Item
-const uri = 'https://github.com/troila-mobile/mCloud-Design-Mobile/blob/master/example/logo.png'
 
 const data = [
     {
@@ -159,6 +159,7 @@ export default () => {
                     }
                 </List>
             </ScrollView>
+            <SafeAreaView />
         </View>
     )
 }

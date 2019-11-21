@@ -6,12 +6,16 @@ export default (theme) => StyleSheet.create({
         borderBottomColor: theme.border_color_base,
         backgroundColor: theme.fill_base,
     },
-    label: {
-        fontSize: 14,
-        color: theme.color_text_base,
+    labelWarp: {
         marginHorizontal: theme.h_spacing_lg,
         marginTop: theme.h_spacing_lg,
         marginBottom: theme.v_spacing_sm,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    label: {
+        fontSize: theme.font_size_base,
+        color: theme.color_text_base,
     },
     inputWrapper: {
         flex: 1,

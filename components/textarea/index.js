@@ -194,12 +194,14 @@ export default class TextAreaItem extends React.Component {
                             >
                                 {
                                     label !== '' && (
-                                        <Text style={_styles.label}>
+                                        <View style={_styles.labelWarp}>
                                             {
                                                 required && <Text style={_styles.RequiredText}>*</Text>
                                             }
-                                            {label}
-                                        </Text>
+                                            <Text style={_styles.label}>
+                                                {label}
+                                            </Text>
+                                        </View>
                                     )
                                 }
                                 <View style={_styles.inputWrapper}>
