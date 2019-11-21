@@ -204,6 +204,7 @@ const styles = StyleSheet.create({
 | thumb    | 缩略图(当为 string 类型时作为 img src) |   String/React.Element  | 无 |
 | hideLine | 是否隐藏下面的线 | Boolean   |  false |
 | required | 是否必需（显示红点） | Boolean   |  false |
+| disabled | 是否禁用此组件的所有交互 | Boolean   |  false |
 | numberOfLines    | 行数 |   number  | 1 |
 | extra    | 右边内容 |   String/React.Element  | 无 |
 

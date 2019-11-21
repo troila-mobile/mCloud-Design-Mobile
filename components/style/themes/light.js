@@ -11,7 +11,6 @@ export default {
     color_text_secondary: '#a4a9b0',          // 辅助色
     color_text_placeholder: '#A5ABB1',           // 文本框提示
     color_text_disabled: '#bbbbbb',              // 失效
-    color_text_caption: '#888888',               // 辅助描述
     color_text_paragraph: '#333333',             // 段落
     color_link: brandPrimary,                 // 链接
     color_text_info: '#A5ABB1',             // 信息文字
@@ -23,7 +22,7 @@ export default {
     fill_disabled: '#dddddd',                       // 通用失效背景
     fill_mask: 'rgba(0, 0, 0, .4)',              // 遮罩背景
     color_icon_base: '#cccccc',                     // 许多小图标的背景，比如一些小圆点，加减号
-    fill_grey: '#f7f7f7',
+    fill_grey: '#F3F5F8',
     fill_black: '#000',
 
     // 透明度
@@ -71,6 +70,7 @@ export default {
     h_spacing_sm: 12,
     h_spacing_md: 8,
     h_spacing_lg: 15,
+    h_spacing_normal: 10,
 
     // 垂直间距
     v_spacing_xs: 3,
@@ -139,6 +139,7 @@ export default {
 
     // list
     list_item_height: 50,
+    list_item_extra_max_width: 150,
 
     // checkbox
     checkbox_item_height: 60,

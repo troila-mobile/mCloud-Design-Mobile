@@ -4,12 +4,12 @@ import {
     StyleSheet,
     ScrollView,
     Image,
+    SafeAreaView,
 } from 'react-native'
 import { List, Switch, Checkbox } from '../..'
 
 const { Item } = List
 const { Brief } = Item
-const uri = 'https://github.com/troila-mobile/mCloud-Design-Mobile/blob/master/example/logo.png'
 
 const data = [
     {
@@ -102,9 +102,7 @@ export default () => {
                         thumb={(
                             <Image
                                 style={styles.logo}
-                                source={{
-                                    uri,
-                                }}
+                                source={require('../../avatar/assets/default.png')}
                             />
                         )}
                         hideLine
@@ -161,6 +159,7 @@ export default () => {
                     }
                 </List>
             </ScrollView>
+            <SafeAreaView />
         </View>
     )
 }
@@ -179,6 +178,5 @@ const styles = StyleSheet.create({
     logo: {
         width: 40,
         height: 40,
-        marginRight: 10,
     },
 })

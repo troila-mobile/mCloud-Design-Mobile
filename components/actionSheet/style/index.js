@@ -55,7 +55,6 @@ export default (theme) => StyleSheet.create({
     },
     wrapper: {
         flex: 1,
-        // backgroundColor:`${theme.fill_grey}66`,
         borderTopLeftRadius:10,
         borderTopRightRadius:10,
         opacity: 0.6,
