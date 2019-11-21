@@ -37,4 +37,9 @@ export default (theme) => StyleSheet.create({
         paddingTop: 13,
         paddingRight: 9,
     },
+    RequiredText: {
+        fontSize: theme.font_size_caption,
+        marginRight: theme.h_spacing_md,
+        color: 'red',
+    },
 })

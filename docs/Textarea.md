@@ -140,3 +140,4 @@ const styles = StyleSheet.create({
 | label      |  title  | string | 无 |
 | labelPosition      |  title 的位置 ，可选值有 `top` `left`  | string | top  |
 | onContentSizeChange      |  count变化的时候触发的方法  | (event: object): void | 无  |
+| required | 是否必需（显示红点） | Boolean   |  false |
