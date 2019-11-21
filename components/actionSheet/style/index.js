@@ -57,8 +57,6 @@ export default (theme) => StyleSheet.create({
         flex: 1,
         borderTopLeftRadius:10,
         borderTopRightRadius:10,
-        opacity: 0.6,
-        backgroundColor: '#000',
     },
     CheckImage: {
         marginRight: theme.h_spacing_lg,
