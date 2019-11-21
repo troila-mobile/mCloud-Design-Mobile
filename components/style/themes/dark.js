@@ -7,14 +7,16 @@ export default {
     color_text_base: '#FFFFFF',             // 标题
 
     // 背景色
-    // fill_base: '#000000',                           // 组件默认背景
+    fill_base: '#12162F',                           // 组件默认背景
+    fill_grey: '#030722',                           // 组件默认背景
+
+    // action sheet
     sheet_title_backgroundcolor:'#141933',
     sheet_backgroundColor:'#2B304D',
     sheet_title_color:'#A5ABB1',
     sheet_item_title_color:'#fff',
     sheet_spre_color:'#444A69',
     sheet_item_backgroundColor:'#222741',
-    fill_base: '#12162F',                           // 组件默认背景
 
     // 边框色
     border_color_base: '#262B48',

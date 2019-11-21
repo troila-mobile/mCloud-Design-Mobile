@@ -4,16 +4,19 @@ export default (theme) => StyleSheet.create({
     ListWrapper: {
         // backgroundColor: theme.fill_tap,
     },
+    ListView: {
+        backgroundColor: theme.fill_grey,
+    },
     Header: {
         fontSize: theme.font_size_base,
-        color: theme.color_text_caption,
+        color: theme.color_text_info,
         paddingHorizontal: theme.h_spacing_lg,
         paddingTop: theme.v_spacing_lg,
         paddingBottom: theme.v_spacing_md,
     },
     Footer: {
         fontSize: theme.font_size_base,
-        color: theme.color_text_caption,
+        color: theme.color_text_info,
         paddingHorizontal: theme.h_spacing_lg,
         paddingVertical: theme.v_spacing_md,
     },
@@ -40,7 +43,7 @@ export default (theme) => StyleSheet.create({
         minHeight: theme.list_item_height,
     },
     RightViewMargin: {
-        marginLeft: theme.h_spacing_md,
+        marginLeft: theme.h_spacing_normal,
     },
     Line: {
         backgroundColor: theme.border_color_base,
@@ -73,7 +76,7 @@ export default (theme) => StyleSheet.create({
         minHeight: theme.font_size_icontext,
     },
     BriefText: {
-        color: theme.color_text_caption,
+        color: theme.color_text_info,
         fontSize: theme.font_size_base,
         paddingTop: theme.v_spacing_sm,
         textAlignVertical: 'center',

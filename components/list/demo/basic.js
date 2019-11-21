@@ -102,9 +102,7 @@ export default () => {
                         thumb={(
                             <Image
                                 style={styles.logo}
-                                source={{
-                                    uri,
-                                }}
+                                source={require('../../avatar/assets/default.png')}
                             />
                         )}
                         hideLine
@@ -179,6 +177,5 @@ const styles = StyleSheet.create({
     logo: {
         width: 40,
         height: 40,
-        marginRight: 10,
     },
 })
