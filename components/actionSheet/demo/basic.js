@@ -1,4 +1,5 @@
 import React from 'react'
+import { View } from 'react-native'
 import {
     ActionSheet,
     Button,
@@ -13,7 +14,7 @@ export default class extends React.Component {
             options,
         } = this.state
         return (
-            <>
+            <View style={{ backgroundColor:'red' }}>
                 <Button
                     onPress={
                         () => {
@@ -31,7 +32,7 @@ export default class extends React.Component {
                     disabledIndexArrary={[5]}
                     title="zhe是标题dfshdfshuhgconst tempHeight = event.nativeEvent.layout.height"
                 />
-            </>
+            </View>
         )
     }
 }
