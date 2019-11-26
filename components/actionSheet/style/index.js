@@ -48,17 +48,16 @@ export default (theme) => StyleSheet.create({
 
     },
     body: {
-        justifyContent: 'flex-end',
+        // justifyContent: 'flex-end',
         backgroundColor: theme.sheet_title_backgroundcolor,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
+        position: 'absolute',
+        left: 0,
+        right: 0,
     },
     wrapper: {
         flex: 1,
-        borderTopLeftRadius:10,
-        borderTopRightRadius:10,
-        opacity: 0.6,
-        backgroundColor: '#000',
     },
     CheckImage: {
         marginRight: theme.h_spacing_lg,

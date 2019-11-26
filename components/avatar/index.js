@@ -22,13 +22,20 @@ export default class Avatar extends React.Component {
         style:{},
     }
     state={
-        imageSource: defaultImage,
+        source: this.props.source,
+        error:false,
     }
-    componentDidMount() {
-        const { source, defaultAvatar } = this.props
-        this.setState({
-            imageSource: source || defaultAvatar,
-        })
+    // componentDidMount() {
+    //     const { source, defaultAvatar } = this.props
+    //     this.setState({
+    //         imageSource: source || defaultAvatar,
+    //     })
+    // }
+    static getDerivedStateFromProps(props, state) {
+        return {
+            error: props.source === state.source ? state.error : false,
+            source: props.source,
+        }
     }
     render() {
         const {
@@ -38,7 +45,7 @@ export default class Avatar extends React.Component {
             defaultAvatar,
             style,
         } = this.props
-        const { imageSource } = this.state
+        const { source,error } = this.state
         return (
             <WithTheme themeStyles={AvatarStyles} styles={styles}>
                 {
@@ -56,10 +63,10 @@ export default class Avatar extends React.Component {
                                     },
                                     ...borderStyle,
                                 ]}
-                                source={imageSource}
+                                source={error ? defaultAvatar : source}
                                 onError={() => {
                                     this.setState({
-                                        imageSource: defaultAvatar,
+                                        error: true,
                                     }) }}
                             />
 
