@@ -75,8 +75,8 @@ export default class TextAreaItem extends React.Component {
         }
     }
     componentDidMount() {
-        const { autoFocus, focus } = this.props
-        if (this.textAreaRef && (autoFocus || focus)) {
+        const { focus } = this.props
+        if (this.textAreaRef && focus) {
             this.textAreaRef.focus()
         }
     }
@@ -163,6 +163,7 @@ export default class TextAreaItem extends React.Component {
             textAlign,
             placeholderTextColor,
             required,
+            autoFocus,
         } = this.props
         const { inputCount, focus } = this.state
         return (
@@ -221,6 +222,7 @@ export default class TextAreaItem extends React.Component {
                                             disabledStyle,
                                         ]}
                                         value={value}
+                                        autoFocus={autoFocus}
                                         defaultValue={defaultValue}
                                         placeholder={placeholder}
                                         placeholderTextColor={placeholderTextColor || theme.color_text_placeholder}

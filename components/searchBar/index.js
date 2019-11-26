@@ -69,13 +69,6 @@ export default class SearchBar extends React.Component {
         }
         return null
     }
-    componentDidMount() {
-        const { autoFocus } = this.props
-        if (this.inputRef && autoFocus) {
-            this.inputRef.focus()
-            this.onFocus()
-        }
-    }
     onSubmit = () => {
         const { value } = this.state
         const { onSubmit } = this.props
@@ -132,6 +125,7 @@ export default class SearchBar extends React.Component {
             type,
             placeholder,
             placeholderTextColor,
+            autoFocus,
         } = this.props
         const style_prefix = type === 'radius' ? 'radius_' : 'default_'
         const search_source = type === 'default' ? searchBigImage : searchSmallImage
@@ -181,6 +175,7 @@ export default class SearchBar extends React.Component {
                                         value={value}
                                         onChangeText={this.onChangeText}
                                         onSubmitEditing={this.onSubmit}
+                                        autoFocus={autoFocus}
                                         onFocus={this.onFocus}
                                         onBlur={this.onBlur}
                                         ref={(e) => {
