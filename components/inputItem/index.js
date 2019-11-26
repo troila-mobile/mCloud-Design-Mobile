@@ -153,6 +153,7 @@ export default class InputItem extends React.Component {
             placeholder,
             placeholderTextColor,
             required,
+            maxLength,
         } = this.props
         const { focus } = this.state
         return (
@@ -211,6 +212,7 @@ export default class InputItem extends React.Component {
                                                 textAlign,
                                             },
                                         ]}
+                                        maxLength={maxLength}
                                         keyboardType={keyboardType}
                                         onChange={(event) => this.onChange(event.nativeEvent.text)}
                                         secureTextEntry={type === 'password'}
