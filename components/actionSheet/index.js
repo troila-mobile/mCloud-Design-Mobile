@@ -153,6 +153,8 @@ export default class ActionSheet extends React.Component {
             checkedIndex,
         } = this.props
         const exitDisabled = disabledIndexArrary.find((mitem) => mitem === index)
+        const textStyle = [exitDisabled ? this._styles.disableTextStyle : this._styles.normalText,
+            { paddingHorizontal:5 }]
         return (
             <TouchableOpacity
                 style={this._styles.buttonStyle}
@@ -171,7 +173,8 @@ export default class ActionSheet extends React.Component {
                     )
                 }
                 <Text
-                    style={exitDisabled ? this._styles.disableTextStyle : this._styles.normalText}
+                    style={textStyle}
+                    numberOfLines={1}
                 >
                     {item}
                 </Text>

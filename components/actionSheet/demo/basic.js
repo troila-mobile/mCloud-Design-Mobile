@@ -19,7 +19,9 @@ export default class extends React.Component {
                     onPress={
                         () => {
                             this.setState({
-                                options:['text','value','value','value','value','value','value','value','value'],
+                                options:['text',
+                                    'zhe是标题dfshdfshuhgceighbcdsbacvbvbqebdvashbjbheurvudvbehlvwdvfwet',
+                                    'value','value','value','value','value','value','value'],
                             },() => this.actionSheet.show())
                         }
                     }
