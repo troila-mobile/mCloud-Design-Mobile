@@ -11,22 +11,9 @@ import {
 import { WithTheme } from '../style'
 import InputItemStyles from './style'
 import PropTypes from 'prop-types'
+import { keyboardTypeArray } from '../utils/KeyboardType'
 
 const func = () => { }
-const keyboardTypeArray = [
-    'default',
-    'email-address',
-    'numeric',
-    'phone-pad',
-    'ascii-capable',
-    'numbers-and-punctuation',
-    'url',
-    'number-pad',
-    'name-phone-pad',
-    'decimal-pad',
-    'twitter',
-    'web-search',
-]
 const clearImage = require('../searchBar/assets/clear.png')
 
 export default class InputItem extends React.Component {
