@@ -14,12 +14,14 @@ export default class extends React.Component {
             options,
         } = this.state
         return (
-            <View style={{ backgroundColor:'red' }}>
+            <>
                 <Button
                     onPress={
                         () => {
                             this.setState({
-                                options:['text','value','value','value','value','value','value','value','value'],
+                                options:['text',
+                                    'zhe是标题dfshdfshuhgceighbcdsbacvbvbqebdvashbjbheurvudvbehlvwdvfwet',
+                                    'value','value','value','value','value','value','value'],
                             },() => this.actionSheet.show())
                         }
                     }
@@ -30,9 +32,9 @@ export default class extends React.Component {
                     ref={(e) => this.actionSheet = e}
                     options={options}
                     disabledIndexArrary={[5]}
-                    title="zhe是标题dfshdfshuhgconst tempHeight = event.nativeEvent.layout.height"
+                    title="zhe是标题dfshdfshuhgceighbcdsbacvbvbqebdvashbjbheurvudvbehlvwdvfwet"
                 />
-            </View>
+            </>
         )
     }
 }
