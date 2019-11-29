@@ -25,15 +25,38 @@ export default class Avatar extends React.Component {
         source: this.props.source,
         error:false,
     }
-    // componentDidMount() {
-    //     const { source, defaultAvatar } = this.props
-    //     this.setState({
-    //         imageSource: source || defaultAvatar,
-    //     })
-    // }
+    componentDidMount() {
+        const { source } = this.props
+        let error = false
+        if (source === null || source === '') {
+            error = true
+        } else if (typeof (source) === 'object') {
+            if (Object.prototype.hasOwnProperty.call(source, 'uri')) {
+                if (source.uri === '' || source.uri === null) {
+                    error = true
+                }
+            } else {
+                error = true
+            }
+        }
+        this.setState({ error })
+    }
     static getDerivedStateFromProps(props, state) {
+        const { source } = props
+        let error = false
+        if (source === null || source === '') {
+            error = true
+        } else if (typeof (source) === 'object') {
+            if (Object.prototype.hasOwnProperty.call(source, 'uri')) {
+                if (source.uri === '' || source.uri === null) {
+                    error = true
+                }
+            } else {
+                error = true
+            }
+        }
         return {
-            error: props.source === state.source ? state.error : false,
+            error: props.source === state.source ? state.error : error,
             source: props.source,
         }
     }
@@ -65,9 +88,11 @@ export default class Avatar extends React.Component {
                                 ]}
                                 source={error ? defaultAvatar : source}
                                 onError={() => {
+                                    console.log('这是onError')
                                     this.setState({
                                         error: true,
-                                    }) }}
+                                    })
+                                }}
                             />
 
                         )
