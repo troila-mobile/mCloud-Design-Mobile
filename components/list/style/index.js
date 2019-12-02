@@ -4,16 +4,19 @@ export default (theme) => StyleSheet.create({
     ListWrapper: {
         // backgroundColor: theme.fill_tap,
     },
+    ListView: {
+        backgroundColor: theme.fill_grey,
+    },
     Header: {
         fontSize: theme.font_size_base,
-        color: theme.color_text_caption,
+        color: theme.color_text_info,
         paddingHorizontal: theme.h_spacing_lg,
         paddingTop: theme.v_spacing_lg,
         paddingBottom: theme.v_spacing_md,
     },
     Footer: {
         fontSize: theme.font_size_base,
-        color: theme.color_text_caption,
+        color: theme.color_text_info,
         paddingHorizontal: theme.h_spacing_lg,
         paddingVertical: theme.v_spacing_md,
     },
@@ -39,6 +42,9 @@ export default (theme) => StyleSheet.create({
         paddingVertical: theme.v_spacing_lg,
         minHeight: theme.list_item_height,
     },
+    RightViewMargin: {
+        marginLeft: theme.h_spacing_normal,
+    },
     Line: {
         backgroundColor: theme.border_color_base,
         height: theme.border_width_sm,
@@ -57,6 +63,9 @@ export default (theme) => StyleSheet.create({
         fontSize: theme.font_size_caption,
         textAlignVertical: 'center',
     },
+    ExtraView: {
+        maxWidth: theme.list_item_extra_max_width,
+    },
     Extra: {
         fontSize: theme.font_size_base,
         textAlign: 'right',
@@ -67,7 +76,7 @@ export default (theme) => StyleSheet.create({
         minHeight: theme.font_size_icontext,
     },
     BriefText: {
-        color: theme.color_text_caption,
+        color: theme.color_text_info,
         fontSize: theme.font_size_base,
         paddingTop: theme.v_spacing_sm,
         textAlignVertical: 'center',
@@ -75,14 +84,14 @@ export default (theme) => StyleSheet.create({
     Arrow: {
         marginLeft: theme.h_spacing_md,
     },
-    column: {
-        flex: 1,
-        flexDirection: 'column',
-    },
-    ContentView: {
+    ContentViewWarp: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+    },
+    ContentView: {
+        flex: 1,
+        flexDirection: 'column',
     },
     RequiredText: {
         fontSize: theme.font_size_caption,

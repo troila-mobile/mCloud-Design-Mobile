@@ -30,6 +30,7 @@ export default () => {
             </Text>
             <InputItem
                 required
+                autoFocus
                 value={value}
                 onChange={(text) => {
                     onChange(text)

@@ -30,6 +30,7 @@ export default class Item extends React.Component {
         extra: PropTypes.node,
         children: PropTypes.any,
         required: PropTypes.bool,
+        disabled: PropTypes.bool,
     }
     static defaultProps = {
         style: {},
@@ -37,6 +38,7 @@ export default class Item extends React.Component {
         hideLine: false,
         numberOfLines: 1,
         required: false,
+        disabled: false,
     }
     render() {
         const {
@@ -54,13 +56,21 @@ export default class Item extends React.Component {
             extra,
             children,
             required,
+            disabled,
         } = this.props
         return (
             <WithTheme themeStyles={ItemStyles} styles={styles}>
                 {
                     (_styles) => {
                         let renderThumb
+                        let RightViewStyle = [
+                            _styles.RightView,
+                        ]
                         if (thumb) {
+                            RightViewStyle = [
+                                _styles.RightView,
+                                _styles.RightViewMargin,
+                            ]
                             typeof thumb === 'string' ? renderThumb = (
                                 <Image
                                     source={{ uri: thumb }}
@@ -89,14 +99,14 @@ export default class Item extends React.Component {
                                 }
                             })
                             renderContent = (
-                                <View style={[_styles.column]}>{temprenderContent}</View>
+                                <View style={_styles.ContentView}>{temprenderContent}</View>
                             )
                         } else {
                             if (children && React.isValidElement(children)) {
-                                renderContent = <View style={[_styles.column]}>{children}</View>
+                                renderContent = <View style={_styles.ContentView}>{children}</View>
                             } else {
                                 renderContent = (
-                                    <View style={[_styles.column]}>
+                                    <View style={_styles.ContentView}>
                                         <Text style={[_styles.Content]} numberOfLines={numberOfLines}>
                                             {children}
                                         </Text>
@@ -116,7 +126,7 @@ export default class Item extends React.Component {
                         let renderExtra
                         if (extra) {
                             renderExtra = (
-                                <View style={[_styles.column]}>
+                                <View style={_styles.ExtraView}>
                                     <Text style={_styles.Extra} numberOfLines={numberOfLines}>
                                         {extra}
                                     </Text>
@@ -128,18 +138,20 @@ export default class Item extends React.Component {
                         }
                         return (
                             <TouchableHighlight
+                                style={style}
                                 onPress={onPress}
                                 onPressIn={onPressIn}
                                 onPressOut={onPressOut}
                                 onLongPress={onLongPress}
                                 delayLongPress={delayLongPress}
+                                disabled={disabled}
                             >
-                                <View style={[_styles.Item, style]}>
+                                <View style={_styles.Item}>
                                     {
                                         renderThumb
                                     }
-                                    <View style={_styles.RightView}>
-                                        <View style={_styles.ContentView}>
+                                    <View style={RightViewStyle}>
+                                        <View style={_styles.ContentViewWarp}>
                                             {
                                                 required && <Text style={_styles.RequiredText}>*</Text>
                                             }

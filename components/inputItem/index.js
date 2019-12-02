@@ -75,8 +75,8 @@ export default class InputItem extends React.Component {
         }
     }
     componentDidMount() {
-        const { autoFocus, focus } = this.props
-        if (this.inputRef && (autoFocus || focus)) {
+        const { focus } = this.props
+        if (this.inputRef && focus) {
             this.inputRef.focus()
         }
     }
@@ -153,6 +153,8 @@ export default class InputItem extends React.Component {
             placeholder,
             placeholderTextColor,
             required,
+            maxLength,
+            autoFocus,
         } = this.props
         const { focus } = this.state
         return (
@@ -211,6 +213,8 @@ export default class InputItem extends React.Component {
                                                 textAlign,
                                             },
                                         ]}
+                                        autoFocus={autoFocus}
+                                        maxLength={maxLength}
                                         keyboardType={keyboardType}
                                         onChange={(event) => this.onChange(event.nativeEvent.text)}
                                         secureTextEntry={type === 'password'}

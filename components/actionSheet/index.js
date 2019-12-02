@@ -7,13 +7,21 @@ import {
     ScrollView,
     Animated,
     Easing,
-    SafeAreaView,
+    Image,
+    findNodeHandle,
+    UIManager,
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { WithTheme } from '../style'
 import ActionSheetStyle from './style/index'
+import { SafeAreaView } from 'react-navigation'
+// import { UIManager } from 'NativeModules'
+
+
+const checkSource = require('./assets/check.png')
 
 const MAXHEIGHT = 410
+
 export default class ActionSheet extends React.Component {
     static propTypes = {
         options: PropTypes.array,
@@ -23,22 +31,26 @@ export default class ActionSheet extends React.Component {
         disabledIndexArrary: PropTypes.array,
         styles: PropTypes.object,
         title: PropTypes.string,
+        checkedIndex: PropTypes.number,
     }
     static defaultProps = {
-        options:[],
-        showCancel:true,
-        cancel: () => {},
-        disabledIndexArrary:[],
-        styles:{},
-        title:null,
-        onPress:() => {},
+        options: [],
+        showCancel: true,
+        cancel: () => { },
+        disabledIndexArrary: [],
+        styles: {},
+        title: null,
+        onPress: () => { },
+        checkedIndex: -1,
     }
     state = {
-        visible:false,
-        scrollEnabled:false,
+        visible: false,
+        scrollEnabled: false,
         sheetAnim: new Animated.Value(MAXHEIGHT),
-        height:MAXHEIGHT,
-        scrollViewHeight:250,
+        height: MAXHEIGHT,
+        scrollViewHeight: 250,
+        titleHeight: 50,
+        safeHeight: 0,
     }
     _styles = ActionSheetStyle
     componentDidMount() {
@@ -46,7 +58,7 @@ export default class ActionSheet extends React.Component {
             options,
         } = this.props
         this.setState({
-            scrollEnabled:options.length > 5,
+            scrollEnabled: options.length > 5,
         })
     }
     static getDerivedStateFromProps(props, state) {
@@ -58,19 +70,19 @@ export default class ActionSheet extends React.Component {
         }
 
         return state.height === tempHeight ? null : {
-            scrollEnabled:props.options && props.options.length > 5,
-            height:tempHeight,
-            sheetAnim:new Animated.Value(tempHeight),
-            scrollViewHeight:props.options && props.options.length > 5 ? 250 : props.options * 50,
+            scrollEnabled: props.options && props.options.length > 5,
+            height: tempHeight,
+            sheetAnim: new Animated.Value(tempHeight),
+            scrollViewHeight: props.options && props.options.length > 5 ? 250 : props.options * 50,
         }
     }
     show = () => {
-        this.setState({ visible: true },this._showSheet)
+        this.setState({ visible: true }, this._showSheet)
     }
     hide = (callback) => {
         this._hideSheet(() => {
             this.setState({ visible: false }, () => {
-                setTimeout(callback,500)
+                setTimeout(callback, 500)
             })
         })
     }
@@ -100,6 +112,14 @@ export default class ActionSheet extends React.Component {
         return (
             <View
                 style={this._styles.titleBox}
+                ref={(o) => this.titleRef = o}
+                onLayout={() => {
+                    const handle = findNodeHandle(this.titleRef)
+                    UIManager.measure(handle, (x, y, width, height, pageX, pageY) => {
+                        console.log(x, y, width, height, pageX, pageY)
+                        this.setState({ titleHeight:height })
+                    })
+                }}
             >
                 <Text
                     style={this._styles.titleStyle}
@@ -126,12 +146,15 @@ export default class ActionSheet extends React.Component {
             duration: 200,
         }).start(callback)
     }
-    _renderCell(item,index) {
+    _renderCell(item, index) {
         const {
             disabledIndexArrary,
             onPress,
+            checkedIndex,
         } = this.props
         const exitDisabled = disabledIndexArrary.find((mitem) => mitem === index)
+        const textStyle = [exitDisabled ? this._styles.disableTextStyle : this._styles.normalText,
+            { paddingHorizontal:5 }]
         return (
             <TouchableOpacity
                 style={this._styles.buttonStyle}
@@ -141,8 +164,17 @@ export default class ActionSheet extends React.Component {
                     this.hide(() => onPress(index))
                 }}
             >
+                {
+                    checkedIndex !== -1 && checkedIndex === index && (
+                        <Image
+                            source={checkSource}
+                            style={this._styles.CheckImage}
+                        />
+                    )
+                }
                 <Text
-                    style={exitDisabled ? this._styles.disableTextStyle : this._styles.normalText}
+                    style={textStyle}
+                    numberOfLines={1}
                 >
                     {item}
                 </Text>
@@ -153,7 +185,7 @@ export default class ActionSheet extends React.Component {
         const {
             options,
         } = this.props
-        return options.map((item,index) => this._renderCell(item,index))
+        return options.map((item, index) => this._renderCell(item, index))
     }
     render() {
         const {
@@ -161,6 +193,8 @@ export default class ActionSheet extends React.Component {
             scrollEnabled,
             sheetAnim,
             scrollViewHeight,
+            titleHeight,
+            safeHeight,
         } = this.state
 
         const {
@@ -169,7 +203,6 @@ export default class ActionSheet extends React.Component {
             title,
             cancel,
         } = this.props
-
         return (
             <WithTheme themeStyles={ActionSheetStyle} styles={styles}>
                 {
@@ -178,7 +211,11 @@ export default class ActionSheet extends React.Component {
                         const overlay = [
                             _styles.overlay,
                         ]
-                        const body = [_styles.body]
+                        const cancelHeight = showCancel && _styles.cancelButton.height
+                        const body = [_styles.body,{
+                            height: scrollViewHeight + cancelHeight + titleHeight,
+                            bottom: safeHeight,
+                        }]
                         const wrapper = [_styles.wrapper]
                         return (
                             <Modal
@@ -186,27 +223,35 @@ export default class ActionSheet extends React.Component {
                                 onRequestClose={() => this.hide(cancel)}
                                 transparent={true}
                             >
-                                <SafeAreaView style={wrapper}>
+                                <View style={wrapper}>
                                     <Text
                                         style={overlay}
                                         onPress={() => this.hide(cancel)}
                                     />
-
                                     <Animated.View
-                                        style={[...body,{ transform: [{ translateY: sheetAnim }]  }]}
+                                        style={[...body, { transform: [{ translateY: sheetAnim }] }]}
                                     >
                                         {title && this._renderTitle()}
                                         <ScrollView
                                             scrollEnabled={scrollEnabled}
-                                            style={{ height:scrollViewHeight }}
+                                            style={{ height: scrollViewHeight }}
                                         >
                                             {this._renderOptions()}
                                         </ScrollView>
                                         {showCancel && this._renderCanceButton()}
                                     </Animated.View>
-
-
-                                </SafeAreaView>
+                                    <SafeAreaView
+                                        style={_styles.SafeAreaView}
+                                        ref={(o) => this.safeBottom = o}
+                                        onLayout={() => {
+                                            const handle = findNodeHandle(this.safeBottom)
+                                            UIManager.measure(handle, (x, y, width, height, pageX, pageY) => {
+                                                console.log(x, y, width, height, pageX, pageY)
+                                                this.setState({ safeHeight:height })
+                                            })
+                                        }}
+                                    />
+                                </View>
                             </Modal>
                         )
                     }

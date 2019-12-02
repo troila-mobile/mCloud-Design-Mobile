@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import ModalStyles from './style'
 import { WithTheme } from '../style'
 import AsyncStorage from '../utils/AsyncStorage'
+import { brandPrimary } from '../style/themes/light'
 
 const modalCloseIcon = require('./assets/icon_modal_close.png')
 const modalNeverSelected = require('./assets/icon_modal_selected.png')
@@ -198,6 +199,7 @@ export default class AlertView extends React.Component {
                           <Text
                               style={[
                                   _styles.action,
+                                  index === buttons.length - 1 ? { color: brandPrimary } : undefined,
                                   item.color ? { color: item.color } : undefined,
                               ]}
                               allowFontScaling={false}

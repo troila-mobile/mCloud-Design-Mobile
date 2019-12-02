@@ -47,17 +47,21 @@ export default class List extends React.Component {
                                 ) : null
                         return (
                             <View style={[_styles.ListWrapper, style]}>
-                                {
-                                    renderHeader
-                                }
+                                <View style={_styles.ListView}>
+                                    {
+                                        renderHeader
+                                    }
+                                </View>
                                 <View style={_styles.Body}>
                                     {
                                         children && children
                                     }
                                 </View>
-                                {
-                                    renderFooter
-                                }
+                                <View style={_styles.ListView}>
+                                    {
+                                        renderFooter
+                                    }
+                                </View>
                             </View>
                         )
                     }

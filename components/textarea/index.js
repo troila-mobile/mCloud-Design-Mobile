@@ -45,6 +45,7 @@ export default class TextAreaItem extends React.Component {
         onContentSizeChange: PropTypes.func,
         textAlign: PropTypes.oneOf(['left', 'right']),
         placeholderTextColor: PropTypes.string,
+        required: PropTypes.bool,
     }
     static defaultProps = {
         styles: {},
@@ -64,6 +65,7 @@ export default class TextAreaItem extends React.Component {
         onChange: func,
         onContentSizeChange: func,
         textAlign: 'left',
+        required: false,
     }
     constructor(props) {
         super(props)
@@ -73,8 +75,8 @@ export default class TextAreaItem extends React.Component {
         }
     }
     componentDidMount() {
-        const { autoFocus, focus } = this.props
-        if (this.textAreaRef && (autoFocus || focus)) {
+        const { focus } = this.props
+        if (this.textAreaRef && focus) {
             this.textAreaRef.focus()
         }
     }
@@ -160,6 +162,8 @@ export default class TextAreaItem extends React.Component {
             editable,
             textAlign,
             placeholderTextColor,
+            required,
+            autoFocus,
         } = this.props
         const { inputCount, focus } = this.state
         return (
@@ -191,7 +195,14 @@ export default class TextAreaItem extends React.Component {
                             >
                                 {
                                     label !== '' && (
-                                        <Text style={_styles.label}>{label}</Text>
+                                        <View style={_styles.labelWarp}>
+                                            {
+                                                required && <Text style={_styles.RequiredText}>*</Text>
+                                            }
+                                            <Text style={_styles.label}>
+                                                {label}
+                                            </Text>
+                                        </View>
                                     )
                                 }
                                 <View style={_styles.inputWrapper}>
@@ -211,6 +222,7 @@ export default class TextAreaItem extends React.Component {
                                             disabledStyle,
                                         ]}
                                         value={value}
+                                        autoFocus={autoFocus}
                                         defaultValue={defaultValue}
                                         placeholder={placeholder}
                                         placeholderTextColor={placeholderTextColor || theme.color_text_placeholder}
