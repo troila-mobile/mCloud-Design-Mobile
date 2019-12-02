@@ -8,7 +8,7 @@ const defaultImage = require('./assets/default.png')
 
 export default class Avatar extends React.Component {
     static propTypes = {
-        source: PropTypes.oneOfType([PropTypes.object,PropTypes.number]).required,
+        source: PropTypes.oneOfType([PropTypes.object,PropTypes.number]).isRequired,
         size: PropTypes.number,
         styles: PropTypes.object,
         type: PropTypes.string,// normal
@@ -25,29 +25,29 @@ export default class Avatar extends React.Component {
         source: this.props.source,
         error:false,
     }
-    getSourceValid = (source)=>{
-        let error = false
-        if(source){
-            if(typeof (source) === 'object'&&!source.uri){
-                error = true
-            }
-        }else{
-            error = true
-        }
-        return error
-    }
     componentDidMount() {
         const { source } = this.props
-        const error = this.getSourceValid(source)
+        const error = Avatar.getSourceValid(source)
         this.setState({ error })
     }
     static getDerivedStateFromProps(props, state) {
         const { source } = props
-        const error = this.getSourceValid(source)
+        const error = Avatar.getSourceValid(source)
         return {
             error: props.source === state.source ? state.error : error,
             source: props.source,
         }
+    }
+    static getSourceValid = (source) => {
+        let error = false
+        if (source) {
+            if (typeof (source) === 'object' && !source.uri) {
+                error = true
+            }
+        } else {
+            error = true
+        }
+        return error
     }
     render() {
         const {
