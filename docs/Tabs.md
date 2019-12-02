@@ -17,7 +17,8 @@ import { Tabs } from 'mcloud-mobile';
 
 export default class TabViewExample extends React.Component {
     state = {
-        index: 0,
+        // eslint-disable-next-line react/no-unused-state
+        index: 2,
         routes: [
             { key: '1', title: '新闻' },
             { key: '2', title: '视频' },
@@ -29,15 +30,37 @@ export default class TabViewExample extends React.Component {
     _renderScene = ({ route }) => {
         switch (route.key) {
         case '1':
-            return  (<View style={[styles.container, { backgroundColor: '#ff4081' }]} />)
+            return  (
+                <View style={[styles.container, { backgroundColor: '#ff4081' }]} />
+            )
         case '2':
-            return  (<View style={[styles.container, { backgroundColor: '#673ab7' }]} />)
+            return  (
+                <View style={[styles.container, {
+                    backgroundColor: '#673ab7',
+                }]}
+                />
+            )
         case '3':
-            return  (<View style={[styles.container, { backgroundColor: 'red' }]} />)
+            return  (
+                <View style={[styles.container, {
+                    backgroundColor: 'red',
+                }]}
+                />
+            )
         case '4':
-            return  (<View style={[styles.container, { backgroundColor: 'blue' }]} />)
+            return  (
+                <View style={[styles.container, {
+                    backgroundColor: 'blue',
+                }]}
+                />
+            )
         case '5':
-            return  (<View style={[styles.container, { backgroundColor: 'black' }]} />)
+            return  (
+                <View style={[styles.container, {
+                    backgroundColor: 'black',
+                }]}
+                />
+            )
         default:
             return null
         }
@@ -45,12 +68,15 @@ export default class TabViewExample extends React.Component {
     render() {
         return (
             <Tabs
-                navigationState={this.state}
+                selectIndex={this.state.index}
+                navigationState={{ ...this.state }}
                 UIColor="#586BFB"
-                labelWidth={60}
+                labelWidth={70}
+                scrollEnabled={true}
                 routesArray={this.state.routes}
                 renderScene={this._renderScene}
                 onIndexChange_Tabs={(index) => {
+                    // eslint-disable-next-line react/no-unused-state
                     this.setState({ index })
                 }}
             />
@@ -64,7 +90,6 @@ const styles = StyleSheet.create({
     },
 })
 
-
 ```
 ## Props:
 
@@ -74,6 +99,7 @@ const styles = StyleSheet.create({
 | UIColor    | 标题和下划线选中颜色  |   string   |   -  |
 | scrollEnabled    | 标题栏是否滑动,默认为false  |   bool   |   -  |
 | navigationState    | 获取当前state |   object   |   -  |
+| selectIndex    | 设置当前tabbar |   number   |   0  |
 | renderScene    |回调，返回一个react元素以呈现为分页的页面。接收包含路由作为参数的对象： |   func  |   -  |
 | onIndexChange_Tabs    |回调，返回当前页面的index： |   func  |   -  |
 | tabStyle    | tab自定义样式 |   Object  | 无 |
