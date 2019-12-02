@@ -57,12 +57,10 @@ export default class TabViewExample extends React.Component {
     render() {
         return (
             <Tabs
-                selectIndex={this.state.index}
                 navigationState={{ ...this.state }}
                 UIColor="#586BFB"
                 labelWidth={70}
                 scrollEnabled={true}
-                routesArray={this.state.routes}
                 renderScene={this._renderScene}
                 onIndexChange_Tabs={(index) => {
                     // eslint-disable-next-line react/no-unused-state
