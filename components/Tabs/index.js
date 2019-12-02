@@ -26,6 +26,7 @@ export default class Tabs extends React.Component {
         routesArray:PropTypes.array,
         UIColor:PropTypes.string,
         scrollEnabled:PropTypes.bool,
+        selectIndex:PropTypes.number,
     }
     static defaultProps = {
         styles: {},
@@ -39,11 +40,12 @@ export default class Tabs extends React.Component {
         labelWidth:null,
         routesArray:[],
         scrollEnabled:false,
+        selectIndex: 0,
     };
     constructor(props) {
         super(props)
         this.state = {
-            index:  0,
+            index:  this.props.selectIndex,
             screen_W:screenW || this.props.indicatorStyle.width,
             // eslint-disable-next-line react/no-unused-state
             scrollX:0,
@@ -69,109 +71,109 @@ export default class Tabs extends React.Component {
             }
         }
     }
-_renderTabBar = (props) => {
-    const {
-        styles,
-        tabStyle,
-        labelStyle,
-        UIColor,
-        indicatorStyle,
-        labelWidth,
-        scrollEnabled,
-    } = this.props
-    return (
-        <WithTheme themeStyles={TabsStyles} styles={styles}>
-            {
-                (_styles,theme) => {
-                    const _tabStyle = [
-                        {
-                            width: labelWidth  ,
-                        },
-                        _styles.tabStyle,
-                        tabStyle,
-                    ]
-                    const _TabBarWrapper =  _styles.TabBarWrapper
-                    const _labelStyle = [
-                        _styles.labelStyle,
-                        labelStyle,
-                    ]
-                    const  _indicatorStyle = [
-                        {
-                            width: labelWidth * 0.6 ,
-                        },
-                        _styles.indicatorStyle,
-                        indicatorStyle,
-                    ]
-                    return (
-                        <View style={_TabBarWrapper}>
-                            <ScrollView
-                                style={_styles.TabBarWrapperScrollView}
-                                horizontal={true}
-                                showsHorizontalScrollIndicator={false}
-                                scrollEnabled={scrollEnabled}
-                                ref={(scrollView) => this.scrollView = scrollView}
-                            >
-                                {this.props.routesArray.map((route, i) => (
-                                    <TouchableOpacity
-                                        style={_tabStyle}
-                                        // eslint-disable-next-line react/no-array-index-key
-                                        key={`${i}Tabbar`}
-                                        onPress={() => {
-                                            this.setState({ index:i })
-                                            this._isScroll(i)
-                                            this.props.onIndexChange_Tabs && this.props.onIndexChange_Tabs(i) }}
-                                    >
-                                        <Text style={
-                                            [_labelStyle,
-                                                { color: this.state.index === i ? UIColor : theme.label_textColor }]
-                                        }
+    _renderTabBar = (props) => {
+        const {
+            styles,
+            tabStyle,
+            labelStyle,
+            UIColor,
+            indicatorStyle,
+            labelWidth,
+            scrollEnabled,
+        } = this.props
+        return (
+            <WithTheme themeStyles={TabsStyles} styles={styles}>
+                {
+                    (_styles,theme) => {
+                        const _tabStyle = [
+                            {
+                                width: labelWidth  ,
+                            },
+                            _styles.tabStyle,
+                            tabStyle,
+                        ]
+                        const _TabBarWrapper =  _styles.TabBarWrapper
+                        const _labelStyle = [
+                            _styles.labelStyle,
+                            labelStyle,
+                        ]
+                        const  _indicatorStyle = [
+                            {
+                                width: labelWidth * 0.6 ,
+                            },
+                            _styles.indicatorStyle,
+                            indicatorStyle,
+                        ]
+                        return (
+                            <View style={_TabBarWrapper}>
+                                <ScrollView
+                                    style={_styles.TabBarWrapperScrollView}
+                                    horizontal={true}
+                                    showsHorizontalScrollIndicator={false}
+                                    scrollEnabled={scrollEnabled}
+                                    ref={(scrollView) => this.scrollView = scrollView}
+                                >
+                                    {this.props.routesArray.map((route, i) => (
+                                        <TouchableOpacity
+                                            style={_tabStyle}
+                                            // eslint-disable-next-line react/no-array-index-key
+                                            key={`${i}Tabbar`}
+                                            onPress={() => {
+                                                this.setState({ index:i })
+                                                this._isScroll(i)
+                                                this.props.onIndexChange_Tabs && this.props.onIndexChange_Tabs(i) }}
                                         >
-                                            {route.title}
-                                        </Text>
-                                        <View style={_styles.wrapper} />
-                                        <View style={
-                                            [_indicatorStyle,{
-                                                backgroundColor:this.state.index === i
-                                                    ? UIColor : theme.tabs_indicator_Color,
-                                            }]
-                                        }
-                                        />
-                                    </TouchableOpacity>
-                                ))}
-                            </ScrollView>
-                        </View>
+                                            <Text style={
+                                                [_labelStyle,
+                                                    { color: this.state.index === i ? UIColor : theme.label_textColor }]
+                                            }
+                                            >
+                                                {route.title}
+                                            </Text>
+                                            <View style={_styles.wrapper} />
+                                            <View style={
+                                                [_indicatorStyle,{
+                                                    backgroundColor:this.state.index === i
+                                                        ? UIColor : theme.tabs_indicator_Color,
+                                                }]
+                                            }
+                                            />
+                                        </TouchableOpacity>
+                                    ))}
+                                </ScrollView>
+                            </View>
+                        )
+                    }
+                }
+            </WithTheme>
+
+        )
+    };
+    render() {
+        const {
+            styles,
+            navigationState,
+            onIndexChange_Tabs,
+            renderScene,
+        } = this.props
+        return (
+            <WithTheme themeStyles={TabsStyles} styles={styles}>
+                {
+                    (_styles,theme) => (
+                        <TabView
+                            navigationState={navigationState}
+                            renderScene={renderScene}
+                            renderTabBar={this._renderTabBar}
+                            onIndexChange={(index) => {
+                                this.setState({ index })
+                                this._isScroll(index)
+                                onIndexChange_Tabs && onIndexChange_Tabs(index)
+                            }}
+                            initialLayout={_styles.initialLayout}
+                        />
                     )
                 }
-            }
-        </WithTheme>
-
-    )
-};
-render() {
-    const {
-        styles,
-        navigationState,
-        onIndexChange_Tabs,
-        renderScene,
-    } = this.props
-    return (
-        <WithTheme themeStyles={TabsStyles} styles={styles}>
-            {
-                (_styles,theme) => (
-                    <TabView
-                        navigationState={navigationState}
-                        renderScene={renderScene}
-                        renderTabBar={this._renderTabBar}
-                        onIndexChange={(index) => {
-                            this.setState({ index })
-                            this._isScroll(index)
-                            onIndexChange_Tabs && onIndexChange_Tabs(index)
-                        }}
-                        initialLayout={_styles.initialLayout}
-                    />
-                )
-            }
-        </WithTheme>
-    )
-}
+            </WithTheme>
+        )
+    }
 }
