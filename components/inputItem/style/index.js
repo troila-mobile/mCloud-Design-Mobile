@@ -23,6 +23,7 @@ export default (theme) => StyleSheet.create({
     },
     input: {
         flex: 1,
+        alignSelf: 'center',
         backgroundColor: 'transparent',
         fontSize: theme.input_font_size,
         color: theme.color_text_base,
