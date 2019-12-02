@@ -7,7 +7,7 @@ import { Tabs } from '../..'
 export default class TabViewExample extends React.Component {
     state = {
         // eslint-disable-next-line react/no-unused-state
-        index: 0,
+        index: 2,
         routes: [
             { key: '1', title: '新闻' },
             { key: '2', title: '视频' },
@@ -57,7 +57,8 @@ export default class TabViewExample extends React.Component {
     render() {
         return (
             <Tabs
-                navigationState={this.state}
+                selectIndex={this.state.index}
+                navigationState={{ ...this.state }}
                 UIColor="#586BFB"
                 labelWidth={70}
                 scrollEnabled={true}
