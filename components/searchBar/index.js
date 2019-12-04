@@ -8,9 +8,10 @@ import {
 } from 'react-native'
 import { WithTheme } from '../style'
 import SearchBarStyles from './style'
+import { keyboardTypeArray } from '../utils/KeyboardType'
 import PropTypes from 'prop-types'
 
-const func = () => {}
+const func = () => { }
 const searchBigImage = require('./assets/search-big.png')
 const searchSmallImage = require('./assets/search-small.png')
 const clearImage = require('./assets/clear.png')
@@ -32,6 +33,7 @@ export default class SearchBar extends React.Component {
         onClear: PropTypes.func,
         placeholderTextColor: PropTypes.string,
         autoFocus: PropTypes.bool,
+        keyboardType: PropTypes.oneOf(keyboardTypeArray),
     }
     static defaultProps = {
         style: {},
@@ -126,6 +128,7 @@ export default class SearchBar extends React.Component {
             placeholder,
             placeholderTextColor,
             autoFocus,
+            keyboardType,
         } = this.props
         const style_prefix = type === 'radius' ? 'radius_' : 'default_'
         const search_source = type === 'default' ? searchBigImage : searchSmallImage
@@ -170,6 +173,7 @@ export default class SearchBar extends React.Component {
                                         style={[_styles[`${style_prefix}input`], style]}
                                         underlineColorAndroid="transparent"
                                         returnKeyType="search"
+                                        keyboardType={keyboardType}
                                         placeholder={placeholder}
                                         placeholderTextColor={placeholderTextColor || theme.color_text_placeholder}
                                         value={value}
