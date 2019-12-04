@@ -5,7 +5,7 @@ import { Label } from '../..'
 export default () => (
     <View style={styles.wrap}>
         <Text style={styles.boldTitle}>
-           SmallLabel
+            SmallLabel
         </Text>
         <View style={styles.cellStyle}>
             <Label type="white" size="small" textType="smallText" style={styles.defaultStyle}>
@@ -13,17 +13,6 @@ export default () => (
             </Label>
             <Label type="black" size="small" textType="smallText" style={styles.multiStyle}>
                 这里是长度固定的两个字
-            </Label>
-        </View>
-        <Text style={styles.boldTitle}>
-            MiddleLabel
-        </Text>
-        <View style={styles.cellStyle}>
-            <Label type="white" size="middle" textType="middleText" style={styles.defaultStyle}>
-                三个字
-            </Label>
-            <Label type="black" size="middle" textType="middleText" style={styles.multiStyle}>
-                这里是长度固定的三个字
             </Label>
         </View>
         <Text style={styles.boldTitle}>
