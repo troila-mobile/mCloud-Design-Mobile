@@ -98,10 +98,10 @@ export default (theme) => StyleSheet.create({
         color: theme.color_text_base_inverse,
     },
     defaultDisabledRawText: {
-        color: `${theme.color_text_base}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
+        color: theme.color_text_base,
     },
     primaryDisabledRawText: {
-        color: `${theme.color_text_base_inverse}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
+        color: theme.color_text_base_inverse,
     },
     ghostDisabledRawText: {
         color: `${theme.ghost_button_color}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
