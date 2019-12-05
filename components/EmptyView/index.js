@@ -82,13 +82,18 @@ export default class EmptyView extends React.Component {
                                     onRefresh
                                         ? (
                                             <TouchableOpacity
-                                                style={TouchableStyle}
+                                                style={[TouchableStyle, { backgroundColor: theme.color_link }]}
                                                 onPress={() => onRefresh && onRefresh()}
                                             >
                                                 <Text style={TouchableTextStyle}>重新加载</Text>
                                             </TouchableOpacity>
                                         )
-                                        : null
+                                        : (
+                                            <View
+                                                style={[TouchableStyle]}
+                                            >
+                                            </View>
+                                        )
                                 }
                             </View>
                         )
