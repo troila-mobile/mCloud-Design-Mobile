@@ -123,7 +123,7 @@ export default class InputItem extends React.Component {
         }
         this.onChange('')
     }
-    // this is instance method for user to use
+    // 供外部使用的实例方法
     focus = () => {
         if (this.inputRef) {
             this.inputRef.focus()
