@@ -117,11 +117,22 @@ export default class InputItem extends React.Component {
             }
         })
     }
-    onInputClear = () => {
+    clear = () => {
         if (this.inputRef) {
             this.inputRef.clear()
         }
         this.onChange('')
+    }
+    // 供外部使用的实例方法
+    focus = () => {
+        if (this.inputRef) {
+            this.inputRef.focus()
+        }
+    }
+    blur = () => {
+        if (this.inputRef) {
+            this.inputRef.blur()
+        }
     }
     render() {
         const {
@@ -212,7 +223,7 @@ export default class InputItem extends React.Component {
                                         editable && clear && value && focus ? (
                                             <TouchableOpacity
                                                 style={[_styles.clear]}
-                                                onPress={this.onInputClear}
+                                                onPress={this.clear}
                                             >
                                                 <Image source={clearImage} />
                                             </TouchableOpacity>
