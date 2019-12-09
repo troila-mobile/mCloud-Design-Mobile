@@ -82,9 +82,14 @@ export default class Tabs extends React.Component {
             indicatorStyle,
             labelWidth,
             scrollEnabled,
-            navigationState,
             onIndexChange_Tabs,
         } = this.props
+        const {
+            navigationState:{
+                index,
+                routes,
+            },
+        } = props
         return (
             <WithTheme themeStyles={TabsStyles} styles={styles}>
                 {
@@ -117,19 +122,19 @@ export default class Tabs extends React.Component {
                                     scrollEnabled={scrollEnabled}
                                     ref={(scrollView) => this.scrollView = scrollView}
                                 >
-                                    {navigationState.routes.map((route, i) => (
+                                    {routes.map((route, i) => (
                                         <TouchableOpacity
                                             style={_tabStyle}
                                             // eslint-disable-next-line react/no-array-index-key
                                             key={`${i}Tabbar`}
                                             onPress={() => {
                                                 this._isScroll(i)
-                                                onIndexChange_Tabs && onIndexChange_Tabs(i) }}
+                                                onIndexChange_Tabs(i) }}
                                         >
                                             <Text style={
                                                 [_labelStyle,
                                                     {
-                                                        color: navigationState.index === i
+                                                        color: index === i
                                                             ? UIColor : theme.label_textColor,
                                                     }]
                                             }
@@ -139,7 +144,7 @@ export default class Tabs extends React.Component {
                                             <View style={_styles.wrapper} />
                                             <View style={
                                                 [_indicatorStyle,{
-                                                    backgroundColor:navigationState.index === i
+                                                    backgroundColor:index === i
                                                         ? UIColor : theme.tabs_indicator_Color,
                                                 }]
                                             }
@@ -170,9 +175,9 @@ export default class Tabs extends React.Component {
                             navigationState={navigationState}
                             renderScene={renderScene}
                             renderTabBar={this._renderTabBar}
-                            onIndexChange={() => {
-                                this._isScroll(navigationState.index)
-                                onIndexChange_Tabs && onIndexChange_Tabs(navigationState.index)
+                            onIndexChange={(index) => {
+                                this._isScroll(index)
+                                onIndexChange_Tabs(index)
                             }}
                             initialLayout={_styles.initialLayout}
                         />
