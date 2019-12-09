@@ -163,7 +163,7 @@ export default {
     label_bg_color:'#00C482',
     // EmptyView
     emptyView_height:screenH * 0.5,
-    emptyView_text_color:'#666',
+    emptyView_text_color:'#999999',
     emptyView_touchable_marginTop:154,
     // tabs
     tabs_color: brandPrimary,
