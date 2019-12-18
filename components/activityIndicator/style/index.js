@@ -17,6 +17,7 @@ export default (theme) => StyleSheet.create({
         backgroundColor: 'transparent',
     },
     wrapper: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         width: theme.activity_indicator_size,

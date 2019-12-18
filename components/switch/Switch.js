@@ -45,6 +45,7 @@ export default class SwitchButton extends Component {
     constructor(props) {
         super(props)
         const { checked } = props
+        // eslint-disable-next-line react/state-in-constructor
         this.state = {
             scale: new Animated.Value(checked ? 0.01 : 1),
             left: new Animated.Value(checked ? 21 : 2),
@@ -53,8 +54,27 @@ export default class SwitchButton extends Component {
         }
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.checked !== this.state.checked) {
-            this.onToggle()
+        const {
+            scale,
+            left,
+            animatedColor,
+            checked,
+        } = this.state
+        if (nextProps.checked !== checked) {
+            this.setState({
+                checked: nextProps.checked,
+            })
+            Animated.parallel([
+                Animated.timing(scale, {
+                    toValue: nextProps.checked ? 0.01 : 1,
+                }),
+                Animated.spring(left, {
+                    toValue: nextProps.checked ? 21 : 2,
+                }),
+                Animated.timing(animatedColor, {
+                    toValue: nextProps.checked ? 1 : 0,
+                }),
+            ]).start()
         }
     }
     onToggle = () => {
@@ -129,7 +149,7 @@ export default class SwitchButton extends Component {
             <WithTheme themeStyles={SwitchStyles} styles={styles}>
                 {
                     (_styles, theme) => {
-                        const tintColor = !!onTintColor ? onTintColor : theme.switch_tint
+                        const tintColor = onTintColor || theme.switch_tint
                         return (
                             <TouchableWithoutFeedback disabled={disabled} onPress={this.onToggle}>
                                 <Animated.View

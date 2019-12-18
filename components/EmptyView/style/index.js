@@ -7,14 +7,14 @@ export default (theme) => StyleSheet.create({
     wrapper: {
         alignItems: 'center',
         justifyContent:'center',
-        height: theme.emptyView_height,
+        flex: 1,
+        backgroundColor: theme.fill_grey,
     },
     text:{
         fontSize: theme.font_size_caption,
         color: theme.emptyView_text_color,
     },
     touchable: {
-        backgroundColor: theme.color_link,
         height: theme.button_height_de,
         width: theme.large_label_width,
         borderRadius: theme.button_height_de / 2,

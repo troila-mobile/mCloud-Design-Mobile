@@ -13,21 +13,16 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { EmptyView } from 'mcloud-mobile';
 
-const network_failedSource = require('../assets/empty_network_failed.png')
-
 export default () => (
-    <View style={styles.wrap}>
-        <EmptyView type='custom' emptyImage={network_failedSource} onRefresh={() => { }}>
-            暂无数据
-        </EmptyView>
-    </View>
+    <EmptyView type="network_failed" onRefresh={() => {}}>
+            很抱歉，加载失败了
+    </EmptyView>
+
+    // <EmptyView type="no_data">
+    // 暂无数据
+    // </EmptyView>
 )
-const styles = StyleSheet.create({
-    wrap: {
-        flex: 1,
-        backgroundColor: '#E6E6E6',
-    },
-})
+
 
 ```
 ## Props:

@@ -73,22 +73,27 @@ export default class EmptyView extends React.Component {
                         return (
                             <View style={EmptyViewStyle}>
                                 {
-                                    type === 0 ? null : <Image source={emptyImageView} />
+                                    type === 'no_image' ? null : <Image source={emptyImageView} />
                                 }
                                 <Text style={textStyle}>
                                     {children}
                                 </Text>
                                 {
-                                    onRefresh
+                                    type === 'network_failed'
                                         ? (
                                             <TouchableOpacity
-                                                style={TouchableStyle}
+                                                style={[TouchableStyle, { backgroundColor: theme.color_link }]}
                                                 onPress={() => onRefresh && onRefresh()}
                                             >
                                                 <Text style={TouchableTextStyle}>重新加载</Text>
                                             </TouchableOpacity>
                                         )
-                                        : null
+                                        : (
+                                            <View
+                                                style={[TouchableStyle]}
+                                            >
+                                            </View>
+                                        )
                                 }
                             </View>
                         )
