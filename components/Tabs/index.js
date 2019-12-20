@@ -19,6 +19,7 @@ export default class Tabs extends React.Component {
         tabStyle: ViewPropTypes.style,
         labelStyle: ViewPropTypes.style,
         indicatorStyle:ViewPropTypes.style,
+        TabBarWrapperStyle: ViewPropTypes.style,
         onIndexChange_Tabs: PropTypes.func,
         renderScene:PropTypes.func,
         navigationState:PropTypes.object,
@@ -31,6 +32,7 @@ export default class Tabs extends React.Component {
         tabStyle:{},
         labelStyle:{},
         indicatorStyle:{},
+        TabBarWrapperStyle: {},
         UIColor:'#000',
         onIndexChange_Tabs:() => {} ,
         renderScene:() => {} ,
@@ -83,6 +85,7 @@ export default class Tabs extends React.Component {
             labelWidth,
             scrollEnabled,
             onIndexChange_Tabs,
+            TabBarWrapperStyle,
         } = this.props
         const {
             navigationState:{
@@ -101,7 +104,7 @@ export default class Tabs extends React.Component {
                             _styles.tabStyle,
                             tabStyle,
                         ]
-                        const _TabBarWrapper =  _styles.TabBarWrapper
+                        const _TabBarWrapper =  [_styles.TabBarWrapper , TabBarWrapperStyle]
                         const _labelStyle = [
                             _styles.labelStyle,
                             labelStyle,
