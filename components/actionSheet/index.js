@@ -153,7 +153,7 @@ export default class ActionSheet extends React.Component {
             checkedIndex,
         } = this.props
         const exitDisabled = disabledIndexArrary.find((mitem) => mitem === index)
-        const textStyle = [exitDisabled ? this._styles.disableTextStyle : this._styles.normalText,
+        const textStyle = [this._styles.normalText, exitDisabled ? this._styles.disableTextStyle : {},
             { paddingHorizontal:5 }]
         return (
             <TouchableOpacity
@@ -164,20 +164,22 @@ export default class ActionSheet extends React.Component {
                     this.hide(() => onPress(index))
                 }}
             >
-                {
-                    checkedIndex !== -1 && checkedIndex === index && (
-                        <Image
-                            source={checkSource}
-                            style={this._styles.CheckImage}
-                        />
-                    )
-                }
-                <Text
-                    style={textStyle}
-                    numberOfLines={1}
-                >
-                    {item}
-                </Text>
+                <View style={this._styles.buttonViewStyle}>
+                    {
+                        checkedIndex !== -1 && checkedIndex === index && (
+                            <Image
+                                source={checkSource}
+                                style={this._styles.CheckImage}
+                            />
+                        )
+                    }
+                    <Text
+                        style={textStyle}
+                        numberOfLines={1}
+                    >
+                        {item}
+                    </Text>
+                </View>
             </TouchableOpacity>
         )
     }
