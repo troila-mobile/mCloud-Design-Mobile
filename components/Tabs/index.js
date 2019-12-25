@@ -19,6 +19,7 @@ export default class Tabs extends React.Component {
         tabStyle: ViewPropTypes.style,
         labelStyle: ViewPropTypes.style,
         indicatorStyle:ViewPropTypes.style,
+        TabBarWrapperStyle: ViewPropTypes.style,
         onIndexChange_Tabs: PropTypes.func,
         renderScene:PropTypes.func,
         navigationState:PropTypes.object,
@@ -31,6 +32,7 @@ export default class Tabs extends React.Component {
         tabStyle:{},
         labelStyle:{},
         indicatorStyle:{},
+        TabBarWrapperStyle: {},
         UIColor:'#000',
         onIndexChange_Tabs:() => {} ,
         renderScene:() => {} ,
@@ -82,9 +84,15 @@ export default class Tabs extends React.Component {
             indicatorStyle,
             labelWidth,
             scrollEnabled,
-            navigationState,
             onIndexChange_Tabs,
+            TabBarWrapperStyle,
         } = this.props
+        const {
+            navigationState:{
+                index,
+                routes,
+            },
+        } = props
         return (
             <WithTheme themeStyles={TabsStyles} styles={styles}>
                 {
@@ -96,7 +104,7 @@ export default class Tabs extends React.Component {
                             _styles.tabStyle,
                             tabStyle,
                         ]
-                        const _TabBarWrapper =  _styles.TabBarWrapper
+                        const _TabBarWrapper =  [_styles.TabBarWrapper , TabBarWrapperStyle]
                         const _labelStyle = [
                             _styles.labelStyle,
                             labelStyle,
@@ -117,19 +125,19 @@ export default class Tabs extends React.Component {
                                     scrollEnabled={scrollEnabled}
                                     ref={(scrollView) => this.scrollView = scrollView}
                                 >
-                                    {navigationState.routes.map((route, i) => (
+                                    {routes.map((route, i) => (
                                         <TouchableOpacity
                                             style={_tabStyle}
                                             // eslint-disable-next-line react/no-array-index-key
                                             key={`${i}Tabbar`}
                                             onPress={() => {
                                                 this._isScroll(i)
-                                                onIndexChange_Tabs && onIndexChange_Tabs(i) }}
+                                                onIndexChange_Tabs(i) }}
                                         >
                                             <Text style={
                                                 [_labelStyle,
                                                     {
-                                                        color: navigationState.index === i
+                                                        color: index === i
                                                             ? UIColor : theme.label_textColor,
                                                     }]
                                             }
@@ -139,7 +147,7 @@ export default class Tabs extends React.Component {
                                             <View style={_styles.wrapper} />
                                             <View style={
                                                 [_indicatorStyle,{
-                                                    backgroundColor:navigationState.index === i
+                                                    backgroundColor:index === i
                                                         ? UIColor : theme.tabs_indicator_Color,
                                                 }]
                                             }
@@ -170,9 +178,9 @@ export default class Tabs extends React.Component {
                             navigationState={navigationState}
                             renderScene={renderScene}
                             renderTabBar={this._renderTabBar}
-                            onIndexChange={() => {
-                                this._isScroll(navigationState.index)
-                                onIndexChange_Tabs && onIndexChange_Tabs(navigationState.index)
+                            onIndexChange={(index) => {
+                                this._isScroll(index)
+                                onIndexChange_Tabs(index)
                             }}
                             initialLayout={_styles.initialLayout}
                         />

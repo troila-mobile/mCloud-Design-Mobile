@@ -8,6 +8,7 @@ export default (theme) => StyleSheet.create({
         alignItems: 'center',
         justifyContent:'center',
         flex: 1,
+        backgroundColor: theme.fill_grey,
     },
     text:{
         fontSize: theme.font_size_caption,

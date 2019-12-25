@@ -58,6 +58,7 @@ export default class TabViewExample extends React.Component {
         return (
             <Tabs
                 navigationState={{ ...this.state }}
+                TabBarWrapperStyle={{ width: 200, marginLeft: 50 }}
                 UIColor="#586BFB"
                 labelWidth={70}
                 scrollEnabled={true}
