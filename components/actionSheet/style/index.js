@@ -10,11 +10,10 @@ export default (theme) => StyleSheet.create({
         color: theme.sheet_title_color,
         fontSize: theme.font_size_caption,
         textAlign: 'center',
+        maxWidth: '80%',
     },
     disableTextStyle: {
         color: theme.color_text_disabled,
-        fontSize: theme.font_size_caption,
-        textAlign: 'center',
     },
     cancelButton: {
         height: 50,
@@ -26,13 +25,9 @@ export default (theme) => StyleSheet.create({
     buttonStyle: {
         height: 50,
         marginTop: StyleSheet.hairlineWidth,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
         backgroundColor: theme.sheet_backgroundColor,
     },
     titleBox: {
-        // flex:1,
         paddingVertical: 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -48,7 +43,6 @@ export default (theme) => StyleSheet.create({
 
     },
     body: {
-        // justifyContent: 'flex-end',
         backgroundColor: theme.sheet_title_backgroundcolor,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
@@ -59,8 +53,17 @@ export default (theme) => StyleSheet.create({
     wrapper: {
         flex: 1,
     },
+    buttonViewStyle: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+    },
     CheckImage: {
-        marginRight: theme.h_spacing_lg,
+        position: 'absolute',
+        left: -theme.h_spacing_lg,
+        alignSelf: 'center',
     },
     SafeAreaView: {
         backgroundColor: theme.sheet_backgroundColor,

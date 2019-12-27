@@ -19,6 +19,7 @@ export default class Tabs extends React.Component {
         tabStyle: ViewPropTypes.style,
         labelStyle: ViewPropTypes.style,
         indicatorStyle:ViewPropTypes.style,
+        TabBarWrapperStyle: ViewPropTypes.style,
         onIndexChange_Tabs: PropTypes.func,
         renderScene:PropTypes.func,
         navigationState:PropTypes.object,
@@ -31,6 +32,7 @@ export default class Tabs extends React.Component {
         tabStyle:{},
         labelStyle:{},
         indicatorStyle:{},
+        TabBarWrapperStyle: {},
         UIColor:'#000',
         onIndexChange_Tabs:() => {} ,
         renderScene:() => {} ,
@@ -40,8 +42,13 @@ export default class Tabs extends React.Component {
     };
     constructor(props) {
         super(props)
+        const {
+            TabBarWrapperStyle,
+            indicatorStyle,
+        } = this.props
         this.state = {
-            screen_W:screenW || this.props.indicatorStyle.width,
+            screen_W: (TabBarWrapperStyle && TabBarWrapperStyle.width)
+                || (indicatorStyle && indicatorStyle.width) || screenW,
             // eslint-disable-next-line react/no-unused-state
             scrollX:0,
         }
@@ -55,6 +62,7 @@ export default class Tabs extends React.Component {
             navigationState,
             labelWidth,
         } = this.props
+        console.log('screen_W', screen_W)
         const number = navigationState.routes.length
         const  scrollView_width = number *  labelWidth
         if (scrollView_width > screen_W) {
@@ -83,6 +91,7 @@ export default class Tabs extends React.Component {
             labelWidth,
             scrollEnabled,
             onIndexChange_Tabs,
+            TabBarWrapperStyle,
         } = this.props
         const {
             navigationState:{
@@ -101,7 +110,7 @@ export default class Tabs extends React.Component {
                             _styles.tabStyle,
                             tabStyle,
                         ]
-                        const _TabBarWrapper =  _styles.TabBarWrapper
+                        const _TabBarWrapper =  [_styles.TabBarWrapper , TabBarWrapperStyle]
                         const _labelStyle = [
                             _styles.labelStyle,
                             labelStyle,
