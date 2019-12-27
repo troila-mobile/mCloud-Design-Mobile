@@ -116,7 +116,6 @@ export default class ActionSheet extends React.Component {
                 onLayout={() => {
                     const handle = findNodeHandle(this.titleRef)
                     UIManager.measure(handle, (x, y, width, height, pageX, pageY) => {
-                        console.log(x, y, width, height, pageX, pageY)
                         this.setState({ titleHeight:height })
                     })
                 }}
@@ -248,7 +247,6 @@ export default class ActionSheet extends React.Component {
                                         onLayout={() => {
                                             const handle = findNodeHandle(this.safeBottom)
                                             UIManager.measure(handle, (x, y, width, height, pageX, pageY) => {
-                                                console.log(x, y, width, height, pageX, pageY)
                                                 this.setState({ safeHeight:height })
                                             })
                                         }}

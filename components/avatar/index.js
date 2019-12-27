@@ -77,7 +77,6 @@ export default class Avatar extends React.Component {
                                 ]}
                                 source={error ? defaultAvatar : source}
                                 onError={() => {
-                                    console.log('这是onError')
                                     this.setState({
                                         error: true,
                                     })

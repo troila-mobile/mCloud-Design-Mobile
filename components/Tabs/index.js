@@ -62,7 +62,6 @@ export default class Tabs extends React.Component {
             navigationState,
             labelWidth,
         } = this.props
-        console.log('screen_W', screen_W)
         const number = navigationState.routes.length
         const  scrollView_width = number *  labelWidth
         if (scrollView_width > screen_W) {
