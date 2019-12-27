@@ -2,7 +2,7 @@ import React from 'react'
 import { portal } from './provider'
 import NoticeView from './NoticeView'
 
-let key = null
+const key = 'mCloudNoticeViewKey'
 let messageQueue = []
 export default function notice(
     title,
@@ -11,6 +11,7 @@ export default function notice(
     onPress,
     onDismiss,
     action,
+    id,
 ) {
     const noticeData = {
         title,
@@ -19,26 +20,24 @@ export default function notice(
         onPress,
         onDismiss,
         action,
+        id,
     }
     const onDialogDismiss = (data) => {
         messageQueue = data
         if (data.length === 0) {
             portal.remove(key)
-            key = null
         }
     }
+    const index = messageQueue.findIndex((item) => item.id === id)
+    if (index > -1) return
     messageQueue.push(noticeData)
-    if (key) {
-        portal.update(key, <NoticeView
-            data={messageQueue}
-            onDialogDismiss={onDialogDismiss}
-        />)
-    } else {
-        key = portal.add(
-            <NoticeView
-                data={messageQueue}
-                onDialogDismiss={onDialogDismiss}
-            />,
-        )
-    }
+    portal.update(key, <NoticeView
+        data={messageQueue}
+        onDialogDismiss={onDialogDismiss}
+    />)
+}
+
+export function clearMessageQueue() {
+    messageQueue = []
+    portal.remove(key)
 }

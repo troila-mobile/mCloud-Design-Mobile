@@ -11,14 +11,22 @@ export default class ModalHost extends React.Component {
         }))
     }
     update = (key, children) => {
-        this.setState((state) => ({
-            modals: state.modals.map((item) => {
-                if (item.key === key) {
-                    return { ...item,children }
-                }
-                return item
-            }),
-        }))
+        const { modals } = this.state
+        const index = modals.findIndex((item) => item.key === key)
+        if (index > -1) {
+            this.setState((state) => ({
+                modals: state.modals.map((item) => {
+                    if (item.key === key) {
+                        return { ...item,children }
+                    }
+                    return item
+                }),
+            }))
+        } else {
+            this.setState((state) => ({
+                modals: [...state.modals, { key, children }],
+            }))
+        }
     }
     unmount = (key) => {
         this.setState((state) => ({
@@ -39,3 +47,4 @@ export default class ModalHost extends React.Component {
         ))
     }
 }
+

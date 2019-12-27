@@ -2,7 +2,7 @@ import alert from './alert'
 import toast from './toast'
 import prompt from './prompt'
 import { showLoading, hideLoading } from './loading'
-import notice from './notice'
+import notice, { clearMessageQueue } from './notice'
 
 const Modal = {
     alert,
@@ -11,5 +11,6 @@ const Modal = {
     showLoading,
     hideLoading,
     notice,
+    clearMessageQueue,
 }
 export default Modal

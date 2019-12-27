@@ -9,8 +9,8 @@ const removeType = 'MODALS_REMOVE_FROM_TOP_CONTAINER'
 const updateType = 'MODALS_UPDATE_ON_TOP_CONTAINER'
 class Portal {
     nextKey = 10000
-    add = (children) => {
-        const key = this.nextKey++
+    add = (children, _key) => {
+        const key = _key || this.nextKey++
         TopViewEventEmitter.emit(addType, children, key)
         return key
     }
