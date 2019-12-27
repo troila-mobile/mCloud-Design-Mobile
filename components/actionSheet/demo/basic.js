@@ -7,24 +7,20 @@ import {
 
 export default class extends React.Component {
     state={
-        options:['text','value'],
+        options: ['text',
+            'zhe是标题dfshdfshuhgceighbcdsbacvbvbqebdvashbjbheurvudvbehlvwdvfwet',
+            'value', 'value', 'value', 'value', 'value', 'value', 'value'],
+        checkedIndex: 1,
     }
     render() {
         const {
             options,
+            checkedIndex,
         } = this.state
         return (
             <>
                 <Button
-                    onPress={
-                        () => {
-                            this.setState({
-                                options:['text',
-                                    'zhe是标题dfshdfshuhgceighbcdsbacvbvbqebdvashbjbheurvudvbehlvwdvfwet',
-                                    'value','value','value','value','value','value','value'],
-                            },() => this.actionSheet.show())
-                        }
-                    }
+                    onPress={() => this.actionSheet.show()}
                 >
                     show
                 </Button>
@@ -32,7 +28,13 @@ export default class extends React.Component {
                     ref={(e) => this.actionSheet = e}
                     options={options}
                     disabledIndexArrary={[5]}
+                    checkedIndex={checkedIndex}
                     title="zhe是标题dfshdfshuhgceighbcdsbacvbvbqebdvashbjbheurvudvbehlvwdvfwet"
+                    onPress={(index) => {
+                        this.setState({
+                            checkedIndex: index,
+                        })
+                    }}
                 />
             </>
         )
