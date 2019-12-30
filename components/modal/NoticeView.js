@@ -147,14 +147,21 @@ export default class NoticeView extends React.Component {
                     >
                         {title}
                     </Text>
-                    <TouchableOpacity
-                        onPress={() => this.onPress(onPress)}
-                        hitSlop={{
-                            top:20,bottom:20,right:20,left:20,
-                        }}
-                    >
-                        <Text style={_styles.actionTitle} allowFontScaling={false}>{`${actionName} >`}</Text>
-                    </TouchableOpacity>
+                    {
+                        onPress
+                            ? (
+                                <TouchableOpacity
+                                    onPress={() => this.onPress(onPress)}
+                                    hitSlop={{
+                                        top:20,bottom:20,right:20,left:20,
+                                    }}
+                                >
+                                    <Text style={_styles.actionTitle} allowFontScaling={false}>
+                                        {`${actionName} >`}
+                                    </Text>
+                                </TouchableOpacity>
+                            ) : null
+                    }
                 </View>
                 <Text
                     style={_styles.noticeText}
