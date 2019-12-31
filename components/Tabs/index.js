@@ -65,7 +65,6 @@ export default class Tabs extends React.Component {
         if (scrollView_width > screen_W) {
             const  scrollView_l = (index + 1) * labelWidth
             if (scrollView_l > (screen_W / 2)) {
-                console.log('')
                 const scrollView_x = scrollView_l - ((screen_W ) / 2 )
                 if ((scrollView_x + (screen_W ) / 2  < scrollView_width - (screen_W ) / 2 )) {
                     this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
