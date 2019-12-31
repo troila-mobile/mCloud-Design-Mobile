@@ -66,12 +66,12 @@ export default class Tabs extends React.Component {
         const  scrollView_width = number *  labelWidth
         if (scrollView_width > screen_W) {
             const  scrollView_l = (index + 1) * labelWidth
-            if (scrollView_l > screen_W) {
+            if (scrollView_l > (screen_W / 2)) {
                 // eslint-disable-next-line react/no-access-state-in-setstate
-                const scrollView_x = scrollView_l - screen_W
+                const scrollView_x = scrollView_l - ((screen_W + labelWidth) / 2 )
                 this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
                 // eslint-disable-next-line react/no-unused-state
-                this.setState({ scrollX:scrollView_x })
+                this.setState({ scrollX:(scrollView_x) })
             } else {
                 const scrollView_x = 0
                 this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
