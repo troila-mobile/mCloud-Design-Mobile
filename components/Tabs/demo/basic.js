@@ -14,6 +14,8 @@ export default class TabViewExample extends React.Component {
             { key: '3', title: '篮球' },
             { key: '4', title: '综艺' },
             { key: '5', title: '电影' },
+            { key: '6', title: '综6艺' },
+            { key: '7', title: '电7影' },
         ],
     };
     _renderScene = ({ route }) => {
@@ -50,6 +52,20 @@ export default class TabViewExample extends React.Component {
                 }]}
                 />
             )
+        case '6':
+            return  (
+                <View style={[styles.container, {
+                    backgroundColor: 'green',
+                }]}
+                />
+            )
+        case '7':
+            return  (
+                <View style={[styles.container, {
+                    backgroundColor: 'yellow',
+                }]}
+                />
+            )
         default:
             return null
         }
@@ -58,7 +74,7 @@ export default class TabViewExample extends React.Component {
         return (
             <Tabs
                 navigationState={{ ...this.state }}
-                TabBarWrapperStyle={{ width: 200, marginLeft: 50 }}
+                TabBarWrapperStyle={{ width: 375 }}
                 UIColor="#586BFB"
                 labelWidth={70}
                 scrollEnabled={true}
