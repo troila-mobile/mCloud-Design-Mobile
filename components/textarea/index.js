@@ -189,6 +189,12 @@ export default class TextAreaItem extends React.Component {
                             paddingHorizontal: theme.h_spacing_lg,
                         }
                         const disabledStyle = (disabled || !editable) ? _styles.inputDisabled : {}
+                        const RequiredText = [
+                            _styles.RequiredText,
+                            {
+                                color: required ? 'red' : 'rgba(0,0,0,0)',
+                            },
+                        ]
                         return (
                             <View
                                 style={[
@@ -199,9 +205,7 @@ export default class TextAreaItem extends React.Component {
                                 {
                                     label !== '' && (
                                         <View style={_styles.labelWarp}>
-                                            {
-                                                required && <Text style={_styles.RequiredText}>*</Text>
-                                            }
+                                            <Text style={RequiredText}>*</Text>
                                             <Text style={_styles.label}>
                                                 {label}
                                             </Text>

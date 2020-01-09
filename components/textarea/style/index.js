@@ -7,7 +7,7 @@ export default (theme) => StyleSheet.create({
         backgroundColor: theme.fill_base,
     },
     labelWarp: {
-        marginHorizontal: theme.h_spacing_lg,
+        marginRight: theme.h_spacing_lg,
         marginTop: theme.h_spacing_lg,
         marginBottom: theme.v_spacing_sm,
         flexDirection: 'row',
@@ -42,8 +42,9 @@ export default (theme) => StyleSheet.create({
         paddingRight: 9,
     },
     RequiredText: {
-        fontSize: theme.font_size_caption,
-        marginRight: theme.h_spacing_md,
+        fontSize: theme.font_size_base,
         color: 'red',
+        marginLeft: 3.5,
+        marginRight: 6,
     },
 })

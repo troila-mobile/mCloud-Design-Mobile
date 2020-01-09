@@ -6,9 +6,6 @@ export default (theme) => StyleSheet.create({
     },
     container: {
         height: theme.input_item_height,
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        borderBottomColor: theme.border_color_base,
-        marginLeft: theme.h_spacing_lg,
         paddingRight: theme.h_spacing_lg,
         marginTop: 0,
         marginBottom: 0,
@@ -41,8 +38,17 @@ export default (theme) => StyleSheet.create({
         alignItems: 'center',
     },
     RequiredText: {
-        fontSize: theme.font_size_caption,
-        marginRight: theme.h_spacing_md,
+        fontSize: theme.font_size_base,
         color: 'red',
+        marginLeft: 3.5,
+        marginRight: 6,
+    },
+    Line: {
+        backgroundColor: theme.border_color_base,
+        height: theme.border_width_sm,
+        position: 'absolute',
+        left: theme.h_spacing_lg,
+        right: 0,
+        bottom: 0,
     },
 })

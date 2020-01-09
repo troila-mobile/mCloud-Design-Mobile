@@ -63,6 +63,12 @@ export default class Item extends React.Component {
                 {
                     (_styles) => {
                         let renderThumb
+                        const ItemStyle = [
+                            _styles.Item,
+                            {
+                                paddingLeft: required ? 3.5 : 15,
+                            },
+                        ]
                         let RightViewStyle = [
                             _styles.RightView,
                         ]
@@ -146,7 +152,7 @@ export default class Item extends React.Component {
                                 delayLongPress={delayLongPress}
                                 disabled={disabled}
                             >
-                                <View style={_styles.Item}>
+                                <View style={ItemStyle}>
                                     {
                                         renderThumb
                                     }
