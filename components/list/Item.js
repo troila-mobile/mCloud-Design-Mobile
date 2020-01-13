@@ -64,10 +64,10 @@ export default class Item extends React.Component {
                     (_styles) => {
                         let renderThumb
                         const ItemStyle = [
-                            _styles.Item,
                             {
                                 paddingLeft: required ? 3.5 : 15,
                             },
+                            _styles.Item,
                         ]
                         let RightViewStyle = [
                             _styles.RightView,

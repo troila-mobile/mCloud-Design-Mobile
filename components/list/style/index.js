@@ -31,7 +31,6 @@ export default (theme) => StyleSheet.create({
         flexGrow: 1,
         alignItems: 'center',
         flexDirection: 'row',
-        // paddingLeft: theme.h_spacing_lg,
         backgroundColor: theme.fill_base,
     },
     RightView: {
