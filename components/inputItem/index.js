@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-    StyleSheet,
     Text,
     TouchableOpacity,
     View,
@@ -159,12 +158,15 @@ export default class InputItem extends React.Component {
             <WithTheme themeStyles={InputItemStyles} styles={styles}>
                 {
                     (_styles, theme) => {
-                        const containerStyle = {
-                            borderBottomWidth: last ? 0 : StyleSheet.hairlineWidth,
-                        }
                         const textStyle = {
                             width: theme.font_size_heading * labelNumber * 1.05,
                         }
+                        const RequiredText = [
+                            _styles.RequiredText,
+                            {
+                                color: required ? 'red' : 'rgba(0,0,0,0)',
+                            },
+                        ]
                         let keyboardType = 'default'
                         if (type === 'number') {
                             keyboardType = 'numeric'
@@ -178,11 +180,9 @@ export default class InputItem extends React.Component {
                         const disabledStyle = (disabled || !editable) ? _styles.inputDisabled : {}
                         return (
                             <View style={[_styles.wrapper]}>
-                                <View style={[_styles.container, containerStyle]}>
+                                <View style={_styles.container}>
                                     <View style={_styles.ContentView}>
-                                        {
-                                            required && <Text style={_styles.RequiredText}>*</Text>
-                                        }
+                                        <Text style={RequiredText}>*</Text>
                                         {
                                             children ? (
                                                 typeof children === 'string' ? (
@@ -228,6 +228,11 @@ export default class InputItem extends React.Component {
                                                 <Image source={clearImage} />
                                             </TouchableOpacity>
                                         ) : null
+                                    }
+                                    {
+                                        !last && (
+                                            <View style={_styles.Line} />
+                                        )
                                     }
                                 </View>
                             </View>

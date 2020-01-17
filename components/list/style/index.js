@@ -31,7 +31,6 @@ export default (theme) => StyleSheet.create({
         flexGrow: 1,
         alignItems: 'center',
         flexDirection: 'row',
-        paddingLeft: theme.h_spacing_lg,
         backgroundColor: theme.fill_base,
     },
     RightView: {
@@ -94,8 +93,8 @@ export default (theme) => StyleSheet.create({
         flexDirection: 'column',
     },
     RequiredText: {
-        fontSize: theme.font_size_caption,
-        marginRight: theme.h_spacing_md,
+        fontSize: theme.font_size_base,
         color: 'red',
+        marginRight: 6,
     },
 })

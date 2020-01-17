@@ -46,6 +46,7 @@ export default class TextAreaItem extends React.Component {
         textAlign: PropTypes.oneOf(['left', 'right']),
         placeholderTextColor: PropTypes.string,
         required: PropTypes.bool,
+        showCount: PropTypes.bool,
     }
     static defaultProps = {
         styles: {},
@@ -66,6 +67,7 @@ export default class TextAreaItem extends React.Component {
         onContentSizeChange: func,
         textAlign: 'left',
         required: false,
+        showCount: true,
     }
     constructor(props) {
         super(props)
@@ -164,6 +166,7 @@ export default class TextAreaItem extends React.Component {
             placeholderTextColor,
             required,
             autoFocus,
+            showCount,
         } = this.props
         const { inputCount, focus } = this.state
         return (
@@ -186,6 +189,12 @@ export default class TextAreaItem extends React.Component {
                             paddingHorizontal: theme.h_spacing_lg,
                         }
                         const disabledStyle = (disabled || !editable) ? _styles.inputDisabled : {}
+                        const RequiredText = [
+                            _styles.RequiredText,
+                            {
+                                color: required ? 'red' : 'rgba(0,0,0,0)',
+                            },
+                        ]
                         return (
                             <View
                                 style={[
@@ -196,9 +205,7 @@ export default class TextAreaItem extends React.Component {
                                 {
                                     label !== '' && (
                                         <View style={_styles.labelWarp}>
-                                            {
-                                                required && <Text style={_styles.RequiredText}>*</Text>
-                                            }
+                                            <Text style={RequiredText}>*</Text>
                                             <Text style={_styles.label}>
                                                 {label}
                                             </Text>
@@ -249,7 +256,7 @@ export default class TextAreaItem extends React.Component {
                                     }
                                 </View>
                                 {
-                                    rows > 1 && count > 0 ? (
+                                    rows > 1 && count > 0 && showCount ? (
                                         <Text style={_styles.count}>
                                             <Text style={{ color: inputCountColor }}>{inputCount}</Text>
                                             /

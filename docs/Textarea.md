@@ -141,3 +141,4 @@ const styles = StyleSheet.create({
 | labelPosition      |  title 的位置 ，可选值有 `top` `left`  | string | top  |
 | onContentSizeChange      |  count变化的时候触发的方法  | (event: object): void | 无  |
 | required | 是否必需（显示红点） | Boolean   |  false |
+| showCount |  是否展示右下角计数（rows > 1 并且 count > 0时才能生效） | Boolean   |  true |
