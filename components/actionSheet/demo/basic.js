@@ -35,6 +35,8 @@ export default class extends React.Component {
                             checkedIndex: index,
                         })
                     }}
+                    numberOfLines={4}
+                    styles={{ buttonStyle: { height: 90 } }}
                 />
             </>
         )
