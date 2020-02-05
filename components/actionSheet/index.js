@@ -32,6 +32,7 @@ export default class ActionSheet extends React.Component {
         styles: PropTypes.object,
         title: PropTypes.string,
         checkedIndex: PropTypes.number,
+        numberOfLines: PropTypes.number,
     }
     static defaultProps = {
         options: [],
@@ -42,6 +43,7 @@ export default class ActionSheet extends React.Component {
         title: null,
         onPress: () => { },
         checkedIndex: -1,
+        numberOfLines: 1,
     }
     state = {
         visible: false,
@@ -150,6 +152,7 @@ export default class ActionSheet extends React.Component {
             disabledIndexArrary,
             onPress,
             checkedIndex,
+            numberOfLines
         } = this.props
         const exitDisabled = disabledIndexArrary.find((mitem) => mitem === index)
         const textStyle = [this._styles.normalText, exitDisabled ? this._styles.disableTextStyle : {},
@@ -174,7 +177,7 @@ export default class ActionSheet extends React.Component {
                     }
                     <Text
                         style={textStyle}
-                        numberOfLines={1}
+                        numberOfLines={numberOfLines}
                     >
                         {item}
                     </Text>
