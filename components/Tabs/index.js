@@ -51,30 +51,11 @@ export default class Tabs extends React.Component {
                 || (indicatorStyle && indicatorStyle.width) || screenW,
         }
     }
-    // eslint-disable-next-line react/sort-comp
-    _isScroll(index) {
-        const {
-            screen_W,
-        } = this.state
-        const {
-            navigationState,
-            labelWidth,
-        } = this.props
-        const number = navigationState.routes.length
-        const  scrollView_width = number *  labelWidth
-        if (scrollView_width > screen_W) {
-            const  scrollView_l = (index + 1) * labelWidth
-            if (scrollView_l > (screen_W / 2)) {
-                const scrollView_x = scrollView_l - ((screen_W ) / 2 )
-                if ((scrollView_x + (screen_W ) / 2  < scrollView_width - (screen_W ) / 2 )) {
-                    this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
-                } else {
-                    this.scrollView.scrollTo({ x: scrollView_width - screen_W, y: 0, animated: true }, 1)
-                }
-            } else {
-                const scrollView_x = 0
-                this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
-            }
+    componentWillReceiveProps(nextProps) {
+        const { navigationState } = this.props
+        const nextNavigationState = nextProps.navigationState
+        if (navigationState.index !== nextNavigationState.index) {
+            this._isScroll(nextNavigationState.index)
         }
     }
     _renderTabBar = (props) => {
@@ -165,6 +146,31 @@ export default class Tabs extends React.Component {
 
         )
     };
+    _isScroll(index) {
+        const {
+            screen_W,
+        } = this.state
+        const {
+            navigationState,
+            labelWidth,
+        } = this.props
+        const number = navigationState.routes.length
+        const  scrollView_width = number *  labelWidth
+        if (scrollView_width > screen_W) {
+            const  scrollView_l = (index + 1) * labelWidth
+            if (scrollView_l > (screen_W / 2)) {
+                const scrollView_x = scrollView_l - ((screen_W ) / 2 )
+                if ((scrollView_x + (screen_W ) / 2  < scrollView_width - (screen_W ) / 2 )) {
+                    this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
+                } else {
+                    this.scrollView.scrollTo({ x: scrollView_width - screen_W, y: 0, animated: true }, 1)
+                }
+            } else {
+                const scrollView_x = 0
+                this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
+            }
+        }
+    }
     render() {
         const {
             styles,
@@ -181,7 +187,6 @@ export default class Tabs extends React.Component {
                             renderScene={renderScene}
                             renderTabBar={this._renderTabBar}
                             onIndexChange={(index) => {
-                                this._isScroll(index)
                                 onIndexChange_Tabs(index)
                             }}
                             initialLayout={_styles.initialLayout}
