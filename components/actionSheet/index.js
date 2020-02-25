@@ -10,6 +10,7 @@ import {
     Image,
     findNodeHandle,
     UIManager,
+    Keyboard,
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { WithTheme } from '../style'
@@ -79,6 +80,7 @@ export default class ActionSheet extends React.Component {
         }
     }
     show = () => {
+        Keyboard.dismiss()
         this.setState({ visible: true }, this._showSheet)
     }
     hide = (callback) => {
