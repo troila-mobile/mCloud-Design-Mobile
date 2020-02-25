@@ -235,7 +235,7 @@ export default class ActionSheet extends React.Component {
                                     <Animated.View
                                         style={[...body, { transform: [{ translateY: sheetAnim }] }]}
                                     >
-                                        {title && this._renderTitle()}
+                                        {!!title && this._renderTitle()}
                                         <ScrollView
                                             scrollEnabled={scrollEnabled}
                                             style={{ height: scrollViewHeight }}
