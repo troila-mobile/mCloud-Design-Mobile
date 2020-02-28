@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Keyboard } from 'react-native'
 
 export default function PopupMixin(
     getModal,
@@ -124,6 +125,7 @@ export default function PopupMixin(
             } = this.props
             onOk(this.picker && this.picker.getValue())
             this.fireVisibleChange(false)
+            Keyboard.dismiss()
         };
         getContent = () => {
             const {
@@ -153,6 +155,7 @@ export default function PopupMixin(
             } = this.props
             onDismiss()
             this.fireVisibleChange(false)
+            Keyboard.dismiss()
         };
         hide = () => {
             this.fireVisibleChange(false)
