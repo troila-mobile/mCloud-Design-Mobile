@@ -134,7 +134,7 @@ DEPENDENCIES:
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - boost-for-react-native
     - libwebp
     - SDWebImage
@@ -225,4 +225,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 90543c14faa93419f1cce843829e4a20354cdc5e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.7.1

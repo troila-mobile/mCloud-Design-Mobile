@@ -118,6 +118,7 @@ export default function PopupMixin(
                 childProps[triggerType](e)
             }
             this.fireVisibleChange(!visible)
+            Keyboard.dismiss()
         };
         onOk = () => {
             const {
@@ -125,7 +126,6 @@ export default function PopupMixin(
             } = this.props
             onOk(this.picker && this.picker.getValue())
             this.fireVisibleChange(false)
-            Keyboard.dismiss()
         };
         getContent = () => {
             const {
@@ -155,7 +155,6 @@ export default function PopupMixin(
             } = this.props
             onDismiss()
             this.fireVisibleChange(false)
-            Keyboard.dismiss()
         };
         hide = () => {
             this.fireVisibleChange(false)
