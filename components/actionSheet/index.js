@@ -76,7 +76,7 @@ export default class ActionSheet extends React.Component {
             scrollEnabled: props.options && props.options.length > 5,
             height: tempHeight,
             sheetAnim: new Animated.Value(tempHeight),
-            scrollViewHeight: props.options && props.options.length > 5 ? 250 : props.options * 50,
+            scrollViewHeight: props.options ? (props.options.length > 5 ? 250 : props.options.length * 50) : 0,
         }
     }
     show = () => {
@@ -217,7 +217,7 @@ export default class ActionSheet extends React.Component {
                         const overlay = [
                             _styles.overlay,
                         ]
-                        const cancelHeight = showCancel && _styles.cancelButton.height
+                        const cancelHeight = showCancel ? _styles.cancelButton.height : 0
                         const body = [_styles.body,{
                             height: scrollViewHeight + cancelHeight + titleHeight,
                             bottom: safeHeight,
