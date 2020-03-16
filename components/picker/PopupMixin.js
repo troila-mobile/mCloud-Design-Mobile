@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Keyboard } from 'react-native'
 
 export default function PopupMixin(
     getModal,
@@ -117,6 +118,7 @@ export default function PopupMixin(
                 childProps[triggerType](e)
             }
             this.fireVisibleChange(!visible)
+            Keyboard.dismiss()
         };
         onOk = () => {
             const {
