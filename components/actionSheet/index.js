@@ -48,7 +48,6 @@ export default class ActionSheet extends React.Component {
     }
     state = {
         visible: false,
-        scrollEnabled: false,
         sheetAnim: new Animated.Value(MAXHEIGHT),
         height: MAXHEIGHT,
         scrollViewHeight: 250,
@@ -56,14 +55,6 @@ export default class ActionSheet extends React.Component {
         safeHeight: 0,
     }
     _styles = ActionSheetStyle
-    componentDidMount() {
-        const {
-            options,
-        } = this.props
-        this.setState({
-            scrollEnabled: options.length > 5,
-        })
-    }
     static getDerivedStateFromProps(props, state) {
         let tempHeight = MAXHEIGHT
         if (props.options.length <= 5) {
@@ -73,10 +64,9 @@ export default class ActionSheet extends React.Component {
         }
 
         return state.height === tempHeight ? null : {
-            scrollEnabled: props.options && props.options.length > 5,
             height: tempHeight,
             sheetAnim: new Animated.Value(tempHeight),
-            scrollViewHeight: props.options ? (props.options.length > 5 ? 250 : props.options.length * 50) : 0,
+            scrollViewHeight: props.options && props.options.length > 5 ? 250 : props.options.length * 50,
         }
     }
     show = () => {
@@ -196,7 +186,6 @@ export default class ActionSheet extends React.Component {
     render() {
         const {
             visible,
-            scrollEnabled,
             sheetAnim,
             scrollViewHeight,
             titleHeight,
@@ -208,6 +197,7 @@ export default class ActionSheet extends React.Component {
             styles,
             title,
             cancel,
+            options,
         } = this.props
         return (
             <WithTheme themeStyles={ActionSheetStyle} styles={styles}>
@@ -239,7 +229,7 @@ export default class ActionSheet extends React.Component {
                                     >
                                         {!!title && this._renderTitle()}
                                         <ScrollView
-                                            scrollEnabled={scrollEnabled}
+                                            scrollEnabled={options && options.length > 5}
                                             style={{ height: scrollViewHeight }}
                                         >
                                             {this._renderOptions()}
