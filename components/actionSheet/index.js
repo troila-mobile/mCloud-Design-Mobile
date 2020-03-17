@@ -34,6 +34,7 @@ export default class ActionSheet extends React.Component {
         title: PropTypes.string,
         checkedIndex: PropTypes.number,
         lines: PropTypes.number,
+        cellHeight: PropTypes.number,
     }
     static defaultProps = {
         options: [],
@@ -45,6 +46,7 @@ export default class ActionSheet extends React.Component {
         onPress: () => { },
         checkedIndex: -1,
         lines: 1,
+        cellHeight: 50,
     }
     state = {
         visible: false,
@@ -56,9 +58,10 @@ export default class ActionSheet extends React.Component {
     }
     _styles = ActionSheetStyle
     static getDerivedStateFromProps(props, state) {
+        const { cellHeight } = props
         let tempHeight = MAXHEIGHT
         if (props.options.length <= 5) {
-            tempHeight = props.options.length * 50 + 30
+            tempHeight = props.options.length * cellHeight + 30
             props.title && (tempHeight += 50)
             props.showCancel && (tempHeight += 50)
         }
@@ -66,7 +69,7 @@ export default class ActionSheet extends React.Component {
         return state.height === tempHeight ? null : {
             height: tempHeight,
             sheetAnim: new Animated.Value(tempHeight),
-            scrollViewHeight: props.options && props.options.length > 5 ? 250 : props.options.length * 50,
+            scrollViewHeight: props.options && props.options.length > 5 ? 250 : props.options.length * cellHeight,
         }
     }
     show = () => {
@@ -144,14 +147,15 @@ export default class ActionSheet extends React.Component {
             disabledIndexArrary,
             onPress,
             checkedIndex,
-            lines
+            lines,
+            cellHeight,
         } = this.props
         const exitDisabled = disabledIndexArrary.find((mitem) => mitem === index)
         const textStyle = [this._styles.normalText, exitDisabled ? this._styles.disableTextStyle : {},
             { paddingHorizontal:5 }]
         return (
             <TouchableOpacity
-                style={this._styles.buttonStyle}
+                style={[this._styles.buttonStyle,{ height:cellHeight }]}
                 disabled={exitDisabled > -1}
                 key={`cell${index}`}
                 onPress={() => {
@@ -208,8 +212,14 @@ export default class ActionSheet extends React.Component {
                             _styles.overlay,
                         ]
                         const cancelHeight = showCancel && _styles.cancelButton.height
+                        let h = 0
+                        if (title) {
+                            h = scrollViewHeight + cancelHeight + titleHeight
+                        } else {
+                            h = scrollViewHeight + cancelHeight
+                        }
                         const body = [_styles.body,{
-                            height: scrollViewHeight + cancelHeight + titleHeight,
+                            height: h,
                             bottom: safeHeight,
                         }]
                         const wrapper = [_styles.wrapper]
