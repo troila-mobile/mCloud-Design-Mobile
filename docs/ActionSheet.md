@@ -40,6 +40,8 @@ export default class extends React.Component {
                     options={options}
                     disabledIndexArrary={[5]}
                     title="zhe是标题dfshdfshuhgiuhdubhdsfiubhdsiufhb"
+                    customColors={[{ color:'red',cellIndex:2 }]}
+                    cellHeight={160}
                 />
             </>
         )
@@ -61,3 +63,5 @@ export default class extends React.Component {
 | title    | 标题，最多显示两行 | string |   无  |
 | checkedIndex    | 选中的索引(-1即为不带选中样式) | number |   -1  |
 | lines    | 选项的行数 | number |   1   |
+| customColors    | 指定行颜色 | array[ {color:自定义颜色,cellIndex:行数} ] |   []   |
+| cellHeight    | 行高 | number |   50  |

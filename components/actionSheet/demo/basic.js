@@ -35,7 +35,7 @@ export default class extends React.Component {
                     }}
                     lines={4}
                     cellHeight={160}
-                    // styles={{ buttonStyle: { height: 90 } }}
+                    // customColors={[{ color:'red',cellIndex:2 }]}
                 />
             </>
         )
