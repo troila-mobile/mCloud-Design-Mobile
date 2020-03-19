@@ -35,6 +35,10 @@ export default class ActionSheet extends React.Component {
         checkedIndex: PropTypes.number,
         lines: PropTypes.number,
         cellHeight: PropTypes.number,
+        customColors: PropTypes.arrayOf(PropTypes.shape({
+            color: PropTypes.string,
+            cellIndex: PropTypes.number,
+        })),
     }
     static defaultProps = {
         options: [],
@@ -47,6 +51,7 @@ export default class ActionSheet extends React.Component {
         checkedIndex: -1,
         lines: 1,
         cellHeight: 50,
+        customColors:[],
     }
     state = {
         visible: false,
@@ -149,10 +154,16 @@ export default class ActionSheet extends React.Component {
             checkedIndex,
             lines,
             cellHeight,
+            customColors,
         } = this.props
+        const customColor = customColors && customColors.find((o) => o.cellIndex === index)
         const exitDisabled = disabledIndexArrary.find((mitem) => mitem === index)
-        const textStyle = [this._styles.normalText, exitDisabled ? this._styles.disableTextStyle : {},
-            { paddingHorizontal:5 }]
+        const textStyle = [
+            this._styles.normalText,
+            customColor && customColor.color ? { color: customColor.color } : {},
+            exitDisabled ? this._styles.disableTextStyle : {},
+            { paddingHorizontal:5 },
+        ]
         return (
             <TouchableOpacity
                 style={[this._styles.buttonStyle,{ height:cellHeight }]}
