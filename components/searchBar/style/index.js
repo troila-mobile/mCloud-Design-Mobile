@@ -10,7 +10,7 @@ export default (theme) => StyleSheet.create({
         alignItems: 'center',
         borderTopWidth: theme.border_width_sm,
         borderBottomWidth: theme.border_width_sm,
-        borderColor: theme.search_bar_border_color,
+        borderColor: theme.border_color_base,
     },
     default_inputWrapper: {
         flex: 1,
@@ -63,7 +63,7 @@ export default (theme) => StyleSheet.create({
         paddingTop: 0,
         paddingBottom: 0,
         borderWidth: theme.border_width_sm,
-        borderColor: theme.search_bar_border_color,
+        borderColor: theme.border_color_base,
     },
     radius_searchView: {
         position: 'absolute',
