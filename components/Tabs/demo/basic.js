@@ -7,7 +7,7 @@ import { Tabs } from '../..'
 export default class TabViewExample extends React.Component {
     state = {
         // eslint-disable-next-line react/no-unused-state
-        index: 2,
+        index: 9,
         routes: [
             { key: '1', title: '新闻' },
             { key: '2', title: '视频' },

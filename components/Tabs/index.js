@@ -51,6 +51,12 @@ export default class Tabs extends React.Component {
                 || (indicatorStyle && indicatorStyle.width) || screenW,
         }
     }
+    componentDidMount() {
+        const { navigationState } = this.props
+        setTimeout(() => {
+            this._isScroll(navigationState.index)
+        }, 500)
+    }
     componentWillReceiveProps(nextProps) {
         const { navigationState } = this.props
         const nextNavigationState = nextProps.navigationState
@@ -161,13 +167,31 @@ export default class Tabs extends React.Component {
             if (scrollView_l > (screen_W / 2)) {
                 const scrollView_x = scrollView_l - ((screen_W ) / 2 )
                 if ((scrollView_x + (screen_W ) / 2  < scrollView_width - (screen_W ) / 2 )) {
-                    this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
+                    if(this.scrollView) {
+                        this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
+                    } else {
+                        setTimeout(() => {
+                            this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
+                        }, 1000)
+                    }
                 } else {
-                    this.scrollView.scrollTo({ x: scrollView_width - screen_W, y: 0, animated: true }, 1)
+                    if(this.scrollView) {
+                        this.scrollView.scrollTo({ x: scrollView_width - screen_W, y: 0, animated: true }, 1)
+                    } else {
+                        setTimeout(() => {
+                            this.scrollView.scrollTo({ x: scrollView_width - screen_W, y: 0, animated: true }, 1)
+                        }, 1000)
+                    }
                 }
             } else {
                 const scrollView_x = 0
-                this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
+                if(this.scrollView) {
+                    this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
+                } else {
+                    setTimeout(() => {
+                        this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
+                    }, 1000)
+                }
             }
         }
     }
