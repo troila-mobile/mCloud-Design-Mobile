@@ -58,9 +58,6 @@ export default {
     // radio
     radio_circle_border_color: '#555768',
 
-    // search_bar
-    search_bar_border_color: '#262B48',
-
     // switch
     switch_tint: '#2C304E',
     switch_disabled_tint: '#2C304E',
