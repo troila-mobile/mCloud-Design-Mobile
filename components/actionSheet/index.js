@@ -34,6 +34,11 @@ export default class ActionSheet extends React.Component {
         title: PropTypes.string,
         checkedIndex: PropTypes.number,
         lines: PropTypes.number,
+        cellHeight: PropTypes.number,
+        customColors: PropTypes.arrayOf(PropTypes.shape({
+            color: PropTypes.string,
+            cellIndex: PropTypes.number,
+        })),
     }
     static defaultProps = {
         options: [],
@@ -45,10 +50,11 @@ export default class ActionSheet extends React.Component {
         onPress: () => { },
         checkedIndex: -1,
         lines: 1,
+        cellHeight: 50,
+        customColors:[],
     }
     state = {
         visible: false,
-        scrollEnabled: false,
         sheetAnim: new Animated.Value(MAXHEIGHT),
         height: MAXHEIGHT,
         scrollViewHeight: 250,
@@ -56,27 +62,19 @@ export default class ActionSheet extends React.Component {
         safeHeight: 0,
     }
     _styles = ActionSheetStyle
-    componentDidMount() {
-        const {
-            options,
-        } = this.props
-        this.setState({
-            scrollEnabled: options.length > 5,
-        })
-    }
     static getDerivedStateFromProps(props, state) {
+        const { cellHeight } = props
         let tempHeight = MAXHEIGHT
         if (props.options.length <= 5) {
-            tempHeight = props.options.length * 50 + 30
+            tempHeight = props.options.length * cellHeight + 30
             props.title && (tempHeight += 50)
             props.showCancel && (tempHeight += 50)
         }
 
         return state.height === tempHeight ? null : {
-            scrollEnabled: props.options && props.options.length > 5,
             height: tempHeight,
             sheetAnim: new Animated.Value(tempHeight),
-            scrollViewHeight: props.options && props.options.length > 5 ? 250 : props.options * 50,
+            scrollViewHeight: props.options && props.options.length > 5 ? 250 : props.options.length * cellHeight,
         }
     }
     show = () => {
@@ -154,14 +152,21 @@ export default class ActionSheet extends React.Component {
             disabledIndexArrary,
             onPress,
             checkedIndex,
-            lines
+            lines,
+            cellHeight,
+            customColors,
         } = this.props
+        const customColor = customColors && customColors.find((o) => o.cellIndex === index)
         const exitDisabled = disabledIndexArrary.find((mitem) => mitem === index)
-        const textStyle = [this._styles.normalText, exitDisabled ? this._styles.disableTextStyle : {},
-            { paddingHorizontal:5 }]
+        const textStyle = [
+            this._styles.normalText,
+            customColor && customColor.color ? { color: customColor.color } : {},
+            exitDisabled ? this._styles.disableTextStyle : {},
+            { paddingHorizontal:5 },
+        ]
         return (
             <TouchableOpacity
-                style={this._styles.buttonStyle}
+                style={[this._styles.buttonStyle,{ height:cellHeight }]}
                 disabled={exitDisabled > -1}
                 key={`cell${index}`}
                 onPress={() => {
@@ -196,7 +201,6 @@ export default class ActionSheet extends React.Component {
     render() {
         const {
             visible,
-            scrollEnabled,
             sheetAnim,
             scrollViewHeight,
             titleHeight,
@@ -208,6 +212,7 @@ export default class ActionSheet extends React.Component {
             styles,
             title,
             cancel,
+            options,
         } = this.props
         return (
             <WithTheme themeStyles={ActionSheetStyle} styles={styles}>
@@ -218,8 +223,14 @@ export default class ActionSheet extends React.Component {
                             _styles.overlay,
                         ]
                         const cancelHeight = showCancel && _styles.cancelButton.height
+                        let h = 0
+                        if (title) {
+                            h = scrollViewHeight + cancelHeight + titleHeight
+                        } else {
+                            h = scrollViewHeight + cancelHeight
+                        }
                         const body = [_styles.body,{
-                            height: scrollViewHeight + cancelHeight + titleHeight,
+                            height: h,
                             bottom: safeHeight,
                         }]
                         const wrapper = [_styles.wrapper]
@@ -239,7 +250,7 @@ export default class ActionSheet extends React.Component {
                                     >
                                         {!!title && this._renderTitle()}
                                         <ScrollView
-                                            scrollEnabled={scrollEnabled}
+                                            scrollEnabled={options && options.length > 5}
                                             style={{ height: scrollViewHeight }}
                                         >
                                             {this._renderOptions()}
