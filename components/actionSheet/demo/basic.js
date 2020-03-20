@@ -7,9 +7,7 @@ import {
 
 export default class extends React.Component {
     state={
-        options: ['text',
-            'zhe是标题dfshdfshuhgceighbcdsbacvbvbqebdvashbjbheurvudvbehlvwdvfwet',
-            'value', 'value', 'value', 'value', 'value', 'value', 'value'],
+        options: ['text','value', 'value'],
         checkedIndex: 1,
     }
     render() {
@@ -36,7 +34,8 @@ export default class extends React.Component {
                         })
                     }}
                     lines={4}
-                    styles={{ buttonStyle: { height: 90 } }}
+                    cellHeight={160}
+                    // customColors={[{ color:'red',cellIndex:2 }]}
                 />
             </>
         )

@@ -23,7 +23,7 @@ export default (theme) => StyleSheet.create({
         backgroundColor: theme.sheet_backgroundColor,
     },
     buttonStyle: {
-        height: 50,
+        // height: 50,
         marginTop: StyleSheet.hairlineWidth,
         backgroundColor: theme.sheet_backgroundColor,
     },
