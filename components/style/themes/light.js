@@ -199,7 +199,6 @@ export default {
     // search_bar
     search_bar_height: 50,
     search_bar_input_height: 30,
-    search_bar_border_color: '#ffffff',
 
     // notice_bar
     notice_bar_fill: '#fffada',
