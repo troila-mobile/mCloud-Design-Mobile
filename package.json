@@ -1,7 +1,7 @@
 {
   "name": "mcloud-mobile",
   "version": "1.0.53",
-  "main":"components/index.js",
+  "main": "components/index.js",
   "scripts": {
     "start": "react-native start",
     "test": "jest",
@@ -17,6 +17,7 @@
     "deepmerge": "^4.0.0",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
+    "react-native-reanimated": "^1.7.1",
     "react-native-tab-view": "^2.13.0"
   },
   "devDependencies": {
@@ -43,7 +44,7 @@
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-fast-image": "^7.0.2",
-    "react-native-gesture-handler": "^1.4.1",
+    "react-native-gesture-handler": "^1.6.1",
     "react-native-screens": "^1.0.0-alpha.23",
     "react-navigation": "^4.0.5",
     "react-navigation-stack": "^1.8.0",

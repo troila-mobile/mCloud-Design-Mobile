@@ -6,11 +6,6 @@ import { WithTheme } from '../style'
 import CheckboxStyles from './style'
 import PropTypes from 'prop-types'
 
-const disabledCheckSource = require('./assets/check-circle-disabled.png')
-const checkSource = require('./assets/check-circle.png')
-const disabledCheckOSource = require('./assets/check-circle-disabled-o.png')
-const checkOSource = require('./assets/check-circle-o.png')
-
 export default class Checkbox extends React.Component {
     static propTypes = {
         style: ViewPropTypes.style,
@@ -75,36 +70,34 @@ export default class Checkbox extends React.Component {
             <WithTheme themeStyles={CheckboxStyles} styles={styles}>
                 {
                     (_styles, theme) => {
-                        let icon
-                        if (checked) {
-                            icon = disabled ? (
-                                <Image
-                                    style={[styles.icon, style]}
-                                    source={disabledCheckSource}
-                                />
+                        const checkSource = theme.dark ? (
+                            disabled ? (
+                                checked
+                                    ? require('./assets/check_disabled_dark.png')
+                                    : require('./assets/no_check_disabled_dark.png')
                             ) : (
-                                <Image
-                                    style={[styles.icon, style]}
-                                    source={checkSource}
-                                />
+                                checked
+                                    ? require('./assets/check_dark.png')
+                                    : require('./assets/no_check_dark.png')
                             )
-                        } else {
-                            icon = disabled ? (
-                                <Image
-                                    style={[styles.icon, style]}
-                                    source={disabledCheckOSource}
-                                />
+                        ) : (
+                            disabled ? (
+                                checked
+                                    ? require('./assets/check_disabled.png')
+                                    : require('./assets/no_check_disabled.png')
                             ) : (
-                                <Image
-                                    style={[styles.icon, style]}
-                                    source={checkOSource}
-                                />
+                                checked
+                                    ? require('./assets/check.png')
+                                    : require('./assets/no_check.png')
                             )
-                        }
+                        )
                         return (
                             <TouchableWithoutFeedback disabled={disabled} onPress={this.onPress}>
                                 <View style={_styles.wrapper}>
-                                    {icon}
+                                    <Image
+                                        style={[styles.icon, style]}
+                                        source={checkSource}
+                                    />
                                     {
                                         typeof children === 'string' ? (
                                             <Text style={styles.iconRight}>{children}</Text>
