@@ -94,7 +94,9 @@ PODS:
     - React
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder (~> 0.2.3)
-  - RNGestureHandler (1.4.1):
+  - RNGestureHandler (1.6.1):
+    - React
+  - RNReanimated (1.7.1):
     - React
   - RNReanimated (1.7.0):
     - React
@@ -222,8 +224,8 @@ SPEC CHECKSUMS:
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
   RNCAsyncStorage: 60a80e72d95bf02a01cace55d3697d9724f0d77f
   RNFastImage: 9b0c22643872bb7494c8d87bbbb66cc4c0d9e7a2
-  RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
-  RNReanimated: 031fe8d9ea93c2bd689a40f05320ef9d96f74d7f
+  RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
+  RNReanimated: 4e102df74a9674fa943e05f97f3362b6e44d0b48
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   SDWebImageWebPCoder: 7568737603c50f6237850afedd7e9e28e5917e6b
@@ -231,4 +233,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 90543c14faa93419f1cce843829e4a20354cdc5e
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.8.4

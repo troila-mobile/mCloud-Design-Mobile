@@ -178,7 +178,6 @@ export default class TextAreaItem extends React.Component {
                             flexDirection: labelPosition === 'left' ? 'row' : 'column',
                         }
                         const maxLength = count > 0 ? count : undefined
-                        const inputCountColor = inputCount > 0 ? theme.color_text_paragraph : theme.color_text_info
                         const inputStyle = labelPosition === 'left' ? {
                             flex: 1,
                             flexWrap: 'wrap',
@@ -258,9 +257,7 @@ export default class TextAreaItem extends React.Component {
                                 {
                                     rows > 1 && count > 0 && showCount ? (
                                         <Text style={_styles.count}>
-                                            <Text style={{ color: inputCountColor }}>{inputCount}</Text>
-                                            /
-                                            {count}
+                                            {`${inputCount}/${count}`}
                                         </Text>
                                     ) : null
                                 }
