@@ -102,7 +102,7 @@ export default (theme) => StyleSheet.create({
     },
     inputStyle: {
         flex: 1,
-        color: theme.color_text_paragraph,
+        color: theme.color_text_base,
         fontSize: theme.font_size_base,
         padding: 0,
     },

@@ -98,6 +98,8 @@ PODS:
     - React
   - RNReanimated (1.7.1):
     - React
+  - RNReanimated (1.7.0):
+    - React
   - RNScreens (1.0.0-alpha.23):
     - React
   - SDWebImage (5.1.1):
@@ -202,7 +204,7 @@ SPEC CHECKSUMS:
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  libwebp: db273b5a72581ca31985dec5c3b8bc826a5f59ee
+  libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
   React-cxxreact: 8384287780c4999351ad9b6e7a149d9ed10a2395
