@@ -12,9 +12,6 @@ import { WithTheme } from '../style'
 import EmptyViewStyles from './style'
 import PropTypes from 'prop-types'
 
-const network_failedSource = require('./assets/empty_network_failed.png')
-const no_dataSource = require('./assets/empty_no_data.png')
-
 export default class EmptyView extends React.Component {
     static propTypes = {
         styles: ViewPropTypes.style,
@@ -45,6 +42,12 @@ export default class EmptyView extends React.Component {
             <WithTheme themeStyles={EmptyViewStyles} styles={styles}>
                 {
                     (_styles, theme) => {
+                        const network_failedSource = theme.dark
+                            ? require('./assets/empty_network_failed_dark.png')
+                            : require('./assets/empty_network_failed.png')
+                        const no_dataSource = theme.dark
+                            ? require('./assets/empty_no_data_dark.png')
+                            : require('./assets/empty_no_data.png')
                         let emptyImageView
                         if (type === 'no_image') {
                             emptyImageView = emptyImage

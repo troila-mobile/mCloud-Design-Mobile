@@ -2,6 +2,7 @@ import defaultTheme, { brandPrimary } from './light'
 
 export default {
     ...defaultTheme,
+    dark: true,
 
     // 文字色
     color_text_base: '#FFFFFF',             // 标题
