@@ -10,7 +10,7 @@ export default class TabViewExample extends React.Component {
         index: 9,
         routes: [
             { key: '1', title: '新闻' },
-            { key: '2', title: '视频' },
+            { key: '2', title: '视gghjgjhhghjfweewfwefewfewfjhg频' },
             { key: '3', title: '篮球' },
             { key: '4', title: '综艺' },
             { key: '5', title: '电影' },
@@ -130,6 +130,7 @@ export default class TabViewExample extends React.Component {
                 TabBarWrapperStyle={{ width: 375 }}
                 UIColor="#586BFB"
                 labelWidth={70}
+                labelStyle={{ width: 70,  }}
                 scrollEnabled={true}
                 renderScene={this._renderScene}
                 onIndexChange_Tabs={(index) => {
