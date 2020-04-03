@@ -100,7 +100,7 @@ export default class Tabs extends React.Component {
                         ]
                         const  _indicatorStyle = [
                             {
-                                width: labelWidth * 0.6 ,
+                                width: labelWidth *0.6  ,
                             },
                             _styles.indicatorStyle,
                             indicatorStyle,
@@ -123,13 +123,16 @@ export default class Tabs extends React.Component {
                                                 this._isScroll(i)
                                                 onIndexChange_Tabs(i) }}
                                         >
-                                            <Text style={
-                                                [_labelStyle,
-                                                    {
-                                                        color: index === i
-                                                            ? UIColor : theme.label_textColor,
-                                                    }]
-                                            }
+                                            <Text
+                                                style={
+                                                    [_labelStyle,
+                                                        {
+                                                            textAlign: 'center',
+                                                            color: index === i
+                                                                ? UIColor : theme.label_textColor,
+                                                        }]
+                                                }
+                                                numberOfLines={1}
                                             >
                                                 {route.title}
                                             </Text>
@@ -167,7 +170,7 @@ export default class Tabs extends React.Component {
             if (scrollView_l > (screen_W / 2)) {
                 const scrollView_x = scrollView_l - ((screen_W ) / 2 )
                 if ((scrollView_x + (screen_W ) / 2  < scrollView_width - (screen_W ) / 2 )) {
-                    if(this.scrollView) {
+                    if (this.scrollView) {
                         this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
                     } else {
                         setTimeout(() => {
@@ -175,7 +178,7 @@ export default class Tabs extends React.Component {
                         }, 1000)
                     }
                 } else {
-                    if(this.scrollView) {
+                    if (this.scrollView) {
                         this.scrollView.scrollTo({ x: scrollView_width - screen_W, y: 0, animated: true }, 1)
                     } else {
                         setTimeout(() => {
@@ -185,7 +188,7 @@ export default class Tabs extends React.Component {
                 }
             } else {
                 const scrollView_x = 0
-                if(this.scrollView) {
+                if (this.scrollView) {
                     this.scrollView.scrollTo({ x: scrollView_x, y: 0, animated: true }, 1)
                 } else {
                     setTimeout(() => {
