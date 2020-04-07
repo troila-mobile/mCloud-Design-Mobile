@@ -127,6 +127,7 @@ export default class Tabs extends React.Component {
                                                 style={
                                                     [_labelStyle,
                                                         {
+                                                            paddingHorizontal: 5,
                                                             textAlign: 'center',
                                                             color: index === i
                                                                 ? UIColor : theme.label_textColor,
