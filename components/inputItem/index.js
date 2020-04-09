@@ -38,6 +38,7 @@ export default class InputItem extends React.Component {
         focus: PropTypes.bool,
         placeholderTextColor: PropTypes.string,
         required: PropTypes.bool,
+        allowFontScaling: PropTypes.bool,
     }
     static defaultProps = {
         styles: {},
@@ -53,6 +54,7 @@ export default class InputItem extends React.Component {
         last: false,
         children: null,
         required: false,
+        allowFontScaling:false,
     }
     constructor(props) {
         super(props)
@@ -152,15 +154,16 @@ export default class InputItem extends React.Component {
             required,
             maxLength,
             autoFocus,
+            allowFontScaling,
         } = this.props
         const { focus } = this.state
         return (
             <WithTheme themeStyles={InputItemStyles} styles={styles}>
                 {
                     (_styles, theme) => {
-                        const textStyle = {
+                        const textStyle = labelNumber > 0 ? {
                             width: theme.font_size_heading * labelNumber * 1.05,
-                        }
+                        } : {}
                         const RequiredText = [
                             _styles.RequiredText,
                             {
@@ -218,6 +221,7 @@ export default class InputItem extends React.Component {
                                         secureTextEntry={type === 'password'}
                                         onBlur={this.onInputBlur}
                                         onFocus={this.onInputFocus}
+                                        allowFontScaling={allowFontScaling}
                                     />
                                     {
                                         editable && clear && value && focus ? (
