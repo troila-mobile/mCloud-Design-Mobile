@@ -25,18 +25,15 @@ export default class Avatar extends React.Component {
         source: this.props.source,
         error:false,
     }
-    componentDidMount() {
-        const { source } = this.props
-        const error = Avatar.getSourceValid(source)
-        this.setState({ error })
-    }
     static getDerivedStateFromProps(props, state) {
         const { source } = props
         const error = Avatar.getSourceValid(source)
-        return {
-            error: props.source === state.source ? state.error : error,
-            source: props.source,
+        if (error) {
+            return {
+                error,
+            }
         }
+        return null
     }
     static getSourceValid = (source) => {
         let error = false
