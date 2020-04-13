@@ -31,6 +31,7 @@ export default class AlertView extends React.Component {
       neverText: PropTypes.string,
       defaultNeverState: PropTypes.bool,
       neverKey: PropTypes.string,
+      contentStyle: PropTypes.object,
   };
   static defaultProps = {
       title: '',
@@ -46,6 +47,7 @@ export default class AlertView extends React.Component {
       neverText: '不再提示',
       defaultNeverState: false,
       neverKey: 'NeverShowModal',
+      contentStyle: {},
   };
   constructor(props) {
       super(props)
@@ -123,7 +125,7 @@ export default class AlertView extends React.Component {
   };
   renderContent = (_styles) => {
       const {
-          title, content, alertType, neverText,
+          title, content, alertType, neverText, contentStyle
       } = this.props
       const { neverState } = this.state
       return (
@@ -149,7 +151,7 @@ export default class AlertView extends React.Component {
               )}
               {content === '' ? null : (
                   <Text
-                      style={[_styles.content, _styles.space]}
+                      style={[_styles.content, _styles.space, contentStyle]}
                       allowFontScaling={false}
                   >
                       {content}
