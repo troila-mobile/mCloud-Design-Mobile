@@ -3,6 +3,7 @@ import { WithTheme } from '../style'
 import AvatarStyles from './style'
 import PropTypes from 'prop-types'
 import Image from './Avatar'
+import { View } from 'react-native'
 
 const defaultImage = require('./assets/default.png')
 
@@ -21,34 +22,6 @@ export default class Avatar extends React.Component {
         defaultAvatar:defaultImage,
         style:{},
     }
-    state={
-        source: this.props.source,
-        error:false,
-    }
-    componentDidMount() {
-        const { source } = this.props
-        const error = Avatar.getSourceValid(source)
-        this.setState({ error })
-    }
-    static getDerivedStateFromProps(props, state) {
-        const { source } = props
-        const error = Avatar.getSourceValid(source)
-        return {
-            error: props.source === state.source ? state.error : error,
-            source: props.source,
-        }
-    }
-    static getSourceValid = (source) => {
-        let error = false
-        if (source) {
-            if (typeof (source) === 'object' && !source.uri) {
-                error = true
-            }
-        } else {
-            error = true
-        }
-        return error
-    }
     render() {
         const {
             styles,
@@ -56,8 +29,8 @@ export default class Avatar extends React.Component {
             type,
             defaultAvatar,
             style,
+            source,
         } = this.props
-        const { source,error } = this.state
         return (
             <WithTheme themeStyles={AvatarStyles} styles={styles}>
                 {
@@ -65,24 +38,20 @@ export default class Avatar extends React.Component {
                         const borderStyle = [
                             _styles[`${type}Border`],style,
                         ]
+                        const imageStyle = [
+                            {
+                                width: size,
+                                height: size,
+                                borderRadius: size / 2,
+                            },
+                            ...borderStyle,
+                        ]
+                        const defaultStyle = [...imageStyle, { position: 'absolute' }]
                         return (
-                            <Image
-                                style={[
-                                    {
-                                        width: size,
-                                        height: size,
-                                        borderRadius: size / 2,
-                                    },
-                                    ...borderStyle,
-                                ]}
-                                source={error ? defaultAvatar : source}
-                                onError={() => {
-                                    this.setState({
-                                        error: true,
-                                    })
-                                }}
-                            />
-
+                            <View>
+                                <Image style={defaultStyle} source={defaultAvatar} />
+                                <Image style={imageStyle} source={source} />
+                            </View>
                         )
                     }
                 }

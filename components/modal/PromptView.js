@@ -85,7 +85,7 @@ export default class PromptView extends React.Component {
         const { onDialogDismiss } = this.props
         onDialogDismiss && onDialogDismiss()
     }
-    renderContent = (_styles) => {
+    renderContent = (_styles, theme) => {
         const {
             title,
             content,
@@ -124,7 +124,7 @@ export default class PromptView extends React.Component {
                         maxLength={maxLength}
                         underlineColorAndroid="transparent"
                         placeholder={placeholder}
-                        placeholderTextColor="#A5ABB1"
+                        placeholderTextColor={theme.color_text_placeholder}
                         autoFocus={true}
                         ref={(inputView) => this.input = inputView}
                     />
@@ -200,7 +200,7 @@ export default class PromptView extends React.Component {
         return (
             <WithTheme themeStyles={ModalStyles}>
                 {
-                    (_styles) => (
+                    (_styles, theme) => (
                         <MaskView
                             ref={(view) => this.modal = view}
                             onDismiss={() => this.onDismiss()}
@@ -208,7 +208,7 @@ export default class PromptView extends React.Component {
                         >
                             <KeyboardAvoidingView behavior="padding">
                                 <View style={_styles.dialogContainer}>
-                                    {this.renderContent(_styles)}
+                                    {this.renderContent(_styles, theme)}
                                     <View style={_styles.horizontalLine} />
                                     {this.renderActions(_styles)}
                                 </View>
