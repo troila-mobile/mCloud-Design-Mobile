@@ -16,7 +16,7 @@ const disableStepperAdd = require('./assets/stepper_add_disable.png')
 export default class Stepper extends React.Component {
     static propTypes = {
         style: ViewPropTypes.style,
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         min: PropTypes.number,
         max: PropTypes.number,
         step: PropTypes.number,

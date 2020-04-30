@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 export default class CheckboxItem extends React.Component {
     static propTypes = {
         style: ViewPropTypes.style,
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         checked: PropTypes.bool,
         defaultChecked: PropTypes.bool,
         disabled: PropTypes.bool,

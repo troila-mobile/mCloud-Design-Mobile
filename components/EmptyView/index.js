@@ -14,7 +14,7 @@ import PropTypes from 'prop-types'
 
 export default class EmptyView extends React.Component {
     static propTypes = {
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         style: ViewPropTypes.style,
         children: PropTypes.any,
         type: PropTypes.string,

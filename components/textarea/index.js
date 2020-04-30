@@ -23,7 +23,7 @@ function fixControlledValue(value) {
 
 export default class TextAreaItem extends React.Component {
     static propTypes = {
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         style: ViewPropTypes.style,
         value: PropTypes.string,
         defaultValue: PropTypes.string,

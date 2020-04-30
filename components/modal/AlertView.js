@@ -125,7 +125,7 @@ export default class AlertView extends React.Component {
   };
   renderContent = (_styles) => {
       const {
-          title, content, alertType, neverText, contentStyle
+          title, content, alertType, neverText, contentStyle,
       } = this.props
       const { neverState } = this.state
       return (
@@ -139,6 +139,7 @@ export default class AlertView extends React.Component {
                           right: 20,
                           left: 20,
                       }}
+                      onPress={() => this.onDismiss()}
                   >
                       <Image source={modalCloseIcon} />
                   </TouchableOpacity>

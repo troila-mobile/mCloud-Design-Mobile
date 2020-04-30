@@ -10,7 +10,7 @@ import SwitchStyles from './style'
 export default class SwitchButton extends Component {
     static propTypes = {
         style: ViewPropTypes.style,
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         checked: PropTypes.bool,
         onChange: PropTypes.func,
         disabled: PropTypes.bool,
