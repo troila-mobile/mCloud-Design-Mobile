@@ -5,7 +5,6 @@ import {
 import { WithTheme } from '../style'
 import StepsStyles from './style'
 import PropTypes from 'prop-types'
-import type { ViewStyle } from 'react-native/Libraries/StyleSheet/StyleSheet'
 
 const steps_finish = require('./assets/steps_finish.png')
 const steps_error = require('./assets/steps_error.png')
@@ -14,7 +13,7 @@ const steps_wait = require('./assets/steps_wait.png')
 export default class StepsItem extends React.Component {
     static propTypes = {
         style: ViewPropTypes.style,
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         status: PropTypes.string,
         title: PropTypes.string,
         description: PropTypes.string,
@@ -90,15 +89,15 @@ export default class StepsItem extends React.Component {
                         }
 
                         const isHorizontal = direction === 'horizontal'
-                        const parentStyle: ViewStyle = isHorizontal ? {
+                        const parentStyle = isHorizontal ? {
                             flexDirection: 'column',
                         } : { flexDirection: 'row' }
-                        const childStyle: ViewStyle = isHorizontal ? {
+                        const childStyle = isHorizontal ? {
                             flexDirection: 'row',
                             flew: 1,
                         } : { flexDirection: 'column' }
 
-                        let styleSuffix: string = ''
+                        let styleSuffix = ''
                         if (isHorizontal) {
                             styleSuffix = '_horizontal'
                         }

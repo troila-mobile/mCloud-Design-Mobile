@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 export default class Steps extends React.Component {
     static propTypes = {
         style: ViewPropTypes.style,
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         current: PropTypes.number,
         size: PropTypes.string,
         direction: PropTypes.oneOf(['vertical', 'horizontal']),

@@ -29,7 +29,7 @@ const getPlatformElevation = Platform.OS === 'ios' ? (elevation) => {
 export default class SwitchButton extends Component {
     static propTypes = {
         style: ViewPropTypes.style,
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         checked: PropTypes.bool,
         onChange: PropTypes.func,
         disabled: PropTypes.bool,
@@ -38,7 +38,6 @@ export default class SwitchButton extends Component {
     static defaultProps = {
         style: {},
         styles: {},
-        checked: false,
         onChange: () => { },
         disabled: false,
     }
@@ -78,18 +77,29 @@ export default class SwitchButton extends Component {
         }
     }
     onToggle = () => {
+        const { disabled, onChange } = this.props
+        if (disabled) {
+            return
+        }
         const {
             checked,
             scale,
             left,
             animatedColor,
         } = this.state
-        const { onChange } = this.props
-        if (!checked) {
-            this.setState((preState) => ({
-                checked: !preState.checked,
-            }), () => {
-                onChange(this.state.checked)
+        if ('checked' in this.props) {
+            this.setState({
+                checked,
+            })
+            onChange && onChange(!checked)
+            return
+        }
+        const newChecked = !checked
+        if (newChecked) {
+            this.setState({
+                checked: newChecked,
+            }, () => {
+                onChange && onChange(newChecked)
                 Animated.parallel([
                     Animated.timing(scale, {
                         toValue: 0.01,
@@ -111,10 +121,10 @@ export default class SwitchButton extends Component {
                 ]).start()
             })
         } else {
-            this.setState((preState) => ({
-                checked: !preState.checked,
-            }), () => {
-                onChange(this.state.checked)
+            this.setState({
+                checked: newChecked,
+            }, () => {
+                onChange && onChange(newChecked)
                 Animated.parallel([
                     Animated.timing(scale, {
                         toValue: 1,

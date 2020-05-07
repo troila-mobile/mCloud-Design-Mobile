@@ -46,6 +46,7 @@ export default function alert(
             neverText={alertOptions.neverText}
             defaultNeverState={alertOptions.defaultNeverState}
             neverKey={alertOptions.neverKey}
+            contentStyle={alertOptions.contentStyle}
         />
     )
 }

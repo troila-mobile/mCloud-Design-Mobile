@@ -17,7 +17,7 @@ const clearImage = require('../searchBar/assets/clear.png')
 
 export default class InputItem extends React.Component {
     static propTypes = {
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         style: ViewPropTypes.style,
         type: PropTypes.oneOf(['text', 'bankCard', 'phone', 'password', 'number', 'digit', ...keyboardTypeArray]),
         editable: PropTypes.bool,

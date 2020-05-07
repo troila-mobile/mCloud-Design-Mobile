@@ -15,7 +15,7 @@ const screenW = Dimensions.get('window').width
 
 export default class Tabs extends React.Component {
     static propTypes = {
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         tabStyle: ViewPropTypes.style,
         labelStyle: ViewPropTypes.style,
         indicatorStyle:ViewPropTypes.style,

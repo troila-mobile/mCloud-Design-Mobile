@@ -19,7 +19,7 @@ const clearImage = require('./assets/clear.png')
 export default class SearchBar extends React.Component {
     static propTypes = {
         style: ViewPropTypes.style,
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         type: PropTypes.oneOf(['default', 'radius']),
         defaultValue: PropTypes.string,
         value: PropTypes.string,

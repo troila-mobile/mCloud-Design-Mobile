@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 
 export default class Label extends React.Component {
     static propTypes = {
-        styles: ViewPropTypes.style,
+        styles: PropTypes.object,
         style: ViewPropTypes.style,
         children: PropTypes.any,
         size: PropTypes.string,
