@@ -11,11 +11,11 @@ import {
     findNodeHandle,
     UIManager,
     Keyboard,
+    SafeAreaView,
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { WithTheme } from '../style'
 import ActionSheetStyle from './style/index'
-import { SafeAreaView } from 'react-navigation'
 // import { UIManager } from 'NativeModules'
 
 
