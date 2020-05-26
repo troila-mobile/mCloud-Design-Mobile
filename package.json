@@ -1,6 +1,6 @@
 {
   "name": "mcloud-mobile",
-  "version": "1.0.60",
+  "version": "1.1.0",
   "main":"components/index.js",
   "scripts": {
     "start": "react-native start",
