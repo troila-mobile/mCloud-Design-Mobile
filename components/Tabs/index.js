@@ -125,13 +125,14 @@ export default class Tabs extends React.Component {
                                         >
                                             <Text
                                                 style={
-                                                    [_labelStyle,
+                                                    [
                                                         {
                                                             paddingHorizontal: 5,
                                                             textAlign: 'center',
                                                             color: index === i
                                                                 ? UIColor : theme.label_textColor,
-                                                        }]
+                                                        },
+                                                        _labelStyle]
                                                 }
                                                 numberOfLines={1}
                                             >
